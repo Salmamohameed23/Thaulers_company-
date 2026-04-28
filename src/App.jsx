@@ -1,24 +1,11 @@
-import {  Route, Routes } from "react-router-dom";
-import Footer from "./components/footer";
-import Home from "./Pages/Home/Home";
-import Electric from "./components/Electric";
-import Consumer from "./components/Consumer";
-import Navbar from "./components/NavBar";
-import Energy from "./components/Energy";
+import Navbar from "./components/layout/Navbar";
+import AppRouter from "./router/AppRouter";
+
 function App() {
   return (
-    <div className="app-container">
+    <div className="min-h-screen bg-[#07090C] text-white">
       <Navbar />
-      <div className="main-contact">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Electric" element={<Electric />} />
-          <Route path="/Energy" element={<Energy />} />
-
-          <Route path="/Consumer" element={<Consumer />} />
-        </Routes>
-      </div>
-      <Footer />
+      <AppRouter />
     </div>
   );
 }
