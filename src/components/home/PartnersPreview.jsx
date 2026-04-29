@@ -3,24 +3,25 @@ import { motion } from "framer-motion";
 import { BatteryCharging, SunMedium, Cpu } from "lucide-react";
 
 const partners = [
-    {
-        name: "EVE Energy",
-        country: "China",
-        icon: BatteryCharging,
-        text: "Providing advanced battery technologies for large-scale energy storage applications.",
-    },
-    {
-        name: "BYD",
-        country: "China",
-        icon: SunMedium,
-        text: "A global leader in renewable energy and battery systems.",
-    },
-    {
-        name: "RF Box Company",
-        country: "Egypt",
-        icon: Cpu,
-        text: "Delivering engineering expertise and technical solutions.",
-    },
+  {
+    name: "RF Box Company",
+    country: "Egypt",
+    icon: Cpu,
+    text: "Delivering engineering expertise and technical solutions.",
+  },
+
+  {
+    name: "BYD",
+    country: "China",
+    icon: SunMedium,
+    text: "A global leader in renewable energy and battery systems.",
+  },
+  {
+    name: "EVE Energy",
+    country: "China",
+    icon: BatteryCharging,
+    text: "Providing advanced battery technologies for large-scale energy storage applications.",
+  },
 ];
 
 const PartnersPreview = () => {
@@ -39,7 +40,8 @@ const PartnersPreview = () => {
                 >
                     <div>
                         <p className="mb-4 text-xs font-black uppercase tracking-[0.34em] text-red-600">
-                            Our Partners
+                            Our Partners  &                             Main Supply Chain
+
                         </p>
 
                         <h2 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">

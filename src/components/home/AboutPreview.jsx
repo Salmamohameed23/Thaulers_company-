@@ -33,10 +33,9 @@ const AboutPreview = () => {
               engineered from design to execution.
             </span>
           </h2>
-
           <div className="mt-7 max-w-2xl space-y-5 text-base leading-8 text-slate-300 sm:text-lg">
             <p>
-              TOUGH HAULERS TRADE LIMITED is a global provider of advanced solar
+              TOUGH HAULERS is a global provider of advanced solar
               power and energy storage solutions, delivering fully integrated
               solar projects across international markets.
             </p>

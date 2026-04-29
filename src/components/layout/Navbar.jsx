@@ -23,7 +23,7 @@ const Navbar = () => {
     }`;
 
   const dropdownItemClass =
-    "block rounded-xl px-4 py-3 text-[17px] font-medium text-neutral-800 transition hover:bg-red-50 hover:text-red-600";
+    "block rounded-xl px-4 py-3 text-[20px] font-medium text-neutral-800 transition hover:bg-red-50 hover:text-red-600";
 
   const solutionsLinks = [
     { label: "Smart Storage", path: "/smart-storage" },
@@ -199,7 +199,7 @@ const Navbar = () => {
               href="/company-profile.pdf"
               download
               onClick={closeAll}
-              className="flex items-center gap-2 text-[17px] font-semibold text-neutral-800 hover:text-red-600"
+              className="flex items-center gap-2 text-[20px] font-semibold text-neutral-800 hover:text-red-600"
             >
               Company Profile <Download size={14} />
             </a>

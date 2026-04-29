@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import heroImg from "../../assets/images/hero.png";
 
-const heroCards = [
-  {
-    title: "Solar Power Systems",
-    text: "High-efficiency solar solutions engineered for reliable performance.",
-  },
-  {
-    title: "Battery Storage Solutions",
-    text: "Advanced BESS technologies for stable and optimized power supply.",
-  },
-  {
-    title: "Full EPC Energy Engineering",
-    text: "From project study and design to supply, installation, and commissioning.",
-  },
-];
+// const heroCards = [
+//   {
+//     title: "Solar Power Systems",
+//     text: "High-efficiency solar solutions engineered for reliable performance.",
+//   },
+//   {
+//     title: "Battery Storage Solutions",
+//     text: "Advanced BESS technologies for stable and optimized power supply.",
+//   },
+//   {
+//     title: "Full EPC Energy Engineering",
+//     text: "From project study and design to supply, installation, and commissioning.",
+//   },
+// ];
 
 const Hero = () => {
   return (
@@ -46,21 +46,21 @@ const Hero = () => {
             transition={{ duration: 0.75 }}
             className="max-w-4xl"
           >
-            <p className="mb-6 inline-flex rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] text-red-300 backdrop-blur">
-              Solar & Energy Storage Solutions
-            </p>
+            {/* <p className="mb-6 inline-flex rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] text-red-300 backdrop-blur">
+              TOUGH HAULERS 
+            </p> */}
 
             <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
-              Engineering Power.
+              Solar Power, Battery Energy
               <span className="block text-red-500">
-                Delivering Reliability.
+                Storage & EPC Solutions.
               </span>
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              TOUGH HAULERS TRADE LIMITED delivers Solar Power Systems, Battery
-              Storage Solutions, and Full EPC Solar & Energy Engineering for
-              global projects — from 100 kW to gigawatt-scale energy systems.
+              TOUGH HAULERS delivers Solar Power Systems, Battery Storage
+              Solutions, and Full EPC Solar & Energy Engineering for global
+              projects — from 5 kW to gigawatt-scale energy systems.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -86,12 +86,12 @@ const Hero = () => {
             transition={{ duration: 0.85, delay: 0.25 }}
             className="hidden lg:block"
           >
-            <div className="rounded-[34px] border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/40 backdrop-blur-xl">
-              <p className="mb-6 text-xs font-bold uppercase tracking-[0.28em] text-red-400">
+            {/* <div className="rounded-[34px] border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/40 backdrop-blur-xl"> */}
+            {/* <p className="mb-6 text-xs font-bold uppercase tracking-[0.28em] text-red-400">
                 Core Capabilities
-              </p>
+              </p> */}
 
-              <div className="space-y-4">
+            {/* <div className="space-y-4">
                 {heroCards.map((card, index) => (
                   <motion.div
                     key={card.title}
@@ -108,8 +108,8 @@ const Hero = () => {
                     </p>
                   </motion.div>
                 ))}
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </motion.div>
         </div>
       </div>

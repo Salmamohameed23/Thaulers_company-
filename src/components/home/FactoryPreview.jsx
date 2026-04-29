@@ -58,7 +58,7 @@ const FactoryPreview = () => {
                         transition={{ duration: 0.75 }}
                     >
                         <p className="mb-4 text-xs font-bold uppercase tracking-[0.34em] text-red-400">
-                            Building Factory
+                            Factory Solutions
                         </p>
 
                         <h2 className="text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
