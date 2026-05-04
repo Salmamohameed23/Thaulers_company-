@@ -1,27 +1,30 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, BatteryCharging, Factory, Globe2 } from "lucide-react";
+import smartstorage from "../../assets/images/9.png";
+import Factoryimg from "../../assets/images/11.jpg";
+import gigawatt from "../../assets/images/12.jpg";
 
 const services = [
   {
     icon: BatteryCharging,
     title: "Smart Storage",
     desc: "Battery Energy Storage Systems designed for stable, scalable, and reliable energy performance.",
-    image: "/src/assets/images/9.png",
+    image: smartstorage,
     path: "/smart-storage",
   },
   {
     icon: Factory,
     title: "Factory Solutions",
     desc: "Turnkey factory solutions, technology transfer, and production support for energy storage systems.",
-    image: "/src/assets/images/11.jpg",
+    image: Factoryimg,
     path: "/factory",
   },
   {
     icon: Globe2,
     title: "Gigawatt Projects",
     desc: "Engineering and supply chain capability supporting projects from kW-scale to Gigawatt-scale deployment.",
-    image: "/src/assets/images/12.jpg",
+    image: gigawatt,
     path: "/gigawatt-projects",
   },
 ];
