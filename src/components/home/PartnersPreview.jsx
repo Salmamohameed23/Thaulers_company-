@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import bydLogo from "../../assets/logos/BYD_logo_clean_final.png";
+import RFLogo from "../../assets/logos/RF LOGO.png";
+import EVELogo from "../../assets/logos/EVE_logo_transparent.png";
+
 const partners = [
   {
     name: "RF Box Company",
     country: "Egypt",
-    logo: "/src/assets/logos/RF LOGO.png",
+    logo: RFLogo,
     text: "Delivering engineering expertise and technical solutions.",
   },
   {
@@ -18,7 +21,7 @@ const partners = [
   {
     name: "EVE Energy",
     country: "China",
-    logo: "/src/assets/logos/EVE_logo_transparent.png",
+    logo: EVELogo,
     text: "Providing advanced battery technologies for large-scale energy storage applications.",
   },
 ];
