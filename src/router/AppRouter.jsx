@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import About from "../pages/About";
+import Whyus from "../pages/whyus";
 import Solutions from "../pages/Solutions";
 import SmartStorage from "../pages/SmartStorage";
 import Factory from "../pages/Factory";
@@ -12,7 +12,7 @@ const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/whyus" element={<Whyus />} />
       <Route path="/solutions" element={<Solutions />} />
       <Route path="/smart-storage" element={<SmartStorage />} />
       <Route path="/factory" element={<Factory />} />

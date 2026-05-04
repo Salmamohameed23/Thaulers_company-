@@ -42,8 +42,8 @@ const Navbar = () => {
   const aboutLinks = [
     { label: "Company Profile", path: "/company-profile.pdf", download: true },
     { label: "Contact", path: "/contact" },
-    { label: "Enquiry", path: "/enquiry" },
-    { label: "Why Us", path: "/why-us" },
+    { label: "Why Us", path: "/whyus" },
+    { label: "Enquiry", path: "/enquiry" }
   ];
 
   const closeAll = () => {

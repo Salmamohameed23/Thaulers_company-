@@ -78,7 +78,7 @@ const AboutPreview = () => {
           </div>
 
           <Link
-            to="/about"
+            to="/whyus"
             className="group mt-9 inline-flex items-center gap-3 rounded-full bg-neutral-950 px-7 py-4 text-[15px] font-black text-white shadow-[0_18px_45px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-1 hover:bg-red-600"
           >
             Learn More About Us
