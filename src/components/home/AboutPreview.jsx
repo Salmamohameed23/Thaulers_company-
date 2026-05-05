@@ -57,12 +57,12 @@ const AboutPreview = () => {
 
           <h2 className="max-w-3xl text-[38px] font-black leading-[1.05] tracking-[-0.045em] text-neutral-950 sm:text-5xl lg:text-[58px]">
             Global solar and energy storage solutions,
-            <span className="block text-neutral-700">
+            <span className="block ">
               engineered from design to execution.
             </span>
           </h2>
 
-          <div className="mt-7 max-w-2xl space-y-5 text-[17px] font-medium leading-8 text-neutral-700 sm:text-lg">
+          <div className="mt-7 max-w-2xl space-y-5 text-[17px] font-medium leading-8  sm:text-lg">
             <p>
               TOUGH HAULERS is a global provider of advanced solar power and
               energy storage solutions, delivering fully integrated solar

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -32,7 +32,7 @@ const partners = [
     country: "China",
     category: "Renewable Energy & Battery Ecosystem",
     image: bydVisit,
-    website: "https://www.byd.com/en",
+    website: "https://www.bydglobal.com/cn/index.html",
     description:
       "BYD strengthens the company’s access to advanced energy technologies, battery solutions, and integrated renewable energy supply chain capabilities.",
     highlights: [
@@ -73,12 +73,12 @@ const Partners = () => {
 
               <h1 className="text-5xl font-black leading-tight">
                 Global Technology Network
-                <span className="block text-neutral-700">
+                <span className="block ">
                   powering energy projects.
                 </span>
               </h1>
 
-              <p className="mt-6 text-lg text-neutral-600 leading-8">
+              <p className="mt-6 text-lg text-neutral-1000 leading-8">
                 Our partner ecosystem supports solar power systems, battery
                 energy storage, EPC engineering, and global project execution
                 with reliable supply chain integration.
@@ -87,7 +87,7 @@ const Partners = () => {
 
             <div className="bg-neutral-100 rounded-3xl p-6">
               <Handshake size={32} className="text-red-600 mb-4" />
-              <p className="text-neutral-700 leading-7">
+              <p className="text-neutral-1000 leading-7">
                 Strong partnerships ensure better sourcing, better engineering
                 coordination, and stronger project delivery confidence.
               </p>
@@ -145,11 +145,11 @@ const Partners = () => {
                         {partner.name}
                       </h3>
 
-                      <p className="text-sm text-neutral-500 mt-2">
+                      <p className="text-sm text-neutral-800 mt-2">
                         {partner.country}
                       </p>
 
-                      <p className="mt-5 text-neutral-600 leading-7">
+                      <p className="mt-5 text-neutral-1000 leading-7">
                         {partner.description}
                       </p>
 
@@ -158,7 +158,7 @@ const Partners = () => {
                         {partner.highlights.map((item) => (
                           <div
                             key={item}
-                            className="p-4 border rounded-xl text-sm text-neutral-700"
+                            className="p-4 border rounded-xl text-sm text-neutral-1000"
                           >
                             {item}
                           </div>
@@ -167,8 +167,8 @@ const Partners = () => {
 
                       {/* CTA */}
                       <div className="mt-8 flex items-center justify-between">
-                        <span className="text-sm text-neutral-700">
-                          Official Partner
+                        <span className="text-sm text-neutral-850 font-bold">
+                          Main supply chain
                         </span>
 
                         <span className="flex items-center gap-2 text-red-600 font-bold group-hover:gap-3 transition">

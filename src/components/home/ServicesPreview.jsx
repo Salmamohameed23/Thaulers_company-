@@ -45,12 +45,12 @@ const ServicesPreview = () => {
 
             <h2 className="text-[40px] font-black leading-[1.05] tracking-[-0.04em] sm:text-5xl">
               Integrated Energy
-              <span className="block text-neutral-700">
+              <span className="block">
                 Solutions & Capabilities.
               </span>
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-neutral-600">
+            <p className="mt-6 text-lg leading-8 ">
               From battery storage systems to full-scale manufacturing and
               gigawatt-level project execution, we deliver scalable and reliable
               energy solutions globally.

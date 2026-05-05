@@ -60,9 +60,7 @@ const About = () => {
 
             <h1 className="text-[44px] font-black leading-[1.02] tracking-[-0.05em] sm:text-6xl lg:text-[78px]">
               Global solar and energy storage solutions,
-              <span className="block text-neutral-700">
-                engineered for reliable execution.
-              </span>
+              <span className="block ">engineered for reliable execution.</span>
             </h1>
 
             <p className="mt-7 max-w-3xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
@@ -107,9 +105,7 @@ const About = () => {
 
             <h2 className="text-[36px] font-black leading-[1.08] tracking-[-0.04em] sm:text-5xl">
               Engineering Power.
-              <span className="block text-neutral-700">
-                Delivering Reliability.
-              </span>
+              <span className="block">Delivering Reliability.</span>
             </h2>
 
             <p className="mt-6 text-[16px] leading-8 text-neutral-600">
@@ -171,7 +167,7 @@ const About = () => {
 
               <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.04em] sm:text-5xl">
                 Integrated energy solutions
-                <span className="block text-neutral-700">
+                <span className="block ">
                   across design, supply & execution.
                 </span>
               </h2>
@@ -217,7 +213,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
     </main>
   );
 };

@@ -47,12 +47,12 @@ const Contact = () => {
 
             <h1 className="text-[44px] font-black leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-[76px]">
               Start your
-              <span className="block text-neutral-700">
+              <span className="block ">
                 energy project with us.
               </span>
             </h1>
 
-            <p className="mt-7 max-w-3xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
+            <p className="mt-7 max-w-3xl text-[17px] leading-8 sm:text-lg">
               Contact TOUGH HAULERS TRADE LIMITED for solar power systems,
               battery energy storage solutions, full EPC solar and energy
               engineering, factory solutions, and global project support.

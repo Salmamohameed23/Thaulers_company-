@@ -7,7 +7,7 @@ import Factory from "../pages/Factory";
 import GigawattProjects from "../pages/GigawattProjects";
 import Partners from "../pages/Partners";
 import Contact from "../pages/Contact";
-
+import LetsBuild from "../pages/LetsBuild";
 const AppRouter = () => {
   return (
     <Routes>
@@ -19,6 +19,7 @@ const AppRouter = () => {
       <Route path="/gigawatt-projects" element={<GigawattProjects />} />
       <Route path="/partners" element={<Partners />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/lets-build" element={<LetsBuild />} />
     </Routes>
   );
 };

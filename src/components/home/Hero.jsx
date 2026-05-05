@@ -123,12 +123,12 @@ const Hero = () => {
 
           <h1 className="max-w-6xl text-[44px] font-black leading-[0.98] tracking-[-0.055em] text-neutral-950 sm:text-6xl lg:text-7xl xl:text-[88px]">
             Powering Global Projects with
-            <span className="text-red-600"> Solar</span>,
-            <span className="block">Battery Storage & EPC Excellence.</span>
+            <span className="text-red-500"> Solar, </span>
+            <span className="text-red-500" >Battery Storage & EPC Excellence.</span>
           </h1>
 
-          <p className="mt-7 max-w-3xl text-[17px] font-medium leading-8 text-neutral-700 sm:text-xl">
-            TOUGH HAULERS TRADE LIMITED delivers integrated energy solutions
+          <p className="mt-7 max-w-3xl text-[17px] font-medium leading-8 sm:text-xl">
+            TOUGH HAULERS delivers integrated energy solutions
             across Solar Power Systems, Battery Energy Storage Systems, and Full
             EPC Solar & Energy Engineering for industrial and utility-scale
             projects.

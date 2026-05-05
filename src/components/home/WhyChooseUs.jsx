@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
 
           <h2 className="text-[40px] font-black leading-[1.05] tracking-[-0.04em] sm:text-5xl">
             Built on Trust.
-            <span className="block text-neutral-700">
+            <span className="block ">
               Driven by Engineering.
             </span>
           </h2>
