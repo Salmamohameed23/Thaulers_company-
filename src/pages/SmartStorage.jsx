@@ -12,7 +12,7 @@ import {
   Zap,
 } from "lucide-react";
 
-import smartHero from "../assets/images/3.jpg";
+import smartHero from "../assets/images/hero4.jpg";
 import ess5 from "../assets/images/5 kw 1.png";
 import ess10 from "../assets/images/5 kw 6.png";
 import essIndustrial from "../assets/images/6.png";
@@ -130,7 +130,7 @@ export default function SmartStorage() {
           className="absolute inset-0 h-full w-full object-cover opacity-[0.18]"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-white/86 via-white/64 to-white/76" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-transparent" />
         <div className="absolute right-[-120px] top-24 h-[520px] w-[520px] rounded-full bg-red-600/10 blur-[120px]" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
@@ -146,9 +146,7 @@ export default function SmartStorage() {
 
             <h1 className="max-w-4xl text-[44px] font-black leading-[1.02] tracking-[-0.055em] sm:text-6xl lg:text-[72px]">
               Integrated battery storage.
-              <span className="block text-neutral-400">
-                Engineered for real operation.
-              </span>
+              <span className="block ">Engineered for real operation.</span>
             </h1>
 
             <p className="mt-7 max-w-2xl text-[17px] leading-8 text-neutral-700 sm:text-lg">
@@ -157,22 +155,7 @@ export default function SmartStorage() {
               to full supply, installation, and commissioning.
             </p>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <Link
-                to="/lets-build"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-red-600 px-8 py-4 text-sm font-bold text-white shadow-[0_20px_45px_rgba(220,38,38,0.24)] transition hover:-translate-y-1 hover:bg-neutral-950"
-              >
-                Start Storage Project
-                <ArrowUpRight size={17} />
-              </Link>
-
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white/90 px-8 py-4 text-sm font-bold text-neutral-950 shadow-[0_16px_45px_rgba(0,0,0,0.08)] backdrop-blur transition hover:-translate-y-1 hover:bg-neutral-950 hover:text-white"
-              >
-                Contact Engineering Team
-              </Link>
-            </div>
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row"></div>
           </motion.div>
 
           <motion.div
@@ -182,59 +165,6 @@ export default function SmartStorage() {
             className="relative"
           >
             <div className="absolute -inset-8 rounded-[48px] bg-gradient-to-br from-red-600/12 via-black/5 to-transparent blur-3xl" />
-
-            <motion.div
-              animate={{ y: [0, -7, 0] }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative overflow-hidden rounded-[42px] border border-black/10 bg-white/82 p-6 shadow-[0_45px_120px_rgba(0,0,0,0.14)] backdrop-blur-xl"
-            >
-              <div className="relative rounded-[32px] bg-gradient-to-b from-neutral-900 to-black p-6 text-white shadow-[0_28px_70px_rgba(0,0,0,0.20)]">
-                <div className="flex items-start justify-between gap-6">
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.28em] text-red-400">
-                      BESS Scope
-                    </p>
-                    <h2 className="mt-3 text-2xl font-black tracking-[-0.04em]">
-                      EPC-ready storage system
-                    </h2>
-                  </div>
-
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/10">
-                    <BatteryCharging size={24} />
-                  </div>
-                </div>
-
-                <div className="mt-7 grid gap-3">
-                  {[
-                    "Battery system design",
-                    "BMS integration",
-                    "PCS selection",
-                    "Thermal management",
-                    "Electrical protection",
-                  ].map((item, index) => (
-                    <motion.div
-                      key={item}
-                      initial={{ opacity: 0, x: 18 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.45,
-                        delay: 0.25 + index * 0.06,
-                      }}
-                      className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3"
-                    >
-                      <CheckCircle2 size={17} className="text-red-400" />
-                      <span className="text-sm font-medium text-white/85">
-                        {item}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
         {/* TRUST STRIP */}
@@ -294,13 +224,13 @@ export default function SmartStorage() {
                 <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
 
                 <div className="relative flex h-[335px] items-center justify-center bg-gradient-to-b from-neutral-50 via-white to-white p-8">
-                  <div className="absolute left-6 top-6 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] text-neutral-700 backdrop-blur">
+                  {/* <div className="absolute left-6 top-6 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] text-neutral-700 backdrop-blur">
                     {index === 0
                       ? "Residential"
                       : index === 1
                         ? "Residential"
                         : "Commercial & Industrial System"}
-                  </div>
+                  </div> */}
 
                   <img
                     src={product.image}
