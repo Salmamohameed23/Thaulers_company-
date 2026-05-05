@@ -36,7 +36,7 @@ const Hero = () => {
       />
 
       <div className="absolute inset-0 bg-white/6" />
-      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/15 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-white/15" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_48%,rgba(220,38,38,0.13),transparent_34%)]" />
 
@@ -59,7 +59,7 @@ const Hero = () => {
           <h1 className="max-w-6xl text-[44px] font-black leading-[0.98] tracking-[-0.055em] text-neutral-950 sm:text-6xl lg:text-7xl xl:text-[88px]">
             Powering Global Projects with Solar,
             <br />
-            <span className="text-red-500">
+            <span className="text-red-700">
               Battery Storage & EPC Excellence.
             </span>
           </h1>
