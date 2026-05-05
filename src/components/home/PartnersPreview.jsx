@@ -13,17 +13,18 @@ const partners = [
     text: "Delivering engineering expertise and technical solutions.",
   },
   {
-    name: "BYD",
-    country: "China",
-    logo: bydLogo,
-    text: "A global leader in renewable energy and battery systems.",
-  },
-  {
     name: "EVE Energy",
     country: "China",
     logo: EVELogo,
     text: "Providing advanced battery technologies for large-scale energy storage applications.",
   },
+  {
+    name: "BYD",
+    country: "China",
+    logo: bydLogo,
+    text: "A global leader in renewable energy and battery systems.",
+  },
+  
 ];
 
 const PartnersPreview = () => {
@@ -99,13 +100,7 @@ const PartnersPreview = () => {
                   {partner.text}
                 </p>
 
-                <div className="mt-8 flex items-center justify-between border-t border-black/10 pt-5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
-                    View Partner
-                  </span>
-
-                  <ArrowUpRight className="text-neutral-400 transition group-hover:text-red-600" />
-                </div>
+                
               
             </motion.div>
           ))}

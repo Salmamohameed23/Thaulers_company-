@@ -205,7 +205,7 @@ const Navbar = () => {
           </NavLink>
         </nav>
 
-        {/* <div className="hidden lg:flex">
+        <div className="hidden lg:flex">
           <Link
             to="/contact"
             className={`rounded-full bg-neutral-950 font-bold text-white transition-all duration-500 hover:bg-red-600 ${
@@ -214,7 +214,7 @@ const Navbar = () => {
           >
             Let’s Build
           </Link>
-        </div> */}
+        </div>
 
         <button
           onClick={() => setIsOpen(!isOpen)}

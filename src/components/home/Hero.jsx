@@ -58,10 +58,10 @@ const Hero = () => {
           </div>
 
           <h1 className="max-w-6xl text-[44px] font-black leading-[0.98] tracking-[-0.055em] text-neutral-950 sm:text-6xl lg:text-7xl xl:text-[88px]">
-            Powering Global Projects with Solar, 
-            <br/>     
+            Powering Global Projects with Solar,
+            <br />
             <span className="text-red-500">
-                  Battery Storage & EPC Excellence.
+              Battery Storage & EPC Excellence.
             </span>
           </h1>
 
@@ -96,21 +96,10 @@ const Hero = () => {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              to="/solutions"
-              className="group inline-flex items-center gap-3 rounded-full bg-red-600 px-8 py-4 text-[15px] font-black text-white shadow-[0_20px_48px_rgba(220,38,38,0.28)] transition-all duration-300 hover:-translate-y-1 hover:bg-red-500"
-            >
-              Explore Solutions
-              <ArrowUpRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </Link>
-
-            <Link
               to="/contact"
               className="inline-flex items-center rounded-full border border-black/15 bg-white/85 px-8 py-4 text-[15px] font-black text-neutral-950 shadow-[0_15px_35px_rgba(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-neutral-950 hover:bg-neutral-950 hover:text-white"
             >
-              Start a Project
+              Let&apos;s Build
             </Link>
           </div>
         </motion.div>

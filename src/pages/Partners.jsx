@@ -69,14 +69,12 @@ const Partners = () => {
           <div className="grid gap-10 lg:grid-cols-2 items-center">
             <div>
               <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-red-600">
-                Partners & Supply Chain
+                Our Partners & Main Supply Chain
               </p>
 
               <h1 className="text-5xl font-black leading-tight">
                 Global Technology Network
-                <span className="block ">
-                  powering energy projects.
-                </span>
+                <span className="block ">powering energy projects.</span>
               </h1>
 
               <p className="mt-6 text-lg text-neutral-1000 leading-8">
