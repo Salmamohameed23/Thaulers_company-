@@ -4,7 +4,6 @@ import { Mail, MapPin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-neutral-950 text-white relative overflow-hidden">
-      {/* soft gradient بدل المربعات */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,rgba(220,38,38,0.12),transparent_30%)]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-12">

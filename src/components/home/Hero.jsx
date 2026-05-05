@@ -7,7 +7,7 @@ import {
   HardHat,
   SunMedium,
 } from "lucide-react";
-import heroImg from "../../assets/images/hero.png";
+import heroImg from "../../assets/images/5.png";
 
 const capabilities = [
   {
