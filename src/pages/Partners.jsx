@@ -11,8 +11,23 @@ import {
 
 import eveVisit from "../assets/images/eve_visit.jpg";
 import bydVisit from "../assets/images/byd_visit.jpg";
+import rfBoxVisit from "../assets/images/rf_visit2.jpg";
 
 const partners = [
+  {
+    name: "RF Box Company",
+    country: "Egypt",
+    category: "Engineering Support Partner",
+    image: rfBoxVisit,
+    website: "https://www.rf-box.com/",
+    description:
+      "RF Box Company supports regional engineering activities in Egypt, helping connect technical coordination, project support, and local engineering execution.",
+    highlights: [
+      "Engineering support in Egypt",
+      "Technical coordination",
+      "Project execution support",
+    ],
+  },
   {
     name: "EVE Energy",
     country: "China",
@@ -39,20 +54,6 @@ const partners = [
       "Battery and storage ecosystem",
       "Renewable energy technologies",
       "Global technology capability",
-    ],
-  },
-  {
-    name: "RF Box Company",
-    country: "Egypt",
-    category: "Engineering Support Partner",
-    image: null,
-    website: "#",
-    description:
-      "RF Box Company supports regional engineering activities in Egypt, helping connect technical coordination, project support, and local engineering execution.",
-    highlights: [
-      "Engineering support in Egypt",
-      "Technical coordination",
-      "Project execution support",
     ],
   },
 ];

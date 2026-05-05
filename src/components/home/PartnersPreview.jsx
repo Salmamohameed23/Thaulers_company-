@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import bydLogo from "../../assets/logos/BYD_logo_clean_final.png";
-import RFLogo from "../../assets/logos/RF LOGO.png";
+import RFLogo from "../../assets/logos/rfbox logo.jpg";
 import EVELogo from "../../assets/logos/EVE_logo_transparent.png";
 
 const partners = [

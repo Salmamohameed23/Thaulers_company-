@@ -192,7 +192,7 @@ const LetsBuild = () => {
                                     </div>
 
                                     <h1 className="text-[28px] font-black leading-tight tracking-[-0.03em] sm:text-[35px]">
-                                        Let's Build Your Solar Solution
+                                        Let&apos;s Build Your Solar Solution
                                     </h1>
                                     <br />
                                     <p> Tell us about your project — takes less than 2 minutes</p>

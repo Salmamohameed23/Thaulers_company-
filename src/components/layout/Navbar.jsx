@@ -297,13 +297,13 @@ const Navbar = () => {
               Projects
             </NavLink>
 
-            {/* <Link
+            <Link
               to="/contact"
               onClick={closeAll}
               className="mt-3 rounded-full bg-red-600 px-6 py-4 text-center text-[15px] font-bold text-white"
             >
               Let’s Build
-            </Link> */}
+            </Link>
           </div>
         </div>
       )}

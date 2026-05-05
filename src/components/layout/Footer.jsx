@@ -109,8 +109,8 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-red-500 mt-1" />
                 <div>
-                  <p>China Supply Chain</p>
-                  <p>Engineering Support in Egypt</p>
+                  <p>Yiwu, Zhejiang, China</p>
+                  <p>Shenzhen, Guangdong, China</p>
                 </div>
               </div>
             </div>

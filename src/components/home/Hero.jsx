@@ -1,68 +1,4 @@
-// import { Link } from "react-router-dom";
-// import { motion } from "framer-motion";
-// import heroImg from "../../assets/images/hero.png";
 
-// const Hero = () => {
-//   return (
-//     <section className="relative min-h-[calc(100vh-96px)] overflow-hidden bg-[#050608] text-white">
-//       <motion.div
-//         initial={{ scale: 1 }}
-//         animate={{ scale: 1.04 }}
-//         transition={{ duration: 12, ease: "easeOut" }}
-//         className="absolute inset-0"
-//       >
-//         <img
-//           src={heroImg}
-//           alt="Solar and energy storage infrastructure"
-//           className="h-full w-full object-cover opacity-65"
-//         />
-//       </motion.div>
-
-//       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/35" />
-//       <div className="absolute inset-0 bg-gradient-to-t from-[#050608] via-transparent to-black/10" />
-//       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(239,35,60,0.26),transparent_36%)]" />
-//       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:72px_72px]" />
-
-//       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-96px)] max-w-7xl items-center justify-center px-5 py-20 text-center sm:px-8 lg:px-10">
-//         <motion.div
-//           initial={{ opacity: 0, y: 34 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.75 }}
-//           className="mx-auto flex max-w-5xl flex-col items-center"
-//         >
-//           <h1 className="max-w-5xl text-center text-[44px] font-black leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl xl:text-[84px]">
-//             Solar Power, Battery Energy
-//             <span className="block text-red-500">Storage & EPC Solutions.</span>
-//           </h1>
-
-//           <p className="mx-auto mt-7 max-w-3xl text-center text-base leading-8 text-slate-200 sm:text-xl">
-//             TOUGH HAULERS delivers Solar Power Systems, Battery Storage
-//             Solutions, and Full EPC Solar & Energy Engineering for global
-//             projects — from 5 kW to gigawatt-scale energy systems.
-//           </p>
-
-//           <div className="mt-10 flex flex-wrap justify-center gap-4">
-//             <Link
-//               to="/solutions"
-//               className="rounded-full bg-red-600 px-7 py-4 text-sm font-bold text-white shadow-[0_0_38px_rgba(239,35,60,0.38)] transition-all duration-300 hover:-translate-y-1 hover:bg-red-500 hover:shadow-[0_0_55px_rgba(239,35,60,0.55)]"
-//             >
-//               Explore Solutions
-//             </Link>
-
-//             <Link
-//               to="/contact"
-//               className="rounded-full border border-white/25 bg-white/10 px-7 py-4 text-sm font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:bg-white/15"
-//             >
-//               Start a Project
-//             </Link>
-//           </div>
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -122,16 +58,17 @@ const Hero = () => {
           </div>
 
           <h1 className="max-w-6xl text-[44px] font-black leading-[0.98] tracking-[-0.055em] text-neutral-950 sm:text-6xl lg:text-7xl xl:text-[88px]">
-            Powering Global Projects with
-            <span className="text-red-500"> Solar, </span>
-            <span className="text-red-500" >Battery Storage & EPC Excellence.</span>
+            Powering Global Projects with Solar, 
+            <br/>     
+            <span className="text-red-500">
+                  Battery Storage & EPC Excellence.
+            </span>
           </h1>
 
           <p className="mt-7 max-w-3xl text-[17px] font-medium leading-8 sm:text-xl">
-            TOUGH HAULERS delivers integrated energy solutions
-            across Solar Power Systems, Battery Energy Storage Systems, and Full
-            EPC Solar & Energy Engineering for industrial and utility-scale
-            projects.
+            TOUGH HAULERS delivers integrated energy solutions across Solar
+            Power Systems, Battery Energy Storage Systems, and Full EPC Solar &
+            Energy Engineering for industrial and utility-scale projects.
           </p>
 
           <div className="mt-9 grid max-w-5xl gap-4 sm:grid-cols-3">

@@ -46,7 +46,7 @@ const products = [
       "Higher-capacity household storage designed for reliable home energy operation.",
   },
   {
-    title: "Commercial & Industrial ESS",
+    title: "Commercial & Industrial System",
     spec: "832V | 232.96kW",
     image: essIndustrial,
     description:
@@ -298,8 +298,8 @@ export default function SmartStorage() {
                     {index === 0
                       ? "Residential"
                       : index === 1
-                        ? "Home Backup"
-                        : "C&I System"}
+                        ? "Residential"
+                        : "Commercial & Industrial System"}
                   </div>
 
                   <img

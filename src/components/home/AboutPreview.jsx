@@ -70,7 +70,7 @@ const AboutPreview = () => {
             </p>
 
             <p>
-              With operations based in China and engineering support in Egypt,
+              With operations based in China and engineering support from  Egypt,
               the company combines global sourcing capabilities with strong
               technical expertise to deliver reliable, scalable, and
               high-performance energy systems.
