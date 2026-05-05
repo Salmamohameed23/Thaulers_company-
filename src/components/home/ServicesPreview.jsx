@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, BatteryCharging, Factory, Globe2 } from "lucide-react";
 import smartstorage from "../../assets/images/9.png";
-import Factoryimg from "../../assets/images/11.jpg";
-import gigawatt from "../../assets/images/12.jpg";
+import Factoryimg from "../../assets/images/factory.png";
+import gigawatt from "../../assets/images/gigawaa.png";
 
 const services = [
   {

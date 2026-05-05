@@ -207,7 +207,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex">
           <Link
-            to="/contact"
+            to="/lets-build"
             className={`rounded-full bg-neutral-950 font-bold text-white transition-all duration-500 hover:bg-red-600 ${
               scrolled ? "px-6 py-3 text-[14px]" : "px-8 py-4 text-[15.5px]"
             }`}
@@ -298,7 +298,7 @@ const Navbar = () => {
             </NavLink>
 
             <Link
-              to="/contact"
+              to="/lets-build"
               onClick={closeAll}
               className="mt-3 rounded-full bg-red-600 px-6 py-4 text-center text-[15px] font-bold text-white"
             >

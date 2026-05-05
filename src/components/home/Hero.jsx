@@ -1,28 +1,27 @@
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  BatteryCharging,
-  HardHat,
-  SunMedium,
-} from "lucide-react";
-import heroImg from "../../assets/images/5.png";
+// import {
+//   BatteryCharging,
+//   HardHat,
+//   SunMedium,
+// } from "lucide-react";
+import heroImg from "../../assets/images/8.png";
 
-const capabilities = [
-  {
-    icon: SunMedium,
-    label: "Solar Power Systems",
-  },
-  {
-    icon: BatteryCharging,
-    label: "Battery Energy Storage Systems",
-  },
-  {
-    icon: HardHat,
-    label: "Full EPC Solar & Energy Engineering",
-  },
-];
+// const capabilities = [
+//   {
+//     icon: SunMedium,
+//     label: "Solar Power Systems",
+//   },
+//   {
+//     icon: BatteryCharging,
+//     label: "Battery Energy Storage Systems",
+//   },
+//   {
+//     icon: HardHat,
+//     label: "Full EPC Solar & Energy Engineering",
+//   },
+// ];
 
 const Hero = () => {
   return (
@@ -65,12 +64,12 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="mt-7 max-w-3xl text-[17px] font-medium leading-8 sm:text-xl">
+          <p className="mt-7 max-w-3xl text-[20px] sm:text-[22px] font-medium leading-9 ">
             TOUGH HAULERS delivers integrated energy solutions across Solar
             Power Systems, Battery Energy Storage Systems, and Full EPC Solar &
             Energy Engineering for industrial and utility-scale projects.
           </p>
-
+          {/* 
           <div className="mt-9 grid max-w-5xl gap-4 sm:grid-cols-3">
             {capabilities.map((item) => {
               const Icon = item.icon;
@@ -96,12 +95,13 @@ const Hero = () => {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              to="/contact"
+              to="/lets-build"
               className="inline-flex items-center rounded-full border border-black/15 bg-white/85 px-8 py-4 text-[15px] font-black text-neutral-950 shadow-[0_15px_35px_rgba(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-neutral-950 hover:bg-neutral-950 hover:text-white"
             >
               Let&apos;s Build
             </Link>
           </div>
+           */}
         </motion.div>
       </div>
     </section>
