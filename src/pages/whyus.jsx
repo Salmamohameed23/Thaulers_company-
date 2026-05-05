@@ -41,11 +41,11 @@ const positioning = [
 
 const About = () => {
   return (
-    <main className="bg-white text-neutral-950">
-      <section className="relative overflow-hidden bg-white py-20 ">
+    <main className="bg-white text-neutral-950 ">
+      <section className="relative overflow-hidden bg-white py-20 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]">
         <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,rgba(220,38,38,0.07),transparent_30%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.025)_1px,transparent_1px),linear-gradient(rgba(0,0,0,0.018)_1px,transparent_1px)] [background-size:72px_72px]" />
+        <div className="absolute inset-0  [background-size:72px_72px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
@@ -71,10 +71,10 @@ const About = () => {
 
             <div className="mt-9 flex flex-wrap gap-4">
               <Link
-                to="/solutions"
+                to="/lets-build"
                 className="group inline-flex items-center gap-3 rounded-full bg-red-600 px-8 py-4 text-sm font-black text-white shadow-[0_18px_45px_rgba(220,38,38,0.22)] transition hover:-translate-y-1 hover:bg-neutral-950"
               >
-                Explore Solutions
+                Let&apos;s Build
                 <ArrowUpRight size={17} />
               </Link>
 
@@ -89,7 +89,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-14 ">
+      <section className="relative overflow-hidden bg-white py-14 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)] ">
         <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
