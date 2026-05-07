@@ -1,107 +1,75 @@
-
 // import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-// import {
-//   BatteryCharging,
-//   HardHat,
-//   SunMedium,
-// } from "lucide-react";
-import heroImg from "../../assets/images/8.png";
-
-// const capabilities = [
-//   {
-//     icon: SunMedium,
-//     label: "Solar Power Systems",
-//   },
-//   {
-//     icon: BatteryCharging,
-//     label: "Battery Energy Storage Systems",
-//   },
-//   {
-//     icon: HardHat,
-//     label: "Full EPC Solar & Energy Engineering",
-//   },
-// ];
+import heroImg from "../../assets/images/hero_home.png";
 
 const Hero = () => {
   return (
-    <section className="relative -mt-px min-h-[calc(100vh-94px)] overflow-hidden bg-white text-neutral-950">
+    <section className="relative -mt-px min-h-[100vh] overflow-hidden bg-black text-white">
+      {/* BACKGROUND IMAGE */}
       <motion.img
         src={heroImg}
         alt="Solar power systems and battery energy storage infrastructure"
         initial={{ scale: 1 }}
-        animate={{ scale: 1.045 }}
+        animate={{ scale: 1.04 }}
         transition={{ duration: 14, ease: "easeOut" }}
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      <div className="absolute inset-0 bg-white/6" />
-      <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/15 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-white/15" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_48%,rgba(220,38,38,0.13),transparent_34%)]" />
+      {/* OVERLAYS */}
+      <div className="absolute inset-0 bg-black/45" />
 
-      <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/60" />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-94px)] max-w-[1540px] items-center px-6 py-16 sm:px-8 md:px-10 lg:px-12 xl:px-14">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.12),transparent_45%)]" />
+
+      {/* RED LEFT LINE */}
+      <div className="absolute left-0 top-0 z-20 h-full w-[5px] bg-red-600" />
+
+      {/* CONTENT */}
+      <div className="relative z-10 mx-auto flex min-h-[100vh] max-w-7xl items-center justify-center px-6 py-12 sm:px-8 lg:px-10">
         <motion.div
-          initial={{ opacity: 0, y: 34 }}
+          initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75 }}
-          className="mx-auto w-full max-w-6xl"
+          transition={{ duration: 0.8 }}
+          className="mx-auto max-w-5xl text-center"
         >
-          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/85 px-5 py-2.5 shadow-[0_14px_35px_rgba(0,0,0,0.08)] backdrop-blur-md">
-            <span className="h-2.5 w-2.5 rounded-full bg-red-600" />
-            <span className="text-xs font-black uppercase tracking-[0.28em] text-neutral-900">
-              Solar Energy · BESS · EPC Engineering
+          {/* TOP LABEL */}
+          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-2 backdrop-blur-md">
+            <span className="h-2.5 w-2.5 rounded-full bg-red-600 animate-pulse" />
+
+            <span className="text-[11px] font-black uppercase tracking-[0.35em] text-white">
+              Smart Solar Energy Solutions
             </span>
           </div>
 
-          <h1 className="max-w-6xl text-[44px] font-black leading-[0.98] tracking-[-0.055em] text-neutral-950 sm:text-6xl lg:text-7xl xl:text-[88px]">
-            Powering Global Projects with Solar,
+          {/* MAIN TITLE */}
+          <h1 className="text-[42px] font-black leading-[0.95] tracking-[-0.05em] text-white sm:text-6xl lg:text-[74px]">
+            Clean Energy
             <br />
-            <span className="text-red-700">
-              Battery Storage & EPC Excellence.
-            </span>
+            <span className="text-white/90">is the Future.</span>
           </h1>
 
-          <p className="mt-7 max-w-3xl text-[20px] sm:text-[22px] font-medium leading-9 ">
-            TOUGH HAULERS delivers integrated energy solutions across Solar
-            Power Systems, Battery Energy Storage Systems, and Full EPC Solar &
-            Energy Engineering for industrial and utility-scale projects.
+          {/* RED LINE */}
+          <div className="mx-auto mt-7 h-[4px] w-24 rounded-full bg-red-600 shadow-[0_0_25px_rgba(220,38,38,0.45)]" />
+
+          {/* DESCRIPTION */}
+          <p className="mx-auto mt-9 max-w-4xl text-[18px] font-medium leading-9 text-white/85 sm:text-[21px]">
+            The world is rapidly shifting toward renewable energy — the only
+            sustainable and secure solution for the future.
+            <span className="mt-5 block">
+              Relying on the sun not only protects the environment, but also
+              guarantees a stable and independent source of power.
+            </span>
+            <span className="mt-5 block">
+              Solar system prices are already rising, a clear sign that demand
+              is growing faster than ever.
+            </span>
+            <span className="mt-5 block text-white">
+              The smart move is to invest in energy that comes directly from the
+              sun — because solar power is not just an alternative, it is the
+              foundation of the future.
+            </span>
           </p>
-          {/* 
-          <div className="mt-9 grid max-w-5xl gap-4 sm:grid-cols-3">
-            {capabilities.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <motion.div
-                  key={item.label}
-                  whileHover={{ y: -5 }}
-                  transition={{ duration: 0.25 }}
-                  className="group rounded-3xl border border-black/10 bg-white/82 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:border-red-600/30 hover:bg-white"
-                >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-950 text-white transition-all duration-300 group-hover:bg-red-600">
-                    <Icon size={23} />
-                  </div>
-
-                  <p className="text-[16px] font-black leading-6 text-neutral-950">
-                    {item.label}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              to="/lets-build"
-              className="inline-flex items-center rounded-full border border-black/15 bg-white/85 px-8 py-4 text-[15px] font-black text-neutral-950 shadow-[0_15px_35px_rgba(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-neutral-950 hover:bg-neutral-950 hover:text-white"
-            >
-              Let&apos;s Build
-            </Link>
-          </div>
-           */}
         </motion.div>
       </div>
     </section>
