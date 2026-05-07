@@ -104,16 +104,6 @@ const process = [
   },
 ];
 
-// const supplySupport = [
-//   "Strong China supply chain capabilities",
-//   "High-quality components",
-//   "Optimized cost",
-//   "Reliable performance",
-//   "Factory-level support when required",
-//   "Technology transfer",
-//   "Production setup",
-//   "Technical training",
-// ];
 
 export default function SmartStorage() {
   return (
@@ -185,7 +175,6 @@ export default function SmartStorage() {
 
       {/* PRODUCT RANGE */}
       <section className="relative overflow-hidden bg-white py-12">
-        <div className="absolute left-0 top-0 z-10 h-full w-[5px] bg-red-600" />
         <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
         <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
 
@@ -376,48 +365,7 @@ export default function SmartStorage() {
         </div>
       </section>
 
-      {/* SUPPLY CHAIN */}
-      {/* <section className="relative overflow-hidden bg-white py-12">
-        <div className="absolute left-0 top-0 z-10 h-full w-[5px] bg-red-600" />
-        <div className="absolute left-[-120px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[95px]" />
-        <div className="absolute right-[-120px] bottom-10 h-[420px] w-[420px] rounded-full bg-red-600/12 blur-[110px]" />
-
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
-          <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-red-600">
-              Supply Chain + Factory Support
-            </p>
-
-            <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.045em] sm:text-5xl">
-              China supply capability with engineering-focused execution.
-            </h2>
-
-            <p className="mt-6 text-[16px] leading-8 text-neutral-600">
-              Strong sourcing capability, high-quality components, optimized
-              cost, and factory-level support when required — including
-              technology transfer, production setup, and technical training.
-            </p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {supplySupport.map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.45, delay: index * 0.04 }}
-                className="rounded-3xl border border-black/10 bg-white/90 p-5 shadow-[0_18px_55px_rgba(0,0,0,0.06)] backdrop-blur transition hover:-translate-y-1 hover:border-red-600/25 hover:shadow-[0_28px_75px_rgba(220,38,38,0.10)]"
-              >
-                <CheckCircle2 className="mb-4 text-red-600" size={22} />
-                <p className="text-[15px] font-semibold leading-7 text-neutral-700">
-                  {item}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+      
     </main>
   );
 }

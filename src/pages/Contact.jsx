@@ -155,7 +155,7 @@ const Contact = () => {
                       className="h-14 w-full rounded-2xl border border-black/10 bg-white px-5 text-[15px] outline-none transition focus:border-red-600"
                     />
                   </div>
-
+{/* 
                   <div>
                     <label className="mb-2 block text-sm font-bold text-neutral-800">
                       Project Type
@@ -171,7 +171,7 @@ const Contact = () => {
                       <option>Gigawatt Projects</option>
                       <option>R&D / Technology Support</option>
                     </select>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div>

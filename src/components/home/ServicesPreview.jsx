@@ -32,10 +32,8 @@ const services = [
 const ServicesPreview = () => {
   return (
     <section className="relative overflow-hidden bg-white py-14 text-neutral-950">
-      <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
-
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(220,38,38,0.05),transparent_30%)]" />
-
+      <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
+      <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
@@ -45,9 +43,7 @@ const ServicesPreview = () => {
 
             <h2 className="text-[40px] font-black leading-[1.05] tracking-[-0.04em] sm:text-5xl">
               Integrated Energy
-              <span className="block">
-                Solutions & Capabilities.
-              </span>
+              <span className="block">Solutions & Capabilities.</span>
             </h2>
 
             <p className="mt-6 text-lg leading-8 ">

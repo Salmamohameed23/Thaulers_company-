@@ -34,8 +34,7 @@ const Navbar = () => {
 
   const rdLinks = [
     { label: "R&D Capability", path: "/rd-capability" },
-    { label: "Advanced Technology", path: "/advanced-technology" },
-    { label: "Advanced Manufacturing", path: "/advanced-manufacturing" },
+
     { label: "Quality Management", path: "/quality-management" },
   ];
 
@@ -200,9 +199,9 @@ const Navbar = () => {
             Partners
           </NavLink>
 
-          <NavLink to="/projects" className={navItemClass}>
+          {/* <NavLink to="/projects" className={navItemClass}>
             Projects
-          </NavLink>
+          </NavLink> */}
         </nav>
 
         <div className="hidden lg:flex">

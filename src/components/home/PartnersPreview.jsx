@@ -30,9 +30,11 @@ const partners = [
 const PartnersPreview = () => {
   return (
     <section className="relative overflow-hidden bg-white py-14 text-neutral-950 ">
-      <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
-      <div className="absolute right-[-120px] top-[-120px] h-80 w-80 rounded-full bg-red-600/8 blur-3xl" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.025)_1px,transparent_1px),linear-gradient(rgba(0,0,0,0.018)_1px,transparent_1px)] [background-size:72px_72px]" />
+      {/* <div className="absolute right-[-120px] top-[-120px] h-80 w-80 rounded-full bg-red-600/8 blur-3xl" /> */}
+      {/* <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.025)_1px,transparent_1px),linear-gradient(rgba(0,0,0,0.018)_1px,transparent_1px)] [background-size:72px_72px]" />
+       */}
+      <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
+      <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
@@ -49,9 +51,7 @@ const PartnersPreview = () => {
 
             <h2 className="text-[40px] font-black leading-[1.05] tracking-[-0.04em] sm:text-5xl">
               Global Technology
-              <span className="block ">
-                & Engineering Network.
-              </span>
+              <span className="block ">& Engineering Network.</span>
             </h2>
           </div>
 
@@ -75,33 +75,29 @@ const PartnersPreview = () => {
               whileHover={{ y: -8 }}
               className="group relative overflow-hidden rounded-[30px] border border-black/10 bg-white p-7 shadow-[0_20px_60px_rgba(0,0,0,0.075)] transition-all duration-300 hover:border-red-600/25 hover:shadow-[0_28px_70px_rgba(0,0,0,0.11)]"
             >
-              
-                <div className="absolute right-6 top-6 text-7xl font-black text-black/[0.035]">
-                  0{index + 1}
-                </div>
+              <div className="absolute right-6 top-6 text-7xl font-black text-black/[0.035]">
+                0{index + 1}
+              </div>
 
-                <div className="mb-8 flex h-20 w-32 items-center justify-center rounded-3xl border border-black/10 bg-white p-4 shadow-[0_12px_35px_rgba(0,0,0,0.055)]">
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
-                    className="max-h-12 max-w-full object-contain"
-                  />
-                </div>
+              <div className="mb-8 flex h-20 w-32 items-center justify-center rounded-3xl border border-black/10 bg-white p-4 shadow-[0_12px_35px_rgba(0,0,0,0.055)]">
+                <img
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  className="max-h-12 max-w-full object-contain"
+                />
+              </div>
 
-                <h3 className="text-[28px] font-black tracking-[-0.03em] text-neutral-950">
-                  {partner.name}
-                </h3>
+              <h3 className="text-[28px] font-black tracking-[-0.03em] text-neutral-950">
+                {partner.name}
+              </h3>
 
-                <p className="mt-2 text-xs font-black uppercase tracking-[0.24em] text-red-600">
-                  {partner.country}
-                </p>
+              <p className="mt-2 text-xs font-black uppercase tracking-[0.24em] text-red-600">
+                {partner.country}
+              </p>
 
-                <p className="mt-6 text-[16px] leading-8 text-neutral-600">
-                  {partner.text}
-                </p>
-
-                
-              
+              <p className="mt-6 text-[16px] leading-8 text-neutral-600">
+                {partner.text}
+              </p>
             </motion.div>
           ))}
         </div>

@@ -1,18 +1,14 @@
 import Hero from "../components/home/Hero";
 import AboutPreview from "../components/home/AboutPreview";
 import ServicesPreview from "../components/home/ServicesPreview";
-// import SmartStoragePreview from "../components/home/SmartStoragePreview";
-// import FactoryPreview from "../components/home/FactoryPreview";
-// import GigawattScalePreview from "../components/home/GigawattScalePreview";
 import PartnersPreview from "../components/home/PartnersPreview";
 import WhyChooseUs from "../components/home/WhyChooseUs";
-// import FinalCTA from "../components/home/FinalCTA";
-
+import CleanEnergySection from "../components/home/CleanEnergySection";
 const Home = () => {
   return (
     <>
       <Hero />
-      {/* <HeroStats /> */}
+      <CleanEnergySection />
       <AboutPreview />
       <ServicesPreview />
       {/* <SmartStoragePreview /> */}
