@@ -42,10 +42,10 @@ const positioning = [
 const About = () => {
   return (
     <main className="bg-white text-neutral-950 ">
-      <section className="relative overflow-hidden bg-white py-20 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]">
-        <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
+      <section className="relative overflow-hidden bg-white py-20 ">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,rgba(220,38,38,0.07),transparent_30%)]" />
-        <div className="absolute inset-0  [background-size:72px_72px]" />
+        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
+        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
@@ -90,8 +90,8 @@ const About = () => {
       </section>
 
       <section className="relative overflow-hidden bg-white py-14 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)] ">
-        <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
-
+        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
+        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 34 }}

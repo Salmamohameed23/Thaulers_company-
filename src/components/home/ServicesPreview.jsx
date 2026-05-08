@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, BatteryCharging, Factory, Globe2 } from "lucide-react";
-import smartstorage from "../../assets/images/9.png";
+import smartstorage from "../../assets/images/smart2.png";
 import Factoryimg from "../../assets/images/factory.png";
 import gigawatt from "../../assets/images/gigawaa.png";
 
@@ -56,7 +56,7 @@ const ServicesPreview = () => {
           {/* Button on right */}
           <div className="shrink-0 lg:mb-3">
             <Link
-              to="/solutions"
+              to="/smart-storage"
               className="inline-flex items-center gap-3 rounded-full bg-neutral-950 px-7 py-4 text-sm font-bold text-white transition hover:bg-red-600"
             >
               Explore All Solutions

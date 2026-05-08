@@ -1,42 +1,55 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import {
-    ArrowLeft,
-    ArrowRight,
-    BatteryCharging,
-    Building2,
-    Check,
-    Factory,
-    Home,
-    Hotel,
-    MapPin,
-    Send,
-    SunMedium,
-    Zap,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Send } from "lucide-react";
+
+// PROJECT IMAGES
+import villaImg from "../assets/images/build_1.png";
+import hotelImg from "../assets/images/build_2.png";
+import commercialImg from "../assets/images/build_3.png";
+import factoryImg from "../assets/images/build_4.png";
+import desertImg from "../assets/images/build_5.png";
+import otherImg from "../assets/images/build_6.png";
+
+// SOLUTION IMAGES
+import solarImg from "../assets/images/build_7.png";
+import batteryImg from "../assets/images/build_8.png";
+import offgridImg from "../assets/images/build_9.png";
+import epcImg from "../assets/images/build_10.png";
 
 const projectTypes = [
-    { label: "Villa / Residence", sub: "Home or private estate", icon: Home },
-    { label: "Resort / Hotel", sub: "Hospitality property", icon: Hotel },
+    {
+        label: "Villa / Residence",
+        sub: "Home or private estate",
+        image: villaImg,
+    },
+    { label: "Resort / Hotel", sub: "Hospitality property", image: hotelImg },
     {
         label: "Commercial Building",
         sub: "Office or retail space",
-        icon: Building2,
+        image: commercialImg,
     },
-    { label: "Industrial / Factory", sub: "Large-scale facility", icon: Factory },
-    { label: "Desert / Remote Camp", sub: "Off-grid location", icon: MapPin },
-    { label: "Other", sub: "Custom requirement", icon: Zap },
+    {
+        label: "Industrial / Factory",
+        sub: "Large-scale facility",
+        image: factoryImg,
+    },
+    { label: "Desert / Remote Camp", sub: "Off-grid location", image: desertImg },
+    { label: "Other", sub: "Custom requirement", image: otherImg },
 ];
 
 const solutionTypes = [
-    { label: "Solar PV System", sub: "Generate clean energy", icon: SunMedium },
+    { label: "Solar PV System", sub: "Generate clean energy", image: solarImg },
     {
         label: "Battery Storage",
         sub: "Store and optimize power",
-        icon: BatteryCharging,
+        image: batteryImg,
     },
-    { label: "Off-Grid System", sub: "Independent power solution", icon: Zap },
-    { label: "EPC / Full Turnkey", sub: "Design to execution", icon: Factory },
+    {
+        label: "Off-Grid System",
+        sub: "Independent power solution",
+        image: offgridImg,
+    },
+    { label: "EPC / Full Turnkey", sub: "Design to execution", image: epcImg },
 ];
 
 const sizes = [
@@ -131,41 +144,50 @@ const LetsBuild = () => {
     const progress = submitted ? 100 : (step / 5) * 100;
 
     const renderOptionCard = (item, active, onClick) => {
-        const Icon = item.icon;
-
         return (
-            <button
+            <motion.button
                 key={item.label}
                 type="button"
                 onClick={onClick}
-                className={`group rounded-[28px] border p-6 text-left transition-all duration-300 hover:-translate-y-1 ${active
-                        ? "border-red-600 bg-red-50 shadow-[0_18px_45px_rgba(220,38,38,0.12)]"
-                        : "border-black/10 bg-white hover:border-red-600/30 hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]"
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.25 }}
+                className={`group relative overflow-hidden rounded-[28px] border text-left transition-all duration-300 ${active
+                        ? "border-red-600 bg-red-50 shadow-[0_24px_70px_rgba(220,38,38,0.18)]"
+                        : "border-black/10 bg-white hover:border-red-500/40 hover:shadow-[0_22px_55px_rgba(0,0,0,0.10)]"
                     }`}
             >
-                <div
-                    className={`mb-6 flex h-12 w-12 items-center justify-center rounded-2xl transition ${active
-                            ? "bg-red-600 text-white"
-                            : "bg-neutral-950 text-white group-hover:bg-red-600"
-                        }`}
-                >
-                    <Icon size={21} />
+                <div className="relative h-[175px] w-full overflow-hidden">
+                    <img
+                        src={item.image}
+                        alt={item.label}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+
+                    {active && (
+                        <div className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-red-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.65)]">
+                            <Check size={18} />
+                        </div>
+                    )}
+
+                    <div className="absolute bottom-5 left-6 right-6">
+                        <p className="text-[20px] font-black leading-6 text-white">
+                            {item.label}
+                        </p>
+
+                        <p className="mt-2 text-[14px] font-medium leading-6 text-white/75">
+                            {item.sub}
+                        </p>
+                    </div>
                 </div>
-
-                <p className="text-[17px] font-medium leading-6 text-neutral-950">
-                    {item.label}
-                </p>
-
-                <p className="mt-3 text-[14px] font-medium leading-6 text-neutral-500">
-                    {item.sub}
-                </p>
-            </button>
+            </motion.button>
         );
     };
 
     return (
         <main className="min-h-screen bg-neutral-100 text-neutral-950">
-            <section className="relative overflow-hidden py-5 ">
+            <section className="relative overflow-hidden py-5">
                 <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 28 }}
@@ -176,34 +198,18 @@ const LetsBuild = () => {
                         <div className="bg-neutral-950 px-6 py-7 text-white sm:px-8">
                             <div className="grid gap-7 md:grid-cols-[1fr_0.85fr] md:items-center">
                                 <div>
-                                    <div className="mb-6 flex items-center gap-3">
-                                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-sm font-black text-neutral-950">
-                                            TH
-                                        </div>
-
-                                        <div>
-                                            <p className="text-sm font-black uppercase tracking-[0.22em] text-red-500">
-                                                THAULERS
-                                            </p>
-                                            <p className="mt-1 text-xs font-medium text-white/45">
-                                                Engineering Power. Delivering Reliability.
-                                            </p>
-                                        </div>
-                                    </div>
-
                                     <h1 className="text-[28px] font-black leading-tight tracking-[-0.03em] sm:text-[35px]">
                                         Let&apos;s Build Your Solar Solution
                                     </h1>
-                                    <br />
-                                    <p> Tell us about your project — takes less than 2 minutes</p>
-
+                                    <p className="mt-3 text-sm font-medium text-white/65">
+                                        Tell us about your project — takes less than 2 minutes
+                                    </p>
                                     <p className="mt-3 text-sm font-medium text-white/65">
                                         {submitted
                                             ? "Your inquiry has been prepared successfully."
                                             : `Step ${step} of 5 — ${steps[step - 1]}`}
                                     </p>
                                 </div>
-
                                 <div>
                                     <div className="h-2 overflow-hidden rounded-full bg-white/10">
                                         <div
@@ -211,7 +217,6 @@ const LetsBuild = () => {
                                             style={{ width: `${progress}%` }}
                                         />
                                     </div>
-
                                     <div className="mt-4 grid grid-cols-5 gap-2">
                                         {steps.map((item, index) => (
                                             <div
@@ -245,7 +250,7 @@ const LetsBuild = () => {
                                                 Select the option that best describes your site.
                                             </p>
 
-                                            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                                                 {projectTypes.map((item) =>
                                                     renderOptionCard(
                                                         item,

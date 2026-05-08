@@ -30,7 +30,8 @@ const Contact = () => {
   return (
     <main className="bg-white text-neutral-950">
       <section className="relative overflow-hidden bg-white py-12 ">
-        <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
+        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
+        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,rgba(220,38,38,0.07),transparent_30%)]" />
         <div className="absolute inset-0  [background-size:72px_72px]" />
 
@@ -47,9 +48,7 @@ const Contact = () => {
 
             <h1 className="text-[44px] font-black leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-[76px]">
               Start your
-              <span className="block ">
-                energy project with us.
-              </span>
+              <span className="block ">energy project with us.</span>
             </h1>
 
             <p className="mt-7 max-w-3xl text-[17px] leading-8 sm:text-lg">
@@ -155,23 +154,6 @@ const Contact = () => {
                       className="h-14 w-full rounded-2xl border border-black/10 bg-white px-5 text-[15px] outline-none transition focus:border-red-600"
                     />
                   </div>
-{/* 
-                  <div>
-                    <label className="mb-2 block text-sm font-bold text-neutral-800">
-                      Project Type
-                    </label>
-                    <select
-                      name="projectType"
-                      className="h-14 w-full rounded-2xl border border-black/10 bg-white px-5 text-[15px] outline-none transition focus:border-red-600"
-                    >
-                      <option>Solar Power Systems</option>
-                      <option>Battery Energy Storage Systems</option>
-                      <option>Full EPC Solar & Energy Engineering</option>
-                      <option>Factory Solutions</option>
-                      <option>Gigawatt Projects</option>
-                      <option>R&D / Technology Support</option>
-                    </select>
-                  </div> */}
                 </div>
 
                 <div>

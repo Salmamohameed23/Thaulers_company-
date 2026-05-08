@@ -1,13 +1,6 @@
 // import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-
-  Building2,
- 
-  Handshake,
-  
-} from "lucide-react";
+import { ArrowUpRight, Building2, Handshake } from "lucide-react";
 
 import eveVisit from "../assets/images/eve_visit.jpg";
 import bydVisit from "../assets/images/byd_visit.jpg";
@@ -18,6 +11,7 @@ const partners = [
     name: "RF Box Company",
     country: "Egypt",
     category: "Engineering Support Partner",
+    label: "Partner",
     image: rfBoxVisit,
     website: "https://www.rf-box.com/",
     description:
@@ -32,6 +26,7 @@ const partners = [
     name: "EVE Energy",
     country: "China",
     category: "Battery Energy Storage Technology",
+    label: "Main supply chain",
     image: eveVisit,
     website: "https://www.evebattery.com/en",
     description:
@@ -46,6 +41,7 @@ const partners = [
     name: "BYD",
     country: "China",
     category: "Renewable Energy & Battery Ecosystem",
+    label: "Main supply chain",
     image: bydVisit,
     website: "https://www.bydglobal.com/cn/index.html",
     description:
@@ -66,7 +62,7 @@ const Partners = () => {
         <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-2 items-center">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-red-600">
                 Our Partners & Main Supply Chain
@@ -74,19 +70,19 @@ const Partners = () => {
 
               <h1 className="text-5xl font-black leading-tight">
                 Global Technology Network
-                <span className="block ">powering energy projects.</span>
+                <span className="block">powering energy projects.</span>
               </h1>
 
-              <p className="mt-6 text-lg text-neutral-1000 leading-8">
+              <p className="mt-6 text-lg leading-8 text-neutral-700">
                 Our partner ecosystem supports solar power systems, battery
                 energy storage, EPC engineering, and global project execution
                 with reliable supply chain integration.
               </p>
             </div>
 
-            <div className="bg-neutral-100 rounded-3xl p-6">
-              <Handshake size={32} className="text-red-600 mb-4" />
-              <p className="text-neutral-1000 leading-7">
+            <div className="rounded-3xl bg-neutral-100 p-6">
+              <Handshake size={32} className="mb-4 text-red-600" />
+              <p className="leading-7 text-neutral-700">
                 Strong partnerships ensure better sourcing, better engineering
                 coordination, and stronger project delivery confidence.
               </p>
@@ -116,7 +112,7 @@ const Partners = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="rounded-3xl border border-black/10 bg-white overflow-hidden shadow-md hover:shadow-xl transition"
+                  className="overflow-hidden rounded-3xl border border-black/10 bg-white shadow-md transition hover:shadow-xl"
                 >
                   <div className="grid lg:grid-cols-2">
                     {/* IMAGE */}
@@ -125,52 +121,50 @@ const Partners = () => {
                         <img
                           src={partner.image}
                           alt={partner.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition"
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                         />
                       ) : (
-                        <div className="flex items-center justify-center h-full bg-neutral-900 text-white">
+                        <div className="flex h-full items-center justify-center bg-neutral-900 text-white">
                           <Building2 size={40} className="text-red-500" />
                         </div>
                       )}
                     </div>
 
                     {/* CONTENT */}
-                    <div className="p-8 relative">
-                      <span className="text-xs uppercase tracking-widest text-red-600 font-bold">
+                    <div className="relative p-8">
+                      <span className="text-xs font-bold uppercase tracking-widest text-red-600">
                         {partner.category}
                       </span>
 
-                      <h3 className="text-3xl font-black mt-3">
+                      <h3 className="mt-3 text-3xl font-black">
                         {partner.name}
                       </h3>
 
-                      <p className="text-sm text-neutral-800 mt-2">
+                      <p className="mt-2 text-sm text-neutral-800">
                         {partner.country}
                       </p>
 
-                      <p className="mt-5 text-neutral-1000 leading-7">
+                      <p className="mt-5 leading-7 text-neutral-700">
                         {partner.description}
                       </p>
 
-                      {/* highlights */}
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
                         {partner.highlights.map((item) => (
                           <div
                             key={item}
-                            className="p-4 border rounded-xl text-sm text-neutral-1000"
+                            className="rounded-xl border p-4 text-sm text-neutral-700"
                           >
                             {item}
                           </div>
                         ))}
                       </div>
 
-                      {/* CTA */}
                       <div className="mt-8 flex items-center justify-between">
-                        <span className="text-sm text-neutral-850 font-bold">
-                          Main supply chain
+                        <span className="text-sm font-bold text-neutral-800">
+                          {partner.label}
                         </span>
 
-                        <span className="flex items-center gap-2 text-red-600 font-bold group-hover:gap-3 transition">
+                        <span className="flex items-center gap-2 font-bold text-red-600 transition group-hover:gap-3">
                           Visit Website
                           <ArrowUpRight size={16} />
                         </span>
