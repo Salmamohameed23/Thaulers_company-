@@ -139,28 +139,29 @@ const GigaProjects = () => {
       </section>
 
       {/* SERVICES */}
-      <section className="relative overflow-hidden bg-neutral-50 py-14">
+      <section className="relative overflow-hidden bg-neutral-50 py-16">
+        {/* Background Glow */}
         <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
+
         <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
+
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-14 grid gap-8 lg:grid-cols-[0.85fr_1fr] lg:items-end">
-            <div>
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-red-600">
+          {/* Heading */}
+          <div className="mb-14 flex flex-col items-center text-center">
+            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-red-600/15 bg-red-600/5 px-4 py-2">
+              <span className="h-2 w-2 rounded-full bg-red-600" />
+
+              <p className="text-xs font-black uppercase tracking-[0.28em] text-red-600">
                 Engineering Scope
               </p>
-
-              <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.045em] sm:text-5xl">
-                Integrated support for large solar and storage projects.
-              </h2>
             </div>
 
-            <p className="max-w-xl text-[16px] leading-8 text-neutral-600 lg:ml-auto">
-              From system design and electrical engineering to procurement, BESS
-              integration, installation support, and commissioning, the focus is
-              reliability at real project scale.
-            </p>
+            <h2 className="max-w-5xl text-[34px] font-black leading-[1.04] tracking-[-0.045em] text-neutral-950 sm:text-5xl lg:text-[64px]">
+              Integrated support for large solar and storage projects.
+            </h2>
           </div>
 
+          {/* Cards */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((item, index) => {
               const Icon = item.icon;
@@ -175,16 +176,20 @@ const GigaProjects = () => {
                   transition={{ duration: 0.55, delay: index * 0.05 }}
                   className="group relative overflow-hidden rounded-[32px] border border-black/10 bg-white p-7 shadow-[0_18px_55px_rgba(0,0,0,0.06)] transition duration-500 hover:-translate-y-2 hover:border-red-600/30 hover:shadow-[0_30px_85px_rgba(220,38,38,0.12)]"
                 >
+                  {/* Top Hover Line */}
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-600 via-red-500 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
 
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-neutral-950 text-white transition group-hover:bg-red-600">
+                  {/* Icon */}
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-neutral-950 text-white transition duration-300 group-hover:bg-red-600">
                     <Icon size={24} />
                   </div>
 
-                  <h3 className="text-xl font-black tracking-[-0.025em]">
+                  {/* Title */}
+                  <h3 className="text-xl font-black tracking-[-0.025em] text-neutral-950">
                     {item.title}
                   </h3>
 
+                  {/* Text */}
                   <p className="mt-4 text-[15px] leading-7 text-neutral-600">
                     {item.text}
                   </p>

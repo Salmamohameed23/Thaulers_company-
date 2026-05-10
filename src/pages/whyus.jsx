@@ -4,7 +4,6 @@ import {
   ArrowUpRight,
   BatteryCharging,
   Factory,
-  HardHat,
   ShieldCheck,
   SunMedium,
 } from "lucide-react";
@@ -20,11 +19,7 @@ const capabilities = [
     title: "Battery Energy Storage Systems",
     text: "Advanced BESS solutions supporting stable, optimized, and continuous energy performance.",
   },
-  {
-    icon: HardHat,
-    title: "Full EPC Solar & Energy Engineering",
-    text: "Engineering, procurement, and construction support across the full project lifecycle.",
-  },
+
   {
     icon: Factory,
     title: "Factory Solutions",
@@ -54,7 +49,7 @@ const About = () => {
             transition={{ duration: 0.7 }}
             className="max-w-5xl"
           >
-            <p className="mb-5 text-xs font-black uppercase tracking-[0.28em] text-red-600">
+            <p className="mb-8 text-s font-black uppercase tracking-[0.28em] text-red-600">
               Why Us
             </p>
 
@@ -87,8 +82,6 @@ const About = () => {
                 right time.
               </span>
             </p>
-
-            
           </motion.div>
         </div>
       </section>
@@ -103,7 +96,7 @@ const About = () => {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.28em] text-red-600">
+            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-red-600">
               Company Positioning
             </p>
 
@@ -159,13 +152,12 @@ const About = () => {
       </section>
 
       <section className="relative overflow-hidden bg-white py-14 ">
-        <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.28em] text-red-600">
+              <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-red-600">
                 Core Capabilities
               </p>
 

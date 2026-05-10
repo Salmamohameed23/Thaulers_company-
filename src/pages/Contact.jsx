@@ -42,7 +42,7 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="mb-14 max-w-4xl"
           >
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.28em] text-red-600">
+            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-red-600">
               Contact Us
             </p>
 

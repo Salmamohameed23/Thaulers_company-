@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap, TrendingUp, SunMedium } from "lucide-react";
+import {  TrendingUp, SunMedium } from "lucide-react";
 
 import cleanEnergyBg from "../../assets/images/about_home.jpg";
 
@@ -38,8 +38,8 @@ saturate-150"
           transition={{ duration: 0.7 }}
           className="mx-auto mb-7 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-3 backdrop-blur-md"
         >
-          <Zap size={16} className="text-red-500" />
-          <span className="text-xs font-black uppercase tracking-[0.28em] text-white/90">
+          <span className="h-2.5 w-2.5 rounded-full bg-red-600" />
+          <span className="text-s font-black uppercase tracking-[0.28em] text-white/90">
             Clean Energy Shift
           </span>
         </motion.div>
