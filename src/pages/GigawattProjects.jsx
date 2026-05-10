@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   BatteryCharging,
   Cable,
   Factory,
@@ -11,9 +10,6 @@ import {
 } from "lucide-react";
 
 import gigaHero from "../assets/images/gigawaa.png";
-import giga1 from "../assets/images/gigawaa.png";
-import giga2 from "../assets/images/gigawaa.png";
-import giga3 from "../assets/images/gigawaa.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -61,25 +57,6 @@ const services = [
   },
 ];
 
-const process = [
-  {
-    title: "Project Scope & Feasibility",
-    text: "Understanding the required capacity, application, location needs, system structure, and technical constraints.",
-  },
-  {
-    title: "Engineering & System Design",
-    text: "Preparing the technical foundation across solar, BESS, electrical layouts, protection systems, and integration scope.",
-  },
-  {
-    title: "Supply Chain & Procurement",
-    text: "Coordinating China-based sourcing for high-quality components with optimized cost and reliable performance.",
-  },
-  {
-    title: "Installation & Commissioning Support",
-    text: "Supporting project execution through installation planning, commissioning, technical training, and operation readiness.",
-  },
-];
-
 const GigaProjects = () => {
   return (
     <main className="overflow-hidden bg-white text-neutral-950">
@@ -108,7 +85,7 @@ const GigaProjects = () => {
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/12 px-5 py-2.5 shadow-[0_16px_45px_rgba(0,0,0,0.22)] backdrop-blur-md">
               <span className="h-2.5 w-2.5 rounded-full bg-red-600 animate-pulse" />
               <span className="text-[11px] font-black uppercase tracking-[0.35em] text-white">
-                Giga Projects · Solar · BESS · EPC
+                Giga Projects · Solar · BESS
               </span>
             </div>
 
@@ -158,52 +135,6 @@ const GigaProjects = () => {
               ))}
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* PROJECT SCALE IMAGES */}
-      <section className="relative overflow-hidden bg-white py-14">
-        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-14 grid gap-8 lg:grid-cols-[0.85fr_1fr] lg:items-end">
-            <div>
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-red-600">
-                Giga-Scale Energy
-              </p>
-
-              <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.045em] sm:text-5xl">
-                Large energy projects need engineering discipline, not just
-                supply.
-              </h2>
-            </div>
-
-            <p className="max-w-xl text-[16px] leading-8 text-neutral-600 lg:ml-auto">
-              Our giga-scale approach is built around solar power systems, BESS,
-              full EPC engineering, supply chain coordination, and practical
-              support from design to commissioning.
-            </p>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-3">
-            {[giga1, giga2, giga3].map((img, index) => (
-              <motion.div
-                key={img}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
-                className="group overflow-hidden rounded-[34px] shadow-[0_24px_75px_rgba(0,0,0,0.12)]"
-              >
-                <img
-                  src={img}
-                  alt="Giga scale energy project"
-                  className="h-[430px] w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -263,64 +194,6 @@ const GigaProjects = () => {
           </div>
         </div>
       </section>
-
-      {/* EPC PROCESS */}
-      <section className="relative overflow-hidden bg-white py-14">
-        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16 grid gap-8 lg:grid-cols-[0.85fr_1fr] lg:items-end">
-            <div>
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-red-600">
-                Delivery Workflow
-              </p>
-
-              <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.045em] sm:text-5xl">
-                A controlled path from concept to operation-ready delivery.
-              </h2>
-            </div>
-
-            <p className="max-w-xl text-[16px] leading-8 text-neutral-600 lg:ml-auto">
-              Giga-scale projects require disciplined sequencing, technical
-              clarity, supply coordination, and practical execution support.
-            </p>
-          </div>
-
-          <div className="grid gap-6">
-            {process.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-                className="group relative grid gap-5 rounded-[32px] border border-black/10 bg-white p-6 shadow-[0_20px_65px_rgba(0,0,0,0.07)] transition duration-500 hover:-translate-y-1 hover:border-red-600/30 hover:shadow-[0_30px_85px_rgba(220,38,38,0.11)] lg:grid-cols-[96px_1fr_auto] lg:items-center"
-              >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-600 text-sm font-black text-white shadow-[0_18px_38px_rgba(220,38,38,0.28)]">
-                  0{index + 1}
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-black tracking-[-0.035em]">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-3 max-w-3xl text-[15px] leading-7 text-neutral-600">
-                    {step.text}
-                  </p>
-                </div>
-
-                <div className="hidden h-12 w-12 items-center justify-center rounded-full bg-neutral-950 text-white transition group-hover:bg-red-600 lg:flex">
-                  <ArrowUpRight size={18} />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
     </main>
   );
 };

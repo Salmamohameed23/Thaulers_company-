@@ -17,7 +17,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Operations",
-    text: "China Supply Chain · Engineering Support in Egypt",
+    text: "Yiwu, Zhejiang, China & Shenzhen, Guangdong, China",
   },
   {
     icon: Building2,

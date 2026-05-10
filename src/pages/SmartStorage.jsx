@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   BatteryCharging,
   Cable,
   Cpu,
@@ -85,24 +84,6 @@ const engineeringScope = [
   },
 ];
 
-const process = [
-  {
-    title: "Design & Engineering",
-    text: "System design, layouts, protection strategy, and technical planning for the required application.",
-  },
-  {
-    title: "Supply & Procurement",
-    text: "China-based sourcing support for high-quality components, optimized cost, and reliable performance.",
-  },
-  {
-    title: "Installation & Commissioning",
-    text: "Support from installation planning through testing, commissioning, and operation readiness.",
-  },
-  {
-    title: "Operation-ready Support",
-    text: "Factory-level support when required, technical training, and practical handover guidance.",
-  },
-];
 
 
 export default function SmartStorage() {
@@ -179,7 +160,6 @@ export default function SmartStorage() {
         <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-14 grid gap-8 lg:grid-cols-[0.9fr_1fr] lg:items-end">
             <div>
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-red-600">
                 Product Range
@@ -187,13 +167,6 @@ export default function SmartStorage() {
               <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.045em] sm:text-5xl">
                 Storage products engineered for different energy demands.
               </h2>
-            </div>
-
-            <p className="max-w-xl text-[16px] leading-8 text-neutral-600 lg:ml-auto">
-              From household ESS to commercial and industrial storage, each
-              solution supports reliable operation, scalable deployment, and
-              practical energy storage applications.
-            </p>
           </div>
 
           <div className="grid gap-7 lg:grid-cols-3">
@@ -307,63 +280,6 @@ export default function SmartStorage() {
         </div>
       </section>
 
-      {/* EPC PROCESS */}
-      <section className="relative overflow-hidden bg-white py-12">
-        <div className="absolute left-0 top-0 z-10 h-full w-[5px] bg-red-600" />
-        <div className="absolute right-[-180px] bottom-[-140px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[130px]" />
-
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16 grid gap-8 lg:grid-cols-[0.85fr_1fr] lg:items-end">
-            <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-red-600">
-                EPC Delivery Process
-              </p>
-
-              <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.045em] sm:text-5xl">
-                From technical planning to operation-ready delivery.
-              </h2>
-            </div>
-
-            <p className="max-w-xl text-[16px] leading-8 text-neutral-600 lg:ml-auto">
-              A structured EPC workflow covering design, sourcing, installation,
-              commissioning, and practical support for real-world BESS
-              operation.
-            </p>
-          </div>
-
-          <div className="grid gap-6">
-            {process.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.25 }}
-                variants={fadeUp}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-                className="group relative grid gap-5 rounded-[32px] border border-black/10 bg-white p-6 shadow-[0_20px_65px_rgba(0,0,0,0.07)] transition duration-500 hover:-translate-y-1 hover:border-red-600/30 hover:shadow-[0_30px_85px_rgba(220,38,38,0.11)] lg:grid-cols-[96px_1fr_auto] lg:items-center"
-              >
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-600 text-sm font-black text-white shadow-[0_18px_38px_rgba(220,38,38,0.28)]">
-                  0{index + 1}
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-black tracking-[-0.035em]">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-3 max-w-3xl text-[15px] leading-7 text-neutral-600">
-                    {step.text}
-                  </p>
-                </div>
-
-                <div className="hidden h-12 w-12 items-center justify-center rounded-full bg-neutral-950 text-white transition group-hover:bg-red-600 lg:flex">
-                  <ArrowUpRight size={18} />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       
     </main>

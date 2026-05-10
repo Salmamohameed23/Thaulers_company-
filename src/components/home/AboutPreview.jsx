@@ -4,7 +4,6 @@ import {
   ArrowUpRight,
   BatteryCharging,
   Globe2,
-  HardHat,
   SunMedium,
   Factory,
 } from "lucide-react";
@@ -17,10 +16,6 @@ const points = [
   {
     icon: BatteryCharging,
     title: "Battery Energy Storage Systems",
-  },
-  {
-    icon: HardHat,
-    title: "Full EPC Solar & Energy Engineering",
   },
   {
     icon: Globe2,

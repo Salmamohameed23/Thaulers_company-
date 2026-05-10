@@ -40,7 +40,7 @@ const Navbar = () => {
 
   const aboutLinks = [
     { label: "Company Profile", path: "/company-profile.pdf", download: true },
-    { label: "Contact", path: "/contact" },
+    { label: "Contact Us", path: "/contact" },
     { label: "Why Us", path: "/whyus" },
     // { label: "Let's Build", path: "/lets-build" },
   ];

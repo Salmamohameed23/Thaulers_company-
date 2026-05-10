@@ -8,10 +8,10 @@ import {
   Settings2,
   Wrench,
 } from "lucide-react";
-import factoryHero from "../assets/images/factory.png";
-import factory1 from "../assets/images/factory.png";
-import factory2 from "../assets/images/factory.png";
-import factory3 from "../assets/images/factory.png";
+import factoryHero from "../assets/images/factory4.jpg";
+// import factory1 from "../assets/images/factory.png";
+// import factory2 from "../assets/images/factory.png";
+// import factory3 from "../assets/images/factory.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -59,24 +59,6 @@ const services = [
   },
 ];
 
-const process = [
-  {
-    title: "Requirement Analysis",
-    text: "Understanding project scope, technical requirements, and operational targets.",
-  },
-  {
-    title: "Factory Matching",
-    text: "Identifying suitable manufacturing partners and supply capabilities.",
-  },
-  {
-    title: "Production Coordination",
-    text: "Managing communication, timelines, sourcing, and production workflow support.",
-  },
-  {
-    title: "Delivery & Support",
-    text: "Coordinating shipment preparation, technical assistance, and ongoing project support.",
-  },
-];
 
 const FactoryPage = () => {
   return (
@@ -163,7 +145,7 @@ const FactoryPage = () => {
       </section>
 
       {/* FACTORY IMAGES */}
-      <section className="relative overflow-hidden bg-white py-14">
+      {/* <section className="relative overflow-hidden bg-white py-14">
         <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -197,7 +179,7 @@ const FactoryPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* SERVICES */}
       <section className="relative overflow-hidden bg-neutral-50 py-14">
@@ -254,54 +236,6 @@ const FactoryPage = () => {
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="relative overflow-hidden bg-white py-14">
-        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16 max-w-3xl">
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-red-600">
-              Workflow Process
-            </p>
-
-            <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.045em] sm:text-5xl">
-              Structured coordination from factory selection to delivery.
-            </h2>
-          </div>
-
-          <div className="grid gap-6">
-            {process.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-                className="group relative grid gap-5 rounded-[32px] border border-black/10 bg-white p-6 shadow-[0_20px_65px_rgba(0,0,0,0.07)] transition duration-500 hover:-translate-y-1 hover:border-red-600/30 hover:shadow-[0_30px_85px_rgba(220,38,38,0.11)] lg:grid-cols-[96px_1fr_auto] lg:items-center"
-              >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-600 text-sm font-black text-white shadow-[0_18px_38px_rgba(220,38,38,0.28)]">
-                  0{index + 1}
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-black tracking-[-0.035em]">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-3 max-w-3xl text-[15px] leading-7 text-neutral-600">
-                    {step.text}
-                  </p>
-                </div>
-
-                <div className="hidden h-12 w-12 items-center justify-center rounded-full bg-neutral-950 text-white transition group-hover:bg-red-600 lg:flex">
-                  <ArrowUpRight size={18} />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </main>
   );
 };

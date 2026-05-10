@@ -55,36 +55,40 @@ const About = () => {
             className="max-w-5xl"
           >
             <p className="mb-5 text-xs font-black uppercase tracking-[0.28em] text-red-600">
-              About Company
+              Why Us
             </p>
 
-            <h1 className="text-[44px] font-black leading-[1.02] tracking-[-0.05em] sm:text-6xl lg:text-[78px]">
-              Global solar and energy storage solutions,
-              <span className="block ">engineered for reliable execution.</span>
+            <h1 className="text-[38px] font-black leading-[1.08] tracking-[-0.04em] sm:text-5xl lg:text-[68px] max-w-6xl">
+              At Tough Haulers, we don’t just supply products —
+              <span className="block text-red-600">
+                we deliver complete, reliable, and long-term solutions.
+              </span>
             </h1>
 
-            <p className="mt-7 max-w-3xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
-              TOUGH HAULERS TRADE LIMITED is a global provider of solar power
-              systems, battery energy storage solutions, and full EPC solar and
-              energy engineering for international energy projects.
+            <p className="mt-8 max-w-4xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
+              With strong experience in solar power systems, smart energy
+              storage, sourcing, and project execution, we support our clients
+              from the first study until delivery, installation, and after-sales
+              service.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link
-                to="/lets-build"
-                className="group inline-flex items-center gap-3 rounded-full bg-red-600 px-8 py-4 text-sm font-black text-white shadow-[0_18px_45px_rgba(220,38,38,0.22)] transition hover:-translate-y-1 hover:bg-neutral-950"
-              >
-                Let&apos;s Build
-                <ArrowUpRight size={17} />
-              </Link>
+            <p className="mt-5 max-w-4xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
+              We work with trusted partners and professional engineering teams
+              to provide high-quality solutions that match each project’s real
+              needs, whether it is a small system, a commercial project, or a
+              large-scale power station.
+            </p>
 
-              <Link
-                to="/contact"
-                className="inline-flex items-center rounded-full border border-black/15 bg-white px-8 py-4 text-sm font-black text-neutral-950 shadow-[0_14px_35px_rgba(0,0,0,0.06)] transition hover:-translate-y-1 hover:bg-neutral-950 hover:text-white"
-              >
-                Contact Us
-              </Link>
-            </div>
+            <p className="mt-5 max-w-4xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
+              Our goal is simple:
+              <span className="font-semibold text-neutral-950">
+                {" "}
+                To deliver the right solution, with the right quality, at the
+                right time.
+              </span>
+            </p>
+
+            
           </motion.div>
         </div>
       </section>
