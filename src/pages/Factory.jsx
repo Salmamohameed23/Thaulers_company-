@@ -142,43 +142,7 @@ const FactoryPage = () => {
         </div>
       </section>
 
-      {/* FACTORY IMAGES */}
-      {/* <section className="relative overflow-hidden bg-white py-14">
-        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-14 max-w-3xl">
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-red-600">
-              Factory Environment
-            </p>
-
-            <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.045em] sm:text-5xl">
-              Industrial capability with practical manufacturing coordination.
-            </h2>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-3">
-            {[factory1, factory2, factory3].map((img, index) => (
-              <motion.div
-                key={img}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
-                className="group overflow-hidden rounded-[34px] shadow-[0_24px_75px_rgba(0,0,0,0.12)]"
-              >
-                <img
-                  src={img}
-                  alt="Factory"
-                  className="h-[430px] w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
+   
       {/* SERVICES */}
       <section className="relative overflow-hidden bg-neutral-50 py-16">
         {/* Background Glow */}

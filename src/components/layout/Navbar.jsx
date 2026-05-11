@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [rdOpen, setRdOpen] = useState(false);
+  const [setRdOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -32,11 +32,11 @@ const Navbar = () => {
     { label: "Gigawatt Projects", path: "/gigawatt-projects" },
   ];
 
-  const rdLinks = [
-    { label: "R&D Capability", path: "/rd-capability" },
+  // const rdLinks = [
+  //   { label: "R&D Capability", path: "/rd-capability" },
 
-    { label: "Quality Management", path: "/quality-management" },
-  ];
+  //   { label: "Quality Management", path: "/quality-management" },
+  // ];
 
   const aboutLinks = [
     { label: "Company Profile", path: "/company-profile.pdf", download: true },
@@ -162,38 +162,9 @@ const Navbar = () => {
               </div>
             )}
           </div>
-
-          <div
-            className="relative"
-            onMouseEnter={() => setRdOpen(true)}
-            onMouseLeave={() => setRdOpen(false)}
-          >
-            <button className={dropdownButtonClass}>
-              R&D
-              <ChevronDown
-                size={17}
-                className={`transition-transform duration-300 ${
-                  rdOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-
-            {rdOpen && (
-              <div className="absolute left-0 top-full w-72 pt-4">
-                <div className="rounded-2xl border border-black/5 bg-white p-3 shadow-[0_22px_60px_rgba(0,0,0,0.13)]">
-                  {rdLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      className={dropdownItemClass}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+          <NavLink to="/R&D" className={navItemClass}>
+            R&D
+          </NavLink>
 
           <NavLink to="/partners" className={navItemClass}>
             Partners
@@ -273,20 +244,9 @@ const Navbar = () => {
               </NavLink>
             ))}
 
-            <p className="mt-2 text-xs font-black uppercase tracking-[0.24em] text-red-600">
+           <NavLink to="/R&D" onClick={closeAll} className={navItemClass}>
               R&D
-            </p>
-
-            {rdLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                onClick={closeAll}
-                className={navItemClass}
-              >
-                {link.label}
-              </NavLink>
-            ))}
+            </NavLink>
 
             <NavLink to="/partners" onClick={closeAll} className={navItemClass}>
               Partners

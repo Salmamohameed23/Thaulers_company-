@@ -8,6 +8,7 @@ import GigawattProjects from "../pages/GigawattProjects";
 import Partners from "../pages/Partners";
 import Contact from "../pages/Contact";
 import LetsBuild from "../pages/LetsBuild";
+import Rd from "../pages/Rd";
 const AppRouter = () => {
   return (
     <Routes>
@@ -20,6 +21,7 @@ const AppRouter = () => {
       <Route path="/partners" element={<Partners />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/lets-build" element={<LetsBuild />} />
+      <Route path="/R&D" element={<Rd />} />
     </Routes>
   );
 };
