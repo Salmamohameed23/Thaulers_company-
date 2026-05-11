@@ -95,8 +95,8 @@ const platformList = [
 
 const SectionLabel = ({ children }) => (
   <div className="mb-6 flex items-center gap-4">
-    <span className="h-px w-10 bg-red-600" />
-    <p className="text-xs font-black uppercase tracking-[0.35em] text-red-600">
+    <span className="h-px w-10 bg-[#ee4036]" />
+    <p className="text-xs font-black uppercase tracking-[0.35em] text-[#ee4036]">
       {children}
     </p>
   </div>
@@ -175,7 +175,7 @@ export default function RDPage() {
           >
             {/* Vision Label */}
             <SectionLabel>
-              <span className="text-[15px] font-black uppercase tracking-[0.42em] text-red-600">
+              <span className="text-[15px] font-black uppercase tracking-[0.42em] text-[#ee4036]">
                 Our Vision
               </span>
             </SectionLabel>
@@ -264,7 +264,7 @@ export default function RDPage() {
           transition={{ duration: 0.8 }}
           className="relative z-10 mx-auto max-w-7xl"
         >
-          <div className="max-w-[460px] border border-neutral-200 bg-white/90 p-10 shadow-2xl shadow-black/10 backdrop-blur-md">
+          <div className="max-w-[460px] border border-neutral-200 bg-white/90 p-10 shadow-2xl shadow-black/10 backdrop-blur-md ">
             <SectionLabel>Our People</SectionLabel>
 
             <h2 className="text-[40px] font-black uppercase leading-[1] tracking-[-0.03em] md:text-[56px]">
@@ -459,7 +459,6 @@ export default function RDPage() {
             capabilities allow us to support reliable energy solutions for
             small, commercial, industrial, and large-scale projects.
           </p>
-
         </motion.div>
       </section>
     </main>

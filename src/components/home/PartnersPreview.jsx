@@ -30,9 +30,6 @@ const partners = [
 const PartnersPreview = () => {
   return (
     <section className="relative overflow-hidden bg-white py-14 text-neutral-950 ">
-      {/* <div className="absolute right-[-120px] top-[-120px] h-80 w-80 rounded-full bg-red-600/8 blur-3xl" /> */}
-      {/* <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.025)_1px,transparent_1px),linear-gradient(rgba(0,0,0,0.018)_1px,transparent_1px)] [background-size:72px_72px]" />
-       */}
       <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
       <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
 
@@ -45,7 +42,7 @@ const PartnersPreview = () => {
           className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between"
         >
           <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.28em] text-red-600">
+            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
               Our Partners & Main Supply Chain
             </p>
 
@@ -91,7 +88,7 @@ const PartnersPreview = () => {
                 {partner.name}
               </h3>
 
-              <p className="mt-2 text-xs font-black uppercase tracking-[0.24em] text-red-600">
+              <p className="mt-2 text-xs font-black uppercase tracking-[0.24em] text-[#ee4036]">
                 {partner.country}
               </p>
 

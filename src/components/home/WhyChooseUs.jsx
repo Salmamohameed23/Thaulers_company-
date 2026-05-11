@@ -34,8 +34,6 @@ const WhyChooseUs = () => {
     <section className="relative overflow-hidden bg-white py-14 text-neutral-950 ">
       <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
       <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,rgba(220,38,38,0.06),transparent_30%)]" /> */}
-      {/* <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.025)_1px,transparent_1px),linear-gradient(rgba(0,0,0,0.018)_1px,transparent_1px)] [background-size:72px_72px]" /> */}
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
@@ -45,7 +43,7 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.7 }}
           className="mx-auto mb-12 max-w-3xl text-center"
         >
-          <p className="mb-4 text-xs font-black uppercase tracking-[0.28em] text-red-600">
+          <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
             Why Choose Us
           </p>
 

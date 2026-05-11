@@ -6,94 +6,142 @@ const solutions = [
   { name: "Smart Storage", path: "/smart-storage" },
   { name: "Factory Solutions", path: "/factory-solutions" },
   { name: "Gigawatt Projects", path: "/gigawatt-projects" },
-  { name: "R&D Capability", path: "/rd-capability" },
+];
+
+const legal = [
+  { name: "Privacy Policy", path: "/privacy-policy" },
+  { name: "Terms of Service", path: "/terms-of-service" },
 ];
 
 const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-black text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_22%,rgba(127,29,29,0.50),transparent_36%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:90px_90px] opacity-25" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.015] via-transparent to-black/40" />
+      {/* Background effects */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_90%_5%,rgba(220,38,38,0.28),transparent_36%)]" />
+      <div className="pointer-events-none absolute left-[-180px] bottom-[-210px] h-[520px] w-[520px] rounded-full border border-red-600/20 opacity-40" />
+      <div className="pointer-events-none absolute left-[-220px] bottom-[-250px] h-[620px] w-[620px] rounded-full border border-red-600/10 opacity-40" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.02] via-transparent to-black" />
 
-      <div className="relative z-10 mx-auto max-w-[1180px] px-6 pt-24 pb-0 lg:px-0">
-        <div className="grid min-h-[330px] grid-cols-1 gap-14 md:grid-cols-3 md:gap-20">
-          <div className="md:pt-0">
+      <div className="relative z-10 mx-auto max-w-[1320px] px-6 pt-20 lg:px-10">
+        <div className="grid grid-cols-1 border-white/10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div className="border-white/10 pb-14 lg:border-r lg:pr-12">
             <Link to="/" className="inline-block">
               <img
                 src={logo}
                 alt="Tough Haulers"
-                className="w-[185px] object-contain"
+                className="w-[205px] object-contain"
               />
             </Link>
 
-            <div className="mt-10 h-[3px] w-11 bg-red-500 shadow-[0_0_16px_rgba(239,68,68,0.75)]" />
+            <div className="mt-7 h-[3px] w-12 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
 
-            <h3 className="mt-5 text-[15px] font-semibold leading-7 text-white">
-              Engineering Power. Delivering Reliability.
+            <h3 className="mt-8 max-w-[270px] text-[25px] font-extrabold leading-[1.35] tracking-[-0.03em] text-white">
+              Engineering Power.
+              <br />
+              Delivering Reliability.
             </h3>
 
-            <p className="mt-4 max-w-[330px] text-[15px] font-normal leading-7 text-neutral-400">
+            <p className="mt-6 max-w-[300px] text-[15px] leading-8 text-neutral-400">
               Solar power, battery energy storage, EPC engineering, global
               projects, and China-based supply chain support.
             </p>
           </div>
 
-          <div>
-            <h4 className="text-[13px] font-bold uppercase tracking-[0.42em] text-red-500">
+          {/* Solutions */}
+          <div className="border-white/10 pb-14 pt-3 lg:border-r lg:px-10">
+            <h4 className="text-[13px] font-bold uppercase tracking-[0.48em] text-[#ee4036]">
               Solutions
             </h4>
 
-            <div className="mt-5 h-[2px] w-11 bg-red-500 shadow-[0_0_14px_rgba(239,68,68,0.75)]" />
+            <div className="mt-6 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
 
-            <ul className="mt-7 w-full max-w-[230px]">
+            <ul className="mt-8 max-w-[250px]">
               {solutions.map((item) => (
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    className="group flex items-center gap-4 border-b border-white/10 py-4 text-[14px] font-medium text-neutral-200 transition-all duration-300 hover:border-red-500/60 hover:text-white"
+                    className="group flex items-center justify-between border-b border-white/10 py-5 text-[14px] font-medium text-neutral-200 transition-all duration-300 hover:border-red-500/60 hover:text-white"
                   >
-                    <ChevronRight className="h-4 w-4 shrink-0 text-red-500 transition-all duration-300 group-hover:translate-x-1 group-hover:drop-shadow-[0_0_8px_rgba(239,68,68,0.9)]" />
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    <span className="flex items-center gap-5">
+                      <ChevronRight className="h-4 w-4 text-red-500 transition-all duration-300 group-hover:translate-x-1 group-hover:drop-shadow-[0_0_8px_rgba(220,38,38,0.95)]" />
                       {item.name}
                     </span>
+
+                    <span className="h-[2px] w-5 bg-red-500 transition-all duration-300 group-hover:w-8 group-hover:shadow-[0_0_10px_rgba(220,38,38,0.95)]" />
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-[13px] font-bold uppercase tracking-[0.42em] text-red-500">
+          {/* Contact */}
+          <div className="border-white/10 pb-14 pt-3 lg:border-r lg:px-10">
+            <h4 className="text-[13px] font-bold uppercase tracking-[0.48em] text-[#ee4036]">
               Contact
             </h4>
 
-            <div className="mt-5 h-[2px] w-11 bg-red-500 shadow-[0_0_14px_rgba(239,68,68,0.75)]" />
+            <div className="mt-6 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
 
-            <div className="mt-8 max-w-[330px] space-y-6">
+            <div className="mt-8 max-w-[300px]">
               <a
                 href="mailto:sales@toughhaulers.cn.com"
-                className="group flex items-start gap-5 border-b border-white/10 pb-6 text-[14px] font-medium text-neutral-100 transition-colors duration-300 hover:text-red-400"
+                className="group flex items-center gap-5 border-b border-white/10 py-5 text-[14px] font-medium text-neutral-100 transition-colors duration-300 hover:text-red-400"
               >
-                <Mail className="mt-0.5 h-6 w-6 shrink-0 text-red-500 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(239,68,68,0.9)]" />
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-500 transition-all duration-300 group-hover:shadow-[0_0_16px_rgba(220,38,38,0.45)]">
+                  <Mail className="h-4 w-4" />
+                </span>
                 <span>sales@toughhaulers.cn.com</span>
               </a>
 
-              <div className="flex items-start gap-5 text-[14px] font-medium leading-7 text-neutral-100">
-                <MapPin className="mt-1 h-6 w-6 shrink-0 text-red-500" />
-                <div>
-                  <p>Yiwu, Zhejiang, China</p>
-                  <p className="mt-1">Shenzhen, Guangdong, China</p>
-                </div>
+              <div className="flex items-center gap-5 border-b border-white/10 py-5 text-[14px] font-medium text-neutral-100">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-500">
+                  <MapPin className="h-4 w-4" />
+                </span>
+                <span>Yiwu, Zhejiang, China</span>
+              </div>
+
+              <div className="flex items-center gap-5 py-5 text-[14px] font-medium text-neutral-100">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-500">
+                  <MapPin className="h-4 w-4" />
+                </span>
+                <span>Shenzhen, Guangdong, China</span>
               </div>
             </div>
           </div>
+
+          {/* Legal */}
+          <div className="pb-14 pt-3 lg:pl-10">
+            <h4 className="text-[13px] font-bold uppercase tracking-[0.48em] text-[#ee4036]">
+              Legal
+            </h4>
+
+            <div className="mt-6 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
+
+            <ul className="mt-8 max-w-[250px]">
+              {legal.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.path}
+                    className="group flex items-center justify-between border-b border-white/10 py-5 text-[14px] font-medium text-neutral-200 transition-all duration-300 hover:border-red-500/60 hover:text-white"
+                  >
+                    <span>{item.name}</span>
+
+                    <span className="h-[2px] w-5 bg-red-500 transition-all duration-300 group-hover:w-8 group-hover:shadow-[0_0_10px_rgba(220,38,38,0.95)]" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-14 border-t border-white/10 py-7 text-center">
-          <p className="text-[14px] text-neutral-500">
-            © 2026 Tough Haulers Trade Limited. All Rights Reserved.
-          </p>
+        {/* Bottom */}
+        <div className="border-t border-white/10 py-10">
+          <div className="flex flex-col items-center justify-center gap-4 text-center text-[14px] text-neutral-500 md:flex-row">
+            <p>© 2025 Tough Haulers. All rights reserved.</p>
+            <span className="hidden h-4 w-px bg-white/20 md:block" />
+            <p>Powering a sustainable future.</p>
+          </div>
         </div>
       </div>
     </footer>

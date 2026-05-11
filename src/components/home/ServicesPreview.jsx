@@ -37,7 +37,7 @@ const ServicesPreview = () => {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.28em] text-red-600">
+            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
               Our Solutions
             </p>
 
@@ -106,7 +106,7 @@ const ServicesPreview = () => {
                     </p>
 
                     <div className="mt-6 flex items-center justify-between">
-                      <span className="text-xs font-bold uppercase tracking-widest text-red-600">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#ee4036]">
                         Explore Solution
                       </span>
 

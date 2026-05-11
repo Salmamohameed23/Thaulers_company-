@@ -46,7 +46,7 @@ const AboutPreview = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <p className="mb-5 text-xs font-black uppercase tracking-[0.28em] text-red-600">
+          <p className="mb-5 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
             About Company
           </p>
 
@@ -93,7 +93,7 @@ const AboutPreview = () => {
           <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-black/5 blur-3xl" />
 
           <div className="relative">
-            <p className="text-xs font-black uppercase tracking-[0.28em] text-red-600">
+            <p className="text-xs font-black uppercase tracking-[0.28em] text-[#ee4036]">
               Core Positioning
             </p>
 

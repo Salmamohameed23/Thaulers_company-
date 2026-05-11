@@ -38,8 +38,8 @@ saturate-150"
           transition={{ duration: 0.7 }}
           className="mx-auto mb-7 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-3 backdrop-blur-md"
         >
-          <span className="h-2.5 w-2.5 rounded-full bg-red-600" />
-          <span className="text-s font-black uppercase tracking-[0.28em] text-white/90">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036]" />
+          <span className="text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
             Clean Energy Shift
           </span>
         </motion.div>
@@ -72,26 +72,26 @@ saturate-150"
           </p>
 
           <div className="mx-auto flex max-w-3xl items-start gap-4 rounded-3xl border border-white/15 bg-white/10 p-5 text-left backdrop-blur-md">
-            <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-red-500/40 bg-red-600/20 text-red-500">
+            <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-red-500/40 bg-red-600/20 text-[#ee4036]">
               <TrendingUp size={21} />
             </div>
 
             <p>
-              <span className="font-black text-red-500">Take note:</span> Solar
-              system prices have already risen, a clear sign that demand is
-              growing faster than ever. The right time to start your clean
+              <span className="font-black text-[#ee4036]">Take note:</span>{" "}
+              Solar system prices have already risen, a clear sign that demand
+              is growing faster than ever. The right time to start your clean
               energy project is now, before everyone else turns to it and entry
               becomes more expensive.
             </p>
           </div>
 
           <div className="mx-auto flex max-w-3xl items-start gap-4 rounded-3xl border border-white/15 bg-white/10 p-5 text-left backdrop-blur-md">
-            <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-red-500/40 bg-red-600/20 text-red-500">
+            <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-red-500/40 bg-red-600/20 text-[#ee4036]">
               <SunMedium size={21} />
             </div>
 
             <p>
-              <span className="font-black text-red-500">The smart move:</span>{" "}
+              <span className="font-black text-[#ee4036]">The smart move:</span>{" "}
               Invest in energy that comes directly from the sun, not from any
               other source. Solar power isn’t just an alternative — it’s the
               foundation of the future.
