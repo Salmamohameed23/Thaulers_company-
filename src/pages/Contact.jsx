@@ -42,7 +42,7 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="mb-14 max-w-4xl"
           >
-            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-red-600">
+            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
               Contact Us
             </p>
 
@@ -65,7 +65,7 @@ const Contact = () => {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="rounded-[34px] border border-black/10 bg-white p-6 shadow-[0_25px_70px_rgba(0,0,0,0.08)] sm:p-8"
             >
-              <p className="mb-7 text-xs font-black uppercase tracking-[0.24em] text-red-600">
+              <p className="mb-7 text-s font-black uppercase tracking-[0.24em] text-[#ee4036]">
                 Company Contact
               </p>
 
@@ -96,7 +96,7 @@ const Contact = () => {
               </div>
 
               <div className="mt-8 rounded-3xl bg-neutral-950 p-6 text-white">
-                <MessageSquare className="mb-4 text-red-500" size={24} />
+                <MessageSquare className="mb-4 text-[#ee4036]" size={24} />
                 <h3 className="text-xl font-black">Project Enquiry</h3>
                 <p className="mt-3 text-[15px] leading-7 text-white/65">
                   Tell us about your project scope, required solution, country,
@@ -111,7 +111,7 @@ const Contact = () => {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="rounded-[34px] border border-black/10 bg-white p-6 shadow-[0_25px_70px_rgba(0,0,0,0.08)] sm:p-8"
             >
-              <p className="mb-7 text-xs font-black uppercase tracking-[0.24em] text-red-600">
+              <p className="mb-7 text-s font-black uppercase tracking-[0.24em] text-[#ee4036]">
                 Send Message
               </p>
 

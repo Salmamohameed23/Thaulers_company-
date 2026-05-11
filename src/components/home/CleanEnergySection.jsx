@@ -39,7 +39,7 @@ saturate-150"
           className="mx-auto mb-7 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-3 backdrop-blur-md"
         >
           <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036]" />
-          <span className="text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
+          <span className="text-s font-black uppercase tracking-[0.28em] text-white">
             Clean Energy Shift
           </span>
         </motion.div>

@@ -74,7 +74,6 @@ const products = [
   },
 ];
 
-
 const engineeringScope = [
   {
     icon: BatteryCharging,
@@ -108,8 +107,6 @@ const engineeringScope = [
   },
 ];
 
-
-
 export default function SmartStorage() {
   const sliderRef = useRef(null);
 
@@ -123,74 +120,86 @@ export default function SmartStorage() {
       behavior: "smooth",
     });
   };
-  
+
   return (
     <main className="overflow-hidden bg-white text-neutral-950">
       {/* HERO */}
-      <section className="relative min-h-[92vh] overflow-hidden bg-white pt-28 pb-20">
-        <div className="absolute left-0 top-0 z-20 h-full w-[5px] bg-red-600" />
-
-        <img
+      <section className="relative min-h-[92vh] overflow-hidden bg-black text-white">
+        {/* BACKGROUND IMAGE */}
+        <motion.img
           src={smartHero}
-          alt="Smart battery energy storage system"
-          className="absolute inset-0 h-full w-full object-cover opacity-[0.18]"
+          alt="Factory production and engineering"
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.05 }}
+          transition={{ duration: 14, ease: "easeOut" }}
+          className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-transparent" />
-        <div className="absolute right-[-120px] top-24 h-[520px] w-[520px] rounded-full bg-red-600/10 blur-[120px]" />
+        {/* DARK OVERLAYS */}
+        <div className="absolute inset-0 bg-black/48" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        {/* CONTENT */}
+        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-6 pb-10 pt-28 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             transition={{ duration: 0.75 }}
+            className="max-w-5xl"
           >
-            <p className="mb-5 text-s font-black uppercase tracking-[0.28em] text-red-600">
-              Smart Storage · BESS Solutions
-            </p>
+            {/* TOP BADGE */}
+            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/40 bg-white/10 px-6 py-3 backdrop-blur-md">
+              <span className="h-3 w-3 rounded-full bg-[#ee4036]" />
+              <span className="text-[13px] font-black uppercase tracking-[0.34em] text-white">
+                Smart Storage · BESS Solutions
+              </span>
+            </div>
 
-            <h1 className="max-w-4xl text-[44px] font-black leading-[1.02] tracking-[-0.055em] sm:text-6xl lg:text-[72px]">
-              Integrated battery storage.
-              <span className="block ">Engineered for real operation.</span>
+            {/* TITLE */}
+            <h1 className="max-w-5xl text-[52px] font-black leading-[0.95] tracking-[-0.06em] text-white sm:text-7xl lg:text-[86px]">
+              Integrated battery
+              <span className="block">storage execution.</span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-[17px] leading-8 text-neutral-700 sm:text-lg">
-              Fully integrated Energy Storage Systems for utility, commercial,
-              and industrial applications — from system design and engineering
-              to full supply, installation, and commissioning.
-            </p>
+            {/* RED LINE */}
+            <div className="mt-8 h-[4px] w-[150px] bg-[#ee4036] shadow-[0_0_18px_rgba(220,38,38,0.75)]" />
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row"></div>
+            {/* DESCRIPTION */}
+            <div className="mt-8 max-w-4xl space-y-6 text-[19px] font-bold leading-9 text-white">
+              <p>
+                TOUGH HAULERS delivers fully integrated Energy Storage Systems
+                for utility, commercial, and industrial applications.
+              </p>
+
+              <p>
+                From system design and engineering to full supply, installation,
+                commissioning, and after-sales service, our focus is built
+                around real operational reliability.
+              </p>
+            </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 60, scale: 0.94 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-            className="relative"
-          >
-            <div className="absolute -inset-8 rounded-[48px] bg-gradient-to-br from-red-600/12 via-black/5 to-transparent blur-3xl" />
-          </motion.div>
-        </div>
-        {/* TRUST STRIP */}
-        <section className="relative border-y  ">
-          <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
-
-          <div className="mx-auto grid max-w-7xl gap-px px-6 py-5 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
+          {/* TRUST STRIP */}
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {capabilities.map((item) => (
               <div
                 key={item}
-                className="flex items-center justify-center gap-4   px-6 py-7 text-xl font-semibold text-neutral-800"
+                className="flex min-h-[84px] items-center gap-4 rounded-[22px] border border-white/50 bg-white/10 px-5 py-4 shadow-[0_18px_45px_rgba(0,0,0,0.28)] backdrop-blur-md"
               >
-                <ShieldCheck size={17} className="text-red-600" />
-                {item}
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#ee4036] text-white shadow-[0_12px_30px_rgba(220,38,38,0.38)]">
+                  <ShieldCheck size={18} />
+                </span>
+
+                <span className="text-[15px] font-extrabold leading-5 text-white">
+                  {item}
+                </span>
               </div>
             ))}
           </div>
-        </section>
+        </div>
       </section>
-
       {/* PRODUCT RANGE */}
       {/* PRODUCT RANGE */}
       <section className="relative overflow-hidden bg-white py-20">
@@ -201,7 +210,7 @@ export default function SmartStorage() {
           <div className="mb-14 flex flex-col items-center text-center">
             <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-red-600/15 bg-red-600/5 px-4 py-2">
               <span className="h-2 w-2 rounded-full bg-red-600" />
-              <p className="text-s font-black uppercase tracking-[0.28em] text-red-600">
+              <p className="text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
                 Product Range
               </p>
             </div>
@@ -251,7 +260,7 @@ export default function SmartStorage() {
                   </div>
 
                   <div className="relative p-8">
-                    <div className="mb-5 inline-flex rounded-full bg-red-600/10 px-4 py-2 text-sm font-black text-red-600">
+                    <div className="mb-5 inline-flex rounded-full bg-red-600/10 px-4 py-2 text-sm font-black text-[#ee4036]">
                       {product.spec}
                     </div>
 
@@ -284,9 +293,9 @@ export default function SmartStorage() {
           {/* Heading */}
           <div className="mb-14 flex flex-col items-center text-center">
             <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-red-600/15 bg-red-600/5 px-4 py-2">
-              <span className="h-2 w-2 rounded-full bg-red-600" />
+              <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
 
-              <p className="text-s font-black uppercase tracking-[0.28em] text-red-600">
+              <p className="text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
                 Engineering Scope
               </p>
             </div>

@@ -83,8 +83,8 @@ const GigaProjects = () => {
             className="max-w-6xl"
           >
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/12 px-5 py-2.5 shadow-[0_16px_45px_rgba(0,0,0,0.22)] backdrop-blur-md">
-              <span className="h-2.5 w-2.5 rounded-full bg-red-600 animate-pulse" />
-              <span className="text-[11px] font-black uppercase tracking-[0.35em] text-white">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036] animate-pulse" />
+              <span className="text-[13px] font-black uppercase tracking-[0.35em] text-white">
                 Giga Projects · Solar · BESS
               </span>
             </div>
@@ -95,9 +95,9 @@ const GigaProjects = () => {
               <span className="text-white/85">at giga scale.</span>
             </h1>
 
-            <div className="mt-8 h-[4px] w-28 rounded-full bg-red-600 shadow-[0_0_25px_rgba(220,38,38,0.5)]" />
+            <div className="mt-8 h-[4px] w-28 rounded-full bg-[#ee4036] shadow-[0_0_25px_rgba(220,38,38,0.5)]" />
 
-            <p className="mt-8 max-w-4xl text-[18px] font-medium leading-9 text-white/85 sm:text-[21px]">
+            <p className="mt-8 max-w-4xl text-[18px] font-medium leading-9 text-white/100 sm:text-[21px]">
               TOUGH HAULERS supports large-scale solar and energy storage
               projects from kW scale to multi-Gigawatt project requirements.
               <span className="mt-5 block">
@@ -123,7 +123,7 @@ const GigaProjects = () => {
                   <div className="absolute right-[-35px] top-[-35px] h-28 w-28 rounded-full bg-red-600/0 blur-[50px] transition duration-500 group-hover:bg-red-600/25" />
 
                   <div className="relative flex items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-red-600 text-white shadow-[0_14px_32px_rgba(220,38,38,0.38)]">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#ee4036] text-white shadow-[0_14px_32px_rgba(220,38,38,0.38)]">
                       <ShieldCheck size={18} />
                     </div>
 
@@ -149,9 +149,9 @@ const GigaProjects = () => {
           {/* Heading */}
           <div className="mb-14 flex flex-col items-center text-center">
             <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-red-600/15 bg-red-600/5 px-4 py-2">
-              <span className="h-2 w-2 rounded-full bg-red-600" />
+              <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
 
-              <p className="text-xs font-black uppercase tracking-[0.28em] text-red-600">
+              <p className="text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
                 Engineering Scope
               </p>
             </div>

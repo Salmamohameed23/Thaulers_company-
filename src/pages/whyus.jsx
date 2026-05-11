@@ -49,13 +49,13 @@ const About = () => {
             transition={{ duration: 0.7 }}
             className="max-w-5xl"
           >
-            <p className="mb-8 text-s font-black uppercase tracking-[0.28em] text-red-600">
+            <p className="mb-8 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
               Why Us
             </p>
 
             <h1 className="text-[38px] font-black leading-[1.08] tracking-[-0.04em] sm:text-5xl lg:text-[68px] max-w-6xl">
               At Tough Haulers, we don’t just supply products —
-              <span className="block text-red-600">
+              <span className="block text-[#ee4036]">
                 we deliver complete, reliable, and long-term solutions.
               </span>
             </h1>
@@ -96,7 +96,7 @@ const About = () => {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-red-600">
+            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
               Company Positioning
             </p>
 
@@ -138,7 +138,7 @@ const About = () => {
                   <div className="flex items-start gap-3">
                     <ShieldCheck
                       size={20}
-                      className="mt-1 shrink-0 text-red-600"
+                      className="mt-1 shrink-0 text-[#ee4036]"
                     />
                     <p className="text-[15px] font-semibold leading-7 text-neutral-800">
                       {item}
@@ -157,7 +157,7 @@ const About = () => {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-red-600">
+              <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
                 Core Capabilities
               </p>
 
@@ -171,7 +171,7 @@ const About = () => {
 
             <Link
               to="/solutions"
-              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-neutral-950 px-7 py-4 text-sm font-black text-white transition hover:bg-red-600"
+              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-neutral-950 px-7 py-4 text-sm font-black text-white transition hover:bg-[#ee4036]"
             >
               View Solutions
               <ArrowUpRight size={16} />

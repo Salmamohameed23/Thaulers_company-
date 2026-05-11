@@ -59,12 +59,11 @@ const Partners = () => {
     <main className="bg-white text-neutral-950">
       {/* HERO */}
       <section className="relative overflow-hidden bg-white py-12">
-        <div className="absolute left-0 top-0 h-full w-[5px] bg-red-600" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-red-600">
+              <p className="mb-4 text-s font-black uppercase tracking-[0.3em] text-[#ee4036]">
                 Our Partners & Main Supply Chain
               </p>
 
@@ -73,7 +72,7 @@ const Partners = () => {
                 <span className="block">powering energy projects.</span>
               </h1>
 
-              <p className="mt-6 text-lg leading-8 text-neutral-700">
+              <p className="mt-6 text-lg leading-8 text-neutral-850">
                 Our partner ecosystem supports solar power systems, battery
                 energy storage, EPC engineering, and global project execution
                 with reliable supply chain integration.
@@ -81,7 +80,7 @@ const Partners = () => {
             </div>
 
             <div className="rounded-3xl bg-neutral-100 p-6">
-              <Handshake size={32} className="mb-4 text-red-600" />
+              <Handshake size={32} className="mb-4 text-[#ee4036]" />
               <p className="leading-7 text-neutral-700">
                 Strong partnerships ensure better sourcing, better engineering
                 coordination, and stronger project delivery confidence.
@@ -132,7 +131,7 @@ const Partners = () => {
 
                     {/* CONTENT */}
                     <div className="relative p-8">
-                      <span className="text-xs font-bold uppercase tracking-widest text-red-600">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#ee4036]">
                         {partner.category}
                       </span>
 
@@ -164,7 +163,7 @@ const Partners = () => {
                           {partner.label}
                         </span>
 
-                        <span className="flex items-center gap-2 font-bold text-red-600 transition group-hover:gap-3">
+                        <span className="flex items-center gap-2 font-bold text-[#ee4036] transition group-hover:gap-3">
                           Visit Website
                           <ArrowUpRight size={16} />
                         </span>
