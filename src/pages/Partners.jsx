@@ -4,7 +4,7 @@ import { ArrowUpRight, Building2, Handshake } from "lucide-react";
 
 import eveVisit from "../assets/images/eve_visit.jpg";
 import bydVisit from "../assets/images/byd_visit.jpg";
-import rfBoxVisit from "../assets/images/rf_visit2.jpg";
+import rfBoxVisit from "../assets/images/rf_visit.jpg";
 
 const partners = [
   {

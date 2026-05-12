@@ -16,33 +16,32 @@ const legal = [
 const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-black text-white">
-      {/* Background effects */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_90%_5%,rgba(220,38,38,0.28),transparent_36%)]" />
       <div className="pointer-events-none absolute left-[-180px] bottom-[-210px] h-[520px] w-[520px] rounded-full border border-red-600/20 opacity-40" />
       <div className="pointer-events-none absolute left-[-220px] bottom-[-250px] h-[620px] w-[620px] rounded-full border border-red-600/10 opacity-40" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.02] via-transparent to-black" />
 
-      <div className="relative z-10 mx-auto max-w-[1320px] px-6 pt-20 lg:px-10">
-        <div className="grid grid-cols-1 border-white/10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="relative z-10 mx-auto max-w-[1320px] px-6 pt-16 lg:px-10">
+        <div className="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div className="border-white/10 pb-14 lg:border-r lg:pr-12">
-            <Link to="/" className="inline-block">
+          <div className="border-white/10 pb-14 pt-3 lg:border-r lg:pr-10">
+            <Link to="/" className="inline-flex h-[16px] items-center">
               <img
                 src={logo}
                 alt="Tough Haulers"
-                className="w-[205px] object-contain"
+                className="w-[185px] object-contain"
               />
             </Link>
 
-            <div className="mt-7 h-[3px] w-12 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
+            <div className=" h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
 
-            <h3 className="mt-8 max-w-[270px] text-[25px] font-extrabold leading-[1.35] tracking-[-0.03em] text-white">
+            <h3 className="mt-3 max-w-[280px] text-[24px] font-extrabold leading-[1.22] tracking-[-0.035em] text-white">
               Engineering Power.
               <br />
               Delivering Reliability.
             </h3>
 
-            <p className="mt-6 max-w-[300px] text-[15px] leading-8 text-neutral-400">
+            <p className="mt-6 max-w-[305px] text-[15px] leading-8 text-neutral-400">
               Solar power, battery energy storage, EPC engineering, global
               projects, and China-based supply chain support.
             </p>
@@ -50,13 +49,13 @@ const Footer = () => {
 
           {/* Solutions */}
           <div className="border-white/10 pb-14 pt-3 lg:border-r lg:px-10">
-            <h4 className="text-[13px] font-bold uppercase tracking-[0.48em] text-[#ee4036]">
+            <h4 className="h-[16px] text-[13px] font-bold uppercase leading-none tracking-[0.48em] text-[#ee4036]">
               Solutions
             </h4>
 
-            <div className="mt-6 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
+            <div className="mt-10 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
 
-            <ul className="mt-8 max-w-[250px]">
+            <ul className="mt-10 max-w-[250px]">
               {solutions.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -77,13 +76,13 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="border-white/10 pb-14 pt-3 lg:border-r lg:px-10">
-            <h4 className="text-[13px] font-bold uppercase tracking-[0.48em] text-[#ee4036]">
+            <h4 className="h-[16px] text-[13px] font-bold uppercase leading-none tracking-[0.48em] text-[#ee4036]">
               Contact
             </h4>
 
-            <div className="mt-6 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
+            <div className="mt-10 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
 
-            <div className="mt-8 max-w-[300px]">
+            <div className="mt-10 max-w-[300px]">
               <a
                 href="mailto:sales@toughhaulers.cn.com"
                 className="group flex items-center gap-5 border-b border-white/10 py-5 text-[14px] font-medium text-neutral-100 transition-colors duration-300 hover:text-red-400"
@@ -112,13 +111,13 @@ const Footer = () => {
 
           {/* Legal */}
           <div className="pb-14 pt-3 lg:pl-10">
-            <h4 className="text-[13px] font-bold uppercase tracking-[0.48em] text-[#ee4036]">
+            <h4 className="h-[16px] text-[13px] font-bold uppercase leading-none tracking-[0.48em] text-[#ee4036]">
               Legal
             </h4>
 
-            <div className="mt-6 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
+            <div className="mt-10 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
 
-            <ul className="mt-8 max-w-[250px]">
+            <ul className="mt-10 max-w-[250px]">
               {legal.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -135,12 +134,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="border-t border-white/10 py-10">
           <div className="flex flex-col items-center justify-center gap-4 text-center text-[14px] text-neutral-500 md:flex-row">
-            <p>© 2025 Tough Haulers. All rights reserved.</p>
+            <p>© 2026 Tough Haulers Trade limited</p>
             <span className="hidden h-4 w-px bg-white/20 md:block" />
-            <p>Powering a sustainable future.</p>
+            <p>Powering a sustainable future</p>
           </div>
         </div>
       </div>
