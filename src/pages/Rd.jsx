@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import PropTypes from "prop-types";
 
-
-import heroImg from "../assets/images/RD1.png";
-import processImg from "../assets/images/RD2.png";
-import standardsImg from "../assets/images/RD3.png";
-import testingImg from "../assets/images/RD4.png";
+import heroImg from "../assets/images/RD3.png";
+import processImg from "../assets/images/RD1.png";
+import standardsImg from "../assets/images/RD4.png";
+import testingImg from "../assets/images/RD8.png";
 import qualityImg from "../assets/images/RD5.png";
 import teamImg from "../assets/images/RD6.png";
 import solutionsImg from "../assets/images/RD7.png";
-import platformImg from "../assets/images/RD8.png";
+import platformImg from "../assets/images/RD2.png";
+
 const fadeUp = {
   hidden: { opacity: 0, y: 45 },
   visible: { opacity: 1, y: 0 },
@@ -77,14 +77,6 @@ const teamList = [
   "Performance-focused development",
 ];
 
-const solutionsList = [
-  "Solar power storage",
-  "Smart energy systems",
-  "EV battery solutions",
-  "IoT and smart device power",
-  "Commercial and industrial applications",
-];
-
 const platformList = [
   "Battery materials research",
   "Cell technology development",
@@ -94,11 +86,11 @@ const platformList = [
 ];
 
 const SectionLabel = ({ children }) => (
-  <div className="mb-6 flex items-center gap-4">
-    <span className="h-px w-10 bg-[#ee4036]" />
-    <p className="text-xs font-black uppercase tracking-[0.35em] text-[#ee4036]">
+  <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-2.5 shadow-[0_14px_35px_rgba(0,0,0,0.18)] backdrop-blur-md">
+    <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036]" />
+    <span className="text-s font-black uppercase tracking-[0.28em] text-white">
       {children}
-    </p>
+    </span>
   </div>
 );
 
@@ -106,65 +98,50 @@ SectionLabel.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const ListItem = ({ children }) => (
-  <div className="flex min-h-[88px] items-center gap-5 rounded-[22px] border border-neutral-200 bg-white px-6 py-5 shadow-[0_18px_45px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#ee4036]/35 hover:shadow-[0_22px_55px_rgba(238,64,54,0.10)]">
-    <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#ee4036] shadow-[0_0_14px_rgba(238,64,54,0.75)]" />
-
-    <span className="text-[16px] font-semibold leading-6 text-neutral-800">
+const RdLabel = ({ children }) => (
+  <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-2.5 backdrop-blur-md">
+    <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036]" />
+    <span className="text-s font-black uppercase tracking-[0.28em] text-white">
       {children}
     </span>
   </div>
 );
-const ImageCard = ({ src, caption }) => (
-  <div className="group relative h-full min-h-[520px] overflow-hidden rounded-[28px] border border-neutral-200 bg-white shadow-[0_25px_70px_rgba(0,0,0,0.10)]">
-    <img
-      src={src}
-      alt={caption}
-      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-    />
 
-    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent" />
+RdLabel.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
-    <div className="absolute bottom-6 left-6 rounded-full border border-white/20 bg-white/15 px-5 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white backdrop-blur-xl">
-      {caption}
-    </div>
+const ListItem = ({ children }) => (
+  <div className="group flex min-h-[88px] items-center gap-5 rounded-[24px] border border-neutral-200 bg-white px-6 py-5 shadow-[0_18px_45px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:border-[#ee4036]/55 hover:shadow-[0_26px_65px_rgba(238,64,54,0.18)]">
+    <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#ee4036] shadow-[0_0_14px_rgba(238,64,54,0.75)] transition-all duration-300 group-hover:scale-125 group-hover:shadow-[0_0_20px_rgba(238,64,54,0.95)]" />
 
-    <div className="absolute bottom-0 right-0 h-1.5 w-28 bg-[#ee4036]" />
+    <span className="text-[16px] font-semibold leading-6 text-neutral-800 transition-colors duration-300 group-hover:text-neutral-950">
+      {children}
+    </span>
   </div>
 );
 
-ImageCard.propTypes = {
-  src: PropTypes.string.isRequired,
-  caption: PropTypes.string.isRequired,
+ListItem.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default function RDPage() {
   return (
     <main className="overflow-hidden bg-white text-neutral-950">
       {/* 1. OUR VISION */}
-      {/* 1. OUR VISION */}
       <section className="relative min-h-screen overflow-hidden bg-black">
         <img
           src={heroImg}
           alt="Smart Energy Innovation"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover "
         />
 
-        {/* Dark cinematic overlay */}
         <div className="absolute inset-0 bg-black/45" />
-
-        {/* Premium gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/58 to-black/20" />
-
-        {/* Soft grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:72px_72px]" />
-
-        {/* Red glow */}
         <div className="absolute left-[-160px] top-24 h-[460px] w-[460px] rounded-full bg-[#ee4036]/15 blur-[150px]" />
-
         <div className="absolute right-[-180px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-[#ee4036]/10 blur-[150px]" />
 
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 py-20 lg:px-8">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 py-14 lg:px-8">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -173,14 +150,13 @@ export default function RDPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            {/* Vision Label */}
-            <SectionLabel>
-              <span className="text-[15px] font-black uppercase tracking-[0.42em] text-[#ee4036]">
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-2.5 shadow-[0_14px_35px_rgba(0,0,0,0.18)] backdrop-blur-md">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036]" />
+              <span className="text-s font-black uppercase tracking-[0.28em] text-white">
                 Our Vision
               </span>
-            </SectionLabel>
+            </div>
 
-            {/* Main Heading */}
             <h1 className="text-[46px] font-black uppercase leading-[0.94] tracking-[-0.045em] text-white md:text-[74px] lg:text-[92px]">
               Powering The Future
               <br />
@@ -194,8 +170,7 @@ export default function RDPage() {
               Innovation
             </h1>
 
-            {/* Description Box */}
-            <div className="mt-12 max-w-4xl rounded-[32px] border border-white/15 bg-white/10 p-8 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.28)] md:p-10">
+            <div className="mt-12 max-w-4xl rounded-[32px] border border-white/15 bg-white/10 p-8 shadow-[0_8px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl md:p-10">
               <p className="text-[18px] leading-[2] text-white md:text-[21px]">
                 To become a leading energy technology company with strong
                 technical capability, reliable lithium battery solutions, and
@@ -213,14 +188,7 @@ export default function RDPage() {
               </p>
             </div>
 
-            {/* CTA */}
-            <button className="group mt-12 inline-flex items-center gap-5 bg-[#ee4036] px-8 py-5 text-xs font-black uppercase tracking-[0.28em] text-white transition duration-300 hover:bg-[#d7372d] hover:shadow-[0_0_35px_rgba(238,64,54,0.45)]">
-              Explore Our Technology
-              <ArrowRight
-                size={16}
-                className="transition group-hover:translate-x-1"
-              />
-            </button>
+            
           </motion.div>
         </div>
       </section>
@@ -233,28 +201,41 @@ export default function RDPage() {
         list={platformList}
         image={platformImg}
         caption="R&D Platform — Advanced Battery Systems"
-        reverse
+        align="left"
       />
 
       {/* 3. SOLUTIONS */}
       <SplitSection
         label="Solutions"
-        title="Renewable Solutions For Multiple Applications"
-        text="Our renewable energy solutions support a wide range of applications, including solar energy storage, smart power systems, electric vehicles, IoT devices, commercial projects, and large-scale energy systems. TOUGH HAULERS provides flexible and scalable technology for the new energy era."
-        list={solutionsList}
+        title="Application-Oriented Energy Solutions"
+        text="TOUGH HAULERS develops energy solutions based on real application needs, combining solar power systems, battery energy storage, system integration, and engineering support to deliver reliable project-ready solutions."
         image={solutionsImg}
-        caption="Renewable Solutions — Solar & Smart Systems"
+        caption="Solar, energy storage, and smart energy infrastructure"
+        list={[
+          "Solar power system solutions",
+          "Battery energy storage system solutions",
+          "Commercial and industrial energy applications",
+          "Integrated EPC and engineering support",
+          "Scalable solutions for different project sizes",
+        ]}
+        align="left"
+        imagePosition="center"
       />
 
-      {/* 4. OUR PEOPLE */}
-      <section className="relative overflow-hidden px-6 py-20">
-        <img
+      {/* 4. R&D TEAM */}
+      <section className="relative overflow-hidden px-6 py-28">
+        <motion.img
           src={teamImg}
           alt="Expert Engineering and Research Team"
+          initial={{ scale: 1 }}
+          whileInView={{ scale: 1.035 }}
+          viewport={{ once: true }}
+          transition={{ duration: 12, ease: "easeOut" }}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-white/35" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-white/20" />
+
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/15" />
 
         <motion.div
           variants={fadeUp}
@@ -264,24 +245,24 @@ export default function RDPage() {
           transition={{ duration: 0.8 }}
           className="relative z-10 mx-auto max-w-7xl"
         >
-          <div className="max-w-[460px] border border-neutral-200 bg-white/90 p-10 shadow-2xl shadow-black/10 backdrop-blur-md ">
-            <SectionLabel>Our People</SectionLabel>
+          <div className="max-w-[520px] rounded-[34px] border border-neutral-200 bg-white/92 p-8 shadow-[0_25px_80px_rgba(0,0,0,0.12)] backdrop-blur-md md:p-10">
+            <RdLabel>R&D Team</RdLabel>
 
-            <h2 className="text-[40px] font-black uppercase leading-[1] tracking-[-0.03em] md:text-[56px]">
+            <h2 className="text-[38px] font-black uppercase leading-[1] tracking-[-0.03em] text-neutral-950 md:text-[52px]">
               Expert
               <br />
               Engineering
               <br />& Research Team
             </h2>
 
-            <p className="mt-8 text-sm leading-8 text-neutral-600">
+            <p className="mt-7 text-[15px] leading-8 text-neutral-600">
               Our engineering-driven approach is supported by experienced
               researchers, technical specialists, and project teams who
               understand real energy requirements. We focus on performance,
               safety, reliability, and practical project execution.
             </p>
 
-            <div className="mt-8 space-y-3">
+            <div className="mt-9 space-y-4">
               {teamList.map((item) => (
                 <ListItem key={item}>{item}</ListItem>
               ))}
@@ -290,37 +271,42 @@ export default function RDPage() {
         </motion.div>
       </section>
 
-      {/* 5. QUALITY */}
+      {/* 5. QUALITY MANAGEMENT */}
       <SplitSection
-        label="Quality"
+        label="Quality Management"
         title="Strict Quality Management"
         text="Quality is a core part of every project. TOUGH HAULERS focuses on customer needs, high standards, stable performance, and continuous improvement. Every stage is managed with serious quality control to support long-term reliability."
         list={qualityList}
         image={qualityImg}
         caption="Quality Management — Standards & Control"
-        reverse
+        align="left"
       />
 
-      {/* 6. TESTING */}
+      {/* 6. TESTING CAPABILITY */}
       <SplitSection
-        label="Testing"
+        label="Testing Capability"
         title="Advanced Testing Capability"
         text="Our testing process covers battery materials, cells, modules, complete systems, safety checks, and performance verification. This ensures every solution is tested for safety, reliability, and real project performance before delivery."
         list={testingList}
         image={testingImg}
         caption="Testing Capability — Laboratory Verification"
+        align="left"
       />
 
-      {/* 7. STANDARDS */}
+      {/* 7. QUALITY ASSURANCE */}
       <section className="relative min-h-[720px] overflow-hidden px-6 py-28">
-        <img
+        <motion.img
           src={standardsImg}
           alt="Certified Quality Standards"
+          initial={{ scale: 1 }}
+          whileInView={{ scale: 1.035 }}
+          viewport={{ once: true }}
+          transition={{ duration: 12, ease: "easeOut" }}
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-white/45" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/65 to-white/35" />
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/15" />
 
         <motion.div
           variants={fadeUp}
@@ -330,10 +316,10 @@ export default function RDPage() {
           transition={{ duration: 0.8 }}
           className="relative z-10 mx-auto max-w-7xl"
         >
-          <div className="mx-auto max-w-[430px] border border-neutral-200 bg-white/95 p-10 shadow-2xl shadow-black/10 backdrop-blur-md md:p-12">
-            <SectionLabel>Standards</SectionLabel>
+          <div className="max-w-[520px] rounded-[34px] border border-neutral-200 bg-white/92 p-8 shadow-[0_25px_80px_rgba(0,0,0,0.12)] backdrop-blur-md md:p-10">
+            <RdLabel>Quality Assurance</RdLabel>
 
-            <h2 className="text-[40px] font-black uppercase leading-[0.98] tracking-[-0.03em] md:text-[56px]">
+            <h2 className="text-[38px] font-black uppercase leading-[0.98] tracking-[-0.03em] text-neutral-950 md:text-[52px]">
               Certified
               <br />
               Quality
@@ -342,7 +328,7 @@ export default function RDPage() {
               Standards
             </h2>
 
-            <p className="mt-8 text-sm leading-8 text-neutral-600">
+            <p className="mt-7 text-[15px] leading-8 text-neutral-600">
               Our solutions are aligned with recognized international quality
               and safety requirements, giving clients stronger confidence when
               working across global markets.
@@ -352,9 +338,9 @@ export default function RDPage() {
               {standards.map(([title, desc]) => (
                 <div
                   key={title}
-                  className="border border-neutral-200 bg-white px-4 py-5 text-center shadow-sm transition hover:border-red-600/50"
+                  className="group rounded-[20px] border border-neutral-200 bg-white px-4 py-5 text-center shadow-[0_14px_35px_rgba(0,0,0,0.055)] transition-all duration-300 hover:-translate-y-1 hover:border-[#ee4036]/55 hover:shadow-[0_22px_45px_rgba(238,64,54,0.16)]"
                 >
-                  <h4 className="text-xl font-black uppercase tracking-widest text-red-600">
+                  <h4 className="text-xl font-black uppercase tracking-widest text-[#ee4036]">
                     {title}
                   </h4>
                   <p className="mt-2 text-[10px] leading-4 text-neutral-500">
@@ -378,7 +364,9 @@ export default function RDPage() {
           className="mx-auto max-w-6xl text-center"
         >
           <div className="flex justify-center">
-            <SectionLabel>Process</SectionLabel>
+            <p className="mb-5 text-xl font-black uppercase tracking-[0.28em] text-[#ee4036]">
+              PROCESS
+            </p>
           </div>
 
           <h2 className="text-[38px] font-black uppercase tracking-[-0.03em] md:text-[56px]">
@@ -400,7 +388,6 @@ export default function RDPage() {
             />
             <div className="absolute inset-0 bg-black/35" />
             <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-              <SectionLabel>End-To-End</SectionLabel>
               <h3 className="max-w-4xl text-[28px] font-black uppercase leading-tight tracking-[0.02em] text-white md:text-[46px]">
                 From Inspection To After-Sales — We Manage Every Step
               </h3>
@@ -443,7 +430,11 @@ export default function RDPage() {
           className="relative z-10 mx-auto max-w-4xl"
         >
           <div className="flex justify-center">
-            <SectionLabel>Get Started</SectionLabel>
+            
+              <p className="mb-5 text-xl font-black uppercase tracking-[0.28em] text-[#ee4036]">
+                GET STARTED
+              </p>
+            
           </div>
 
           <h2 className="text-[42px] font-black uppercase leading-tight tracking-[-0.03em] md:text-[68px]">
@@ -465,12 +456,33 @@ export default function RDPage() {
   );
 }
 
-function SplitSection({ label, title, text, list, image, caption, reverse }) {
+function SplitSection({
+  label,
+  title,
+  text,
+  list,
+  image,
+  caption,
+  align = "left",
+  imagePosition = "center",
+}) {
+  const cardPosition =
+    align === "right" ? "lg:ml-auto" : align === "center" ? "lg:mx-auto" : "";
+
   return (
-    <section className="relative overflow-hidden border-t border-neutral-200 bg-[#f8f8f8] px-6 py-28">
-      {/* Background Red Glows */}
-      <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-[#ee4036]/10 blur-[110px]" />
-      <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-[#ee4036]/10 blur-[120px]" />
+    <section className="relative overflow-hidden  px-6 py-28">
+      <motion.img
+        src={image}
+        alt={caption}
+        initial={{ scale: 1 }}
+        whileInView={{ scale: 1.035 }}
+        viewport={{ once: true }}
+        transition={{ duration: 12, ease: "easeOut" }}
+        className={`absolute inset-0 h-full w-full object-cover object-${imagePosition}`}
+      />
+
+      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/15" />
 
       <motion.div
         variants={fadeUp}
@@ -478,20 +490,12 @@ function SplitSection({ label, title, text, list, image, caption, reverse }) {
         whileInView="visible"
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 mx-auto grid max-w-7xl items-stretch gap-10 lg:grid-cols-2"
+        className="relative z-10 mx-auto flex max-w-7xl items-center"
       >
-        {/* IMAGE */}
-        <div className={reverse ? "lg:order-1" : "lg:order-2"}>
-          <ImageCard src={image} caption={caption} />
-        </div>
-
-        {/* CONTENT CARD */}
         <div
-          className={`rounded-[34px] border border-neutral-200 bg-white p-8 shadow-[0_25px_80px_rgba(0,0,0,0.07)] md:p-10 ${
-            reverse ? "lg:order-2" : "lg:order-1"
-          }`}
+          className={`w-full max-w-[520px] rounded-[34px] border border-neutral-200 bg-white/92 p-8 shadow-[0_25px_80px_rgba(0,0,0,0.12)] backdrop-blur-md md:p-10 ${cardPosition}`}
         >
-          <SectionLabel>{label}</SectionLabel>
+          <RdLabel>{label}</RdLabel>
 
           <h2 className="max-w-xl text-[38px] font-black uppercase leading-[1] tracking-[-0.03em] text-neutral-950 md:text-[52px]">
             {title}
@@ -519,9 +523,6 @@ SplitSection.propTypes = {
   list: PropTypes.arrayOf(PropTypes.string).isRequired,
   image: PropTypes.string.isRequired,
   caption: PropTypes.string.isRequired,
-  reverse: PropTypes.bool,
-};
-
-SplitSection.defaultProps = {
-  reverse: false,
+  align: PropTypes.oneOf(["left", "right", "center"]),
+  imagePosition: PropTypes.string,
 };

@@ -43,7 +43,7 @@ const PartnersPreview = () => {
         >
           <div className="max-w-3xl">
             <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
-              Our Partners & Main Supply Chain
+              Main Supply Chain
             </p>
 
             <h2 className="text-[40px] font-black leading-[1.05] tracking-[-0.04em] sm:text-5xl">
@@ -56,7 +56,7 @@ const PartnersPreview = () => {
             to="/partners"
             className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-neutral-950 px-7 py-4 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-red-600"
           >
-            View All Partners
+            View All
             <ArrowUpRight size={16} />
           </Link>
         </motion.div>

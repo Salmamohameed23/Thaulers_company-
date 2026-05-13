@@ -64,7 +64,7 @@ const Partners = () => {
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <p className="mb-4 text-s font-black uppercase tracking-[0.3em] text-[#ee4036]">
-                Our Partners & Main Supply Chain
+                Main Supply Chain
               </p>
 
               <h1 className="text-5xl font-black leading-tight">
@@ -73,7 +73,7 @@ const Partners = () => {
               </h1>
 
               <p className="mt-6 text-lg leading-8 text-neutral-850">
-                Our partner ecosystem supports solar power systems, battery
+                Our main supply chain ecosystem supports solar power systems, battery
                 energy storage, EPC engineering, and global project execution
                 with reliable supply chain integration.
               </p>

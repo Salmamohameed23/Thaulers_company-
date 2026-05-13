@@ -151,10 +151,8 @@ const FactoryPage = () => {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           {/* Heading */}
           <div className="mb-14 flex flex-col items-center text-center">
-            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-red-600/15 bg-red-600/5 px-4 py-2">
-              <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
-
-              <p className="text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
+            <div className="mb-6 flex flex-col items-center">
+              <p className="mb-5 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
                 Factory Services
               </p>
             </div>

@@ -31,7 +31,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_48%,rgba(220,38,38,0.18),transparent_34%)]" />
 
       {/* CONTENT */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-94px)] max-w-[1540px] items-center px-6 py-10 sm:px-8 md:px-10 lg:px-12 xl:px-14">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-94px)] max-w-[1540px] items-center px-20 py-13 sm:px-8 md:px-10 lg:px-12 xl:px-14">
         <motion.div
           initial={{ opacity: 0, y: 34 }}
           animate={{ opacity: 1, y: 0 }}

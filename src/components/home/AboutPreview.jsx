@@ -23,7 +23,7 @@ const points = [
   },
   {
     icon: Factory,
-    title: "Engineering Support in Egypt",
+    title: "Engineering Support From Egypt",
   },
   {
     icon: ArrowUpRight,
@@ -37,7 +37,6 @@ const AboutPreview = () => {
       <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
       <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.07),transparent_30%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(rgba(0,0,0,0.025)_1px,transparent_1px)] [background-size:72px_72px] opacity-50" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-7 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <motion.div

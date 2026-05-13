@@ -25,17 +25,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="border-white/10 pb-14 pt-3 lg:border-r lg:pr-10">
-            <Link to="/" className="inline-flex h-[16px] items-center">
-              <img
-                src={logo}
-                alt="Tough Haulers"
-                className="w-[185px] object-contain"
-              />
-            </Link>
+            <div className="flex h-[16px] items-center  -ml-6">
+              <Link to="/" className="inline-flex items-end pt-3">
+                <img
+                  src={logo}
+                  alt="Tough Haulers"
+                  className="w-[180px] object-contain"
+                />
+              </Link>
+            </div>
 
-            <div className=" h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
+            <div className="mt-10 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
 
-            <h3 className="mt-3 max-w-[280px] text-[24px] font-extrabold leading-[1.22] tracking-[-0.035em] text-white">
+            <h3 className="mt-10 max-w-[280px] text-[24px] font-extrabold leading-[1.22] tracking-[-0.035em] text-white">
               Engineering Power.
               <br />
               Delivering Reliability.

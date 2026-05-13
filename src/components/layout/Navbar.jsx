@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Menu, X, ChevronDown, Download } from "lucide-react";
 import logo from "../../assets/logos/logo2.png";
 
@@ -7,7 +8,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [setRdOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,34 +26,26 @@ const Navbar = () => {
   const dropdownItemClass =
     "flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold text-neutral-800 transition-all duration-300 hover:bg-red-50 hover:text-red-600";
 
+  const dropdownButtonClass =
+    "flex items-center gap-1 text-[16.5px] xl:text-[17.5px] font-bold tracking-[0.01em] text-neutral-900 transition-all duration-300 hover:text-red-600";
+
   const solutionsLinks = [
     { label: "Smart Storage", path: "/smart-storage" },
     { label: "Factory Solutions", path: "/factory" },
     { label: "Gigawatt Projects", path: "/gigawatt-projects" },
   ];
 
-  // const rdLinks = [
-  //   { label: "R&D Capability", path: "/rd-capability" },
-
-  //   { label: "Quality Management", path: "/quality-management" },
-  // ];
-
   const aboutLinks = [
     { label: "Company Profile", path: "/company-profile.pdf", download: true },
-    { label: "Contact Us", path: "/contact" },
     { label: "Why Us", path: "/whyus" },
-    // { label: "Let's Build", path: "/lets-build" },
+    { label: "Contact Us", path: "/contact" },
   ];
 
   const closeAll = () => {
     setIsOpen(false);
     setSolutionsOpen(false);
     setAboutOpen(false);
-    setRdOpen(false);
   };
-
-  const dropdownButtonClass =
-    "flex items-center gap-1 text-[16.5px] xl:text-[17.5px] font-bold tracking-[0.01em] text-neutral-900 transition-all duration-300 hover:text-red-600";
 
   return (
     <header
@@ -64,9 +56,9 @@ const Navbar = () => {
       }`}
     >
       <div
-        className={`mx-auto flex w-full max-w-[1540px] items-center justify-between transition-all duration-500 ease-out ${
+        className={`mx-auto flex w-full max-w-[1540px] items-center justify-between px-5 transition-all duration-500 ease-out sm:px-7 md:px-8 lg:px-10 xl:px-12 ${
           scrolled ? "h-[74px]" : "h-[94px]"
-        } px-5 sm:px-7 md:px-8 lg:px-10 xl:px-12`}
+        }`}
       >
         <Link
           to="/"
@@ -124,7 +116,7 @@ const Navbar = () => {
                       >
                         {link.label}
                       </Link>
-                    ),
+                    )
                   )}
                 </div>
               </div>
@@ -162,6 +154,7 @@ const Navbar = () => {
               </div>
             )}
           </div>
+
           <NavLink to="/R&D" className={navItemClass}>
             R&D
           </NavLink>
@@ -169,22 +162,36 @@ const Navbar = () => {
           <NavLink to="/partners" className={navItemClass}>
             Partners
           </NavLink>
-
-          {/* <NavLink to="/projects" className={navItemClass}>
-            Projects
-          </NavLink> */}
         </nav>
 
-        <div className="hidden lg:flex">
+        <motion.div
+          initial={{ opacity: 0, y: -4 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          className="group hidden items-center gap-4 lg:flex"
+        >
+          <motion.span
+            animate={{ opacity: [0.7, 1, 0.7] }}
+            transition={{
+              duration: 3.2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="text-[16px] font-medium tracking-wide text-neutral-700 transition-all duration-300 group-hover:-translate-x-1 group-hover:text-neutral-950"
+          >
+            Start your project
+          </motion.span>
+
           <Link
             to="/lets-build"
-            className={`rounded-full bg-neutral-950 font-bold text-white transition-all duration-500 hover:bg-red-600 ${
+            className={`relative overflow-hidden rounded-full bg-neutral-950 font-bold text-white transition-all duration-500 hover:-translate-y-0.5 hover:bg-red-600 hover:shadow-[0_14px_35px_rgba(220,38,38,0.28)] ${
               scrolled ? "px-6 py-3 text-[14px]" : "px-8 py-4 text-[15.5px]"
             }`}
           >
-            Let’s Build
+            <span className="relative z-10">Let’s Build</span>
+            <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>
-        </div>
+        </motion.div>
 
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -226,7 +233,7 @@ const Navbar = () => {
                 >
                   {link.label}
                 </NavLink>
-              ),
+              )
             )}
 
             <p className="mt-2 text-xs font-black uppercase tracking-[0.24em] text-red-600">
@@ -244,7 +251,7 @@ const Navbar = () => {
               </NavLink>
             ))}
 
-           <NavLink to="/R&D" onClick={closeAll} className={navItemClass}>
+            <NavLink to="/R&D" onClick={closeAll} className={navItemClass}>
               R&D
             </NavLink>
 
@@ -252,14 +259,14 @@ const Navbar = () => {
               Partners
             </NavLink>
 
-            <NavLink to="/projects" onClick={closeAll} className={navItemClass}>
-              Projects
-            </NavLink>
+            <span className="mt-4 text-[15px] font-medium tracking-wide text-neutral-700">
+              Start your project
+            </span>
 
             <Link
               to="/lets-build"
               onClick={closeAll}
-              className="mt-3 rounded-full bg-red-600 px-6 py-4 text-center text-[15px] font-bold text-white"
+              className="rounded-full bg-red-600 px-6 py-4 text-center text-[15px] font-bold text-white"
             >
               Let’s Build
             </Link>

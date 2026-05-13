@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   BatteryCharging,
   Factory,
   ShieldCheck,
@@ -29,7 +28,7 @@ const capabilities = [
 
 const positioning = [
   "China-based supply chain capability",
-  "Engineering support in Egypt",
+  "Engineering support from Egypt",
   "Global project execution mindset",
   "From kW-scale to Gigawatt-scale projects",
 ];
@@ -169,16 +168,16 @@ const About = () => {
               </h2>
             </div>
 
-            <Link
+            {/* <Link
               to="/solutions"
               className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-neutral-950 px-7 py-4 text-sm font-black text-white transition hover:bg-[#ee4036]"
             >
               View Solutions
               <ArrowUpRight size={16} />
-            </Link>
+            </Link> */}
           </div>
 
-          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid max-w-5xl mx-auto gap-7 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
             {capabilities.map((item, index) => {
               const Icon = item.icon;
 
