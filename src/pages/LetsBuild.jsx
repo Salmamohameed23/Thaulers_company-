@@ -2,6 +2,8 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Send } from "lucide-react";
 
+
+import bgImg from "../assets/images/build_bg.png";
 // PROJECT IMAGES
 import villaImg from "../assets/images/build_1.png";
 import hotelImg from "../assets/images/build_2.png";
@@ -241,14 +243,22 @@ const LetsBuild = () => {
   };
 
   return (
-    <main className="min-h-screen bg-neutral-100 text-neutral-950">
+    <main
+      className="relative min-h-screen text-neutral-950"
+      style={{
+        backgroundImage: `url(${bgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <section className="relative overflow-hidden py-5">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
-            className="overflow-visible rounded-[34px] bg-white shadow-[0_30px_90px_rgba(0,0,0,0.12)]"
+            className="overflow-visible rounded-[34px] bg-white/85 backdrop-blur-xl shadow-[0_30px_90px_rgba(0,0,0,0.12)]"
           >
             <div className="bg-neutral-950 px-6 py-7 text-white sm:px-8">
               <div className="grid gap-7 md:grid-cols-[1fr_0.85fr] md:items-center">
