@@ -70,9 +70,53 @@ const timelines = [
 
 const steps = ["Project Type", "Solution", "Scale", "Contact", "Review"];
 
+const locations = [
+  {
+    name: "Riyadh, Saudi Arabia",
+    temps: [15, 18, 22, 27, 33, 36, 38, 38, 35, 29, 23, 17],
+  },
+  {
+    name: "Dubai, UAE",
+    temps: [19, 21, 24, 28, 33, 36, 38, 38, 35, 31, 26, 21],
+  },
+  {
+    name: "Cairo, Egypt",
+    temps: [14, 16, 19, 23, 27, 30, 31, 31, 29, 25, 20, 16],
+  },
+  {
+    name: "Yiwu, China",
+    temps: [5, 7, 11, 17, 22, 25, 29, 29, 24, 19, 13, 7],
+  },
+  {
+    name: "Shenzhen, China",
+    temps: [15, 16, 19, 23, 26, 28, 30, 30, 28, 25, 21, 17],
+  },
+  {
+    name: "São Paulo, Brazil",
+    temps: [23, 23, 22, 20, 17, 16, 16, 18, 19, 20, 21, 22],
+  },
+];
+
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
 const LetsBuild = () => {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [locationQuery, setLocationQuery] = useState("");
+  const [locationOpen, setLocationOpen] = useState(false);
 
   const [form, setForm] = useState({
     projectType: "",
@@ -104,6 +148,14 @@ const LetsBuild = () => {
     });
   };
 
+  const filteredLocations = locations.filter((item) =>
+    item.name.toLowerCase().includes(locationQuery.toLowerCase()),
+  );
+
+  const selectedLocation = locations.find(
+    (item) => item.name === form.location,
+  );
+
   const canContinue = useMemo(() => {
     if (step === 1) return Boolean(form.projectType);
     if (step === 2) return form.solutions.length > 0;
@@ -127,6 +179,8 @@ const LetsBuild = () => {
   const resetWizard = () => {
     setStep(1);
     setSubmitted(false);
+    setLocationQuery("");
+    setLocationOpen(false);
     setForm({
       projectType: "",
       solutions: [],
@@ -194,7 +248,7 @@ const LetsBuild = () => {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
-            className="overflow-hidden rounded-[34px] bg-white shadow-[0_30px_90px_rgba(0,0,0,0.12)]"
+            className="overflow-visible rounded-[34px] bg-white shadow-[0_30px_90px_rgba(0,0,0,0.12)]"
           >
             <div className="bg-neutral-950 px-6 py-7 text-white sm:px-8">
               <div className="grid gap-7 md:grid-cols-[1fr_0.85fr] md:items-center">
@@ -202,15 +256,18 @@ const LetsBuild = () => {
                   <h1 className="text-[28px] font-black leading-tight tracking-[-0.03em] sm:text-[35px]">
                     Let&apos;s Build Your Solar Solution
                   </h1>
+
                   <p className="mt-3 text-sm font-medium text-white/65">
                     Tell us about your project — takes less than 2 minutes
                   </p>
+
                   <p className="mt-3 text-sm font-medium text-white/65">
                     {submitted
                       ? "Your inquiry has been prepared successfully."
                       : `Step ${step} of 5 — ${steps[step - 1]}`}
                   </p>
                 </div>
+
                 <div>
                   <div className="h-2 overflow-hidden rounded-full bg-white/10">
                     <div
@@ -218,6 +275,7 @@ const LetsBuild = () => {
                       style={{ width: `${progress}%` }}
                     />
                   </div>
+
                   <div className="mt-4 grid grid-cols-5 gap-2">
                     {steps.map((item, index) => (
                       <div
@@ -360,13 +418,82 @@ const LetsBuild = () => {
                           Project location / country
                         </label>
 
-                        <input
-                          type="text"
-                          value={form.location}
-                          onChange={(e) => update("location", e.target.value)}
-                          placeholder="e.g. Riyadh, Saudi Arabia"
-                          className="h-14 w-full rounded-2xl border border-black/10 bg-white px-5 text-[15px] font-medium outline-none transition focus:border-red-600"
-                        />
+                        <div className="">
+                          <input
+                            type="text"
+                            value={locationQuery || form.location}
+                            onFocus={() => setLocationOpen(true)}
+                            onChange={(e) => {
+                              setLocationQuery(e.target.value);
+                              setLocationOpen(true);
+                              update("location", "");
+                            }}
+                            placeholder="Search city or country..."
+                            className="h-14 w-full rounded-2xl border border-black/10 bg-white px-5 text-[15px] font-medium outline-none transition focus:border-red-600"
+                          />
+
+                          {locationOpen && filteredLocations.length > 0 && (
+                            <div className="mt-3 max-h-[240px] overflow-y-auto rounded-2xl border border-black/10 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.10)]">
+                              {filteredLocations.map((item) => (
+                                <button
+                                  key={item.name}
+                                  type="button"
+                                  onClick={() => {
+                                    update("location", item.name);
+                                    setLocationQuery(item.name);
+                                    setLocationOpen(false);
+                                  }}
+                                  className="block w-full px-5 py-4 text-left text-[15px] font-semibold text-neutral-700 transition hover:bg-red-50 hover:text-red-600"
+                                >
+                                  {item.name}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+
+                        {selectedLocation && (
+                          <div className="mt-6 rounded-[28px] border border-black/10 bg-neutral-50 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.06)]">
+                            <div className="mb-5">
+                              <p className="text-sm font-black uppercase tracking-[0.22em] text-red-600">
+                                Monthly Temperature Overview
+                              </p>
+
+                              <p className="mt-2 text-sm font-medium text-neutral-500">
+                                Average monthly temperature for{" "}
+                                {selectedLocation.name}
+                              </p>
+                            </div>
+
+                            <div className="grid grid-cols-6 gap-3 md:grid-cols-12">
+                              {selectedLocation.temps.map((temp, index) => {
+                                const height = Math.max(36, temp * 2.2);
+
+                                return (
+                                  <div
+                                    key={months[index]}
+                                    className="flex flex-col items-center gap-2"
+                                  >
+                                    <div className="flex h-[110px] items-end">
+                                      <div
+                                        className="w-5 rounded-full bg-red-600/80 shadow-[0_8px_20px_rgba(220,38,38,0.22)]"
+                                        style={{ height: `${height}px` }}
+                                      />
+                                    </div>
+
+                                    <p className="text-[11px] font-bold text-neutral-400">
+                                      {months[index]}
+                                    </p>
+
+                                    <p className="text-[12px] font-black text-neutral-900">
+                                      {temp}°
+                                    </p>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </motion.div>
                   )}
@@ -491,6 +618,7 @@ const LetsBuild = () => {
                             <p className="text-sm font-medium text-neutral-500">
                               {key}
                             </p>
+
                             <p className="text-sm font-medium text-neutral-950">
                               {value}
                             </p>

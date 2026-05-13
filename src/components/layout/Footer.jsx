@@ -21,7 +21,7 @@ const Footer = () => {
       <div className="pointer-events-none absolute left-[-220px] bottom-[-250px] h-[620px] w-[620px] rounded-full border border-red-600/10 opacity-40" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.02] via-transparent to-black" />
 
-      <div className="relative z-10 mx-auto max-w-[1320px] px-6 pt-16 lg:px-10">
+      <div className="relative z-0 mx-auto max-w-[1320px] px-6 pt-16 lg:px-10">
         <div className="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="border-white/10 pb-14 pt-3 lg:border-r lg:pr-10">
