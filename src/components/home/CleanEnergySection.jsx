@@ -54,7 +54,7 @@ const CleanEnergySection = () => {
             className="max-w-4xl text-[42px] font-black leading-[1.02] tracking-[-0.055em] sm:text-6xl lg:text-[78px]"
           >
             Clean Energy is
-            <span className="block text-red-500 drop-shadow-[0_0_28px_rgba(239,68,68,0.45)]">
+            <span className="block font-black text-[#ee4036]">
               the Future
             </span>
           </motion.h2>
