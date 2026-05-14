@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Menu, X, ChevronDown, Download } from "lucide-react";
+import { Menu, X, ChevronDown, Download, Globe } from "lucide-react";
+
 import logo from "../../assets/logos/logo2.png";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 35);
@@ -30,21 +35,35 @@ const Navbar = () => {
     "flex items-center gap-1 text-[16.5px] xl:text-[17.5px] font-bold tracking-[0.01em] text-neutral-900 transition-all duration-300 hover:text-red-600";
 
   const solutionsLinks = [
-    { label: "Smart Storage", path: "/smart-storage" },
-    { label: "Factory Solutions", path: "/factory" },
-    { label: "Gigawatt Projects", path: "/gigawatt-projects" },
+    { label: t.nav.smartStorage, path: "/smart-storage" },
+    { label: t.nav.factorySolutions, path: "/factory" },
+    { label: t.nav.gigawattProjects, path: "/gigawatt-projects" },
   ];
 
   const aboutLinks = [
-    { label: "Company Profile", path: "/company-profile.pdf", download: true },
-    { label: "Why Us", path: "/whyus" },
-    { label: "Contact Us", path: "/contact" },
+    {
+      label: t.nav.companyProfile,
+      path: "/company-profile.pdf",
+      download: true,
+    },
+    { label: t.nav.whyUs, path: "/whyus" },
+    { label: t.nav.contactUs, path: "/contact" },
   ];
+
+  const languages = [
+    { code: "en", label: "English", short: "EN" },
+    { code: "ar", label: "العربية", short: "AR" },
+    { code: "zh", label: "中文", short: "中文" },
+  ];
+
+  const currentLanguage =
+    languages.find((item) => item.code === lang) || languages[0];
 
   const closeAll = () => {
     setIsOpen(false);
     setSolutionsOpen(false);
     setAboutOpen(false);
+    setLangOpen(false);
   };
 
   return (
@@ -76,7 +95,7 @@ const Navbar = () => {
 
         <nav className="hidden items-center gap-8 lg:flex xl:gap-11">
           <NavLink to="/" className={navItemClass}>
-            Home
+            {t.nav.home}
           </NavLink>
 
           <div
@@ -85,7 +104,7 @@ const Navbar = () => {
             onMouseLeave={() => setAboutOpen(false)}
           >
             <button className={dropdownButtonClass}>
-              About
+              {t.nav.about}
               <ChevronDown
                 size={17}
                 className={`transition-transform duration-300 ${
@@ -116,7 +135,7 @@ const Navbar = () => {
                       >
                         {link.label}
                       </Link>
-                    )
+                    ),
                   )}
                 </div>
               </div>
@@ -129,7 +148,7 @@ const Navbar = () => {
             onMouseLeave={() => setSolutionsOpen(false)}
           >
             <button className={dropdownButtonClass}>
-              Solutions
+              {t.nav.solutions}
               <ChevronDown
                 size={17}
                 className={`transition-transform duration-300 ${
@@ -156,11 +175,7 @@ const Navbar = () => {
           </div>
 
           <NavLink to="/R&D" className={navItemClass}>
-            R&D
-          </NavLink>
-
-          <NavLink to="/partners" className={navItemClass}>
-            Partners
+            {t.nav.rd}
           </NavLink>
         </nav>
 
@@ -179,7 +194,7 @@ const Navbar = () => {
             }}
             className="text-[16px] font-medium tracking-wide text-neutral-700 transition-all duration-300 group-hover:-translate-x-1 group-hover:text-neutral-950"
           >
-            Start your project
+            {t.nav.startProject}
           </motion.span>
 
           <Link
@@ -188,9 +203,50 @@ const Navbar = () => {
               scrolled ? "px-6 py-3 text-[14px]" : "px-8 py-4 text-[15.5px]"
             }`}
           >
-            <span className="relative z-10">Let’s Build</span>
+            <span className="relative z-10">{t.nav.letsBuild}</span>
             <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>
+
+          <div
+            className="relative"
+            onMouseEnter={() => setLangOpen(true)}
+            onMouseLeave={() => setLangOpen(false)}
+          >
+            <button className="flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2.5 text-[14px] font-bold text-neutral-900 transition-all duration-300 hover:border-red-500 hover:text-red-600">
+              <Globe size={16} />
+              <span>{currentLanguage.short}</span>
+              <ChevronDown
+                size={14}
+                className={`transition-transform duration-300 ${
+                  langOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {langOpen && (
+              <div className="absolute right-0 top-full w-40 pt-3">
+                <div className="rounded-2xl border border-black/5 bg-white p-2 shadow-[0_22px_60px_rgba(0,0,0,0.14)]">
+                  {languages.map((item) => (
+                    <button
+                      key={item.code}
+                      type="button"
+                      onClick={() => {
+                        setLang(item.code);
+                        setLangOpen(false);
+                      }}
+                      className={`block w-full rounded-xl px-4 py-3 text-left text-sm font-bold transition-all duration-300 ${
+                        lang === item.code
+                          ? "bg-red-50 text-red-600"
+                          : "text-neutral-800 hover:bg-red-50 hover:text-red-600"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </motion.div>
 
         <button
@@ -206,11 +262,11 @@ const Navbar = () => {
         <div className="border-t border-black/5 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.08)] lg:hidden">
           <div className="flex flex-col gap-4 px-6 py-6">
             <NavLink to="/" onClick={closeAll} className={navItemClass}>
-              Home
+              {t.nav.home}
             </NavLink>
 
             <p className="mt-2 text-xs font-black uppercase tracking-[0.24em] text-red-600">
-              About
+              {t.nav.about}
             </p>
 
             {aboutLinks.map((link) =>
@@ -233,11 +289,11 @@ const Navbar = () => {
                 >
                   {link.label}
                 </NavLink>
-              )
+              ),
             )}
 
             <p className="mt-2 text-xs font-black uppercase tracking-[0.24em] text-red-600">
-              Solutions
+              {t.nav.solutions}
             </p>
 
             {solutionsLinks.map((link) => (
@@ -252,15 +308,28 @@ const Navbar = () => {
             ))}
 
             <NavLink to="/R&D" onClick={closeAll} className={navItemClass}>
-              R&D
+              {t.nav.rd}
             </NavLink>
 
-            <NavLink to="/partners" onClick={closeAll} className={navItemClass}>
-              Partners
-            </NavLink>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {languages.map((item) => (
+                <button
+                  key={item.code}
+                  type="button"
+                  onClick={() => setLang(item.code)}
+                  className={`rounded-full border px-4 py-2 text-sm font-bold transition ${
+                    lang === item.code
+                      ? "border-red-600 bg-red-50 text-red-600"
+                      : "border-black/10 text-neutral-700"
+                  }`}
+                >
+                  {item.short}
+                </button>
+              ))}
+            </div>
 
             <span className="mt-4 text-[15px] font-medium tracking-wide text-neutral-700">
-              Start your project
+              {t.nav.startProject}
             </span>
 
             <Link
@@ -268,7 +337,7 @@ const Navbar = () => {
               onClick={closeAll}
               className="rounded-full bg-red-600 px-6 py-4 text-center text-[15px] font-bold text-white"
             >
-              Let’s Build
+              {t.nav.letsBuild}
             </Link>
           </div>
         </div>

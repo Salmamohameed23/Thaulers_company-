@@ -54,15 +54,7 @@ const ServicesPreview = () => {
           </div>
 
           {/* Button on right */}
-          <div className="shrink-0 lg:mb-3">
-            <Link
-              to="/smart-storage"
-              className="inline-flex items-center gap-3 rounded-full bg-neutral-950 px-7 py-4 text-sm font-bold text-white transition hover:bg-red-600"
-            >
-              Explore All Solutions
-              <ArrowUpRight size={16} />
-            </Link>
-          </div>
+          
         </div>
 
         {/* Cards */}
@@ -107,7 +99,7 @@ const ServicesPreview = () => {
 
                     <div className="mt-6 flex items-center justify-between">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#ee4036]">
-                        Explore Solution
+                        Explore  all Solution
                       </span>
 
                       <ArrowUpRight className="text-neutral-400 transition group-hover:text-red-600" />

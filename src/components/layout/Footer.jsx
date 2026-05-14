@@ -4,7 +4,7 @@ import logo from "../../assets/logos/white_red_logo.png";
 
 const solutions = [
   { name: "Smart Storage", path: "/smart-storage" },
-  { name: "Factory Solutions", path: "/factory-solutions" },
+  { name: "Factory Solutions", path: "/factory" },
   { name: "Gigawatt Projects", path: "/gigawatt-projects" },
 ];
 
