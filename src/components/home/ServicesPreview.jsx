@@ -58,7 +58,7 @@ const ServicesPreview = () => {
             }`}
           >
             {t.services.title1}
-            <span className="block">{t.services.title2}</span>
+            <span className="block text-[#ee4036]">{t.services.title2}</span>
           </h2>
         </div>
 

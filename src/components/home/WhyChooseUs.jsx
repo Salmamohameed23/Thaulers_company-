@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
             }`}
           >
             {t.whyChoose.title1}
-            <span className="block">{t.whyChoose.title2}</span>
+            <span className="block text-[#ee4036]">{t.whyChoose.title2}</span>
           </h2>
         </motion.div>
 

@@ -38,8 +38,8 @@ export const translations = {
     },
     about: {
       badge: "About Company",
-      title:
-        "Integrated solar and energy storage solutions, from design to full-scale execution.",
+      title: "Integrated solar and energy storage solutions,",
+      highlight: " from design to full project execution.",
       p1: "TOUGH HAULERS is a global provider of advanced solar power and battery energy storage solutions, delivering fully integrated energy projects across international markets.",
       p2: "With operations based in China and engineering support from Egypt, the company combines efficient global sourcing with strong technical expertise to deliver reliable, scalable, and high-performance energy systems.",
 
@@ -130,7 +130,8 @@ export const translations = {
       legal: "Legal",
 
       email: "sales@toughhaulers.cn.com",
-      location1:"Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
+      location1:
+        "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
       copyright: "© 2026 Tough Haulers Trade Limited. All rights reserved.",
       slogan: "Powering a sustainable future",
@@ -184,8 +185,8 @@ export const translations = {
     },
     about: {
       badge: "عن الشركة",
-      title:
-        "حلول متكاملة في الطاقة الشمسية وتخزين الطاقة، من التصميم وحتى التنفيذ الكامل للمشاريع.",
+      title: "حلول متكاملة في الطاقة الشمسية وتخزين الطاقة، ",
+      highlight: "من التصميم إلى التنفيذ الكامل للمشاريع.",
       p1: "تُعد TOUGH HAULERS شركة عالمية متخصصة في تقديم حلول متقدمة للطاقة الشمسية وأنظمة تخزين الطاقة بالبطاريات، مع تنفيذ مشاريع متكاملة في أسواق دولية متعددة.",
       p2: "بفضل تواجدها التشغيلي في الصين ودعمها الهندسي من مصر، تجمع الشركة بين كفاءة سلاسل التوريد العالمية والخبرة الفنية المتقدمة لتقديم أنظمة طاقة موثوقة وقابلة للتوسع وعالية الأداء.",
 
@@ -268,7 +269,7 @@ export const translations = {
     },
     footer: {
       tagline1: "هندسة الطاقة.",
-      tagline2: "وثقة في التنفيذ.",
+      tagline2: "ثقة في التنفيذ.",
       desc: "حلول متكاملةمع خدمات هندسية متخصصة تشمل التوريد , التصميم , التنفيذ والتشغيل بدعم من السلاسل توريد قوية من الصين.",
 
       solutions: "الحلول",
@@ -276,9 +277,10 @@ export const translations = {
       legal: "القانوني",
 
       email: "sales@toughhaulers.cn.com",
-      location1: "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
-      
-      copyright: "© 2026 جميع الحقوق محفوظة لشركة Tough Haulers Trade Limited.",
+      location1:
+        "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
+
+      copyright: "© 2026 جميع الحقوق محفوظة لشركة Tough Haulers Trade Limited",
       slogan: "نقود مستقبل الطاقة المستدامة",
 
       links: {
@@ -330,7 +332,8 @@ export const translations = {
     },
     about: {
       badge: "关于公司",
-      title: "提供从设计到全面实施的一体化太阳能与储能解决方案。",
+      title: "提供从设计到全面实施的",
+      highlight: "一体化太阳能与储能解决方案。",
       p1: "TOUGH HAULERS 是一家全球领先的能源解决方案提供商，专注于太阳能系统与电池储能系统，为国际市场提供完整的一体化能源项目。",
       p2: "公司以中国为运营核心，并依托埃及的工程支持，将高效的全球供应链与专业技术能力相结合，打造稳定、可扩展且高性能的能源系统。",
 

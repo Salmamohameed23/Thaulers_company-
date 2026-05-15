@@ -48,8 +48,8 @@ const Footer = () => {
                 <img
                   src={logo}
                   alt="Tough Haulers"
-                  className={`mt-[21px] -translate-x-[33px] w-[210px] object-contain ${
-                    isAr ? "translate-x-[55px]" : "-translate-x-[10px]"
+                  className={`mt-[16px] -translate-x-[29px] w-[300px] object-contain ${
+                    isAr ? "translate-x-[35px]" : "-translate-x-[10px]"
                   }`}
                 />
               </Link>
@@ -67,7 +67,7 @@ const Footer = () => {
               {t.footer.tagline2}
             </h3>
 
-            <p className="mt-4 max-w-[280px] text-[14px] leading-7 text-neutral-400">
+            <p className="mt-2 max-w-[280px] text-[14px] leading-7 text-neutral-400">
               {t.footer.desc}
             </p>
           </div>
@@ -193,7 +193,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/30 py-4">
+        <div className="border-t border-white/30  py-8">
           <div
             className={`flex flex-col items-center justify-center gap-4 text-center text-[15px] text-neutral-400 tracking-wide md:flex-row ${
               isAr ? "md:flex-row-reverse" : ""

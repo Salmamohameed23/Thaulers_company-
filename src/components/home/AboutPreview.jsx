@@ -44,7 +44,7 @@ const AboutPreview = () => {
             isAr ? "text-right lg:[direction:rtl]" : ""
           }`}
         >
-          <p className="mb-5 text-[13px] font-black uppercase tracking-[0.36em] text-[#ee4036]">
+          <p className="mb-5 text-s font-black uppercase tracking-[0.36em] text-[#ee4036]">
             {t.about.badge}
           </p>
 
@@ -56,6 +56,9 @@ const AboutPreview = () => {
             }`}
           >
             {t.about.title}
+            <span className="block text-[#ee4036]">
+              {t.about.highlight}
+            </span>
           </h2>
 
           <div className="mt-8 space-y-5 text-[15px] font-medium leading-8 text-neutral-800">
