@@ -25,11 +25,15 @@ const Hero = () => {
       />
 
       {/* OVERLAYS */}
-      <div className="absolute inset-0 bg-black/45" />
+      {/* <div className="absolute inset-0 bg-black/45" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/72 via-black/50 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/10" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_48%,rgba(220, 38, 38, 0.18),transparent_50%)]" />
-
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_48%,rgba(220, 38, 38, 0.18),transparent_50%)]" /> */}
+      {/* OVERLAYS */}
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/68 via-black/20 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/5" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_48%,rgba(220,38,38,0.12),transparent_48%)]" />
       {/* CONTENT */}
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-94px)] max-w-[1540px] items-center px-6 py-20 sm:px-8 md:px-10 lg:px-12 xl:px-14">
         <motion.div
@@ -50,7 +54,13 @@ const Hero = () => {
           </div>
 
           {/* TITLE */}
-          <h1 className="max-w-6xl text-[44px] font-black leading-[0.98] tracking-[-0.01em] text-white sm:text-6xl lg:text-7xl xl:text-[88px]">
+          <h1
+            className={`max-w-6xl font-black tracking-[-0.01em] drop-shadow-[0_5px_18px_rgba(0,0,0,0.65)] ${
+              lang === "ar"
+                ? "text-[46px] leading-[1.35] sm:text-[58px] lg:text-[72px] xl:text-[82px]"
+                : "text-[44px] leading-[1.04] sm:text-6xl lg:text-7xl xl:text-[88px]"
+            }`}
+          >
             {t.home.heroTitle}
             <span className="text-[#ee4036]">
               {lang === "ar" ? " " : "\u00A0"}
