@@ -130,8 +130,7 @@ export const translations = {
       legal: "Legal",
 
       email: "sales@toughhaulers.cn.com",
-      location1: "Yiwu, Zhejiang, China",
-      location2: "Shenzhen, Guangdong, China",
+      location1:"Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
       copyright: "© 2026 Tough Haulers Trade Limited. All rights reserved.",
       slogan: "Powering a sustainable future",
@@ -277,9 +276,9 @@ export const translations = {
       legal: "القانوني",
 
       email: "sales@toughhaulers.cn.com",
-      location1: "ييوو، تشجيانغ، الصين",
-      location2: "شينزن، قوانغدونغ، الصين",
-      copyright: "© 2026 Tough Haulers Trade Limited. All rights reserved.",
+      location1: "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
+      
+      copyright: "© 2026 جميع الحقوق محفوظة لشركة Tough Haulers Trade Limited.",
       slogan: "نقود مستقبل الطاقة المستدامة",
 
       links: {
@@ -415,17 +414,16 @@ export const translations = {
     footer: {
       tagline1: "工程驱动能源。",
       tagline2: "交付值得信赖。",
-      desc: "提供太阳能系统、电池储能解决方案、EPC工程服务，以及全球项目与中国供应链支持。",
+      desc: "提供太阳能系统、电池储能解决方案 ，以及全球项目与中国供应链支持。",
 
       solutions: "解决方案",
       contact: "联系我们",
       legal: "法律信息",
 
       email: "sales@toughhaulers.cn.com",
-      location1: "中国 浙江 义乌",
-      location2: "中国 广东 深圳",
+      location1: "中国浙江省义乌市工人北路454号楼201室",
 
-      copyright: "© 2026 Tough Haulers Trade Limited",
+      copyright: "© 2026 Tough Haulers Trade Limited. 版权所有。",
       slogan: "推动可持续能源未来",
 
       links: {
