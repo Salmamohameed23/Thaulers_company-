@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, BatteryCharging, Factory, Globe2 } from "lucide-react";
+
 import smartstorage from "../../assets/images/smart2.png";
 import Factoryimg from "../../assets/images/factory 5.png";
 import gigawatt from "../../assets/images/gigawaa.png";
@@ -31,78 +32,66 @@ const services = [
 
 const ServicesPreview = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-14 text-neutral-950">
-      <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-      <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
-              Our Solutions
-            </p>
+    <section className="relative overflow-hidden bg-white py-20 text-neutral-950">
+      <div className="absolute left-[-160px] top-10 h-[340px] w-[340px] rounded-full bg-red-600/10 blur-[120px]" />
+      <div className="absolute right-[-160px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-red-600/10 blur-[130px]" />
 
-            <h2 className="text-[40px] font-black leading-[1.05] tracking-[-0.04em] sm:text-5xl">
-              Integrated Energy
-              <span className="block">Solutions & Capabilities.</span>
-            </h2>
+      <div className="relative mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
+        <div className="mb-8 max-w-[520px]">
+          <p className="mb-3 text-s font-black uppercase tracking-[0.32em] text-[#ee4036]">
+            Our Solutions
+          </p>
 
-            <p className="mt-6 text-lg leading-8 ">
-              From battery storage systems to full-scale manufacturing and
-              gigawatt-level project execution, we deliver scalable and reliable
-              energy solutions globally.
-            </p>
-          </div>
-
-          {/* Button on right */}
-          
+          <h2 className="text-[32px] font-black leading-[1.1] tracking-[-0.025em] text-neutral-950 sm:text-[40px] lg:text-[44px]">
+            Integrated Energy
+            <span className="block">Solutions & Capabilities.</span>
+          </h2>
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((item, i) => {
             const Icon = item.icon;
 
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 26 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
+                transition={{ duration: 0.55, delay: i * 0.08 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-[28px] border border-black/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_28px_70px_rgba(0,0,0,0.12)]"
+                className="group flex h-full flex-col  rounded-[26px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_65px_rgba(0,0,0,0.12)]"
               >
-                <Link to={item.path} className="block h-full">
+                <Link to={item.path} className="flex h-full flex-col">
                   {/* Image */}
-                  <div className="relative h-[220px] overflow-hidden">
+                  <div className="relative h-[200px] rounded-t-[26px]">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      className="h-full w-full rounded-t-[26px] object-cover  "
                     />
 
-                    <div className="absolute inset-0 bg-white/10" />
+                    {/* icon floating */}
+                    <div className="absolute -bottom-5 left-6 z-20 flex h-11 w-11 items-center justify-center rounded-xl bg-black text-white shadow-lg transition group-hover:bg-[#ee4036]">
+                      <Icon size={18} />
+                    </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-950 text-white transition group-hover:bg-red-600">
-                      <Icon size={20} />
-                    </div>
-
-                    <h3 className="text-[18px] font-semibold text-neutral-900">
+                  <div className="flex flex-1 flex-col px-6 pb-6 pt-8">
+                    <h3 className="text-[18px] font-bold text-black">
                       {item.title}
                     </h3>
 
-                    <p className="mt-3 text-[15px] leading-7 text-neutral-600">
+                    <p className="mt-3 text-[14px] leading-7 text-neutral-600">
                       {item.desc}
                     </p>
 
-                    <div className="mt-6 flex items-center justify-between">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#ee4036]">
-                        Explore  all Solution
-                      </span>
-
-                      <ArrowUpRight className="text-neutral-400 transition group-hover:text-red-600" />
+                    {/* BUTTON FIXED */}
+                    <div className="mt-auto pt-5">
+                      <div className="inline-flex items-center gap-2 text-[12px] font-bold text-[#ee4036]">
+                        <span>Explore Solutions</span>
+                        <ArrowUpRight size={14} />
+                      </div>
                     </div>
                   </div>
                 </Link>

@@ -8,52 +8,37 @@ import {
 } from "lucide-react";
 
 const points = [
-  {
-    icon: SunMedium,
-    title: "Solar Power Systems",
-  },
-  {
-    icon: BatteryCharging,
-    title: "Battery Energy Storage Systems",
-  },
-  {
-    icon: Globe2,
-    title: "China Supply Chain",
-  },
-  {
-    icon: Factory,
-    title: "Engineering Support From Egypt",
-  },
-  {
-    icon: ArrowUpRight,
-    title: "From kW-scale to Gigawatt-scale Projects",
-  },
+  { icon: SunMedium, title: "Solar Power Systems" },
+  { icon: BatteryCharging, title: "Battery Energy Storage Systems" },
+  { icon: Globe2, title: "China Supply Chain" },
+  { icon: Factory, title: "Engineering Support From Egypt" },
+  { icon: ArrowUpRight, title: "From kW-scale to Gigawatt-scale Projects" },
 ];
 
 const AboutPreview = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-12  text-neutral-950">
-      <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-      <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.07),transparent_30%)]" />
+    <section className="relative overflow-hidden bg-white py-20 text-neutral-950">
+      <div className="absolute left-[-180px] top-10 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[120px]" />
+      <div className="absolute right-[-180px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-red-600/10 blur-[130px]" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-7 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+      <div className="relative mx-auto grid max-w-6xl items-start gap-16 px-6 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
         <motion.div
-          initial={{ opacity: 0, y: 34 }}
+          initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.7 }}
+          className="max-w-[460px]"
         >
-          <p className="mb-5 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
+          <p className="mb-4 text-s font-black uppercase tracking-[0.32em] text-[#ee4036]">
             About Company
           </p>
 
-          <h2 className="max-w-3xl text-[38px] font-black leading-[1.05] tracking-[-0.045em] text-neutral-950 sm:text-5xl lg:text-[58px]">
-            Global solar and energy storage solutions,
-            <span className="block ">engineered from design to execution.</span>
+          <h2 className="text-[32px] font-black leading-[1.02] tracking-[-0.035em] text-neutral-950 sm:text-[40px] lg:text-[44px]">
+            Global solar and energy storage solutions, engineered from design to
+            execution.
           </h2>
 
-          <div className="mt-7 max-w-2xl space-y-5 text-[17px] font-medium leading-8  sm:text-lg">
+          <div className="mt-6 space-y-4 text-[13px] font-medium leading-6 text-neutral-800">
             <p>
               TOUGH HAULERS is a global provider of advanced solar power and
               energy storage solutions, delivering fully integrated solar
@@ -67,47 +52,40 @@ const AboutPreview = () => {
               high-performance energy systems.
             </p>
           </div>
-
-          
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 34 }}
+          initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative rounded-[34px] border border-black/10 bg-white/80 p-5 shadow-[0_30px_80px_rgba(0,0,0,0.10)] backdrop-blur-xl sm:p-8"
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.7, delay: 0.08 }}
+          className="relative rounded-[28px] border border-black/5 bg-white p-6 shadow-[0_28px_70px_rgba(0,0,0,0.08)] sm:p-7"
         >
-          <div className="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-red-600/10 blur-3xl" />
-          <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-black/5 blur-3xl" />
+          <p className="mb-5 text-s font-black uppercase tracking-[0.32em] text-[#ee4036]">
+            Core Positioning
+          </p>
 
-          <div className="relative">
-            <p className="text-xs font-black uppercase tracking-[0.28em] text-[#ee4036]">
-              Core Positioning
-            </p>
+          <div className="space-y-3">
+            {points.map((item) => {
+              const Icon = item.icon;
 
-            <div className="mt-8 grid gap-4">
-              {points.map((item) => {
-                const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  whileHover={{ y: -3 }}
+                  transition={{ duration: 0.22 }}
+                  className="group flex items-center gap-4 rounded-[14px] border border-black/10 bg-white px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.045)] transition-all duration-300 hover:border-red-600/25"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-neutral-950 text-white transition-all duration-300 group-hover:bg-[#ee4036]">
+                    <Icon size={17} strokeWidth={2.4} />
+                  </div>
 
-                return (
-                  <motion.div
-                    key={item.title}
-                    whileHover={{ y: -4 }}
-                    transition={{ duration: 0.25 }}
-                    className="group flex items-center gap-4 rounded-2xl border border-black/10 bg-white p-4 shadow-[0_14px_35px_rgba(0,0,0,0.055)] transition-all duration-300 hover:border-red-600/25 hover:shadow-[0_22px_48px_rgba(0,0,0,0.10)]"
-                  >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-neutral-950 text-white transition-all duration-300 group-hover:bg-red-600">
-                      <Icon size={20} />
-                    </div>
-
-                    <p className="text-[15px] font-semibold leading-6 text-neutral-800">
-                      {item.title}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
+                  <p className="text-[13px] font-semibold text-neutral-800">
+                    {item.title}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>

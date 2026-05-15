@@ -5,80 +5,41 @@ import cleanEnergyBg from "../../assets/images/clean.png";
 
 const CleanEnergySection = () => {
   return (
-    <section
-      className="relative flex min-h-[760px] items-center overflow-hidden text-white"
-      style={{
-        backgroundImage: `url(${cleanEnergyBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Background image animation */}
-      <motion.div
-        initial={{ scale: 1 }}
-        whileInView={{ scale: 1.04 }}
-        viewport={{ once: true }}
-        transition={{ duration: 12, ease: "easeOut" }}
-        className="absolute inset-0 bg-cover bg-center brightness-100 contrast-110 saturate-110"
-        style={{
-          backgroundImage: `url(${cleanEnergyBg})`,
-        }}
-      />
+    <section className="relative overflow-hidden bg-white py-16 text-black sm:py-20">
+      <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
+      <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.07),transparent_30%)]" />
+      <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 26 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-[520px]"
+        >
+          <p className="mb-4 text-s font-black uppercase tracking-[0.38em] text-[#ee4036]">
+            Clean Energy Shift
+          </p>
 
-      {/* Softer overlays */}
-      <div className="absolute inset-0 bg-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/35 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/35" />
-      <div className="absolute left-0 top-0 h-full w-[55%] bg-[radial-gradient(circle_at_25%_45%,rgba(220,38,38,0.18),transparent_45%)]" />
-
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 py-20">
-        <div className="max-w-3xl text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 26 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.7 }}
-            className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-3 backdrop-blur-md"
-          >
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036]" />
-            <span className="text-xs font-black uppercase tracking-[0.28em] text-white">
-              Clean Energy Shift
-            </span>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.8, delay: 0.08 }}
-            className="max-w-4xl text-[42px] font-black leading-[1.02] tracking-[-0.055em] sm:text-6xl lg:text-[78px]"
-          >
+          <h2 className="text-[40px] font-black leading-[1.1] tracking-[-0.02em] text-black sm:text-[50px] lg:text-[58px]">
             Clean Energy is
-            <span className="block font-black text-[#ee4036]">
-              the Future
-            </span>
-          </motion.h2>
+            <span className="block text-[#ee4036]">the Future</span>
+          </h2>
 
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.18 }}
-            className="mt-8 max-w-3xl space-y-5 text-[16px] font-medium leading-8 text-neutral-100 sm:text-lg"
-          >
-            <p className="max-w-2xl">
-              The world is rapidly shifting toward renewable energy — it’s the
-              only sustainable and secure solution. Relying on the sun not only
-              protects the environment but also guarantees you a stable and free
-              source of power.
-            </p>
+          <p className="mt-6 max-w-[520px] text-[15px] font-medium leading-7 text-black/80">
+            The world is rapidly shifting toward renewable energy — it’s the
+            only sustainable and secure solution. Relying on the sun not only
+            protects the environment but also guarantees you a stable and free
+            source of power.
+          </p>
 
-            <div className="flex max-w-3xl items-start gap-4 rounded-3xl border border-white/15 bg-white/10 p-5 text-left backdrop-blur-md">
-              <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-red-500/40 bg-red-600/20 text-[#ee4036]">
-                <TrendingUp size={21} />
+          <div className="mt-7 space-y-4">
+            <div className="flex items-start gap-4 rounded-[20px] border border-black/10 bg-white p-5 shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-[#ee4036]/10 text-[#ee4036]">
+                <TrendingUp size={21} strokeWidth={2.5} />
               </div>
 
-              <p>
+              <p className="text-[14px] font-medium leading-7 text-black/75">
                 <span className="font-black text-[#ee4036]">Take note:</span>{" "}
                 Solar system prices have already risen, a clear sign that demand
                 is growing faster than ever. The right time to start your clean
@@ -87,12 +48,12 @@ const CleanEnergySection = () => {
               </p>
             </div>
 
-            <div className="flex max-w-3xl items-start gap-4 rounded-3xl border border-white/15 bg-white/10 p-5 text-left backdrop-blur-md">
-              <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-red-500/40 bg-red-600/20 text-[#ee4036]">
-                <SunMedium size={21} />
+            <div className="flex items-start gap-4 rounded-[20px] border border-black/10 bg-white p-5 shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-[#ee4036]/10 text-[#ee4036]">
+                <SunMedium size={21} strokeWidth={2.5} />
               </div>
 
-              <p>
+              <p className="text-[14px] font-medium leading-7 text-black/75">
                 <span className="font-black text-[#ee4036]">
                   The smart move:
                 </span>{" "}
@@ -101,8 +62,24 @@ const CleanEnergySection = () => {
                 foundation of the future.
               </p>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 35 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+          <div className="overflow-hidden rounded-[30px]">
+            <img
+              src={cleanEnergyBg}
+              alt="Clean energy battery storage"
+              className="h-[360px] w-full object-start sm:h-[595px] lg:h-[595px]"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

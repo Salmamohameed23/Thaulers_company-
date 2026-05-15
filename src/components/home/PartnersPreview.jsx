@@ -29,7 +29,7 @@ const partners = [
 
 const PartnersPreview = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-10 text-neutral-950 ">
+    <section className="relative overflow-hidden bg-white py-20 text-neutral-950 ">
       <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
       <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
 
@@ -42,7 +42,7 @@ const PartnersPreview = () => {
           className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between"
         >
           <div className="max-w-3xl">
-            <p className="mb-4 text-[20px] font-black uppercase tracking-[0.28em] text-[#ee4036]">
+            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
               Global Technology & Engineering Network.
             </p>
 
