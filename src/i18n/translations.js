@@ -15,7 +15,7 @@ export const translations = {
       gigawattProjects: "Gigawatt Projects",
     },
     home: {
-      heroBadge: "Solar Energy · Battery Storage · EPC",
+      heroBadge: "Solar Energy · Battery Storage ",
       heroTitle: "Engineering reliable solar power",
       heroHighlight: "and battery storage solutions.",
       heroDescription:
@@ -133,7 +133,7 @@ export const translations = {
       location1: "Yiwu, Zhejiang, China",
       location2: "Shenzhen, Guangdong, China",
 
-      copyright: "© 2026 Tough Haulers Trade Limited",
+      copyright: "© 2026 Tough Haulers Trade Limited. All rights reserved.",
       slogan: "Powering a sustainable future",
 
       links: {
@@ -162,7 +162,7 @@ export const translations = {
       gigawattProjects: "مشاريع الطاقة العملاقة",
     },
     home: {
-      heroBadge: "طاقة شمسية · تخزين بطاريات · تنفيذ هندسي",
+      heroBadge: "طاقة شمسية · تخزين بطاريات ",
       heroTitle: "حلول طاقة شمسية موثوقة",
       heroHighlight: "وأنظمة تخزين بطاريات متكاملة.",
       heroDescription:
@@ -270,7 +270,7 @@ export const translations = {
     footer: {
       tagline1: "هندسة الطاقة.",
       tagline2: "وثقة في التنفيذ.",
-      desc: "حلول الطاقة الشمسية، وأنظمة تخزين الطاقة بالبطاريات، وخدمات EPC الهندسية، مع مشاريع عالمية وسلاسل توريد مدعومة من الصين.",
+      desc: "حلول متكاملةمع خدمات هندسية متخصصة تشمل التوريد , التصميم , التنفيذ والتشغيل بدعم من السلاسل توريد قوية من الصين.",
 
       solutions: "الحلول",
       contact: "التواصل",
@@ -279,16 +279,15 @@ export const translations = {
       email: "sales@toughhaulers.cn.com",
       location1: "ييوو، تشجيانغ، الصين",
       location2: "شينزن، قوانغدونغ، الصين",
-
-      copyright: "© 2026 Tough Haulers Trade Limited",
+      copyright: "© 2026 Tough Haulers Trade Limited. All rights reserved.",
       slogan: "نقود مستقبل الطاقة المستدامة",
 
       links: {
-        smart: "التخزين الذكي",
-        factory: "حلول المصانع",
-        giga: "مشاريع الجيجاوات",
+        smart: "حلول التخزين الذكي ",
+        factory: "حلول المصانع والمنشأت",
+        giga: " مشاريع الطاقة العملاقة",
         privacy: "سياسة الخصوصية",
-        terms: "الشروط والأحكام",
+        terms: "الشروط والأحكام العامة",
       },
     },
   },
@@ -309,7 +308,7 @@ export const translations = {
       gigawattProjects: "吉瓦级项目",
     },
     home: {
-      heroBadge: "太阳能 · 电池储能 · EPC工程",
+      heroBadge: "太阳能 · 电池储能 ",
       heroTitle: "打造可靠的太阳能系统",
       heroHighlight: "与电池储能解决方案。",
       heroDescription:

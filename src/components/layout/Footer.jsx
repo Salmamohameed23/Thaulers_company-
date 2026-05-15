@@ -27,7 +27,7 @@ const Footer = () => {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_0%,rgba(220,38,38,0.25),transparent_34%)]" />
       <div className="pointer-events-none absolute left-[-220px] bottom-[-260px] h-[620px] w-[620px] rounded-full border border-red-600/10 opacity-40" />
 
-      <div className="relative mx-auto max-w-[1180px] px-6 pt-14 lg:px-8">
+      <div className="relative mx-auto max-w-[1180px] px-8 pt-14 lg:px-8">
         <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-0">
           {/* Brand */}
           <div
@@ -38,7 +38,7 @@ const Footer = () => {
                 <img
                   src={logo}
                   alt="Tough Haulers"
-                  className="mt-[18px] w-[170px] object-contain"
+                  className="mt-[10px] ml-[-29px] w-[2300px] object-contain"
                 />
               </Link>
             </div>
@@ -182,10 +182,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="py-8">
-          <div className="flex flex-col items-center justify-center gap-4 text-center text-[13px] text-neutral-500 md:flex-row">
+        <div className="border-t border-white/30 py-4">
+          <div className="flex flex-col items-center justify-center gap-4 text-center text-[15px] text-neutral-400 md:flex-row tracking-wide">
             <p>{t.footer.copyright}</p>
-            <span className="hidden h-4 w-px bg-white/20 md:block" />
+            <span className="hidden h-4 w-px bg-white/40 md:block" />
             <p>{t.footer.slogan}</p>
           </div>
         </div>

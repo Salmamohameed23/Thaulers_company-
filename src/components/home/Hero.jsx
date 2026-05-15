@@ -1,11 +1,5 @@
 // import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-// import {
-//   BatteryCharging,
-//   HardHat,
-//   SunMedium,
-// } from "lucide-react";
-
 import heroImg from "../../assets/images/hero_home.png";
 import { useLanguage } from "../../i18n/LanguageContext";
 
@@ -25,15 +19,12 @@ const Hero = () => {
       />
 
       {/* OVERLAYS */}
-      {/* <div className="absolute inset-0 bg-black/45" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/72 via-black/50 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/10" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_48%,rgba(220, 38, 38, 0.18),transparent_50%)]" /> */}
-      {/* OVERLAYS */}
+
       <div className="absolute inset-0 bg-black/40" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/68 via-black/20 to-black/10" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/5" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_48%,rgba(220,38,38,0.12),transparent_48%)]" />
+  
       {/* CONTENT */}
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-94px)] max-w-[1540px] items-center px-6 py-20 sm:px-8 md:px-10 lg:px-12 xl:px-14">
         <motion.div
