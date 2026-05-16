@@ -1,89 +1,73 @@
-// import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Building2, Handshake } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 import eveVisit from "../assets/images/eve_visit.jpg";
 import bydVisit from "../assets/images/byd_visit.jpg";
 import rfBoxVisit from "../assets/images/rf_visit.jpg";
 
-const partners = [
+const partnerAssets = [
   {
+    key: "rf",
     name: "RF Box Company",
-    country: "Egypt",
-    category: "Engineering Support Partner",
-    label: "Partner",
+    country: { en: "Egypt", ar: "مصر", zh: "埃及" },
     image: rfBoxVisit,
     website: "https://www.rf-box.com/",
-    description:
-      "RF Box Company supports regional engineering activities in Egypt, helping connect technical coordination, project support, and local engineering execution.",
-    highlights: [
-      "Engineering support in Egypt",
-      "Technical coordination",
-      "Project execution support",
-    ],
   },
   {
+    key: "eve",
     name: "EVE Energy",
-    country: "China",
-    category: "Battery Energy Storage Technology",
-    label: "Main supply chain",
+    country: { en: "China", ar: "الصين", zh: "中国" },
     image: eveVisit,
     website: "https://www.evebattery.com/en",
-    description:
-      "EVE Energy is part of the company’s battery technology and supply chain network, supporting advanced energy storage applications for reliable and scalable project delivery.",
-    highlights: [
-      "Battery Energy Storage Systems",
-      "Large-scale storage applications",
-      "Energy technology supply chain",
-    ],
   },
   {
+    key: "byd",
     name: "BYD",
-    country: "China",
-    category: "Renewable Energy & Battery Ecosystem",
-    label: "Main supply chain",
+    country: { en: "China", ar: "الصين", zh: "中国" },
     image: bydVisit,
     website: "https://www.bydglobal.com/cn/index.html",
-    description:
-      "BYD strengthens the company’s access to advanced energy technologies, battery solutions, and integrated renewable energy supply chain capabilities.",
-    highlights: [
-      "Battery and storage ecosystem",
-      "Renewable energy technologies",
-      "Global technology capability",
-    ],
   },
 ];
 
 const Partners = () => {
+  const { t, lang } = useLanguage();
+  const isAr = lang === "ar";
+
+  const partners = partnerAssets.map((item) => ({
+    ...item,
+    country: item.country[lang] || item.country.en,
+    ...t.partnersPage.partners[item.key],
+  }));
+
   return (
-    <main className="bg-white text-neutral-950">
+    <main
+      dir={isAr ? "rtl" : "ltr"}
+      className={`bg-white text-neutral-950 ${isAr ? "font-[Cairo]" : ""}`}
+    >
       {/* HERO */}
       <section className="relative overflow-hidden bg-white py-12">
-
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
+            <div className={isAr ? "text-right" : ""}>
               <p className="mb-4 text-s font-black uppercase tracking-[0.3em] text-[#ee4036]">
-                Main Supply Chain
+                {t.partnersPage.heroBadge}
               </p>
 
               <h1 className="text-5xl font-black leading-tight">
-                Global Technology Network
-                <span className="block">powering energy projects.</span>
+                {t.partnersPage.heroTitle1}
+                <span className="block">{t.partnersPage.heroTitle2}</span>
               </h1>
 
-              <p className="mt-6 text-lg leading-8 text-neutral-850">
-                Our main supply chain ecosystem supports solar power systems, battery
-                energy storage, EPC engineering, and global project execution
-                with reliable supply chain integration.
+              <p className="mt-6 text-lg leading-8 text-neutral-700">
+                {t.partnersPage.heroDesc}
               </p>
             </div>
 
             <div className="rounded-3xl bg-neutral-100 p-6">
               <Handshake size={32} className="mb-4 text-[#ee4036]" />
               <p className="leading-7 text-neutral-700">
-                Strong partnerships ensure better sourcing, better engineering
-                coordination, and stronger project delivery confidence.
+                {t.partnersPage.heroBox}
               </p>
             </div>
           </div>
@@ -100,11 +84,7 @@ const Partners = () => {
                 href={partner.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group block transition ${
-                  partner.website === "#"
-                    ? "pointer-events-none opacity-70"
-                    : ""
-                }`}
+                className="group block transition"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
@@ -130,7 +110,7 @@ const Partners = () => {
                     </div>
 
                     {/* CONTENT */}
-                    <div className="relative p-8">
+                    <div className={`relative p-8 ${isAr ? "text-right" : ""}`}>
                       <span className="text-xs font-bold uppercase tracking-widest text-[#ee4036]">
                         {partner.category}
                       </span>
@@ -163,8 +143,12 @@ const Partners = () => {
                           {partner.label}
                         </span>
 
-                        <span className="flex items-center gap-2 font-bold text-[#ee4036] transition group-hover:gap-3">
-                          Visit Website
+                        <span
+                          className={`flex items-center gap-2 font-bold text-[#ee4036] transition group-hover:gap-3 ${
+                            isAr ? "flex-row-reverse" : ""
+                          }`}
+                        >
+                          {t.partnersPage.visit}
                           <ArrowUpRight size={16} />
                         </span>
                       </div>

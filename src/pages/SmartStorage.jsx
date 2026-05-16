@@ -91,55 +91,67 @@ export default function SmartStorage() {
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* HERO */}
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-black text-white">
         <motion.img
           src={smartHero}
           alt="Battery energy storage systems"
           initial={{ scale: 1.03 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 10, ease: "easeOut" }}
+          transition={{ duration: 12, ease: "easeOut" }}
           className="absolute inset-0 h-full w-full object-cover"
         />
 
+        <div className="absolute inset-0 bg-black/35" />
+
         <div
-          className={`absolute inset-y-0 w-[62%] ${
+          className={`absolute inset-y-0 w-[68%] ${
             isAr
-              ? "right-0 bg-gradient-to-l from-white via-white/92 to-transparent"
-              : "left-0 bg-gradient-to-r from-white via-white/92 to-transparent"
+              ? "right-0 bg-gradient-to-l from-black via-black/78 to-transparent"
+              : "left-0 bg-gradient-to-r from-black via-black/78 to-transparent"
           }`}
         />
 
-        <div className="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-white/85 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/80 to-transparent" />
 
-        <div className="relative z-10 mx-auto min-h-[560px] max-w-7xl px-6 py-20 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             transition={{ duration: 0.75 }}
-            className={`max-w-[570px] ${isAr ? "text-right" : ""}`}
+            className={`max-w-[650px] ${isAr ? "text-right" : ""}`}
           >
-            <p className="mb-4 text-s font-black uppercase tracking-[0.32em] text-[#ee4036]">
-              {t.smartStoragePage.heroBadge}
-            </p>
+            <div
+              className={`mb-5 inline-flex items-center gap-3 rounded-full border border-white/20 bg-black/35 px-4 py-2 backdrop-blur-md ${
+                isAr ? "flex-row-reverse" : ""
+              }`}
+            >
+              <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
+              <span className="text-s font-black uppercase tracking-[0.32em] text-white">
+                {t.smartStoragePage.heroBadge}
+              </span>
+            </div>
 
-            <h1 className="text-[42px] font-black leading-[1.08] tracking-[-0.025em] text-neutral-950 sm:text-5xl lg:text-[62px]">
+            <h1 className="text-[42px] font-black leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl lg:text-[62px]">
               {t.smartStoragePage.heroTitle1}
               <span className="mt-2 block text-[#ee4036]">
                 {t.smartStoragePage.heroTitle2}
               </span>
             </h1>
 
-            <p className="mt-6 max-w-[520px] text-[15px] font-medium leading-7 text-neutral-700">
+            <p className="mt-6 max-w-[560px] text-[15px] font-medium leading-7 text-white/85">
               {t.smartStoragePage.heroDesc}
             </p>
           </motion.div>
 
-          <div className="mt-12 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {capabilities.map((item) => (
-              <div
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {capabilities.map((item, index) => (
+              <motion.div
                 key={item}
-                className="flex min-h-[74px] items-center gap-4 rounded-2xl border border-white/50 bg-neutral-950/75 px-5 py-4 text-white shadow-[0_18px_45px_rgba(0,0,0,0.18)] backdrop-blur-md"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.25 + index * 0.07 }}
+                className="group flex min-h-[74px] items-center gap-4 rounded-2xl border border-white/20 bg-neutral-950/70 px-5 py-4 text-white shadow-[0_18px_45px_rgba(0,0,0,0.22)] backdrop-blur-md transition hover:-translate-y-1 hover:border-red-500/40 hover:shadow-[0_24px_60px_rgba(220,38,38,0.18)]"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ee4036] text-white">
                   <ShieldCheck size={16} />
@@ -148,7 +160,7 @@ export default function SmartStorage() {
                 <span className="text-[13px] font-extrabold leading-5">
                   {item}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

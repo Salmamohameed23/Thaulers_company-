@@ -7,160 +7,234 @@ import {
   ShieldCheck,
   SunMedium,
   Zap,
+  ClipboardCheck,
+  MapPinned,
+  Boxes,
+  ScanSearch,
+  Building2,
+  Network,
+  ArrowRight,
 } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 import gigaHero from "../assets/images/gigawaa.png";
+import gigaEnd from "../assets/images/gigawat2.png";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 26 },
   visible: { opacity: 1, y: 0 },
 };
 
-const capabilities = [
-  "Multi-GW Project Scope",
-  "Solar + BESS Integration",
-  "Full EPC Engineering",
-  "China Supply Chain",
-  "Utility-Scale Execution",
+const heroIcons = [SunMedium, BatteryCharging, HardHat, Boxes, ShieldCheck];
+
+const serviceIcons = [SunMedium, BatteryCharging, Cable, Zap, Factory, HardHat];
+
+const processIcons = [
+  ClipboardCheck,
+  MapPinned,
+  ScanSearch,
+  Boxes,
+  HardHat,
+  ShieldCheck,
 ];
 
-const services = [
-  {
-    icon: SunMedium,
-    title: "Utility-Scale Solar",
-    text: "Engineering and supply support for large-scale solar power systems designed for industrial and utility applications.",
-  },
-  {
-    icon: BatteryCharging,
-    title: "BESS Integration",
-    text: "Battery Energy Storage Systems integrated with project requirements, safety needs, and long-term operation.",
-  },
-  {
-    icon: Cable,
-    title: "Electrical Engineering",
-    text: "Single-line diagrams, layouts, protection systems, and electrical engineering support for complex projects.",
-  },
-  {
-    icon: Zap,
-    title: "PCS & Inverter Selection",
-    text: "Technical selection support for inverters, PCS, and power conversion systems based on project scale.",
-  },
-  {
-    icon: Factory,
-    title: "China Supply Chain",
-    text: "Strong China-based supply chain capability for high-quality components, optimized cost, and reliable delivery.",
-  },
-  {
-    icon: HardHat,
-    title: "Commissioning Support",
-    text: "Project support from engineering and supply through installation, commissioning, and operation-ready handover.",
-  },
+const largeScaleIcons = [
+  SunMedium,
+  BatteryCharging,
+  Network,
+  HardHat,
+  Zap,
+  Building2,
 ];
 
 const GigaProjects = () => {
+  const { t, lang } = useLanguage();
+  const isAr = lang === "ar";
+
+  const heroCapabilities = t.gigaPage.heroCapabilities.map((title, index) => ({
+    icon: heroIcons[index],
+    title,
+  }));
+
+  const services = t.gigaPage.services.map((item, index) => ({
+    ...item,
+    icon: serviceIcons[index],
+  }));
+
+  const process = t.gigaPage.process.map((title, index) => ({
+    icon: processIcons[index],
+    title,
+  }));
+
+  const largeScaleCapabilities = t.gigaPage.capabilities.map(
+    (title, index) => ({
+      icon: largeScaleIcons[index],
+      title,
+    }),
+  );
+
   return (
-    <main className="overflow-hidden bg-white text-neutral-950">
+    <main
+      dir={isAr ? "rtl" : "ltr"}
+      className={`overflow-hidden bg-white text-neutral-950 ${
+        isAr ? "font-[Cairo]" : ""
+      }`}
+    >
       {/* HERO */}
-      <section className="relative min-h-[100vh] overflow-hidden bg-black text-white">
+      <section className="relative overflow-hidden bg-black text-white">
         <motion.img
           src={gigaHero}
           alt="Utility scale solar and energy storage project"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.05 }}
-          transition={{ duration: 14, ease: "easeOut" }}
+          initial={{ scale: 1.03 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 12, ease: "easeOut" }}
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/62" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/86 via-black/55 to-black/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-black/35" />
 
-        <div className="relative z-10 mx-auto flex min-h-[100vh] max-w-7xl items-center px-6 py-14 sm:px-8 lg:px-10">
+        <div
+          className={`absolute inset-y-0 w-[68%] ${
+            isAr
+              ? "right-0 bg-gradient-to-l from-black via-black/78 to-transparent"
+              : "left-0 bg-gradient-to-r from-black via-black/78 to-transparent"
+          }`}
+        />
+
+        <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/80 to-transparent" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85 }}
-            className="max-w-6xl"
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            transition={{ duration: 0.75 }}
+            className={`max-w-[660px] ${isAr ? "mr-0 text-right" : ""}`}
           >
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/12 px-5 py-2.5 shadow-[0_16px_45px_rgba(0,0,0,0.22)] backdrop-blur-md">
-              <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036] animate-pulse" />
-              <span className="text-[13px] font-black uppercase tracking-[0.35em] text-white">
-                Giga Projects · Solar · BESS
+            <div
+              className={`mb-5 inline-flex items-center gap-3 rounded-full border border-white/20 bg-black/35 px-4 py-2 backdrop-blur-md ${
+                isAr ? "flex-row-reverse" : ""
+              }`}
+            >
+              <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
+              <span className="text-s font-black uppercase tracking-[0.32em] text-white">
+                {t.gigaPage.heroBadge}
               </span>
             </div>
 
-            <h1 className="max-w-5xl text-[46px] font-black leading-[0.93] tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl xl:text-[88px]">
-              Engineering power
-              <br />
-              <span className="text-white/85">at giga scale.</span>
+            <h1
+              className={`text-[42px] font-black text-white sm:text-5xl lg:text-[62px] ${
+                isAr
+                  ? "leading-[1.18] tracking-[0em]"
+                  : "leading-[1.02] tracking-[-0.045em]"
+              }`}
+            >
+              {t.gigaPage.heroTitle1}
+              <span className="block">
+                {t.gigaPage.heroTitle2A}{" "}
+                <span className="text-[#ee4036]">&</span>
+              </span>
+              <span className="block">{t.gigaPage.heroTitle2B}</span>
             </h1>
 
-            <div className="mt-8 h-[4px] w-28 rounded-full bg-[#ee4036] shadow-[0_0_25px_rgba(220,38,38,0.5)]" />
+            <p className="mt-6 max-w-[560px] text-[15px] font-medium leading-7 text-white/85">
+              {t.gigaPage.heroDesc}
+            </p>
+          </motion.div>
 
-            <p className="mt-8 max-w-4xl text-[18px] font-medium leading-9 text-white/100 sm:text-[21px]">
-              TOUGH HAULERS supports large-scale solar and energy storage
-              projects from kW scale to multi-Gigawatt project requirements.
-              <span className="mt-5 block">
-                Our role connects EPC engineering, BESS integration, China-based
-                supply chain capability, and practical project execution support
-                for industrial and utility-scale energy applications.
-              </span>
+          <div
+            className={`mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5 ${
+              isAr ? "lg:[direction:rtl]" : ""
+            }`}
+          >
+            {heroCapabilities.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55, delay: 0.25 + index * 0.07 }}
+                  className={`group flex min-h-[74px] items-center gap-4 rounded-2xl border border-white/20 bg-neutral-950/70 px-5 py-4 text-white shadow-[0_18px_45px_rgba(0,0,0,0.22)] backdrop-blur-md transition hover:-translate-y-1 hover:border-red-500/40 hover:shadow-[0_24px_60px_rgba(220,38,38,0.18)] ${
+                    isAr ? "flex-row-reverse text-right" : ""
+                  }`}
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ee4036] text-white">
+                    <Icon size={17} />
+                  </span>
+
+                  <span className="text-[13px] font-extrabold leading-5">
+                    {item.title}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT GIGA PROJECTS */}
+      <section className="relative overflow-hidden bg-white py-14">
+        <div className="absolute left-[-160px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[120px]" />
+
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.35fr_1fr] lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            variants={fadeUp}
+            transition={{ duration: 0.55 }}
+            className="flex items-center justify-center"
+          >
+            <div className="flex h-28 w-28 items-center justify-center rounded-[28px] border border-red-600/20 bg-red-600/5 text-[#ee4036]">
+              <SunMedium size={56} />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            variants={fadeUp}
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className={isAr ? "text-right" : ""}
+          >
+            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+              {t.gigaPage.aboutBadge}
             </p>
 
-            {/* TRUST STRIP INSIDE HERO */}
-            <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-              {capabilities.map((item, index) => (
-                <motion.div
-                  key={item}
-                  initial={{ opacity: 0, y: 22 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.35 + index * 0.08,
-                  }}
-                  className="group relative overflow-hidden rounded-[24px] border border-white/18 bg-black/35 px-5 py-5 shadow-[0_20px_55px_rgba(0,0,0,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-red-500/50 hover:bg-red-600/15"
-                >
-                  <div className="absolute right-[-35px] top-[-35px] h-28 w-28 rounded-full bg-red-600/0 blur-[50px] transition duration-500 group-hover:bg-red-600/25" />
+            <h2 className="text-[30px] font-black tracking-[-0.035em] sm:text-4xl">
+              {t.gigaPage.aboutTitle}
+            </h2>
 
-                  <div className="relative flex items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#ee4036] text-white shadow-[0_14px_32px_rgba(220,38,38,0.38)]">
-                      <ShieldCheck size={18} />
-                    </div>
-
-                    <span className="text-[14px] font-bold leading-5 text-white">
-                      {item}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            <p className="mt-5 max-w-4xl text-[15px] leading-7 text-neutral-600">
+              {t.gigaPage.aboutDesc}
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="relative overflow-hidden bg-neutral-50 py-16">
-        {/* Background Glow */}
-        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-
-        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
+      {/* ENGINEERING SCOPE */}
+      <section className="relative overflow-hidden bg-neutral-50 py-14">
+        <div className="absolute right-[-160px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-red-600/10 blur-[130px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* Heading */}
-          <div className="mb-14 flex flex-col items-center text-center">
-            <div className="mb-6 flex flex-col items-center">
-              <p className="mb-5 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
-                Engineering Scope
-              </p>
-            </div>
+          <div className="mb-10 text-center">
+            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+              {t.gigaPage.scopeBadge}
+            </p>
 
-            <h2 className="max-w-5xl text-[34px] font-black leading-[1.04] tracking-[-0.045em] text-neutral-950 sm:text-5xl lg:text-[64px]">
-              Integrated support for large solar and storage projects.
+            <h2 className="text-[30px] font-black tracking-[-0.035em] sm:text-4xl">
+              {t.gigaPage.scopeTitle}
             </h2>
+
+            <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-7 text-neutral-600">
+              {t.gigaPage.scopeDesc}
+            </p>
           </div>
 
-          {/* Cards */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2 lg:grid-cols-3">
             {services.map((item, index) => {
               const Icon = item.icon;
 
@@ -169,31 +243,194 @@ const GigaProjects = () => {
                   key={item.title}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.25 }}
                   variants={fadeUp}
-                  transition={{ duration: 0.55, delay: index * 0.05 }}
-                  className="group relative overflow-hidden rounded-[32px] border border-black/10 bg-white p-7 shadow-[0_18px_55px_rgba(0,0,0,0.06)] transition duration-500 hover:-translate-y-2 hover:border-red-600/30 hover:shadow-[0_30px_85px_rgba(220,38,38,0.12)]"
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  className={`group relative overflow-hidden rounded-[18px] border border-black/5 bg-white p-6 shadow-[0_16px_42px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:border-red-500/20 hover:shadow-[0_24px_70px_rgba(220,38,38,0.14)] ${
+                    isAr ? "text-right" : ""
+                  }`}
                 >
-                  {/* Top Hover Line */}
-                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-600 via-red-500 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-
-                  {/* Icon */}
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-neutral-950 text-white transition duration-300 group-hover:bg-red-600">
-                    <Icon size={24} />
+                  <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100">
+                    <div
+                      className={`absolute top-[-30px] h-28 w-28 rounded-full bg-red-600/15 blur-2xl ${
+                        isAr ? "left-[-30px]" : "right-[-30px]"
+                      }`}
+                    />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-black tracking-[-0.025em] text-neutral-950">
+                  <div className="relative z-10 mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-950 text-white transition group-hover:bg-[#ee4036]">
+                    <Icon size={20} />
+                  </div>
+
+                  <h3 className="relative z-10 text-[16px] font-black text-neutral-950">
                     {item.title}
                   </h3>
 
-                  {/* Text */}
-                  <p className="mt-4 text-[15px] leading-7 text-neutral-600">
+                  <p className="relative z-10 mt-3 text-[13px] leading-6 text-neutral-600">
                     {item.text}
                   </p>
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="bg-white py-14">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+              {t.gigaPage.processBadge}
+            </p>
+
+            <h2 className="text-[28px] font-black tracking-[-0.035em] sm:text-4xl">
+              {t.gigaPage.processTitle}
+            </h2>
+          </div>
+
+          <div className="relative mx-auto max-w-6xl">
+            <div className="absolute left-[8%] right-[8%] top-8 hidden h-px bg-red-500/40 lg:block" />
+
+            <div
+              className={`grid gap-8 md:grid-cols-3 lg:grid-cols-6 ${
+                isAr ? "lg:[direction:rtl]" : ""
+              }`}
+            >
+              {process.map((item, index) => {
+                const Icon = item.icon;
+
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.25 }}
+                    variants={fadeUp}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                    className="group relative text-center"
+                  >
+                    {index !== process.length - 1 && (
+                      <ArrowRight
+                        size={18}
+                        className={`absolute top-[23px] z-10 hidden text-[#ee4036] lg:block ${
+                          isAr
+                            ? "right-[calc(50%+45px)] rotate-180"
+                            : "left-[calc(50%+45px)]"
+                        }`}
+                      />
+                    )}
+
+                    <div className="relative z-20 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-red-500 bg-white text-[#ee4036] shadow-[0_18px_45px_rgba(220,38,38,0.15)] ring-8 ring-white transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_20px_50px_rgba(220,38,38,0.25)]">
+                      <Icon size={22} />
+                    </div>
+
+                    <p className="mb-1 text-[11px] font-black text-[#ee4036]">
+                      0{index + 1}
+                    </p>
+
+                    <p className="mx-auto max-w-[145px] text-[12px] font-black leading-5 text-neutral-950">
+                      {item.title}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LARGE SCALE CAPABILITIES */}
+      <section className="bg-neutral-50 py-14">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-9 text-center">
+            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+              {t.gigaPage.capabilitiesBadge}
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+            {largeScaleCapabilities.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.title}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.25 }}
+                  variants={fadeUp}
+                  transition={{ duration: 0.5, delay: index * 0.04 }}
+                  whileHover={{ y: -8, scale: 1.03 }}
+                  className="group relative overflow-hidden rounded-2xl border border-black/5 bg-white p-5 text-center shadow-[0_14px_35px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-red-600/30 hover:shadow-[0_18px_45px_rgba(220,38,38,0.18)]"
+                >
+                  <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100">
+                    <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-600/15 blur-2xl" />
+                  </div>
+
+                  <Icon
+                    className="relative z-10 mx-auto mb-3 text-[#ee4036] transition duration-300 group-hover:scale-110"
+                    size={31}
+                  />
+
+                  <p className="relative z-10 text-[13px] font-black leading-5">
+                    {item.title}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL SECTION */}
+      <section className="bg-white py-14">
+        <div
+          className={`mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-2 lg:px-8 ${
+            isAr ? "lg:[direction:rtl]" : ""
+          }`}
+        >
+          <div className="min-h-[320px] overflow-hidden rounded-[28px] bg-black shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+            <img
+              src={gigaEnd}
+              alt="Large scale solar and storage infrastructure"
+              className="h-full w-full object-cover opacity-90"
+            />
+          </div>
+
+          <div className={`flex items-center ${isAr ? "text-right" : ""}`}>
+            <div>
+              <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+                {t.gigaPage.finalBadge}
+              </p>
+
+              <h2 className="text-[32px] font-black leading-[1.08] tracking-[-0.04em] sm:text-4xl">
+                {t.gigaPage.finalTitle}
+              </h2>
+
+              <p className="mt-5 max-w-xl text-[15px] leading-7 text-neutral-600">
+                {t.gigaPage.finalDesc}
+              </p>
+
+              <div className="mt-6 space-y-4">
+                {t.gigaPage.executionPoints.map((item) => (
+                  <div
+                    key={item}
+                    className={`flex items-start gap-3 ${
+                      isAr ? "flex-row-reverse" : ""
+                    }`}
+                  >
+                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ee4036] text-white">
+                      <ShieldCheck size={12} />
+                    </span>
+
+                    <p className="text-[14px] font-semibold leading-6 text-neutral-700">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

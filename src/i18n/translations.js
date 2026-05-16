@@ -437,6 +437,236 @@ export const translations = {
         "After-Sales Support",
       ],
     },
+    factoryPage: {
+      heroBadge: "Factory Support · Production · Engineering",
+      heroTitle1: "Factory Solutions for",
+      heroTitle2A: "Industrial",
+      heroTitle2B: "Energy Projects.",
+      heroDesc:
+        "Tough Haulers supports industrial and energy projects through China-based manufacturing coordination, component sourcing, factory setup, quality control, and technical engineering support.",
+
+      heroCapabilities: [
+        "Factory Coordination",
+        "Production Setup",
+        "China Supply Chain",
+        "Technical Support",
+        "Quality Control",
+      ],
+
+      servicesBadge: "Factory Services",
+      servicesTitle: "Manufacturing support beyond standard sourcing.",
+
+      servicesDesc:
+        "We help connect project requirements with the right manufacturing resources, technical teams, and supply-chain execution.",
+
+      services: [
+        {
+          title: "Production Coordination",
+          text: "Factory-level coordination for manufacturing schedules, workflow preparation, and project execution.",
+        },
+        {
+          title: "Component Sourcing",
+          text: "Reliable sourcing for BESS components, solar system materials, electrical equipment, and industrial parts.",
+        },
+        {
+          title: "Quality Control",
+          text: "Inspection-focused workflows to support quality consistency before shipment and delivery.",
+        },
+        {
+          title: "Production Setup",
+          text: "Support for factory setup, production preparation, layout coordination, and operational workflow planning.",
+        },
+        {
+          title: "Technical Training",
+          text: "Practical technical guidance and training support for engineering and operational teams.",
+        },
+        {
+          title: "Engineering Support",
+          text: "Engineering-focused support across manufacturing coordination, technical review, and project execution.",
+        },
+      ],
+
+      processBadge: "Our Process",
+      processTitle1: "From Factory Planning to",
+      processTitle2: "Delivery",
+      process: [
+        "Requirement Study",
+        "Supplier / Factory Matching",
+        "Technical Specification Review",
+        "Production Coordination",
+        "Quality Control & Inspection",
+        "Shipping & After-Sales Support",
+      ],
+
+      capabilitiesBadge: "Industrial Capabilities",
+      capabilitiesTitle: "Industrial Capabilities",
+      capabilitiesTitle2: "We Support ",
+      industrialCapabilities: [
+        "Energy Storage Assembly",
+        "Solar Project Components",
+        "Electrical Cabinets",
+        "Production Line Equipment",
+        "Testing & Inspection",
+        "Packaging & Delivery Coordination",
+      ],
+
+      executionBadge: "Execution Support",
+      executionTitle:
+        "Supporting production workflows, factory coordination, and manufacturing execution",
+      executionDesc:
+        "We support projects from supplier coordination to quality inspection and delivery planning, helping clients manage complex manufacturing workflows with stronger technical visibility.",
+      executionPoints: [
+        "Trusted coordination with suitable Chinese factories",
+        "Professional support across production and engineering",
+        "Quality-focused execution from start to finish",
+      ],
+    },
+    gigaPage: {
+      heroBadge: "Giga Projects · Solar · Energy Storage",
+
+      heroTitle1: "Advanced Engineering Power",
+      heroTitle2A: "for Utility-Scale Solar",
+      heroTitle2B: "and Gigawatt Projects",
+
+      heroDesc:
+        "Tough Haulers delivers large-scale solar and energy storage solutions, from kW systems to multi-MW and gigawatt-level projects. We combine EPC engineering, BESS integration, and China-based supply chain strength to ensure reliable, scalable, and execution-focused delivery.",
+
+      heroCapabilities: [
+        "Utility-Scale Solar",
+        "Solar + BESS Integration",
+        "Full EPC Engineering",
+        "China Supply Chain",
+        "Project Execution",
+      ],
+
+      aboutBadge: "About Giga Projects",
+      aboutTitle: "What Defines a Gigawatt-Scale Project?",
+      aboutDesc:
+        "Gigawatt-scale energy projects represent large-capacity generation or storage systems designed to support utility grids, industrial zones, cities, and national infrastructure. These projects require advanced engineering, reliable sourcing, grid integration, and long-term operational planning.",
+
+      scopeBadge: "Engineering Scope",
+      scopeTitle:
+        "Integrated support for large-scale solar and storage projects",
+      scopeDesc:
+        "Large energy projects require precise coordination across engineering design, BESS integration, electrical systems, supply chain management, and commissioning workflows.",
+
+      services: [
+        {
+          title: "Utility-Scale Solar",
+          text: "Engineering and supply support for large solar systems designed for industrial and utility-scale applications.",
+        },
+        {
+          title: "BESS Integration",
+          text: "Energy storage systems integrated based on project requirements, safety standards, and long-term operational goals.",
+        },
+        {
+          title: "Electrical Engineering",
+          text: "Design of single-line diagrams, protection systems, and electrical layouts for complex projects.",
+        },
+        {
+          title: "PCS & Inverter Selection",
+          text: "Technical support for selecting inverters and PCS systems aligned with project scale and performance needs.",
+        },
+        {
+          title: "China Supply Chain",
+          text: "Optimized sourcing and supply chain management ensuring quality, cost efficiency, and delivery reliability.",
+        },
+        {
+          title: "Commissioning Support",
+          text: "End-to-end support from engineering through installation, commissioning, and final project delivery.",
+        },
+      ],
+
+      processBadge: "Project Delivery Process",
+      processTitle: "From Concept to Utility-Scale Execution",
+
+      process: [
+        "Project Requirement Study",
+        "Site & Energy Demand Analysis",
+        "System Design & Capacity Planning",
+        "Equipment Sourcing & Supply Chain",
+        "EPC Coordination & Installation",
+        "Testing, Commissioning & Handover",
+      ],
+
+      capabilitiesBadge: "Large-Scale Capabilities",
+
+      capabilities: [
+        "Solar Farm Development",
+        "Battery Energy Storage Systems",
+        "Substation & Grid Connection",
+        "EPC Engineering Support",
+        "Industrial Power Projects",
+        "City & Utility Applications",
+      ],
+
+      finalBadge: "Utility-Scale Support",
+
+      finalTitle:
+        "Delivering large-scale energy infrastructure through engineering, sourcing, and execution coordination",
+
+      finalDesc:
+        "We combine engineering expertise, high-quality components, and China supply chain strength to deliver reliable, efficient, and scalable energy projects.",
+
+      executionPoints: [
+        "End-to-end EPC engineering support",
+        "Reliable equipment sourcing and supply chain",
+        "Quality control and pre-deployment testing",
+        "Long-term operational and technical support",
+      ],
+    },
+    partnersPage: {
+      heroBadge: "Main Supply Chain",
+
+      heroTitle1: "Global Technology Network",
+      heroTitle2: "powering energy projects.",
+
+      heroDesc:
+        "Our main supply chain ecosystem supports solar power systems, battery energy storage, EPC engineering, and global project execution through reliable supply chain integration.",
+
+      heroBox:
+        "Strategic partnerships strengthen sourcing capability, engineering coordination, and project delivery confidence.",
+
+      visit: "Visit Website",
+
+      partners: {
+        rf: {
+          category: "Engineering Support Partner",
+          label: "Partner",
+          description:
+            "RF Box Company supports regional engineering activities in Egypt, helping connect technical coordination, project support, and local engineering execution.",
+          highlights: [
+            "Engineering support in Egypt",
+            "Technical coordination",
+            "Project execution support",
+          ],
+        },
+
+        eve: {
+          category: "Battery Energy Storage Technology",
+          label: "Main Supply Chain",
+          description:
+            "EVE Energy is part of our battery technology and supply chain network, supporting advanced energy storage applications for reliable and scalable project delivery.",
+          highlights: [
+            "Battery Energy Storage Systems",
+            "Large-scale storage applications",
+            "Energy technology supply chain",
+          ],
+        },
+
+        byd: {
+          category: "Renewable Energy & Battery Ecosystem",
+          label: "Main Supply Chain",
+          description:
+            "BYD strengthens our access to advanced energy technologies, battery solutions, and integrated renewable energy supply chain capabilities.",
+          highlights: [
+            "Battery and storage ecosystem",
+            "Renewable energy technologies",
+            "Global technology capability",
+          ],
+        },
+      },
+    },
   },
 
   ar: {
@@ -876,8 +1106,235 @@ export const translations = {
         "دعم ما بعد البيع",
       ],
     },
-  },
+    factoryPage: {
+      heroBadge: "دعم المصانع · الإنتاج · الهندسة",
+      heroTitle1: "حلول مصانع متكاملة",
+      heroTitle2A: "للمشاريع الصناعية",
+      heroTitle2B: "ومشاريع الطاقة.",
+      heroDesc:
+        "تدعم Tough Haulers المشاريع الصناعية ومشاريع الطاقة من خلال تنسيق التصنيع داخل الصين، وتوريد المكونات، وتجهيز المصانع، ومراقبة الجودة، والدعم الهندسي الفني.",
 
+      heroCapabilities: [
+        "تنسيق المصانع",
+        "تجهيز الإنتاج",
+        "سلسلة توريد من الصين",
+        "دعم فني",
+        "مراقبة الجودة",
+      ],
+
+      servicesBadge: "خدمات المصانع",
+      servicesTitle: "دعم تصنيعي يتجاوز التوريد التقليدي.",
+      servicesDesc:
+        "نساعد في ربط متطلبات المشروع بالموارد التصنيعية المناسبة، والفرق الفنية، وتنفيذ سلاسل التوريد بكفاءة.",
+
+      services: [
+        {
+          title: "تنسيق الإنتاج",
+          text: "تنسيق على مستوى المصنع لجداول التصنيع، وتجهيز سير العمل، ودعم تنفيذ المشروع.",
+        },
+        {
+          title: "توريد المكونات",
+          text: "دعم موثوق في توريد مكونات BESS، ومواد أنظمة الطاقة الشمسية، والمعدات الكهربائية، والمواد الصناعية.",
+        },
+        {
+          title: "مراقبة الجودة",
+          text: "إجراءات فحص موجهة لضمان اتساق الجودة قبل الشحن والتسليم.",
+        },
+        {
+          title: "تجهيز خطوط الإنتاج",
+          text: "دعم في تجهيز المصنع، والتحضير للإنتاج، وتنسيق التخطيط التشغيلي وسير العمل.",
+        },
+        {
+          title: "التدريب الفني",
+          text: "إرشاد وتدريب فني عملي لدعم الفرق الهندسية والتشغيلية.",
+        },
+        {
+          title: "الدعم الهندسي",
+          text: "دعم هندسي متخصص يشمل تنسيق التصنيع، والمراجعة الفنية، وتنفيذ المشاريع.",
+        },
+      ],
+
+      processBadge: "آلية العمل",
+      processTitle1: "من تخطيط المصنع إلى",
+      processTitle2: "التسليم",
+      process: [
+        "دراسة المتطلبات",
+        "مطابقة المورد أو المصنع المناسب",
+        "مراجعة المواصفات الفنية",
+        "تنسيق الإنتاج",
+        "مراقبة الجودة والفحص",
+        "الشحن ودعم ما بعد البيع",
+      ],
+
+      capabilitiesBadge: "القدرات الصناعية",
+      capabilitiesTitle: "القدرات الصناعية التي ",
+      capabilitiesTitle2: "ندعمها ",
+      industrialCapabilities: [
+        "تجميع أنظمة تخزين الطاقة",
+        "مكونات مشاريع الطاقة الشمسية",
+        "اللوحات والخزائن الكهربائية",
+        "معدات خطوط الإنتاج",
+        "الاختبار والفحص",
+        "تنسيق التغليف والتسليم",
+      ],
+
+      executionBadge: "دعم التنفيذ",
+      executionTitle: "دعم سير الإنتاج، وتنسيق المصانع، وتنفيذ عمليات التصنيع",
+      executionDesc:
+        "ندعم المشاريع بدءًا من تنسيق الموردين وحتى فحص الجودة وتخطيط التسليم، مما يساعد العملاء على إدارة عمليات التصنيع المعقدة برؤية فنية أوضح.",
+      executionPoints: [
+        "تنسيق موثوق مع مصانع صينية مناسبة",
+        "دعم احترافي في الإنتاج والهندسة",
+        "تنفيذ قائم على الجودة من البداية حتى التسليم",
+      ],
+    },
+    gigaPage: {
+      heroBadge: "مشاريع عملاقة · الطاقة الشمسية · أنظمة التخزين",
+
+      heroTitle1: "قدرات هندسية متقدمة",
+      heroTitle2A: "لمشاريع الطاقة الشمسية",
+      heroTitle2B: "على مستوى الجيجاواط",
+
+      heroDesc:
+        "تدعم Tough Haulers مشاريع الطاقة الشمسية وأنظمة تخزين الطاقة على نطاق واسع، بدءًا من الأنظمة الصغيرة وحتى المشاريع متعددة الجيجاواط، من خلال تكامل حلول EPC، وأنظمة التخزين BESS، وسلاسل التوريد المعتمدة من الصين، مع تنفيذ عملي يركز على الكفاءة والموثوقية.",
+
+      heroCapabilities: [
+        "محطات طاقة شمسية على نطاق المرافق",
+        "تكامل الطاقة الشمسية مع أنظمة التخزين",
+        "هندسة EPC متكاملة",
+        "سلاسل توريد من الصين",
+        "تنفيذ وإدارة المشاريع",
+      ],
+
+      aboutBadge: "عن المشاريع العملاقة",
+      aboutTitle: "ما هي مشاريع الجيجاواط؟",
+      aboutDesc:
+        "تشير مشاريع الجيجاواط إلى مشاريع توليد أو تخزين الطاقة ذات السعات الكبيرة جدًا، والتي تخدم شبكات الكهرباء، والمناطق الصناعية، والمدن، والمشاريع القومية الكبرى. وتتطلب هذه المشاريع تكاملًا دقيقًا بين التصميم الهندسي، وسلاسل التوريد، وربط الشبكات، وإدارة التنفيذ، والتشغيل طويل الأمد.",
+
+      scopeBadge: "نطاق الهندسة",
+      scopeTitle:
+        "دعم متكامل لمشاريع الطاقة الشمسية وأنظمة التخزين واسعة النطاق",
+      scopeDesc:
+        "تتطلب المشاريع الكبيرة تنسيقًا عالي المستوى بين الهندسة، وأنظمة التخزين، والتصميم الكهربائي، وإدارة سلاسل التوريد، وعمليات التشغيل والتسليم.",
+
+      services: [
+        {
+          title: "محطات الطاقة الشمسية الكبرى",
+          text: "دعم هندسي وسلسلة توريد متكاملة لمشاريع الطاقة الشمسية المصممة للاستخدامات الصناعية وشبكات المرافق.",
+        },
+        {
+          title: "تكامل أنظمة التخزين BESS",
+          text: "تصميم ودمج أنظمة تخزين الطاقة وفقًا لمتطلبات المشروع ومعايير السلامة واحتياجات التشغيل طويلة المدى.",
+        },
+        {
+          title: "الهندسة الكهربائية",
+          text: "تصميم المخططات الأحادية، وأنظمة الحماية، والتوزيع الكهربائي للمشاريع المعقدة.",
+        },
+        {
+          title: "اختيار العواكس وأنظمة PCS",
+          text: "دعم فني لاختيار العواكس وأنظمة التحويل بما يتناسب مع حجم المشروع ومتطلباته التشغيلية.",
+        },
+        {
+          title: "سلاسل التوريد من الصين",
+          text: "إدارة متكاملة لسلاسل التوريد لضمان الجودة العالية، والكفاءة في التكلفة، والموثوقية في التسليم.",
+        },
+        {
+          title: "دعم التشغيل والتسليم",
+          text: "دعم شامل من مرحلة الهندسة وحتى التركيب والتشغيل والتسليم النهائي الجاهز للتشغيل.",
+        },
+      ],
+
+      processBadge: "مراحل تنفيذ المشروع",
+      processTitle: "من الفكرة إلى التنفيذ على مستوى المرافق",
+
+      process: [
+        "دراسة متطلبات المشروع",
+        "تحليل الموقع والطلب على الطاقة",
+        "تصميم النظام وتحديد السعة",
+        "توريد المعدات وإدارة سلسلة التوريد",
+        "تنسيق EPC والتركيب",
+        "الاختبار والتشغيل والتسليم",
+      ],
+
+      capabilitiesBadge: "القدرات على نطاق واسع",
+
+      capabilities: [
+        "تطوير محطات الطاقة الشمسية",
+        "أنظمة تخزين الطاقة",
+        "محطات الربط بالشبكة",
+        "دعم هندسي EPC",
+        "مشاريع الطاقة الصناعية",
+        "تطبيقات المدن والمرافق",
+      ],
+
+      finalBadge: "دعم المشاريع الكبرى",
+
+      finalTitle:
+        "نقدم دعمًا متكاملًا لمشاريع الطاقة واسعة النطاق من خلال الهندسة وسلاسل التوريد والتنفيذ",
+
+      finalDesc:
+        "نجمع بين الخبرة الهندسية، وجودة المكونات، وقوة سلاسل التوريد في الصين لتقديم مشاريع طاقة موثوقة، فعالة، وقابلة للتوسع.",
+
+      executionPoints: [
+        "دعم هندسي EPC متكامل",
+        "سلاسل توريد موثوقة",
+        "رقابة جودة واختبارات قبل التشغيل",
+        "دعم فني وتشغيلي طويل الأمد",
+      ],
+    },
+    partnersPage: {
+  heroBadge: "سلسلة التوريد الرئيسية",
+
+  heroTitle1: "شبكة تكنولوجية عالمية",
+  heroTitle2: "تقود تنفيذ مشاريع الطاقة",
+
+  heroDesc:
+    "تعتمد منظومة سلسلة التوريد لدينا على شبكة قوية من الشركاء العالميين لدعم أنظمة الطاقة الشمسية، وحلول تخزين الطاقة، ومشاريع EPC، وتنفيذ المشاريع على نطاق عالمي بكفاءة وموثوقية عالية.",
+
+  heroBox:
+    "تعزز الشراكات الاستراتيجية قدرتنا على تحسين التوريد، وتطوير التنسيق الهندسي، وضمان تنفيذ المشاريع بثقة واستقرار أعلى.",
+
+  visit: "زيارة الموقع",
+
+  partners: {
+    rf: {
+      category: "شريك دعم هندسي",
+      label: "شريك",
+      description:
+        "تدعم شركة RF Box الأنشطة الهندسية الإقليمية في مصر، من خلال الربط بين التنسيق الفني، ودعم المشاريع، وتنفيذ الأعمال الهندسية على أرض الواقع.",
+      highlights: [
+        "دعم هندسي داخل مصر",
+        "تنسيق فني متكامل",
+        "دعم تنفيذ المشاريع",
+      ],
+    },
+
+    eve: {
+      category: "تكنولوجيا تخزين الطاقة",
+      label: "مورد رئيسي",
+      description:
+        "تُعد EVE Energy جزءًا من منظومة تكنولوجيا البطاريات وسلسلة التوريد لدينا، حيث تدعم تطبيقات تخزين الطاقة المتقدمة لضمان تنفيذ مشاريع موثوقة وقابلة للتوسع.",
+      highlights: [
+        "أنظمة تخزين الطاقة",
+        "تطبيقات تخزين على نطاق واسع",
+        "سلسلة توريد تكنولوجية متقدمة",
+      ],
+    },
+
+    byd: {
+      category: "الطاقة المتجددة وأنظمة البطاريات",
+      label: "مورد رئيسي",
+      description:
+        "تعزز BYD وصولنا إلى أحدث تقنيات الطاقة، وحلول البطاريات، وقدرات سلسلة التوريد المتكاملة في قطاع الطاقة المتجددة.",
+      highlights: [
+        "منظومة بطاريات متكاملة",
+        "تقنيات الطاقة المتجددة",
+        "قدرات تكنولوجية عالمية",
+      ],
+    },
+  },
+},
+  },
   zh: {
     nav: {
       home: "首页",
@@ -1302,5 +1759,232 @@ export const translations = {
         "售后支持",
       ],
     },
+    factoryPage: {
+      heroBadge: "工厂支持 · 生产 · 工程",
+      heroTitle1: "面向工业与能源项目的",
+      heroTitle2A: "工厂解决方案",
+      heroTitle2B: "能源项目。",
+      heroDesc:
+        "Tough Haulers 通过中国本地制造协调、零部件采购、工厂搭建、质量控制及技术工程支持，为工业与能源项目提供可靠的执行支持。",
+
+      heroCapabilities: [
+        "工厂协调",
+        "生产搭建",
+        "中国供应链",
+        "技术支持",
+        "质量控制",
+      ],
+
+      servicesBadge: "工厂服务",
+      servicesTitle: "超越传统采购的制造支持。",
+      servicesDesc:
+        "我们帮助客户将项目需求与合适的制造资源、技术团队及供应链执行能力相连接。",
+
+      services: [
+        {
+          title: "生产协调",
+          text: "围绕生产计划、流程准备及项目执行，提供工厂层面的协调支持。",
+        },
+        {
+          title: "零部件采购",
+          text: "为 BESS 组件、太阳能系统材料、电气设备及工业部件提供可靠采购支持。",
+        },
+        {
+          title: "质量控制",
+          text: "通过以检验为核心的流程，确保发货与交付前的质量一致性。",
+        },
+        {
+          title: "生产搭建",
+          text: "支持工厂搭建、生产准备、布局协调及运营流程规划。",
+        },
+        {
+          title: "技术培训",
+          text: "为工程和运营团队提供实用的技术指导与培训支持。",
+        },
+        {
+          title: "工程支持",
+          text: "围绕制造协调、技术审核及项目执行提供工程化支持。",
+        },
+      ],
+
+      processBadge: "项目流程",
+      processTitle1: "从工厂规划到",
+      processTitle2: "项目交付",
+      process: [
+        "需求分析",
+        "供应商 / 工厂匹配",
+        "技术规格审核",
+        "生产协调",
+        "质量控制与检验",
+        "运输与售后支持",
+      ],
+
+      capabilitiesBadge: "工业能力",
+      capabilitiesTitle: "我们支持的工业能力",
+      capabilitiesTitle2: "能力",
+      industrialCapabilities: [
+        "储能系统组装",
+        "光伏项目组件",
+        "电气柜",
+        "生产线设备",
+        "测试与检验",
+        "包装与交付协调",
+      ],
+
+      executionBadge: "执行支持",
+      executionTitle: "支持生产流程、工厂协调与制造执行",
+      executionDesc:
+        "我们从供应商协调、质量检验到交付规划提供支持，帮助客户以更清晰的技术视角管理复杂的制造流程。",
+      executionPoints: [
+        "与合适的中国工厂进行可靠协调",
+        "覆盖生产与工程环节的专业支持",
+        "从启动到交付的质量导向执行",
+      ],
+    },
+    gigaPage: {
+      heroBadge: "超大型项目 · 光伏 · 储能系统",
+
+      heroTitle1: "先进工程能力",
+      heroTitle2A: "面向大型光伏项目",
+      heroTitle2B: "与吉瓦级能源系统",
+
+      heroDesc:
+        "Tough Haulers 为大规模光伏及储能项目提供全流程支持，从千瓦级系统到多兆瓦乃至吉瓦级项目，结合 EPC 工程能力、BESS 集成、中国供应链优势及高效项目执行能力，确保项目可靠交付。",
+
+      heroCapabilities: [
+        "公用事业级光伏系统",
+        "光伏 + 储能系统集成",
+        "EPC 工程总包",
+        "中国供应链能力",
+        "项目执行与管理",
+      ],
+
+      aboutBadge: "关于超大型项目",
+      aboutTitle: "什么是吉瓦级项目？",
+      aboutDesc:
+        "吉瓦级能源项目指的是大规模发电或储能系统，通常服务于电网、工业园区、城市及国家级基础设施。这类项目需要工程设计、供应链管理、电网接入及长期运营的深度协同。",
+
+      scopeBadge: "工程范围",
+      scopeTitle: "面向大型光伏与储能项目的一体化支持",
+      scopeDesc:
+        "大规模能源项目需要在工程设计、储能系统、电气设计、供应链管理以及调试交付等方面实现高效协同。",
+
+      services: [
+        {
+          title: "大型光伏系统",
+          text: "为工业及公用事业项目提供工程设计及设备供应支持。",
+        },
+        {
+          title: "储能系统集成（BESS）",
+          text: "根据项目需求、安全标准及长期运行目标进行系统集成。",
+        },
+        {
+          title: "电气工程",
+          text: "提供单线图设计、保护系统及电气布局支持。",
+        },
+        {
+          title: "PCS 与逆变器选型",
+          text: "根据项目规模提供专业选型与技术支持。",
+        },
+        {
+          title: "中国供应链",
+          text: "整合高质量供应资源，实现成本优化与稳定交付。",
+        },
+        {
+          title: "调试与交付支持",
+          text: "从工程阶段到安装调试及最终交付的全流程支持。",
+        },
+      ],
+
+      processBadge: "项目交付流程",
+      processTitle: "从概念到公用事业级落地",
+
+      process: [
+        "项目需求分析",
+        "场地与用能评估",
+        "系统设计与容量规划",
+        "设备采购与供应链管理",
+        "EPC 协调与安装",
+        "测试、调试与交付",
+      ],
+
+      capabilitiesBadge: "大规模能力",
+
+      capabilities: [
+        "光伏电站开发",
+        "储能系统建设",
+        "变电站与并网",
+        "EPC 工程支持",
+        "工业能源项目",
+        "城市与公用事业应用",
+      ],
+
+      finalBadge: "公用事业级支持",
+
+      finalTitle:
+        "通过工程能力、供应链整合与执行协调，支持大规模能源基础设施建设",
+
+      finalDesc:
+        "我们结合工程专业能力、优质设备资源及中国供应链优势，为客户提供可靠、高效、可扩展的能源解决方案。",
+
+      executionPoints: [
+        "端到端 EPC 工程支持",
+        "稳定可靠的供应链体系",
+        "交付前严格质量检测",
+        "长期运行与技术支持",
+      ],
+    },
+    partnersPage: {
+  heroBadge: "核心供应链体系",
+
+  heroTitle1: "全球技术网络",
+  heroTitle2: "赋能能源项目交付",
+
+  heroDesc:
+    "我们的供应链体系依托全球合作伙伴网络，为光伏系统、储能解决方案、EPC工程及全球项目执行提供稳定、高效、可靠的支持。",
+
+  heroBox:
+    "强大的合作伙伴关系有助于提升采购能力、优化工程协同，并增强项目交付的稳定性与可靠性。",
+
+  visit: "访问官网",
+
+  partners: {
+    rf: {
+      category: "工程支持合作伙伴",
+      label: "合作伙伴",
+      description:
+        "RF Box 公司为埃及地区提供工程支持，协助技术协调、项目执行及本地工程落地。",
+      highlights: [
+        "埃及本地工程支持",
+        "技术协调能力",
+        "项目执行支持",
+      ],
+    },
+
+    eve: {
+      category: "储能技术",
+      label: "核心供应链",
+      description:
+        "EVE Energy 是公司电池技术及供应链体系的重要组成部分，为大型储能应用提供稳定、高效的技术支持。",
+      highlights: [
+        "储能系统解决方案",
+        "大规模储能应用",
+        "能源技术供应链",
+      ],
+    },
+
+    byd: {
+      category: "新能源与电池生态",
+      label: "核心供应链",
+      description:
+        "比亚迪为公司提供先进的能源技术、储能解决方案以及完整的新能源供应链支持能力。",
+      highlights: [
+        "电池及储能生态",
+        "新能源技术",
+        "全球技术能力",
+      ],
+    },
+  },
+},
   },
 };
