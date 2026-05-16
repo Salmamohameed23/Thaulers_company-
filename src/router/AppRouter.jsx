@@ -9,6 +9,8 @@ import Partners from "../pages/Partners";
 import Contact from "../pages/Contact";
 import LetsBuild from "../pages/LetsBuild";
 import Rd from "../pages/Rd";
+import TermsOfService from "../pages/TermsOfService";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 const AppRouter = () => {
   return (
     <Routes>
@@ -22,6 +24,8 @@ const AppRouter = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/lets-build" element={<LetsBuild />} />
       <Route path="/R&D" element={<Rd />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     </Routes>
   );
 };

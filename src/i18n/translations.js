@@ -129,7 +129,7 @@ export const translations = {
       contact: "Contact",
       legal: "Legal",
 
-      email: "sales@toughhaulers.cn.com",
+      email: "Sales@toughhaulers.cn.com",
       location1:
         "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
@@ -143,6 +143,107 @@ export const translations = {
         privacy: "Privacy Policy",
         terms: "Terms of Service",
       },
+    },
+    privacy: {
+      title: "Privacy Policy",
+      intro:
+        "This Privacy Policy explains how Tough Haulers collects, uses, and protects the information you provide when using our website or contacting us. We are committed to safeguarding your privacy and handling your information responsibly.",
+
+      sections: [
+        {
+          title: "Information We Collect",
+          text: "We may collect basic contact information that you choose to provide when communicating with us through our website, email, or business channels. This may include:",
+          items: [
+            "Name",
+            "Email address",
+            "Phone number",
+            "Company name",
+            "Message details and inquiry information",
+          ],
+          after:
+            "Our website does not require user accounts and does not process online payments.",
+        },
+        {
+          title: "How We Use Your Information",
+          text: "We use collected information strictly for legitimate business communication and service-related purposes, including:",
+          items: [
+            "Responding to inquiries and quotation requests",
+            "Providing product information, catalogues, and company details",
+            "Discussing potential cooperation and supply opportunities",
+            "Enhancing our website and customer support experience",
+          ],
+        },
+        {
+          title: "Information Sharing",
+          text: "We do not sell, rent, or trade your personal data. Information may only be shared when necessary:",
+          items: [
+            "With your consent",
+            "To comply with legal obligations",
+            "To protect our rights, business, or users",
+            "With trusted service providers supporting technical operations",
+          ],
+        },
+        {
+          title: "Data Security",
+          text: "We implement appropriate technical and organizational measures to protect your data. However, no system can guarantee complete security.",
+        },
+        {
+          title: "Cookies and Website Analytics",
+          text: "We may use cookies or similar technologies to enhance performance and understand usage patterns. You may disable cookies via your browser settings.",
+        },
+        {
+          title: "Your Rights",
+          text: "Subject to applicable laws, you may request access, correction, or deletion of your personal data.",
+        },
+        {
+          title: "Contact Us",
+          text: "For any questions regarding this Privacy Policy, please contact us through the details provided on our website.",
+        },
+      ],
+    },
+    terms: {
+      title: "Terms of Service",
+      intro:
+        "Welcome to the Tough Haulers website. By accessing or using our website, you agree to the following Terms of Service. Please read them carefully before using the website.",
+
+      sections: [
+        {
+          title: "Website Purpose",
+          text: "This website is intended to present information about Tough Haulers, including our products, services, catalogues, and company details.",
+        },
+        {
+          title: "Use of Website",
+          text: "You agree to use this website only for lawful purposes and not to engage in any activity that may harm the website or its security.",
+        },
+        {
+          title: "Product Information",
+          text: "We strive to provide accurate product information. However, specifications, availability, and details may change without prior notice. Images are for reference purposes only.",
+        },
+        {
+          title: "No Online Orders or Payments",
+          text: "This website does not support online payments, user accounts, or direct orders. All business transactions must be confirmed directly with our team.",
+        },
+        {
+          title: "Intellectual Property",
+          text: "All website content is owned by Tough Haulers and may not be copied, reproduced, or used without prior written permission.",
+        },
+        {
+          title: "External Links",
+          text: "We may provide links to third-party websites. We are not responsible for their content or policies.",
+        },
+        {
+          title: "Limitation of Liability",
+          text: "Tough Haulers is not liable for any damages resulting from the use of this website or reliance on its content.",
+        },
+        {
+          title: "Changes to These Terms",
+          text: "We may update these terms at any time. Continued use of the website means acceptance of the updated terms.",
+        },
+        {
+          title: "Contact Us",
+          text: "If you have any questions regarding these terms, please contact us through the website.",
+        },
+      ],
     },
   },
 
@@ -276,7 +377,7 @@ export const translations = {
       contact: "التواصل",
       legal: "القانوني",
 
-      email: "sales@toughhaulers.cn.com",
+      email: "Sales@toughhaulers.cn.com",
       location1:
         "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
@@ -290,6 +391,107 @@ export const translations = {
         privacy: "سياسة الخصوصية",
         terms: "الشروط والأحكام العامة",
       },
+    },
+    privacy: {
+      title: "سياسة الخصوصية",
+      intro:
+        "توضح سياسة الخصوصية هذه كيفية قيام شركة Tough Haulers بجمع واستخدام وحماية المعلومات التي تقدمها عند استخدامك للموقع أو عند التواصل معنا. نحن ملتزمون بحماية خصوصيتك والتعامل مع بياناتك بمسؤولية وشفافية.",
+
+      sections: [
+        {
+          title: "المعلومات التي نقوم بجمعها",
+          text: "قد نقوم بجمع بعض بيانات التواصل الأساسية التي تختار تقديمها عند التواصل معنا عبر الموقع أو البريد الإلكتروني أو قنوات الأعمال، وتشمل:",
+          items: [
+            "الاسم",
+            "البريد الإلكتروني",
+            "رقم الهاتف",
+            "اسم الشركة",
+            "تفاصيل الرسائل والاستفسارات",
+          ],
+          after:
+            "لا يتطلب موقعنا إنشاء حسابات مستخدمين ولا يدعم عمليات الدفع الإلكتروني.",
+        },
+        {
+          title: "كيفية استخدام المعلومات",
+          text: "نستخدم المعلومات التي يتم جمعها لأغراض الأعمال المشروعة فقط، وتشمل:",
+          items: [
+            "الرد على الاستفسارات وطلبات التسعير",
+            "تقديم المعلومات الفنية والكتالوجات",
+            "مناقشة فرص التعاون والتوريد",
+            "تحسين تجربة الموقع وخدمة العملاء",
+          ],
+        },
+        {
+          title: "مشاركة المعلومات",
+          text: "نحن لا نقوم ببيع أو تأجير أو مشاركة بياناتك مع أطراف خارجية إلا في الحالات الضرورية التالية:",
+          items: [
+            "بموافقتك",
+            "للالتزام بالمتطلبات القانونية",
+            "لحماية حقوق الشركة أو المستخدمين",
+            "مع مزودي خدمات موثوقين لدعم العمليات التقنية",
+          ],
+        },
+        {
+          title: "أمن البيانات",
+          text: "نطبق إجراءات تقنية وتنظيمية مناسبة لحماية بياناتك، ومع ذلك لا يمكن ضمان الأمان الكامل لأي نظام إلكتروني.",
+        },
+        {
+          title: "ملفات تعريف الارتباط (Cookies)",
+          text: "قد نستخدم تقنيات مثل ملفات تعريف الارتباط لتحسين الأداء وفهم سلوك المستخدم. يمكنك تعطيلها من إعدادات المتصفح.",
+        },
+        {
+          title: "حقوقك",
+          text: "وفقًا للقوانين المعمول بها، يمكنك طلب الوصول إلى بياناتك أو تعديلها أو حذفها.",
+        },
+        {
+          title: "التواصل معنا",
+          text: "في حال وجود أي استفسار حول سياسة الخصوصية، يرجى التواصل معنا عبر القنوات المتاحة على الموقع.",
+        },
+      ],
+    },
+    terms: {
+      title: "شروط الاستخدام",
+      intro:
+        "مرحبًا بك في موقع Tough Haulers. باستخدامك لهذا الموقع، فإنك توافق على شروط الاستخدام التالية. يرجى قراءتها بعناية قبل المتابعة.",
+
+      sections: [
+        {
+          title: "الغرض من الموقع",
+          text: "يهدف هذا الموقع إلى عرض معلومات عن الشركة، بما في ذلك المنتجات والخدمات والبيانات التعريفية.",
+        },
+        {
+          title: "استخدام الموقع",
+          text: "يجب استخدام الموقع لأغراض مشروعة فقط، ويُمنع أي استخدام قد يؤثر سلبًا على أداء الموقع أو أمانه.",
+        },
+        {
+          title: "معلومات المنتجات",
+          text: "نسعى لتقديم معلومات دقيقة، إلا أن المواصفات والتفاصيل قد تتغير دون إشعار مسبق. الصور لأغراض توضيحية فقط.",
+        },
+        {
+          title: "عدم وجود طلبات أو مدفوعات إلكترونية",
+          text: "لا يدعم الموقع عمليات الشراء أو الدفع الإلكتروني، وجميع المعاملات تتم عبر التواصل المباشر مع الشركة.",
+        },
+        {
+          title: "الملكية الفكرية",
+          text: "جميع محتويات الموقع مملوكة للشركة ولا يجوز استخدامها أو نسخها دون إذن مسبق.",
+        },
+        {
+          title: "الروابط الخارجية",
+          text: "قد يحتوي الموقع على روابط لمواقع خارجية، ولا تتحمل الشركة مسؤولية محتواها.",
+        },
+        {
+          title: "تحديد المسؤولية",
+          text: "لا تتحمل الشركة أي مسؤولية عن الأضرار الناتجة عن استخدام الموقع أو الاعتماد على محتواه.",
+        },
+        {
+          title: "تعديل الشروط",
+          text: "يجوز تحديث هذه الشروط في أي وقت، ويُعد استمرار الاستخدام موافقة على التحديثات.",
+        },
+        {
+          title: "التواصل معنا",
+          text: "في حال وجود أي استفسارات، يرجى التواصل معنا عبر الموقع.",
+        },
+      ],
     },
   },
 
@@ -423,7 +625,7 @@ export const translations = {
       contact: "联系我们",
       legal: "法律信息",
 
-      email: "sales@toughhaulers.cn.com",
+      email: "Sales@toughhaulers.cn.com",
       location1: "中国浙江省义乌市工人北路454号楼201室",
 
       copyright: "© 2026 Tough Haulers Trade Limited. 版权所有。",
@@ -436,6 +638,100 @@ export const translations = {
         privacy: "隐私政策",
         terms: "服务条款",
       },
+    },
+    privacy: {
+      title: "隐私政策",
+      intro:
+        "本隐私政策说明 Tough Haulers 在您使用我们的网站或与我们联系时，如何收集、使用及保护您的信息。我们致力于以负责任和安全的方式处理您的数据。",
+
+      sections: [
+        {
+          title: "我们收集的信息",
+          text: "当您通过网站、电子邮件或业务沟通渠道与我们联系时，我们可能会收集您自愿提供的基本信息，包括：",
+          items: ["姓名", "电子邮箱", "电话号码", "公司名称", "咨询及沟通内容"],
+          after: "本网站不要求用户注册账户，也不提供在线支付功能。",
+        },
+        {
+          title: "信息的使用方式",
+          text: "我们仅将所收集的信息用于合法的业务沟通和服务目的，包括：",
+          items: [
+            "回复咨询及报价请求",
+            "提供产品信息及资料",
+            "洽谈合作及供应事宜",
+            "优化网站及客户服务体验",
+          ],
+        },
+        {
+          title: "信息共享",
+          text: "我们不会出售或出租您的个人信息，仅在必要情况下共享：",
+          items: [
+            "经您同意",
+            "遵守法律法规要求",
+            "保护公司或用户权益",
+            "与技术服务合作方共享必要信息",
+          ],
+        },
+        {
+          title: "数据安全",
+          text: "我们采取合理的技术和管理措施保护您的数据，但无法保证绝对安全。",
+        },
+        {
+          title: "Cookies 与分析",
+          text: "我们可能使用 Cookies 或类似技术提升网站性能并分析使用情况，您可在浏览器中进行设置。",
+        },
+        {
+          title: "您的权利",
+          text: "根据相关法律，您有权请求访问、更正或删除您的个人数据。",
+        },
+        {
+          title: "联系我们",
+          text: "如对本隐私政策有任何疑问，请通过网站提供的联系方式与我们联系。",
+        },
+      ],
+    },
+    terms: {
+      title: "服务条款",
+      intro:
+        "欢迎访问 Tough Haulers 网站。使用本网站即表示您同意以下服务条款，请在使用前仔细阅读。",
+
+      sections: [
+        {
+          title: "网站用途",
+          text: "本网站用于展示公司信息，包括产品、服务及相关资料。",
+        },
+        {
+          title: "网站使用",
+          text: "您应合法使用本网站，不得进行任何影响网站运行或安全的行为。",
+        },
+        {
+          title: "产品信息",
+          text: "我们尽力提供准确的信息，但产品规格及细节可能随时调整，图片仅供参考。",
+        },
+        {
+          title: "无在线交易",
+          text: "本网站不提供在线支付或订单功能，所有业务需通过人工确认。",
+        },
+        {
+          title: "知识产权",
+          text: "网站所有内容归公司所有，未经许可不得复制或使用。",
+        },
+        {
+          title: "外部链接",
+          text: "网站可能包含第三方链接，我们不对其内容负责。",
+        },
+        {
+          title: "责任限制",
+          text: "对于因使用本网站产生的任何损失，公司不承担责任。",
+        },
+        {
+          title: "条款变更",
+          text: "我们有权随时更新条款，继续使用即表示接受更新内容。",
+        },
+        {
+          title: "联系我们",
+          text: "如有疑问，请通过网站与我们联系。",
+        },
+      ],
     },
   },
 };
