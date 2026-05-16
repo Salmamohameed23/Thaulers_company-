@@ -1,182 +1,149 @@
 import { motion } from "framer-motion";
-import {
-  Building2,
-  Mail,
-  MapPin,
-  MessageSquare,
-
-  Send,
-} from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: Mail,
-    title: "Email",
-    text: "sales@toughhaulers.cn.com",
-  },
-  {
-    icon: MapPin,
-    title: "Operations",
-    text: "Yiwu, Zhejiang, China & Shenzhen, Guangdong, China",
-  },
-  {
-    icon: Building2,
-    title: "Company",
-    text: "TOUGH HAULERS TRADE LIMITED",
-  },
-];
+import { Mail, MapPin, Building2 } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Contact = () => {
+  const { t, lang } = useLanguage();
+  const isAr = lang === "ar";
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      title: t.contactPage.info[0].title,
+      text: t.contactPage.info[0].text,
+    },
+    {
+      icon: MapPin,
+      title: t.contactPage.info[1].title,
+      text: t.contactPage.info[1].text,
+    },
+    {
+      icon: Building2,
+      title: t.contactPage.info[2].title,
+      text: t.contactPage.info[2].text,
+    },
+  ];
+
   return (
-    <main className="bg-white text-neutral-950">
-      <section className="relative overflow-hidden bg-white py-12 ">
-        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,rgba(220,38,38,0.07),transparent_30%)]" />
-        <div className="absolute inset-0  [background-size:72px_72px]" />
+    <main
+      className={`bg-white text-neutral-950 ${
+        isAr ? "font-[Cairo] text-right" : ""
+      }`}
+      dir={isAr ? "rtl" : "ltr"}
+    >
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-white py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,rgba(220,38,38,0.07),transparent_30%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 34 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mb-14 max-w-4xl"
+            className="max-w-5xl"
           >
-            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
-              Contact Us
+            <p className="mb-6 text-sm font-bold uppercase tracking-[0.3em] text-red-600">
+              {t.contactPage.badge}
             </p>
 
-            <h1 className="text-[44px] font-black leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-[76px]">
-              Start your
-              <span className="block ">energy project with us.</span>
+            <h1 className="max-w-5xl text-[38px] font-black leading-[1.3] tracking-[0.01em] sm:text-5xl lg:text-[64px]">
+              {t.contactPage.title1}
+              <span className="block text-red-600 mt-3">
+                {t.contactPage.title2}
+              </span>
             </h1>
 
-            <p className="mt-7 max-w-3xl text-[17px] leading-8 sm:text-lg">
-              Contact TOUGH HAULERS TRADE LIMITED for solar power systems,
-              battery energy storage solutions, full EPC solar and energy
-              engineering, factory solutions, and global project support.
+            <p className="mt-6 max-w-3xl text-[16px] leading-8 text-neutral-600">
+              {t.contactPage.desc}
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <motion.div
-              initial={{ opacity: 0, y: 34 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="rounded-[34px] border border-black/10 bg-white p-6 shadow-[0_25px_70px_rgba(0,0,0,0.08)] sm:p-8"
-            >
-              <p className="mb-7 text-s font-black uppercase tracking-[0.24em] text-[#ee4036]">
-                Company Contact
-              </p>
+      {/* CONTENT */}
+      <section className="relative mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-2">
+          {/* LEFT SIDE */}
+          <div>
+            <h2 className="text-2xl font-bold mb-6">
+              {t.contactPage.contactTitle}
+            </h2>
 
-              <div className="space-y-5">
-                {contactInfo.map((item) => {
-                  const Icon = item.icon;
+            <div className="space-y-6">
+              {contactInfo.map((item, i) => {
+                const Icon = item.icon;
 
-                  return (
-                    <div
-                      key={item.title}
-                      className="flex gap-4 rounded-3xl border border-black/10 bg-white p-5 shadow-[0_14px_35px_rgba(0,0,0,0.045)]"
-                    >
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-neutral-950 text-white">
-                        <Icon size={20} />
-                      </div>
-
-                      <div>
-                        <h3 className="text-[16px] font-bold text-neutral-950">
-                          {item.title}
-                        </h3>
-                        <p className="mt-2 text-[15px] leading-7 text-neutral-600">
-                          {item.text}
-                        </p>
-                      </div>
+                return (
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 border-b border-black/10 pb-5"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-red-600 text-red-600">
+                      <Icon size={18} />
                     </div>
-                  );
-                })}
-              </div>
 
-              <div className="mt-8 rounded-3xl bg-neutral-950 p-6 text-white">
-                <MessageSquare className="mb-4 text-[#ee4036]" size={24} />
-                <h3 className="text-xl font-black">Project Enquiry</h3>
-                <p className="mt-3 text-[15px] leading-7 text-white/65">
-                  Tell us about your project scope, required solution, country,
-                  and technical requirements. Our team will review your request.
-                </p>
-              </div>
-            </motion.div>
+                    <div>
+                      <p className="text-sm font-semibold text-neutral-500">
+                        {item.title}
+                      </p>
+                      <p className="text-[15px] font-medium text-neutral-800 leading-7">
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 34 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="rounded-[34px] border border-black/10 bg-white p-6 shadow-[0_25px_70px_rgba(0,0,0,0.08)] sm:p-8"
-            >
-              <p className="mb-7 text-s font-black uppercase tracking-[0.24em] text-[#ee4036]">
-                Send Message
+            {/* ENQUIRY */}
+            <div className="mt-10">
+              <h3 className="text-lg font-bold mb-2">
+                {t.contactPage.enquiryTitle}
+              </h3>
+              <p className="text-neutral-600 leading-7 text-[15px]">
+                {t.contactPage.enquiryText}
               </p>
+            </div>
+          </div>
 
-              <form className="grid gap-5">
-                <div className="grid gap-5 md:grid-cols-2">
-                  <div>
-                    <label className="mb-2 block text-sm font-bold text-neutral-800">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your name"
-                      className="h-14 w-full rounded-2xl border border-black/10 bg-white px-5 text-[15px] outline-none transition focus:border-red-600"
-                    />
-                  </div>
+          {/* RIGHT SIDE - FORM */}
+          <div className="rounded-[28px] border border-black/10 bg-white p-8 shadow-[0_20px_60px_rgba(0,0,0,0.07)]">
+            <h3 className="text-xl font-bold mb-6">
+              {t.contactPage.formTitle}
+            </h3>
 
-                  <div>
-                    <label className="mb-2 block text-sm font-bold text-neutral-800">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="your@email.com"
-                      className="h-14 w-full rounded-2xl border border-black/10 bg-white px-5 text-[15px] outline-none transition focus:border-red-600"
-                    />
-                  </div>
-                </div>
+            <form className="space-y-5">
+              <input
+                type="text"
+                placeholder={t.contactPage.name}
+                className="w-full rounded-xl border border-black/10 px-4 py-3 outline-none focus:border-red-500"
+              />
 
-                <div className="grid gap-5 md:grid-cols-2">
-                  <div>
-                    <label className="mb-2 block text-sm font-bold text-neutral-800">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      placeholder="Company name"
-                      className="h-14 w-full rounded-2xl border border-black/10 bg-white px-5 text-[15px] outline-none transition focus:border-red-600"
-                    />
-                  </div>
-                </div>
+              <input
+                type="email"
+                placeholder={t.contactPage.email}
+                className="w-full rounded-xl border border-black/10 px-4 py-3 outline-none focus:border-red-500"
+              />
 
-                <div>
-                  <label className="mb-2 block text-sm font-bold text-neutral-800">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    rows="6"
-                    placeholder="Tell us about your project requirements..."
-                    className="w-full resize-none rounded-2xl border border-black/10 bg-white px-5 py-4 text-[15px] outline-none transition focus:border-red-600"
-                  />
-                </div>
+              <input
+                type="text"
+                placeholder={t.contactPage.company}
+                className="w-full rounded-xl border border-black/10 px-4 py-3 outline-none focus:border-red-500"
+              />
 
-                <button
-                  type="submit"
-                  className="group mt-2 inline-flex w-fit items-center gap-3 rounded-full bg-red-600 px-8 py-4 text-sm font-black text-white shadow-[0_18px_45px_rgba(220,38,38,0.25)] transition hover:-translate-y-1 hover:bg-neutral-950"
-                >
-                  Send Enquiry
-                  <Send size={16} />
-                </button>
-              </form>
-            </motion.div>
+              <textarea
+                rows="4"
+                placeholder={t.contactPage.message}
+                className="w-full rounded-xl border border-black/10 px-4 py-3 outline-none focus:border-red-500"
+              />
+
+              <button
+                type="submit"
+                className="w-full rounded-xl bg-red-600 py-3 text-white font-semibold transition hover:bg-red-700"
+              >
+                {t.contactPage.send}
+              </button>
+            </form>
           </div>
         </div>
       </section>

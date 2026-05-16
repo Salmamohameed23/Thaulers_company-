@@ -245,6 +245,198 @@ export const translations = {
         },
       ],
     },
+    aboutPage: {
+      badge: "Who We Are",
+      title1: "At Tough Haulers, we don’t just supply products —",
+      title2: "we deliver complete, reliable, and long-term solutions.",
+      p1: "With strong experience in solar power systems, smart energy storage, sourcing, and project execution, we support our clients from the first study until delivery, installation, and after-sales service.",
+      p2: "We work with trusted partners and professional engineering teams to provide high-quality solutions that match each project’s real needs, whether it is a small system, a commercial project, or a large-scale power station.",
+      goalLabel: "Our goal is simple:",
+      goalText:
+        "To deliver the right solution, with the right quality, at the right time.",
+
+      positioningBadge: "Company Positioning",
+      positioningTitle1: "Engineering Power.",
+      positioningTitle2: "Delivering Reliability.",
+      positioningP1:
+        "With operations based in China and engineering support in Egypt, the company combines supply chain strength with technical expertise to deliver scalable solar and energy storage solutions.",
+      positioningP2:
+        "The company supports global projects through integrated solutions covering solar power systems, BESS, EPC engineering, factory solutions, and technology transfer.",
+
+      positioningItems: [
+        "China-based supply chain capability",
+        "Engineering support from Egypt",
+        "Global project execution mindset",
+        "From kW-scale to Gigawatt-scale projects",
+      ],
+
+      capabilitiesBadge: "Core Capabilities",
+      capabilitiesTitle1: "Integrated energy solutions",
+      capabilitiesTitle2: "across design, supply & execution.",
+
+      capabilities: [
+        {
+          title: "Solar Power Systems",
+          text: "Integrated solar power solutions designed for reliable performance and scalable deployment.",
+        },
+        {
+          title: "Battery Energy Storage Systems",
+          text: "Advanced BESS solutions supporting stable, optimized, and continuous energy performance.",
+        },
+        {
+          title: "Factory Solutions",
+          text: "Turnkey factory solutions, technology transfer, and manufacturing support for energy systems.",
+        },
+        {
+          title: "After-Sales Support",
+          text: "Comprehensive after-sales service and technical support to ensure long-term value and reliability.",
+        },
+      ],
+    },
+    contactPage: {
+      badge: "Contact Us",
+      title1: "Start your",
+      title2: "energy project with us.",
+      desc: "Contact Tough Haulers for solar power systems, battery energy storage, EPC engineering, factory solutions, and global project support.",
+
+      contactTitle: "Company Contact",
+
+      info: [
+        { title: "Email", text: "Sales@toughhaulers.cn.com" },
+        {
+          title: "Operations",
+          text: "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
+        },
+        { title: "Company", text: "TOUGH HAULERS TRADE LIMITED" },
+      ],
+
+      enquiryTitle: "Project Enquiry",
+      enquiryText:
+        "Share your project scope, required solution, location, and technical requirements. Our team will review and respond accordingly.",
+
+      formTitle: "Send Message",
+      name: "Full Name",
+      email: "Email Address",
+      company: "Company",
+      message: "Message",
+      send: "Send Enquiry",
+    },
+    smartStoragePage: {
+      heroBadge: "Smart Storage · BESS Solutions",
+      heroTitle1: "Integrated Battery Storage Solutions",
+      heroTitle2: "for Reliable Energy Projects.",
+      heroDesc:
+        "We design, source, install, and commission fully integrated BESS systems for utility, commercial, and industrial applications — with reliable performance and dedicated after-sales support.",
+
+      capabilities: [
+        "BMS Integration",
+        "PCS Selection",
+        "China Supply Chain",
+        "Safety & Scalability",
+      ],
+
+      productBadge: "Product Range",
+      productTitle1: "Storage Systems for",
+      productTitle2: "every energy demand.",
+
+      products: [
+        {
+          title: "Residential ESS",
+          description:
+            "Compact residential energy storage for backup power and daily energy flexibility.",
+          action: "View Details",
+        },
+        {
+          title: "Household ESS 10kWh",
+          description:
+            "Higher-capacity household storage designed for reliable home energy operation.",
+          action: "View Details",
+        },
+        {
+          title: "Commercial ESS",
+          description:
+            "Scalable storage system for businesses, C&I facilities, and microgrids.",
+          action: "Send Inquiry",
+        },
+        {
+          title: "Containerized Storage System",
+          description:
+            "High-capacity containerized solution built for utility and large-scale energy projects.",
+          action: "Send Inquiry",
+        },
+        {
+          title: "Industrial BESS Cabinet",
+          description:
+            "Industrial-grade battery storage cabinet designed for stable and continuous operation.",
+          action: "Send Inquiry",
+        },
+        {
+          title: "Utility-Scale BESS",
+          description:
+            "Large-scale storage solution for grid support, peak shaving, and renewable integration.",
+          action: "Send Inquiry",
+        },
+      ],
+
+      applicationsBadge: "Applications",
+      applicationsTitle1: "Built for",
+      applicationsTitle2: "Real Project Applications",
+
+      applications: [
+        "Residential Backup Power",
+        "Commercial Energy Saving",
+        "Industrial Power Stability",
+        "Solar + Storage Projects",
+        "Remote Site Energy",
+        "Grid Support / Peak Shaving",
+      ],
+
+      engineeringBadge: "Engineering Scope",
+      engineeringTitle1: "Engineering Depth",
+      engineeringTitle2: "Behind Every Storage System.",
+      engineeringDesc:
+        "From system architecture and battery logic to inverter selection, thermal control, and protection systems.",
+
+      engineeringScope: [
+        {
+          title: "Battery System Design",
+          text: "BESS architecture designed around real project requirements, capacity needs, and operational stability.",
+        },
+        {
+          title: "BMS Integration",
+          text: "Battery management integration focused on monitoring, safety logic, and dependable system control.",
+        },
+        {
+          title: "Inverter & PCS Selection",
+          text: "Project-specific inverter and PCS selection to support efficient power conversion and performance.",
+        },
+        {
+          title: "Containerized Storage",
+          text: "Containerized storage solutions for utility, commercial, and industrial deployment needs.",
+        },
+        {
+          title: "Thermal Management",
+          text: "Thermal control systems designed to support safety, efficiency, and long-term reliability.",
+        },
+        {
+          title: "Electrical Engineering",
+          text: "Single-line diagrams, layouts, protection systems, and full electrical engineering support.",
+        },
+      ],
+
+      processBadge: "Our Process",
+      processTitle1: "From Requirement to",
+      processTitle2: "Delivery",
+
+      process: [
+        "Project Requirement Study",
+        "System Design & Sizing",
+        "Battery / BMS / PCS Selection",
+        "Supply Chain & Manufacturing",
+        "Installation & Commissioning",
+        "After-Sales Support",
+      ],
+    },
   },
 
   ar: {
@@ -493,6 +685,197 @@ export const translations = {
         },
       ],
     },
+    aboutPage: {
+      badge: "من نحن",
+      title1: "في Tough Haulers،  نحن لا نكتفي بتوريد المنتجات —",
+      title2: "بل نقدم حلولًا متكاملة وموثوقة وطويلة الأمد.",
+      p1: "بخبرة واسعة في أنظمة الطاقة الشمسية، وحلول التخزين الذكي، والتوريد، وتنفيذ المشاريع، ندعم عملاءنا من مرحلة الدراسة الأولية وحتى التسليم والتركيب وخدمات ما بعد البيع.",
+      p2: "نعمل مع شركاء موثوقين وفرق هندسية محترفة لتقديم حلول عالية الجودة تتوافق مع الاحتياجات الفعلية لكل مشروع، سواء كان نظامًا صغيرًا، أو مشروعًا تجاريًا، أو محطة طاقة واسعة النطاق.",
+      goalLabel: "هدفنا واضح:",
+      goalText: "تقديم الحل المناسب، بالجودة المناسبة، وفي الوقت المناسب.",
+
+      positioningBadge: "مكانتنا التشغيلية",
+      positioningTitle1: "هندسة الطاقة.",
+      positioningTitle2: "وتقديم الاعتمادية.",
+      positioningP1:
+        "من خلال عملياتنا القائمة في الصين والدعم الهندسي من مصر، تجمع الشركة بين قوة سلسلة الإمداد والخبرة الفنية لتقديم حلول طاقة شمسية وتخزين طاقة قابلة للتوسع.",
+      positioningP2:
+        "تدعم الشركة المشاريع العالمية من خلال حلول متكاملة تشمل أنظمة الطاقة الشمسية، وأنظمة تخزين الطاقة BESS، والهندسة والتنفيذ EPC، وحلول المصانع، ونقل التكنولوجيا.",
+
+      positioningItems: [
+        "قدرات قوية في سلسلة الإمداد من الصين",
+        "دعم هندسي متخصص من مصر",
+        "منهجية تنفيذ عالمية للمشاريع",
+        "من أنظمة الكيلوواط إلى مشاريع الجيجاواط",
+      ],
+
+      capabilitiesBadge: "القدرات الأساسية",
+      capabilitiesTitle1: "حلول طاقة متكاملة",
+      capabilitiesTitle2: "تشمل التصميم والتوريد والتنفيذ.",
+
+      capabilities: [
+        {
+          title: "أنظمة الطاقة الشمسية",
+          text: "حلول طاقة شمسية متكاملة مصممة لتحقيق أداء موثوق وقابلية توسع عالية.",
+        },
+        {
+          title: "أنظمة تخزين الطاقة بالبطاريات",
+          text: "حلول BESS متقدمة تدعم استقرار الطاقة وتحسين الأداء واستمرارية التشغيل.",
+        },
+        {
+          title: "حلول المصانع",
+          text: "حلول مصانع متكاملة تشمل التنفيذ الجاهز، ونقل التكنولوجيا، ودعم التصنيع لأنظمة الطاقة.",
+        },
+        {
+          title: "خدمات ما بعد البيع",
+          text: "دعم فني وخدمات ما بعد البيع لضمان القيمة طويلة الأمد والاعتمادية المستمرة.",
+        },
+      ],
+    },
+    contactPage: {
+      badge: "تواصل معنا",
+      title1: "ابدأ مشروعك",
+      title2: "في مجال الطاقة معنا",
+      desc: "تواصل مع Tough Haulers للحصول على حلول الطاقة الشمسية، وأنظمة تخزين الطاقة، وخدمات EPC الهندسية، وحلول المصانع، ودعم المشاريع على المستوى العالمي.",
+
+      contactTitle: "معلومات التواصل",
+
+      info: [
+        { title: "البريد الإلكتروني", text: "Sales@toughhaulers.cn.com" },
+        {
+          title: "المقر التشغيلي",
+          text: "المكتب 201، المبنى رقم 454، طريق Gongren North، مدينة Yiwu، مقاطعة Zhejiang، الصين",
+        },
+        { title: "الشركة", text: "TOUGH HAULERS TRADE LIMITED" },
+      ],
+
+      enquiryTitle: "استفسار عن مشروع",
+      enquiryText:
+        "يرجى توضيح نطاق المشروع، ونوع الحل المطلوب، وموقع التنفيذ، والمتطلبات الفنية، وسيقوم فريقنا بمراجعة الطلب والتواصل معكم.",
+
+      formTitle: "إرسال رسالة",
+      name: "الاسم الكامل",
+      email: "البريد الإلكتروني",
+      company: "اسم الشركة",
+      message: "الرسالة",
+      send: "إرسال الطلب",
+    },
+    smartStoragePage: {
+      heroBadge: "التخزين الذكي · حلول BESS",
+      heroTitle1: "حلول متكاملة لتخزين الطاقة بالبطاريات",
+      heroTitle2: "لمشاريع طاقة أكثر موثوقية.",
+      heroDesc:
+        "نقوم بتصميم وتوريد وتركيب وتشغيل أنظمة BESS متكاملة لتطبيقات المرافق والمشاريع التجارية والصناعية، مع أداء موثوق ودعم فني متواصل لما بعد البيع.",
+
+      capabilities: [
+        "تكامل أنظمة BMS",
+        "اختيار أنظمة PCS",
+        "سلسلة توريد من الصين",
+        "السلامة وقابلية التوسع",
+      ],
+
+      productBadge: "نطاق المنتجات",
+      productTitle1: "أنظمة تخزين طاقة تناسب",
+      productTitle2: "كل احتياج تشغيلي.",
+
+      products: [
+        {
+          title: "نظام تخزين منزلي ESS",
+          description:
+            "حل تخزين مدمج للمنازل يدعم الطاقة الاحتياطية ومرونة استخدام الطاقة اليومية.",
+          action: "عرض التفاصيل",
+        },
+        {
+          title: "نظام منزلي ESS بقدرة 10kWh",
+          description:
+            "نظام تخزين منزلي بسعة أعلى مصمم لتشغيل موثوق وإدارة أفضل للطاقة المنزلية.",
+          action: "عرض التفاصيل",
+        },
+        {
+          title: "نظام تخزين تجاري ESS",
+          description:
+            "نظام تخزين قابل للتوسع للشركات والمنشآت التجارية والصناعية والشبكات الصغيرة.",
+          action: "إرسال استفسار",
+        },
+        {
+          title: "نظام تخزين حاوياتي",
+          description:
+            "حل تخزين عالي السعة مصمم للمرافق والمشاريع الصناعية ومشاريع الطاقة واسعة النطاق.",
+          action: "إرسال استفسار",
+        },
+        {
+          title: "خزانة تخزين صناعية BESS",
+          description:
+            "خزانة تخزين بطاريات صناعية مصممة للتشغيل المستقر والمستمر في البيئات التشغيلية.",
+          action: "إرسال استفسار",
+        },
+        {
+          title: "نظام BESS للمشاريع الكبرى",
+          description:
+            "حل تخزين واسع النطاق لدعم الشبكات، وتخفيف أحمال الذروة، ودمج الطاقة المتجددة.",
+          action: "إرسال استفسار",
+        },
+      ],
+
+      applicationsBadge: "التطبيقات",
+      applicationsTitle1: "مصمم ليلائم",
+      applicationsTitle2: "تطبيقات المشاريع الحقيقية",
+
+      applications: [
+        "طاقة احتياطية للمنازل",
+        "ترشيد استهلاك الطاقة تجاريًا",
+        "استقرار الطاقة الصناعية",
+        "مشاريع الطاقة الشمسية والتخزين",
+        "طاقة للمواقع النائية",
+        "دعم الشبكة وتقليل أحمال الذروة",
+      ],
+
+      engineeringBadge: "النطاق الهندسي",
+      engineeringTitle1: "عمق هندسي",
+      engineeringTitle2: "يدعم كل نظام تخزين.",
+      engineeringDesc:
+        "من بنية النظام ومنطق إدارة البطاريات إلى اختيار العواكس، والتحكم الحراري، وأنظمة الحماية.",
+
+      engineeringScope: [
+        {
+          title: "تصميم نظام البطاريات",
+          text: "تصميم بنية BESS وفق متطلبات المشروع الفعلية، والسعة المطلوبة، واستقرار التشغيل.",
+        },
+        {
+          title: "تكامل أنظمة BMS",
+          text: "تكامل أنظمة إدارة البطاريات مع التركيز على المراقبة، ومنطق السلامة، والتحكم الموثوق.",
+        },
+        {
+          title: "اختيار العواكس وأنظمة PCS",
+          text: "اختيار العاكس وPCS وفق طبيعة المشروع لضمان كفاءة تحويل الطاقة وجودة الأداء.",
+        },
+        {
+          title: "حلول التخزين الحاوياتية",
+          text: "حلول تخزين داخل حاويات مخصصة لاحتياجات المرافق والمشاريع التجارية والصناعية.",
+        },
+        {
+          title: "الإدارة الحرارية",
+          text: "أنظمة تحكم حراري مصممة لدعم السلامة والكفاءة والاعتمادية على المدى الطويل.",
+        },
+        {
+          title: "الهندسة الكهربائية",
+          text: "مخططات أحادية الخط، وتخطيطات كهربائية، وأنظمة حماية، ودعم هندسي كهربائي متكامل.",
+        },
+      ],
+
+      processBadge: "آلية العمل",
+      processTitle1: "من دراسة المتطلبات إلى",
+      processTitle2: "التسليم",
+
+      process: [
+        "دراسة متطلبات المشروع",
+        "تصميم النظام وتحديد السعة",
+        "اختيار البطاريات / BMS / PCS",
+        "سلسلة التوريد والتصنيع",
+        "التركيب والتشغيل",
+        "دعم ما بعد البيع",
+      ],
+    },
   },
 
   zh: {
@@ -731,6 +1114,192 @@ export const translations = {
           title: "联系我们",
           text: "如有疑问，请通过网站与我们联系。",
         },
+      ],
+    },
+    aboutPage: {
+      badge: "关于我们",
+      title1: "在 Tough Haulers，我们不只是供应产品——",
+      title2: "我们提供完整、可靠且长期稳定的解决方案。",
+      p1: "凭借在太阳能系统、智能储能、采购供应及项目执行方面的丰富经验，我们从前期方案研究到交付、安装及售后服务，全流程支持客户项目落地。",
+      p2: "我们与值得信赖的合作伙伴和专业工程团队协作，提供符合项目实际需求的高质量解决方案，无论是小型系统、商业项目，还是大型电站项目。",
+      goalLabel: "我们的目标很清晰：",
+      goalText: "在正确的时间，以可靠的质量，交付真正合适的解决方案。",
+
+      positioningBadge: "公司定位",
+      positioningTitle1: "工程驱动能源。",
+      positioningTitle2: "交付可靠价值。",
+      positioningP1:
+        "依托中国的供应链资源与埃及的工程技术支持，公司将供应链能力与专业工程经验相结合，为客户提供可扩展的太阳能与储能解决方案。",
+      positioningP2:
+        "公司通过一体化解决方案支持全球项目，涵盖太阳能系统、BESS 电池储能系统、EPC 工程、工厂解决方案及技术转移。",
+
+      positioningItems: [
+        "基于中国的供应链能力",
+        "来自埃及的工程技术支持",
+        "面向全球项目的执行思维",
+        "覆盖千瓦级至吉瓦级项目",
+      ],
+
+      capabilitiesBadge: "核心能力",
+      capabilitiesTitle1: "一体化能源解决方案",
+      capabilitiesTitle2: "覆盖设计、供应与执行。",
+
+      capabilities: [
+        {
+          title: "太阳能系统",
+          text: "提供一体化太阳能解决方案，兼顾可靠性能与可扩展部署。",
+        },
+        {
+          title: "电池储能系统",
+          text: "先进的 BESS 储能解决方案，支持稳定、优化且持续的能源运行。",
+        },
+        {
+          title: "工厂解决方案",
+          text: "提供交钥匙工厂方案、技术转移及能源系统制造支持。",
+        },
+        {
+          title: "售后支持",
+          text: "提供全面的售后服务与技术支持，确保长期价值与持续可靠性。",
+        },
+      ],
+    },
+    contactPage: {
+      badge: "联系我们",
+      title1: "开启您的",
+      title2: "能源项目合作",
+      desc: "欢迎联系 Tough Haulers，我们提供太阳能系统、电池储能解决方案、EPC 工程服务、工厂解决方案以及全球项目支持。",
+
+      contactTitle: "联系信息",
+
+      info: [
+        { title: "邮箱", text: "Sales@toughhaulers.cn.com" },
+        {
+          title: "运营地址",
+          text: "中国浙江省义乌市工人北路454号201室",
+        },
+        { title: "公司名称", text: "TOUGH HAULERS TRADE LIMITED" },
+      ],
+
+      enquiryTitle: "项目咨询",
+      enquiryText:
+        "请提供项目范围、所需解决方案、项目所在地及技术需求，我们的团队将尽快评估并与您联系。",
+
+      formTitle: "发送信息",
+      name: "姓名",
+      email: "邮箱地址",
+      company: "公司名称",
+      message: "留言内容",
+      send: "提交咨询",
+    },
+    smartStoragePage: {
+      heroBadge: "智能储能 · BESS 解决方案",
+      heroTitle1: "一体化电池储能解决方案",
+      heroTitle2: "为可靠能源项目而设计。",
+      heroDesc:
+        "我们为公用事业、商业及工业应用提供完整的 BESS 系统设计、采购、安装与调试服务，并确保稳定性能与持续的售后技术支持。",
+
+      capabilities: [
+        "BMS 系统集成",
+        "PCS 选型",
+        "中国供应链支持",
+        "安全性与可扩展性",
+      ],
+
+      productBadge: "产品范围",
+      productTitle1: "满足不同能源需求的",
+      productTitle2: "储能系统方案。",
+
+      products: [
+        {
+          title: "户用 ESS 储能系统",
+          description: "紧凑型户用储能系统，适用于备用电源及日常能源灵活管理。",
+          action: "查看详情",
+        },
+        {
+          title: "10kWh 家用 ESS",
+          description: "更高容量的家用储能系统，专为可靠的家庭能源运行而设计。",
+          action: "查看详情",
+        },
+        {
+          title: "商业 ESS 储能系统",
+          description: "适用于企业、工商业设施及微电网的可扩展储能系统。",
+          action: "发送咨询",
+        },
+        {
+          title: "集装箱式储能系统",
+          description: "高容量集装箱式储能方案，适用于公用事业及大型能源项目。",
+          action: "发送咨询",
+        },
+        {
+          title: "工业 BESS 储能柜",
+          description: "工业级电池储能柜，面向稳定、持续运行场景设计。",
+          action: "发送咨询",
+        },
+        {
+          title: "大型 BESS 储能系统",
+          description:
+            "适用于电网支撑、削峰填谷及可再生能源并网的大规模储能方案。",
+          action: "发送咨询",
+        },
+      ],
+
+      applicationsBadge: "应用场景",
+      applicationsTitle1: "面向真实项目",
+      applicationsTitle2: "应用需求而构建",
+
+      applications: [
+        "住宅备用电源",
+        "商业节能应用",
+        "工业用电稳定",
+        "光伏 + 储能项目",
+        "偏远地区供能",
+        "电网支撑 / 削峰填谷",
+      ],
+
+      engineeringBadge: "工程范围",
+      engineeringTitle1: "每一套储能系统背后的",
+      engineeringTitle2: "深度工程能力。",
+      engineeringDesc:
+        "从系统架构、电池逻辑，到逆变器选型、热管理及保护系统，提供完整工程支持。",
+
+      engineeringScope: [
+        {
+          title: "电池系统设计",
+          text: "根据项目实际需求、容量要求及运行稳定性进行 BESS 系统架构设计。",
+        },
+        {
+          title: "BMS 系统集成",
+          text: "围绕监控、安全逻辑及可靠控制，实现电池管理系统集成。",
+        },
+        {
+          title: "逆变器与 PCS 选型",
+          text: "根据项目需求选择合适的逆变器与 PCS，提升能量转换效率与系统性能。",
+        },
+        {
+          title: "集装箱式储能",
+          text: "面向公用事业、商业及工业场景提供集装箱式储能解决方案。",
+        },
+        {
+          title: "热管理系统",
+          text: "通过热控制系统支持安全、高效及长期可靠运行。",
+        },
+        {
+          title: "电气工程支持",
+          text: "提供单线图、系统布局、保护方案及完整电气工程支持。",
+        },
+      ],
+
+      processBadge: "项目流程",
+      processTitle1: "从需求分析到",
+      processTitle2: "项目交付",
+
+      process: [
+        "项目需求分析",
+        "系统设计与容量配置",
+        "电池 / BMS / PCS 选型",
+        "供应链与制造",
+        "安装与调试",
+        "售后支持",
       ],
     },
   },

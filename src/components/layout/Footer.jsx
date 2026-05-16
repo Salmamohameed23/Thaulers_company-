@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ChevronRight, Mail, MapPin } from "lucide-react";
 import logo from "../../assets/logos/white_red_logo.png";
 import { useLanguage } from "../../i18n/LanguageContext";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   const { t, lang } = useLanguage();
@@ -28,9 +27,9 @@ const Footer = () => {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_0%,rgba(220,38,38,0.25),transparent_34%)]" />
       <div className="pointer-events-none absolute left-[-220px] bottom-[-260px] h-[620px] w-[620px] rounded-full border border-red-600/10 opacity-40" />
 
-      <div className="relative mx-auto max-w-[1180px] px-8 pt-10   lg:px-8">
+      <div className="relative mx-auto max-w-[1180px] px-8 pt-10 lg:px-8">
         <div
-          className={`grid grid-cols-1 gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 ${
+          className={`grid grid-cols-1 gap-16 border-b border-white/30 pb-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-16 ${
             isAr ? "lg:[direction:rtl]" : ""
           }`}
         >
@@ -71,55 +70,11 @@ const Footer = () => {
             <p className="mt-2 max-w-[280px] text-[14px] leading-7 text-neutral-400">
               {t.footer.desc}
             </p>
-            {/* <div
-              className={`mt-6 flex items-center gap-4 ${isAr ? "justify-end" : ""}`}
-            >
-              <a
-                href="https://www.facebook.com/TOUGHHAULERS"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-red-500 hover:text-red-500 hover:shadow-[0_0_12px_rgba(220,38,38,0.6)]"
-              >
-                <FaFacebookF className="h-4 w-4" />
-              </a>
-
-              <a
-                href="https://www.instagram.com/thaulers"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-red-500 hover:text-red-500 hover:shadow-[0_0_12px_rgba(220,38,38,0.6)]"
-              >
-                <FaInstagram className="h-4 w-4" />
-              </a>
-            </div> */}
-            <div
-              className={`mt-4 flex items-center gap-8 ${isAr ? "justify-end" : ""}`}
-            >
-              {/* Facebook */}
-              <a
-                href="https://www.facebook.com/TOUGHHAULERS"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#1877F2]/40 text-[#1877F2] transition hover:bg-[#1877F2] hover:text-white"
-              >
-                <FaFacebookF className="h-7 w-7" />
-              </a>
-
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/thaulers"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-pink-500/40 text-pink-500 transition hover:bg-gradient-to-r hover:from-pink-500 hover:via-red-500 hover:to-yellow-500 hover:text-white"
-              >
-                <FaInstagram className="h-7 w-7" />
-              </a>
-            </div>
           </div>
 
           {/* Solutions */}
           <div
-            className={`lg:border-white/10 lg:px-10 ${
+            className={`lg:border-white/10 ml-[-75px] lg:px-10 ${
               isAr ? "text-right lg:border-l" : "lg:border-r"
             }`}
           >
@@ -164,7 +119,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div
-            className={`lg:border-white/10 lg:px-10 ${
+            className={`lg:border-white/10  ml-[-75px] lg:px-10 ${
               isAr ? "text-right lg:border-l" : "lg:border-r"
             }`}
           >
@@ -177,7 +132,7 @@ const Footer = () => {
             <div className="mt-5">
               <a
                 href={`mailto:${t.footer.email}`}
-                className={`group flex items-center gap-4 ml-[-17px] border-b border-white/10 py-4 text-[14px] font-semibold text-neutral-100 hover:text-red-400 ${
+                className={`group flex items-center gap-4  border-b border-white/10 py-4 text-[14px] font-semibold text-neutral-100 hover:text-red-400 ${
                   isAr ? "flex-row-reverse" : ""
                 }`}
               >
@@ -188,7 +143,7 @@ const Footer = () => {
               </a>
 
               <div
-                className={`flex items-center gap-4 border-b border-white/10 py-4 text-[14px] font-semibold text-neutral-100 ${
+                className={`flex items-center gap-4 border-b ml-[15px] border-white/10 py-4 text-[14px] font-semibold text-neutral-100 ${
                   isAr ? "flex-row-reverse" : ""
                 }`}
               >
@@ -201,7 +156,8 @@ const Footer = () => {
           </div>
 
           {/* Legal */}
-          <div className={`${isAr ? "text-right lg:pr-10" : "lg:pl-10"}`}>
+          <div className={ `lg:border-white/10  ml-[-75px] lg:px-10 ${
+            isAr ? "text-right lg:pr-10" : "lg:pl-10"}`}>
             <h4 className="flex h-[34px] items-center text-[12px] font-bold uppercase tracking-[0.42em] text-[#ee4036]">
               {t.footer.legal}
             </h4>
@@ -238,15 +194,47 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/30  py-8">
+        <div className=" py-10 -mt-[-8px]">
           <div
-            className={`flex flex-col items-center justify-center gap-4 text-center text-[15px] text-neutral-400 tracking-wide md:flex-row ${
+            className={`flex flex-col items-center justify-center gap-5 text-center text-[15px] text-neutral-400 tracking-wide md:flex-row ${
               isAr ? "md:flex-row-reverse" : ""
             }`}
           >
             <p dir={isAr ? "rtl" : "ltr"}>{t.footer.copyright}</p>
+
             <span className="hidden h-4 w-px bg-white/40 md:block" />
+
             <p dir={isAr ? "rtl" : "ltr"}>{t.footer.slogan}</p>
+
+            <div className="flex items-center justify-center gap-5 md:ml-4">
+              <a
+                href="https://www.facebook.com/TOUGHHAULERS"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-full transition hover:scale-110"
+              >
+                <img
+                  src="/icons/facebook.png"
+                  alt="Facebook"
+                  className="h-8 w-8 object-contain"
+                />
+              </a>
+
+              <a
+                href="https://www.instagram.com/thaulers"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-9 w-9 items-center justify-center rounded-full transition hover:scale-110"
+              >
+                <img
+                  src="/icons/instagram.png"
+                  alt="Instagram"
+                  className="h-8 w-8 object-contain"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>

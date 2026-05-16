@@ -1,42 +1,50 @@
-// import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   BatteryCharging,
   Factory,
   ShieldCheck,
   SunMedium,
+  Headphones,
 } from "lucide-react";
-
-const capabilities = [
-  {
-    icon: SunMedium,
-    title: "Solar Power Systems",
-    text: "Integrated solar power solutions designed for reliable performance and scalable deployment.",
-  },
-  {
-    icon: BatteryCharging,
-    title: "Battery Energy Storage Systems",
-    text: "Advanced BESS solutions supporting stable, optimized, and continuous energy performance.",
-  },
-
-  {
-    icon: Factory,
-    title: "Factory Solutions",
-    text: "Turnkey factory solutions, technology transfer, and manufacturing support for energy systems.",
-  },
-];
-
-const positioning = [
-  "China-based supply chain capability",
-  "Engineering support from Egypt",
-  "Global project execution mindset",
-  "From kW-scale to Gigawatt-scale projects",
-];
+import { useLanguage } from "../i18n/LanguageContext";
 
 const About = () => {
+  const { t, lang } = useLanguage();
+  const isAr = lang === "ar";
+
+  const capabilities = [
+    {
+      icon: SunMedium,
+      title: t.aboutPage.capabilities[0].title,
+      text: t.aboutPage.capabilities[0].text,
+    },
+    {
+      icon: BatteryCharging,
+      title: t.aboutPage.capabilities[1].title,
+      text: t.aboutPage.capabilities[1].text,
+    },
+    {
+      icon: Factory,
+      title: t.aboutPage.capabilities[2].title,
+      text: t.aboutPage.capabilities[2].text,
+    },
+    {
+      icon: Headphones,
+      title: t.aboutPage.capabilities[3].title,
+      text: t.aboutPage.capabilities[3].text,
+    },
+  ];
+
+  const positioning = t.aboutPage.positioningItems;
+
   return (
-    <main className="bg-white text-neutral-950 ">
-      <section className="relative overflow-hidden bg-white py-20 ">
+    <main
+      className={`bg-white text-neutral-950 ${
+        isAr ? "font-[Cairo] text-right" : ""
+      }`}
+      dir={isAr ? "rtl" : "ltr"}
+    >
+      <section className="relative overflow-hidden bg-white py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,rgba(220,38,38,0.07),transparent_30%)]" />
         <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
         <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
@@ -49,45 +57,43 @@ const About = () => {
             className="max-w-5xl"
           >
             <p className="mb-8 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
-              Why Us
+              {t.aboutPage.badge}
             </p>
 
-            <h1 className="text-[38px] font-black leading-[1.08] tracking-[-0.04em] sm:text-5xl lg:text-[68px] max-w-6xl">
-              At Tough Haulers, we don’t just supply products —
-              <span className="block text-[#ee4036]">
-                we deliver complete, reliable, and long-term solutions.
+            <h1
+              className={`max-w-5xl text-[38px] font-black 
+${isAr ? "leading-[1.4] tracking-[0.02em]" : "leading-[1.4] tracking-[0em]"} 
+sm:text-5xl lg:text-[68px]`}
+            >
+              {t.aboutPage.title1}
+              <span className="block leading-[1.5] text-[#ee4036]">
+                {t.aboutPage.title2}
               </span>
             </h1>
 
             <p className="mt-8 max-w-4xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
-              With strong experience in solar power systems, smart energy
-              storage, sourcing, and project execution, we support our clients
-              from the first study until delivery, installation, and after-sales
-              service.
+              {t.aboutPage.p1}
             </p>
 
             <p className="mt-5 max-w-4xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
-              We work with trusted partners and professional engineering teams
-              to provide high-quality solutions that match each project’s real
-              needs, whether it is a small system, a commercial project, or a
-              large-scale power station.
+              {t.aboutPage.p2}
             </p>
 
             <p className="mt-5 max-w-4xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
-              Our goal is simple:
+              {t.aboutPage.goalLabel}
               <span className="font-semibold text-neutral-950">
                 {" "}
-                To deliver the right solution, with the right quality, at the
-                right time.
+                {t.aboutPage.goalText}
               </span>
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-14 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)] ">
+      <section className="relative overflow-hidden bg-white py-14 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]">
         <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
         <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
+
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 34 }}
@@ -96,24 +102,22 @@ const About = () => {
             transition={{ duration: 0.7 }}
           >
             <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
-              Company Positioning
+              {t.aboutPage.positioningBadge}
             </p>
 
             <h2 className="text-[36px] font-black leading-[1.08] tracking-[-0.04em] sm:text-5xl">
-              Engineering Power.
-              <span className="block">Delivering Reliability.</span>
+              {t.aboutPage.positioningTitle1}
+              <span className="block text-[#ee4036]">
+                {t.aboutPage.positioningTitle2}
+              </span>
             </h2>
 
             <p className="mt-6 text-[16px] leading-8 text-neutral-600">
-              With operations based in China and engineering support in Egypt,
-              the company combines supply chain strength with technical
-              expertise to deliver scalable solar and energy storage solutions.
+              {t.aboutPage.positioningP1}
             </p>
 
             <p className="mt-5 text-[16px] leading-8 text-neutral-600">
-              The company supports global projects through integrated solutions
-              covering solar power systems, BESS, EPC engineering, factory
-              solutions, and technology transfer.
+              {t.aboutPage.positioningP2}
             </p>
           </motion.div>
 
@@ -150,34 +154,26 @@ const About = () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-14 ">
+      <section className="relative overflow-hidden bg-white py-14">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
-                Core Capabilities
+                {t.aboutPage.capabilitiesBadge}
               </p>
 
               <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.04em] sm:text-5xl">
-                Integrated energy solutions
-                <span className="block ">
-                  across design, supply & execution.
+                {t.aboutPage.capabilitiesTitle1}
+                <span className="block text-[#ee4036]">
+                  {t.aboutPage.capabilitiesTitle2}
                 </span>
               </h2>
             </div>
-
-            {/* <Link
-              to="/solutions"
-              className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-neutral-950 px-7 py-4 text-sm font-black text-white transition hover:bg-[#ee4036]"
-            >
-              View Solutions
-              <ArrowUpRight size={16} />
-            </Link> */}
           </div>
 
-          <div className="grid max-w-5xl mx-auto gap-7 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
+          <div className="mx-auto grid max-w-6xl gap-7 md:grid-cols-2 lg:grid-cols-4 justify-items-center">
             {capabilities.map((item, index) => {
               const Icon = item.icon;
 
@@ -189,7 +185,7 @@ const About = () => {
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ duration: 0.6, delay: index * 0.08 }}
                   whileHover={{ y: -7 }}
-                  className="group rounded-[30px] border border-black/10 bg-white p-7 shadow-[0_20px_60px_rgba(0,0,0,0.075)] transition-all duration-300 hover:border-red-600/25 hover:shadow-[0_28px_70px_rgba(0,0,0,0.11)]"
+                  className="group h-full rounded-[30px] border border-black/10 bg-white p-7 shadow-[0_20px_60px_rgba(0,0,0,0.075)] transition-all duration-300 hover:border-red-600/25 hover:shadow-[0_28px_70px_rgba(0,0,0,0.11)]"
                 >
                   <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-950 text-white transition group-hover:bg-red-600">
                     <Icon size={21} />
