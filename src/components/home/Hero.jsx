@@ -49,7 +49,14 @@ const Hero = () => {
           {/* TOP BADGE */}
           <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 shadow-[0_14px_35px_rgba(0,0,0,0.18)] backdrop-blur-md sm:mb-7 sm:gap-3 sm:px-5 sm:py-2.5">
             <span className="h-2 w-2 shrink-0 rounded-full bg-[#ee4036] sm:h-2.5 sm:w-2.5" />
-            <span className="break-words text-[10px] font-black uppercase tracking-[0.18em] text-white sm:text-xs sm:tracking-[0.28em]">
+
+            <span
+              className={`break-words font-black text-white ${
+                isAr
+                  ? "text-[12px] tracking-normal text-right"
+                  : "text-[10px] uppercase tracking-[0.18em] sm:text-xs sm:tracking-[0.28em]"
+              }`}
+            >
               {t.home.heroBadge}
             </span>
           </div>

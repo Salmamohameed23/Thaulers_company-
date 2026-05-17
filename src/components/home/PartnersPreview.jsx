@@ -39,7 +39,13 @@ const PartnersPreview = () => {
           }`}
         >
           <div className="max-w-3xl">
-            <p className="mb-4 break-words text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.28em]">
+            <p
+              className={`mb-4 break-words font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.28em]"
+              }`}
+            >
               {t.partners.badge}
             </p>
           </div>
@@ -89,10 +95,15 @@ const PartnersPreview = () => {
                 {partner.name}
               </h3>
 
-              <p className="mt-2 break-words text-[11px] font-black uppercase tracking-[0.18em] text-[#ee4036] sm:text-xs sm:tracking-[0.24em]">
+              <p
+                className={`mt-2 break-words font-black text-[#ee4036] ${
+                  isAr
+                    ? "text-[12px] tracking-normal text-right"
+                    : "text-[11px] uppercase tracking-[0.18em] sm:text-xs sm:tracking-[0.24em]"
+                }`}
+              >
                 {partner.country}
               </p>
-
               <p className="mt-5 break-words text-[14px] leading-7 text-neutral-600 sm:mt-6 sm:text-[16px] sm:leading-8">
                 {partner.text}
               </p>

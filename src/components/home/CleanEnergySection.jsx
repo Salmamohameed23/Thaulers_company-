@@ -26,10 +26,15 @@ const CleanEnergySection = () => {
           transition={{ duration: 0.7 }}
           className={isAr ? "text-right" : "text-left"}
         >
-          <p className="mb-3 break-words text-[11px] font-black uppercase tracking-[0.24em] text-[#ee4036] sm:text-xs sm:tracking-[0.38em]">
+          <p
+            className={`mb-3 break-words font-black text-[#ee4036] ${
+              isAr
+                ? "text-[13px] tracking-normal text-right"
+                : "text-[11px] uppercase tracking-[0.24em] sm:text-xs sm:tracking-[0.38em]"
+            }`}
+          >
             {t.cleanEnergy.badge}
           </p>
-
           <h2
             className={`break-words text-[30px] font-black text-black sm:text-[42px] lg:text-[50px] ${
               isAr
@@ -38,7 +43,9 @@ const CleanEnergySection = () => {
             }`}
           >
             {t.cleanEnergy.title}
-            <span className="block text-[#ee4036]">{t.cleanEnergy.highlight}</span>
+            <span className="block text-[#ee4036]">
+              {t.cleanEnergy.highlight}
+            </span>
           </h2>
 
           <p className="mt-5 max-w-[520px] break-words text-[14px] font-medium leading-7 text-black/80 sm:text-[15px]">
@@ -47,8 +54,16 @@ const CleanEnergySection = () => {
 
           <div className="mt-6 space-y-4">
             {[
-              { icon: TrendingUp, title: t.cleanEnergy.noteTitle, text: t.cleanEnergy.noteText },
-              { icon: SunMedium, title: t.cleanEnergy.smartTitle, text: t.cleanEnergy.smartText },
+              {
+                icon: TrendingUp,
+                title: t.cleanEnergy.noteTitle,
+                text: t.cleanEnergy.noteText,
+              },
+              {
+                icon: SunMedium,
+                title: t.cleanEnergy.smartTitle,
+                text: t.cleanEnergy.smartText,
+              },
             ].map((item, index) => {
               const Icon = item.icon;
               return (
@@ -63,7 +78,9 @@ const CleanEnergySection = () => {
                   </div>
 
                   <p className="break-words text-[13px] font-medium leading-6 text-black/75 sm:text-[14px]">
-                    <span className="font-black text-[#ee4036]">{item.title}</span>{" "}
+                    <span className="font-black text-[#ee4036]">
+                      {item.title}
+                    </span>{" "}
                     {item.text}
                   </p>
                 </div>

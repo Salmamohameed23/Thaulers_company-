@@ -22,10 +22,11 @@ const Footer = () => {
     isAr ? "flex-row-reverse text-right" : ""
   }`;
 
-  const sectionTitleClass = `flex min-h-[34px] items-center text-[11px] font-bold uppercase tracking-[0.32em] text-[#ee4036] sm:text-[12px] sm:tracking-[0.42em] ${
-    isAr ? "w-full justify-start text-right" : ""
-  }`;
-
+const sectionTitleClass = `flex min-h-[34px] items-center font-bold text-[#ee4036] ${
+  isAr
+    ? "w-full text-[13px] tracking-normal text-right justify-start"
+    : "text-[11px] uppercase tracking-[0.32em] sm:text-[12px] sm:tracking-[0.42em]"
+}`;
   const redLineClass = `mt-5 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)] sm:mt-8 ${
     isAr ? "ml-0 mr-auto lg:ml-auto lg:mr-0" : ""
   }`;

@@ -32,7 +32,13 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.7 }}
           className="mx-auto mb-8 max-w-3xl text-center sm:mb-12"
         >
-          <p className="mb-4 break-words text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.28em]">
+          <p
+            className={`mb-4 break-words font-black text-[#ee4036] ${
+              isAr
+                ? "text-[13px] tracking-normal text-right"
+                : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.28em]"
+            }`}
+          >
             {t.whyChoose.badge}
           </p>
 

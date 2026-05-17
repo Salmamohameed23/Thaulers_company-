@@ -31,11 +31,10 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  const navItemClass = ({ isActive }) =>
-    `text-[15px] xl:text-[16.5px] font-bold tracking-[0.01em] transition-all duration-300 whitespace-nowrap ${
-      isActive ? "text-red-600" : "text-neutral-900 hover:text-red-600"
-    }`;
-
+const navItemClass = ({ isActive }) =>
+  `text-[15px] xl:text-[16.5px] font-bold transition-all duration-300 whitespace-nowrap ${
+    isAr ? "tracking-normal" : "tracking-[0.01em]"
+  } ${isActive ? "text-red-600" : "text-neutral-900 hover:text-red-600"}`;
   const mobileNavItemClass = ({ isActive }) =>
     `rounded-2xl px-4 py-3 text-[16px] font-bold transition ${
       isActive ? "bg-red-50 text-red-600" : "text-neutral-900 hover:bg-neutral-50"
@@ -45,9 +44,9 @@ const Navbar = () => {
     isAr ? "flex-row-reverse text-right" : ""
   }`;
 
-  const dropdownButtonClass = `flex items-center gap-1 text-[15px] xl:text-[16.5px] font-bold tracking-[0.01em] text-neutral-900 transition-all duration-300 hover:text-red-600 whitespace-nowrap ${
-    isAr ? "flex-row-reverse" : ""
-  }`;
+const dropdownButtonClass = `flex items-center gap-1 text-[15px] xl:text-[16.5px] font-bold text-neutral-900 transition-all duration-300 hover:text-red-600 whitespace-nowrap ${
+  isAr ? "flex-row-reverse tracking-normal" : "tracking-[0.01em]"
+}`;
 
   const solutionsLinks = [
     { label: t.nav.smartStorage, path: "/smart-storage" },
@@ -101,7 +100,11 @@ const Navbar = () => {
           scrolled ? "h-[70px] lg:h-[74px]" : "h-[78px] sm:h-[86px] lg:h-[94px]"
         }`}
       >
-        <Link to="/" onClick={closeAll} className="flex min-w-0 shrink-0 items-center">
+        <Link
+          to="/"
+          onClick={closeAll}
+          className="flex min-w-0 shrink-0 items-center"
+        >
           <img
             src={logo}
             alt="TOUGH HAULERS TRADE LIMITED"
@@ -132,16 +135,27 @@ const Navbar = () => {
             </button>
 
             {aboutOpen && (
-              <div className={`absolute top-full w-64 pt-4 ${isAr ? "right-0" : "left-0"}`}>
+              <div
+                className={`absolute top-full w-64 pt-4 ${isAr ? "right-0" : "left-0"}`}
+              >
                 <div className="rounded-2xl border border-black/5 bg-white p-3 shadow-[0_22px_60px_rgba(0,0,0,0.13)]">
                   {aboutLinks.map((link) =>
                     link.download ? (
-                      <a key={link.label} href={link.path} download className={dropdownItemClass}>
+                      <a
+                        key={link.label}
+                        href={link.path}
+                        download
+                        className={dropdownItemClass}
+                      >
                         <span>{link.label}</span>
                         <Download size={14} />
                       </a>
                     ) : (
-                      <Link key={link.label} to={link.path} className={dropdownItemClass}>
+                      <Link
+                        key={link.label}
+                        to={link.path}
+                        className={dropdownItemClass}
+                      >
                         {link.label}
                       </Link>
                     ),
@@ -165,10 +179,16 @@ const Navbar = () => {
             </button>
 
             {solutionsOpen && (
-              <div className={`absolute top-full w-72 pt-4 ${isAr ? "right-0" : "left-0"}`}>
+              <div
+                className={`absolute top-full w-72 pt-4 ${isAr ? "right-0" : "left-0"}`}
+              >
                 <div className="rounded-2xl border border-black/5 bg-white p-3 shadow-[0_22px_60px_rgba(0,0,0,0.13)]">
                   {solutionsLinks.map((link) => (
-                    <Link key={link.path} to={link.path} className={dropdownItemClass}>
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={dropdownItemClass}
+                    >
                       {link.label}
                     </Link>
                   ))}
@@ -201,10 +221,14 @@ const Navbar = () => {
           <Link
             to="/lets-build"
             className={`relative overflow-hidden rounded-full bg-neutral-950 font-bold text-white transition-all duration-500 hover:-translate-y-0.5 hover:bg-red-600 hover:shadow-[0_14px_35px_rgba(220,38,38,0.28)] ${
-              scrolled ? "px-5 py-3 text-[13px]" : "px-6 py-3.5 text-[14px] xl:px-7 xl:text-[15px]"
+              scrolled
+                ? "px-5 py-3 text-[13px]"
+                : "px-6 py-3.5 text-[14px] xl:px-7 xl:text-[15px]"
             }`}
           >
-            <span className="relative z-10 whitespace-nowrap">{t.nav.letsBuild}</span>
+            <span className="relative z-10 whitespace-nowrap">
+              {t.nav.letsBuild}
+            </span>
             <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>
 
@@ -226,7 +250,9 @@ const Navbar = () => {
             </button>
 
             {langOpen && (
-              <div className={`absolute top-full w-40 pt-3 ${isAr ? "left-0" : "right-0"}`}>
+              <div
+                className={`absolute top-full w-40 pt-3 ${isAr ? "left-0" : "right-0"}`}
+              >
                 <div className="rounded-2xl border border-black/5 bg-white p-2 shadow-[0_22px_60px_rgba(0,0,0,0.14)]">
                   {languages.map((item) => (
                     <button
@@ -263,12 +289,20 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="fixed inset-x-0 top-[70px] z-40 max-h-[calc(100vh-70px)] overflow-y-auto border-t border-black/5 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.08)] sm:top-[78px] lg:hidden">
-          <div className={`flex flex-col gap-2 px-4 py-5 sm:px-6 ${isAr ? "text-right" : ""}`}>
+          <div
+            className={`flex flex-col gap-2 px-4 py-5 sm:px-6 ${isAr ? "text-right" : ""}`}
+          >
             <NavLink to="/" onClick={closeAll} className={mobileNavItemClass}>
               {t.nav.home}
             </NavLink>
 
-            <p className="mt-3 px-4 text-xs font-black uppercase tracking-[0.24em] text-red-600">
+            <p
+              className={`mt-3 px-4 text-xs font-black text-red-600 ${
+                isAr
+                  ? "text-right tracking-normal"
+                  : "uppercase tracking-[0.24em]"
+              }`}
+            >
               {t.nav.about}
             </p>
 
@@ -284,23 +318,43 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ) : (
-                <NavLink key={link.path} to={link.path} onClick={closeAll} className={mobileNavItemClass}>
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  onClick={closeAll}
+                  className={mobileNavItemClass}
+                >
                   {link.label}
                 </NavLink>
               ),
             )}
 
-            <p className="mt-3 px-4 text-xs font-black uppercase tracking-[0.24em] text-red-600">
+            <p
+              className={`mt-3 px-4 text-xs font-black text-red-600 ${
+                isAr
+                  ? "text-right tracking-normal"
+                  : "uppercase tracking-[0.24em]"
+              }`}
+            >
               {t.nav.solutions}
             </p>
 
             {solutionsLinks.map((link) => (
-              <NavLink key={link.path} to={link.path} onClick={closeAll} className={mobileNavItemClass}>
+              <NavLink
+                key={link.path}
+                to={link.path}
+                onClick={closeAll}
+                className={mobileNavItemClass}
+              >
                 {link.label}
               </NavLink>
             ))}
 
-            <NavLink to="/R&D" onClick={closeAll} className={mobileNavItemClass}>
+            <NavLink
+              to="/R&D"
+              onClick={closeAll}
+              className={mobileNavItemClass}
+            >
               {t.nav.rd}
             </NavLink>
 

@@ -48,8 +48,16 @@ const ServicesPreview = () => {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-10">
         {/* HEADER */}
-        <div className={`mb-8 max-w-[560px] ${isAr ? "text-right" : "text-left"}`}>
-          <p className="mb-3 break-words text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.32em]">
+        <div
+          className={`mb-8 max-w-[560px] ${isAr ? "text-right" : "text-left"}`}
+        >
+          <p
+            className={`mb-3 break-words font-black text-[#ee4036] ${
+              isAr
+                ? "text-[13px] tracking-normal text-right"
+                : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.32em]"
+            }`}
+          >
             {t.services.badge}
           </p>
 
@@ -96,7 +104,9 @@ const ServicesPreview = () => {
                   </div>
 
                   {/* CONTENT */}
-                  <div className={`flex flex-1 flex-col px-5 pb-6 pt-8 sm:px-6 ${isAr ? "text-right" : "text-left"}`}>
+                  <div
+                    className={`flex flex-1 flex-col px-5 pb-6 pt-8 sm:px-6 ${isAr ? "text-right" : "text-left"}`}
+                  >
                     <h3 className="break-words text-[18px] font-bold leading-7 text-black">
                       {item.title}
                     </h3>
@@ -109,7 +119,10 @@ const ServicesPreview = () => {
                     <div className="mt-auto pt-5">
                       <div className="inline-flex items-center gap-2 text-[12px] font-bold text-[#ee4036]">
                         <span>{t.services.explore}</span>
-                        <ArrowUpRight size={14} className={isAr ? "rotate-[-90deg]" : ""} />
+                        <ArrowUpRight
+                          size={14}
+                          className={isAr ? "rotate-[-90deg]" : ""}
+                        />
                       </div>
                     </div>
                   </div>

@@ -39,7 +39,13 @@ const AboutPreview = () => {
           transition={{ duration: 0.7 }}
           className={`h-full max-w-[540px] ${isAr ? "text-right" : "text-left"}`}
         >
-          <p className="mb-4 break-words text-[11px] font-black uppercase tracking-[0.24em] text-[#ee4036] sm:mb-5 sm:text-xs sm:tracking-[0.36em]">
+          <p
+            className={`mb-4 break-words font-black text-[#ee4036] sm:mb-5 ${
+              isAr
+                ? "text-[13px] tracking-normal"
+                : "text-[11px] uppercase tracking-[0.24em] sm:text-xs sm:tracking-[0.36em]"
+            }`}
+          >
             {t.about.badge}
           </p>
 
@@ -67,7 +73,13 @@ const AboutPreview = () => {
           transition={{ duration: 0.7, delay: 0.08 }}
           className="relative flex h-full flex-col rounded-[24px] border border-black/5 bg-white p-4 shadow-[0_24px_70px_rgba(0,0,0,0.08)] sm:rounded-[32px] sm:p-7"
         >
-          <p className={`mb-5 break-words text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:mb-7 sm:text-[13px] sm:tracking-[0.36em] ${isAr ? "text-right" : "text-left"}`}>
+          <p
+            className={`mb-5 break-words font-black text-[#ee4036] sm:mb-7 ${
+              isAr
+                ? "text-[14px] tracking-normal text-right"
+                : "text-[11px] uppercase tracking-[0.22em] sm:text-[13px] sm:tracking-[0.36em] text-left"
+            }`}
+          >
             {t.about.coreBadge}
           </p>
 

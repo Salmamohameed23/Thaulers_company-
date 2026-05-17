@@ -4,10 +4,8 @@ import { translations } from "./translations";
 const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
-  // ✅ دايمًا يبدأ بـ English
   const [lang, setLang] = useState("en");
 
-  // ✅ يتحكم في الاتجاه والـ lang attribute
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
