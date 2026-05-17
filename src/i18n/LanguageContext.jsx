@@ -4,17 +4,16 @@ import { translations } from "./translations";
 const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState(() => {
-    return localStorage.getItem("siteLang") || "en";
-  });
+  // ✅ دايمًا يبدأ بـ English
+  const [lang, setLang] = useState("en");
 
+  // ✅ يتحكم في الاتجاه والـ lang attribute
   useEffect(() => {
-    localStorage.setItem("siteLang", lang);
-
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [lang]);
 
+  // ✅ memo عشان الأداء
   const value = useMemo(() => {
     return {
       lang,
