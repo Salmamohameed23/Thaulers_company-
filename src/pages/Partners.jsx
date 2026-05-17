@@ -57,7 +57,13 @@ const Partners = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className={isAr ? "text-right" : ""}>
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[#ee4036]">
+              <p
+                className={`mb-4 font-black text-[#ee4036] ${
+                  isAr
+                    ? "text-[13px] tracking-normal text-right"
+                    : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em]"
+                }`}
+              >
                 {t.partnersPage.heroBadge}
               </p>
 

@@ -42,7 +42,13 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="max-w-5xl break-words"
           >
-            <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-red-600 sm:mb-6 sm:text-sm sm:tracking-[0.3em]">
+            <p
+              className={`mb-4 font-bold text-red-600 sm:mb-6 ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-[11px] uppercase tracking-[0.22em] sm:text-sm sm:tracking-[0.3em]"
+              }`}
+            >
               {t.contactPage.badge}
             </p>
 

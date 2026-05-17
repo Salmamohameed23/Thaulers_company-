@@ -448,7 +448,13 @@ const LetsBuild = () => {
                         {selectedLocation && (
                           <div className="mt-6 rounded-[28px] border border-black/10 bg-neutral-50 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.06)]">
                             <div className="mb-5">
-                              <p className="text-sm font-black uppercase tracking-[0.22em] text-red-600">
+                              <p
+                                className={`text-sm font-black text-red-600 ${
+                                  isAr
+                                    ? "tracking-normal text-right"
+                                    : "uppercase tracking-[0.22em]"
+                                }`}
+                              >
                                 {page.weatherTitle}
                               </p>
 
@@ -609,7 +615,13 @@ const LetsBuild = () => {
                           className="mt-8 rounded-[28px] border border-black/10 bg-neutral-50 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.06)]"
                         >
                           <div className="mb-5">
-                            <p className="text-sm font-black uppercase tracking-[0.22em] text-red-600">
+                            <p
+                              className={`text-sm font-black text-red-600 ${
+                                isAr
+                                  ? "tracking-normal text-right"
+                                  : "uppercase tracking-[0.22em]"
+                              }`}
+                            >
                               {page.weatherTitle}
                             </p>
 

@@ -56,16 +56,27 @@ const About = () => {
             transition={{ duration: 0.7 }}
             className="max-w-5xl"
           >
-            <p className="mb-8 text-xs font-black uppercase tracking-[0.18em] sm:tracking-[0.28em] text-[#ee4036]">
+            <p
+              className={`mb-8 text-xs font-black text-[#ee4036] ${
+                isAr
+                  ? "tracking-normal text-right"
+                  : "uppercase tracking-[0.18em] sm:tracking-[0.28em]"
+              }`}
+            >
               {t.aboutPage.badge}
             </p>
 
             <h1
-              className={`max-w-5xl text-[32px] font-black sm:text-[38px] 
-${isAr ? "leading-[1.4] tracking-[0.02em]" : "leading-[1.4] tracking-[0em]"} 
-sm:text-5xl lg:text-[68px]`}
+              className={`max-w-5xl font-black 
+  text-[28px] sm:text-[34px] lg:text-[68px] 
+  ${
+    isAr
+      ? "leading-[1.5] tracking-normal text-right"
+      : "leading-[1.4] tracking-[0em]"
+  }`}
             >
               {t.aboutPage.title1}
+
               <span className="block leading-[1.5] text-[#ee4036]">
                 {t.aboutPage.title2}
               </span>
@@ -101,7 +112,13 @@ sm:text-5xl lg:text-[68px]`}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] sm:tracking-[0.28em] text-[#ee4036]">
+            <p
+              className={`mb-4 text-xs font-black text-[#ee4036] ${
+                isAr
+                  ? "tracking-normal text-right"
+                  : "uppercase tracking-[0.18em] sm:tracking-[0.28em]"
+              }`}
+            >
               {t.aboutPage.positioningBadge}
             </p>
 
@@ -160,7 +177,13 @@ sm:text-5xl lg:text-[68px]`}
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] sm:tracking-[0.28em] text-[#ee4036]">
+              <p
+                className={`mb-4 text-xs font-black text-[#ee4036] ${
+                  isAr
+                    ? "tracking-normal text-right"
+                    : "uppercase tracking-[0.18em] sm:tracking-[0.28em]"
+                }`}
+              >
                 {t.aboutPage.capabilitiesBadge}
               </p>
 

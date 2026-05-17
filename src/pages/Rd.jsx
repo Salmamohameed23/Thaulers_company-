@@ -195,7 +195,13 @@ export default function RDPage() {
             >
               <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036]" />
 
-              <span className="whitespace-nowrap text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-white">
+              <span
+                className={`whitespace-nowrap font-black text-white ${
+                  isAr
+                    ? "text-[12px] tracking-normal text-right"
+                    : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
+                }`}
+              >
                 {page.heroBadge}
               </span>
             </div>
@@ -233,7 +239,13 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-[520px] ${isAr ? "text-right" : ""}`}
           >
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-[#ee4036]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
+              }`}
+            >
               {page.platformBadge}
             </p>
 
@@ -349,7 +361,13 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-[520px] ${isAr ? "mr-auto text-right" : ""}`}
           >
-            <p className="mb-5 text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-[#ee4036]">
+            <p
+              className={`mb-5 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
+              }`}
+            >
               {page.solutionsBadge}
             </p>
 
@@ -405,7 +423,13 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-[620px] ${isAr ? "text-right" : ""}`}
           >
-            <p className="mb-5 text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-[#ee4036]">
+            <p
+              className={`mb-5 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
+              }`}
+            >
               {page.teamBadge}
             </p>
 
@@ -442,7 +466,13 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-[620px] ${isAr ? "text-right" : ""}`}
           >
-            <p className="mb-5 text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-[#ee4036]">
+            <p
+              className={`mb-5 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
+              }`}
+            >
               {page.qualityBadge}
             </p>
 
@@ -519,7 +549,13 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-[520px] ${isAr ? "text-right" : ""}`}
           >
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-[#ee4036]">
+            <p
+              className={`mb-4 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
+              }`}
+            >
               {page.testingBadge}
             </p>
 
@@ -550,17 +586,22 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-3xl ${isAr ? "text-right" : ""}`}
           >
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-[#ee4036]">
+            ر
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
+              }`}
+            >
               {page.standardsBadge}
             </p>
-
             <h2 className="text-[34px] font-black leading-[1.08] tracking-[-0.04em] text-neutral-950 sm:text-5xl">
               {page.standardsTitle1}
               <span className="block text-[#ee4036]">
                 {page.standardsTitle2}
               </span>
             </h2>
-
             <p className="mt-5 max-w-2xl text-[15px] leading-7 text-neutral-600">
               {page.standardsDesc}
             </p>
@@ -611,7 +652,13 @@ export default function RDPage() {
               transition={{ duration: 0.65 }}
               className={isAr ? "text-right" : ""}
             >
-              <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-[#ee4036]">
+              <p
+                className={`mb-3 font-black text-[#ee4036] ${
+                  isAr
+                    ? "text-[13px] tracking-normal text-right"
+                    : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
+                }`}
+              >
                 {page.processBadge}
               </p>
 

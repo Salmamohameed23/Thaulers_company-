@@ -126,7 +126,13 @@ export default function SmartStorage() {
               }`}
             >
               <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
-              <span className="text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-white">
+              <span
+                className={`font-black text-white ${
+                  isAr
+                    ? "text-[12px] tracking-normal text-right"
+                    : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
+                }`}
+              >
                 {t.smartStoragePage.heroBadge}
               </span>
             </div>
@@ -169,7 +175,13 @@ export default function SmartStorage() {
       <section className="relative overflow-x-hidden bg-white py-14">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-9 text-center">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] sm:tracking-[0.34em] text-[#ee4036]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.22em] sm:tracking-[0.34em]"
+              }`}
+            >
               {t.smartStoragePage.productBadge}
             </p>
 
@@ -246,7 +258,13 @@ export default function SmartStorage() {
       <section className="bg-neutral-50 py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] sm:tracking-[0.34em] text-[#ee4036]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.22em] sm:tracking-[0.34em]"
+              }`}
+            >
               {t.smartStoragePage.applicationsBadge}
             </p>
 
@@ -297,10 +315,15 @@ export default function SmartStorage() {
       <section className="relative overflow-x-hidden bg-white py-14">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-9 text-center">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] sm:tracking-[0.34em] text-[#ee4036]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.22em] sm:tracking-[0.34em]"
+              }`}
+            >
               {t.smartStoragePage.engineeringBadge}
             </p>
-
             <h2 className="text-[28px] font-black tracking-[-0.035em] sm:text-4xl">
               {t.smartStoragePage.engineeringTitle1}
               <span className="text-[#ee4036]">
@@ -359,10 +382,15 @@ export default function SmartStorage() {
       <section className="bg-neutral-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] sm:tracking-[0.34em] text-[#ee4036]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-xs uppercase tracking-[0.22em] sm:tracking-[0.34em]"
+              }`}
+            >
               {t.smartStoragePage.processBadge}
             </p>
-
             <h2 className="text-[28px] font-black tracking-[-0.035em] sm:text-4xl">
               {t.smartStoragePage.processTitle1}
               <span className="text-[#ee4036]">

@@ -125,7 +125,13 @@ const FactoryPage = () => {
               }`}
             >
               <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white sm:text-xs sm:tracking-[0.28em]">
+              <span
+                className={`font-black text-white ${
+                  isAr
+                    ? "text-[12px] tracking-normal text-right"
+                    : "text-[10px] uppercase tracking-[0.18em] sm:text-xs sm:tracking-[0.28em]"
+                }`}
+              >
                 {t.factoryPage.heroBadge}
               </span>
             </div>
@@ -193,7 +199,13 @@ const FactoryPage = () => {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center sm:mb-10">
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.34em]"
+              }`}
+            >
               {t.factoryPage.servicesBadge}
             </p>
 
@@ -256,7 +268,13 @@ const FactoryPage = () => {
       <section className="bg-neutral-50 py-12 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center sm:mb-12">
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.34em]"
+              }`}
+            >
               {t.factoryPage.processBadge}
             </p>
 
@@ -324,7 +342,13 @@ const FactoryPage = () => {
       <section id="factory-capabilities" className="bg-white py-12 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-7 text-center sm:mb-9">
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.34em]"
+              }`}
+            >
               {t.factoryPage.capabilitiesBadge}
             </p>
 
@@ -388,7 +412,13 @@ const FactoryPage = () => {
 
           <div className={`flex items-center ${isAr ? "text-right" : ""}`}>
             <div>
-              <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
+              <p
+                className={`mb-3 font-black text-[#ee4036] ${
+                  isAr
+                    ? "text-[13px] tracking-normal text-right"
+                    : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.34em]"
+                }`}
+              >
                 {t.factoryPage.executionBadge}
               </p>
 

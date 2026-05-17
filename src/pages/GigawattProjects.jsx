@@ -117,7 +117,13 @@ const GigaProjects = () => {
               }`}
             >
               <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white sm:text-xs sm:tracking-[0.32em]">
+              <span
+                className={`font-black text-white ${
+                  isAr
+                    ? "text-[12px] tracking-normal text-right"
+                    : "text-[10px] uppercase tracking-[0.18em] sm:text-xs sm:tracking-[0.32em]"
+                }`}
+              >
                 {t.gigaPage.heroBadge}
               </span>
             </div>
@@ -200,7 +206,13 @@ const GigaProjects = () => {
             transition={{ duration: 0.55, delay: 0.08 }}
             className={isAr ? "text-right" : ""}
           >
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.34em]"
+              }`}
+            >
               {t.gigaPage.aboutBadge}
             </p>
 
@@ -221,7 +233,13 @@ const GigaProjects = () => {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center sm:mb-10">
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.34em]"
+              }`}
+            >
               {t.gigaPage.scopeBadge}
             </p>
 
@@ -280,7 +298,13 @@ const GigaProjects = () => {
       <section className="bg-white py-12 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center sm:mb-12">
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.34em]"
+              }`}
+            >
               {t.gigaPage.processBadge}
             </p>
 
@@ -344,7 +368,13 @@ const GigaProjects = () => {
       <section className="bg-neutral-50 py-12 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-7 text-center sm:mb-9">
-            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
+            <p
+              className={`mb-3 font-black text-[#ee4036] ${
+                isAr
+                  ? "text-[13px] tracking-normal text-right"
+                  : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.34em]"
+              }`}
+            >
               {t.gigaPage.capabilitiesBadge}
             </p>
           </div>
@@ -400,7 +430,13 @@ const GigaProjects = () => {
 
           <div className={`flex items-center ${isAr ? "text-right" : ""}`}>
             <div>
-              <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
+              <p
+                className={`mb-3 font-black text-[#ee4036] ${
+                  isAr
+                    ? "text-[13px] tracking-normal text-right"
+                    : "text-[11px] uppercase tracking-[0.22em] sm:text-xs sm:tracking-[0.34em]"
+                }`}
+              >
                 {t.gigaPage.finalBadge}
               </p>
 
