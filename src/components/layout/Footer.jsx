@@ -18,8 +18,25 @@ const Footer = () => {
     { name: t.footer.links.terms, path: "/terms-of-service" },
   ];
 
+  const linkRowClass = `group flex items-center justify-between border-b border-white/10 py-3.5 text-[14px] font-semibold text-neutral-200 transition hover:text-white sm:py-4 ${
+    isAr ? "flex-row-reverse text-right" : ""
+  }`;
+
+  const sectionTitleClass = `flex min-h-[34px] items-center text-[11px] font-bold uppercase tracking-[0.32em] text-[#ee4036] sm:text-[12px] sm:tracking-[0.42em] ${
+    isAr ? "w-full justify-start text-right" : ""
+  }`;
+
+  const redLineClass = `mt-5 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)] sm:mt-8 ${
+    isAr ? "ml-0 mr-auto lg:ml-auto lg:mr-0" : ""
+  }`;
+
+  const brandRedLineClass = `mt-[-45px] h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)] ${
+    isAr ? "ml-0 mr-auto lg:ml-auto lg:mr-0" : ""
+  }`;
+
   return (
     <footer
+      dir={isAr ? "rtl" : "ltr"}
       className={`relative overflow-hidden bg-black text-white ${
         isAr ? "font-[Cairo]" : ""
       }`}
@@ -27,89 +44,77 @@ const Footer = () => {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_0%,rgba(220,38,38,0.25),transparent_34%)]" />
       <div className="pointer-events-none absolute left-[-220px] bottom-[-260px] h-[620px] w-[620px] rounded-full border border-red-600/10 opacity-40" />
 
-      <div className="relative mx-auto max-w-[1180px] px-8 pt-10 lg:px-8">
-        <div
-          className={`grid grid-cols-1 gap-16 border-b border-white/30 pb-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-16 ${
-            isAr ? "lg:[direction:rtl]" : ""
-          }`}
-        >
+      <div className="relative mx-auto max-w-[1180px] px-5 pt-10 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-10 border-b border-white/20 pb-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:pb-12">
           {/* Brand */}
           <div
-            className={`lg:border-white/10 ${
-              isAr ? "text-right lg:border-l lg:pl-10" : "lg:border-r lg:pr-10"
+            className={`lg:border-white/10 lg:px-8 ${
+              isAr ? "text-right lg:border-l" : "lg:border-r lg:pl-0"
             }`}
           >
-            <div
-              className={`flex h-[34px] items-center ${
-                isAr ? "justify-end" : ""
-              }`}
-            >
-              <Link to="/">
+            <div className="flex min-h-[34px] items-center">
+              <Link
+                to="/"
+                className={`flex w-full items-center ${
+                  isAr ? "justify-end" : "justify-start"
+                }`}
+              >
                 <img
                   src={logo}
                   alt="Tough Haulers"
-                  className={`mt-[16px] -translate-x-[29px] w-[300px] object-contain ${
-                    isAr ? "translate-x-[35px]" : "-translate-x-[10px]"
+                  className={`mt-[-60px] h-auto w-[220px] max-w-full object-contain sm:w-[260px] lg:w-[285px] ${
+                    isAr ? "mr-[-15px]" : "ml-[-30px]"
                   }`}
                 />
               </Link>
             </div>
+            <div className="-translate-y-15">
+              <div className={brandRedLineClass} />
 
-            <div
-              className={`mt-8 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)] ${
-                isAr ? "text-right lg:border-l" : "lg:border-r"
-              }`}
-            />
+              <h3 className="mt-6 max-w-[280px] text-[21px] font-extrabold leading-[1.28] tracking-[-0.02em] sm:text-[23px]">
+                {t.footer.tagline1}
+                <br />
+                {t.footer.tagline2}
+              </h3>
 
-            <h3 className="mt-5 max-w-[260px] text-[23px] font-extrabold leading-[1.25] tracking-[-0.02em]">
-              {t.footer.tagline1}
-              <br />
-              {t.footer.tagline2}
-            </h3>
-
-            <p className="mt-2 max-w-[280px] text-[14px] leading-7 text-neutral-400">
-              {t.footer.desc}
-            </p>
+              <p className="mt-3 max-w-[300px] text-[14px] leading-7 text-neutral-400">
+                {t.footer.desc}
+              </p>
+            </div>
           </div>
 
           {/* Solutions */}
           <div
-            className={`lg:border-white/10 ml-[-75px] lg:px-10 ${
+            className={`lg:border-white/10 lg:px-8 ${
               isAr ? "text-right lg:border-l" : "lg:border-r"
             }`}
           >
-            <h4 className="flex h-[34px] items-center text-[12px] font-bold uppercase tracking-[0.42em] text-[#ee4036]">
-              {t.footer.solutions}
-            </h4>
+            <h4 className={sectionTitleClass}>{t.footer.solutions}</h4>
+            <div className={redLineClass} />
 
-            <div
-              className={`mt-8 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)] ${
-                isAr ? "mr-0" : ""
-              }`}
-            />
-
-            <ul className="mt-5">
+            <ul className="mt-4 sm:mt-5">
               {solutions.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    to={item.path}
-                    className="group flex items-center justify-between border-b border-white/10 py-4 text-[14px] font-semibold text-neutral-200 transition hover:text-white"
-                  >
+                  <Link to={item.path} className={linkRowClass}>
                     <span
-                      className={`flex items-center gap-4 ${
-                        isAr ? "w-full flex-row-reverse justify-between" : ""
+                      className={`flex min-w-0 items-center gap-3 ${
+                        isAr
+                          ? "flex-row-reverse justify-end text-right w-full"
+                          : ""
                       }`}
                     >
                       <ChevronRight
-                        className={`h-4 w-4 text-red-500 transition ${
-                          isAr ? "rotate-180" : "group-hover:translate-x-1"
+                        className={`h-4 w-4 shrink-0 text-red-500 transition ${
+                          isAr
+                            ? "rotate-180 order-2"
+                            : "group-hover:translate-x-1"
                         }`}
                       />
-                      {item.name}
+                      <span className="break-words">{item.name}</span>
                     </span>
 
                     {!isAr && (
-                      <span className="h-[2px] w-5 bg-red-500 transition-all group-hover:w-8" />
+                      <span className="ml-4 h-[2px] w-5 shrink-0 bg-red-500 transition-all group-hover:w-8" />
                     )}
                   </Link>
                 </li>
@@ -119,73 +124,69 @@ const Footer = () => {
 
           {/* Contact */}
           <div
-            className={`lg:border-white/10  ml-[-75px] lg:px-10 ${
+            className={`lg:border-white/10 lg:px-8 ${
               isAr ? "text-right lg:border-l" : "lg:border-r"
             }`}
           >
-            <h4 className="flex h-[34px] items-center text-[12px] font-bold uppercase tracking-[0.42em] text-[#ee4036]">
-              {t.footer.contact}
-            </h4>
+            <h4 className={sectionTitleClass}>{t.footer.contact}</h4>
+            <div className={redLineClass} />
 
-            <div className="mt-8 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
-
-            <div className="mt-5">
+            <div className="mt-4 sm:mt-5">
               <a
                 href={`mailto:${t.footer.email}`}
-                className={`group flex items-center gap-4  border-b border-white/10 py-4 text-[14px] font-semibold text-neutral-100 hover:text-red-400 ${
-                  isAr ? "flex-row-reverse" : ""
+                className={`group flex items-center gap-4 border-b border-white/10 py-3.5 text-[14px] font-semibold text-neutral-100 transition hover:text-red-400 sm:py-4 ${
+                  isAr ? "flex-row-reverse text-right" : ""
                 }`}
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-500">
                   <Mail className="h-4 w-4" />
                 </span>
-                <span dir="ltr">{t.footer.email}</span>
+                <span dir="ltr" className="break-all">
+                  {t.footer.email}
+                </span>
               </a>
 
               <div
-                className={`flex items-center gap-4 border-b ml-[15px] border-white/10 py-4 text-[14px] font-semibold text-neutral-100 ${
-                  isAr ? "flex-row-reverse" : ""
+                className={`flex items-center gap-4 border-b border-white/10 py-3.5 text-[14px] font-semibold text-neutral-100 sm:py-4 ${
+                  isAr ? "flex-row-reverse text-right" : ""
                 }`}
               >
-                <span className="flex h-10 w-10 shrink-0 items-center ml-[-17px] justify-center rounded-full border border-red-600 text-red-500">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-500">
                   <MapPin className="h-4 w-4" />
                 </span>
-                <span>{t.footer.location1}</span>
+                <span className="break-words">{t.footer.location1}</span>
               </div>
             </div>
           </div>
 
           {/* Legal */}
-          <div className={ `lg:border-white/10  ml-[-75px] lg:px-10 ${
-            isAr ? "text-right lg:pr-10" : "lg:pl-10"}`}>
-            <h4 className="flex h-[34px] items-center text-[12px] font-bold uppercase tracking-[0.42em] text-[#ee4036]">
-              {t.footer.legal}
-            </h4>
+          <div className={`lg:px-8 ${isAr ? "text-right" : ""}`}>
+            <h4 className={sectionTitleClass}>{t.footer.legal}</h4>
+            <div className={redLineClass} />
 
-            <div className="mt-8 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)]" />
-
-            <ul className="mt-5">
+            <ul className="mt-4 sm:mt-5">
               {legal.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    to={item.path}
-                    className="group flex items-center justify-between border-b border-white/10 py-4 text-[14px] font-semibold text-neutral-200 transition hover:text-white"
-                  >
+                  <Link to={item.path} className={linkRowClass}>
                     <span
-                      className={`flex items-center gap-4 ${
-                        isAr ? "w-full flex-row-reverse justify-between" : ""
+                      className={`flex min-w-0 items-center gap-3 ${
+                        isAr
+                          ? "flex-row-reverse justify-end text-right w-full"
+                          : ""
                       }`}
                     >
                       <ChevronRight
-                        className={`h-4 w-4 text-red-500 transition ${
-                          isAr ? "rotate-180" : "group-hover:translate-x-1"
+                        className={`h-4 w-4 shrink-0 text-red-500 transition ${
+                          isAr
+                            ? "rotate-180 order-2"
+                            : "group-hover:translate-x-1"
                         }`}
                       />
-                      {item.name}
+                      <span className="break-words">{item.name}</span>
                     </span>
 
                     {!isAr && (
-                      <span className="h-[2px] w-5 bg-red-500 transition-all group-hover:w-8" />
+                      <span className="ml-4 h-[2px] w-5 shrink-0 bg-red-500 transition-all group-hover:w-8" />
                     )}
                   </Link>
                 </li>
@@ -194,19 +195,27 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className=" py-10 -mt-[-8px]">
+        <div className="py-8 sm:py-10">
           <div
-            className={`flex flex-col items-center justify-center gap-5 text-center text-[15px] text-neutral-400 tracking-wide md:flex-row ${
+            className={`flex flex-col items-center justify-center gap-4 text-center text-[13px] leading-6 tracking-wide text-neutral-400 sm:text-[15px] md:flex-row md:gap-5 ${
               isAr ? "md:flex-row-reverse" : ""
             }`}
           >
-            <p dir={isAr ? "rtl" : "ltr"}>{t.footer.copyright}</p>
+            <p className="break-words" dir={isAr ? "rtl" : "ltr"}>
+              {t.footer.copyright}
+            </p>
 
             <span className="hidden h-4 w-px bg-white/40 md:block" />
 
-            <p dir={isAr ? "rtl" : "ltr"}>{t.footer.slogan}</p>
+            <p className="break-words" dir={isAr ? "rtl" : "ltr"}>
+              {t.footer.slogan}
+            </p>
 
-            <div className="flex items-center justify-center gap-5 md:ml-4">
+            <div
+              className={`flex items-center justify-center gap-4 ${
+                isAr ? "md:mr-4" : "md:ml-4"
+              }`}
+            >
               <a
                 href="https://www.facebook.com/TOUGHHAULERS"
                 target="_blank"

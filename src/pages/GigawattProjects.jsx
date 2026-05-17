@@ -91,10 +91,10 @@ const GigaProjects = () => {
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-black/50 sm:bg-black/40 lg:bg-black/35" />
 
         <div
-          className={`absolute inset-y-0 w-[68%] ${
+          className={`absolute inset-y-0 hidden w-[68%] sm:block ${
             isAr
               ? "right-0 bg-gradient-to-l from-black via-black/78 to-transparent"
               : "left-0 bg-gradient-to-r from-black via-black/78 to-transparent"
@@ -103,7 +103,7 @@ const GigaProjects = () => {
 
         <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/80 to-transparent" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -117,13 +117,13 @@ const GigaProjects = () => {
               }`}
             >
               <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
-              <span className="text-s font-black uppercase tracking-[0.32em] text-white">
+              <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white sm:text-xs sm:tracking-[0.32em]">
                 {t.gigaPage.heroBadge}
               </span>
             </div>
 
             <h1
-              className={`text-[42px] font-black text-white sm:text-5xl lg:text-[62px] ${
+              className={`break-words text-[34px] font-black text-white sm:text-5xl lg:text-[62px] ${
                 isAr
                   ? "leading-[1.18] tracking-[0em]"
                   : "leading-[1.02] tracking-[-0.045em]"
@@ -137,13 +137,13 @@ const GigaProjects = () => {
               <span className="block">{t.gigaPage.heroTitle2B}</span>
             </h1>
 
-            <p className="mt-6 max-w-[560px] text-[15px] font-medium leading-7 text-white/85">
+            <p className="mt-5 max-w-[560px] break-words text-[14px] font-medium leading-7 text-white/85 sm:mt-6 sm:text-[15px]">
               {t.gigaPage.heroDesc}
             </p>
           </motion.div>
 
           <div
-            className={`mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5 ${
+            className={`mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 lg:grid-cols-5 ${
               isAr ? "lg:[direction:rtl]" : ""
             }`}
           >
@@ -175,10 +175,10 @@ const GigaProjects = () => {
       </section>
 
       {/* ABOUT GIGA PROJECTS */}
-      <section className="relative overflow-hidden bg-white py-14">
+      <section className="relative overflow-hidden bg-white py-12 sm:py-14">
         <div className="absolute left-[-160px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[120px]" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.35fr_1fr] lg:px-8">
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.35fr_1fr] lg:gap-10 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -187,7 +187,7 @@ const GigaProjects = () => {
             transition={{ duration: 0.55 }}
             className="flex items-center justify-center"
           >
-            <div className="flex h-28 w-28 items-center justify-center rounded-[28px] border border-red-600/20 bg-red-600/5 text-[#ee4036]">
+            <div className="flex h-20 w-20 items-center justify-center rounded-[22px] border border-red-600/20 bg-red-600/5 text-[#ee4036] sm:h-28 sm:w-28 sm:rounded-[28px]">
               <SunMedium size={56} />
             </div>
           </motion.div>
@@ -200,15 +200,15 @@ const GigaProjects = () => {
             transition={{ duration: 0.55, delay: 0.08 }}
             className={isAr ? "text-right" : ""}
           >
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
               {t.gigaPage.aboutBadge}
             </p>
 
-            <h2 className="text-[30px] font-black tracking-[-0.035em] sm:text-4xl">
+            <h2 className="break-words text-[26px] font-black leading-[1.15] tracking-[-0.025em] sm:text-4xl">
               {t.gigaPage.aboutTitle}
             </h2>
 
-            <p className="mt-5 max-w-4xl text-[15px] leading-7 text-neutral-600">
+            <p className="mt-5 max-w-4xl break-words text-[15px] leading-7 text-neutral-600">
               {t.gigaPage.aboutDesc}
             </p>
           </motion.div>
@@ -216,20 +216,20 @@ const GigaProjects = () => {
       </section>
 
       {/* ENGINEERING SCOPE */}
-      <section className="relative overflow-hidden bg-neutral-50 py-14">
+      <section className="relative overflow-hidden bg-neutral-50 py-12 sm:py-14">
         <div className="absolute right-[-160px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-red-600/10 blur-[130px]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-10 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 text-center sm:mb-10">
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
               {t.gigaPage.scopeBadge}
             </p>
 
-            <h2 className="text-[30px] font-black tracking-[-0.035em] sm:text-4xl">
+            <h2 className="break-words text-[26px] font-black leading-[1.15] tracking-[-0.025em] sm:text-4xl">
               {t.gigaPage.scopeTitle}
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-7 text-neutral-600">
+            <p className="mx-auto mt-4 max-w-2xl break-words text-[14px] leading-7 text-neutral-600">
               {t.gigaPage.scopeDesc}
             </p>
           </div>
@@ -262,11 +262,11 @@ const GigaProjects = () => {
                     <Icon size={20} />
                   </div>
 
-                  <h3 className="relative z-10 text-[16px] font-black text-neutral-950">
+                  <h3 className="relative z-10 break-words text-[16px] font-black text-neutral-950">
                     {item.title}
                   </h3>
 
-                  <p className="relative z-10 mt-3 text-[13px] leading-6 text-neutral-600">
+                  <p className="relative z-10 mt-3 break-words text-[13px] leading-6 text-neutral-600">
                     {item.text}
                   </p>
                 </motion.div>
@@ -277,14 +277,14 @@ const GigaProjects = () => {
       </section>
 
       {/* PROCESS */}
-      <section className="bg-white py-14">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+      <section className="bg-white py-12 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 text-center sm:mb-12">
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
               {t.gigaPage.processBadge}
             </p>
 
-            <h2 className="text-[28px] font-black tracking-[-0.035em] sm:text-4xl">
+            <h2 className="break-words text-[25px] font-black leading-[1.18] tracking-[-0.025em] sm:text-4xl">
               {t.gigaPage.processTitle}
             </h2>
           </div>
@@ -341,15 +341,15 @@ const GigaProjects = () => {
       </section>
 
       {/* LARGE SCALE CAPABILITIES */}
-      <section className="bg-neutral-50 py-14">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-9 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+      <section className="bg-neutral-50 py-12 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-7 text-center sm:mb-9">
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
               {t.gigaPage.capabilitiesBadge}
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {largeScaleCapabilities.map((item, index) => {
               const Icon = item.icon;
 
@@ -384,13 +384,13 @@ const GigaProjects = () => {
       </section>
 
       {/* FINAL SECTION */}
-      <section className="bg-white py-14">
+      <section className="bg-white py-12 sm:py-14">
         <div
-          className={`mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-2 lg:px-8 ${
+          className={`mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
           }`}
         >
-          <div className="min-h-[320px] overflow-hidden rounded-[28px] bg-black shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+          <div className="min-h-[240px] overflow-hidden rounded-[22px] bg-black shadow-[0_20px_60px_rgba(0,0,0,0.12)] sm:min-h-[320px] sm:rounded-[28px]">
             <img
               src={gigaEnd}
               alt="Large scale solar and storage infrastructure"
@@ -400,15 +400,15 @@ const GigaProjects = () => {
 
           <div className={`flex items-center ${isAr ? "text-right" : ""}`}>
             <div>
-              <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+              <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
                 {t.gigaPage.finalBadge}
               </p>
 
-              <h2 className="text-[32px] font-black leading-[1.08] tracking-[-0.04em] sm:text-4xl">
+              <h2 className="break-words text-[27px] font-black leading-[1.16] tracking-[-0.02em] sm:text-4xl">
                 {t.gigaPage.finalTitle}
               </h2>
 
-              <p className="mt-5 max-w-xl text-[15px] leading-7 text-neutral-600">
+              <p className="mt-5 max-w-xl break-words text-[15px] leading-7 text-neutral-600">
                 {t.gigaPage.finalDesc}
               </p>
 

@@ -23,64 +23,55 @@ const AboutPreview = () => {
 
   return (
     <section
-      className={`relative overflow-hidden bg-white py-20 text-neutral-950 ${
+      dir={isAr ? "rtl" : "ltr"}
+      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-16 lg:py-20 ${
         isAr ? "font-[Cairo]" : ""
       }`}
     >
-      <div className="absolute left-[-180px] top-10 h-[380px] w-[380px] rounded-full bg-red-600/10 blur-[120px]" />
-      <div className="absolute right-[-180px] bottom-[-120px] h-[450px] w-[450px] rounded-full bg-red-600/10 blur-[130px]" />
+      <div className="pointer-events-none absolute left-[-180px] top-10 h-[280px] w-[280px] rounded-full bg-red-600/10 blur-[100px] sm:h-[380px] sm:w-[380px] sm:blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-[-120px] right-[-180px] h-[320px] w-[320px] rounded-full bg-red-600/10 blur-[110px] sm:h-[450px] sm:w-[450px] sm:blur-[130px]" />
 
-      <div
-        className={`relative mx-auto grid max-w-[1180px] items-stretch gap-14 px-6 sm:px-8 lg:grid-cols-[0.95fr_1.15fr] lg:px-10 ${
-          isAr ? "lg:[direction:rtl]" : ""
-        }`}
-      >
+      <div className="relative mx-auto grid max-w-[1180px] items-stretch gap-8 px-4 sm:gap-10 sm:px-6 md:px-8 lg:grid-cols-[0.95fr_1.15fr] lg:gap-14 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
+          viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7 }}
-          className={`h-full max-w-[540px] ${
-            isAr ? "text-right lg:[direction:rtl]" : ""
-          }`}
+          className={`h-full max-w-[540px] ${isAr ? "text-right" : "text-left"}`}
         >
-          <p className="mb-5 text-s font-black uppercase tracking-[0.36em] text-[#ee4036]">
+          <p className="mb-4 break-words text-[11px] font-black uppercase tracking-[0.24em] text-[#ee4036] sm:mb-5 sm:text-xs sm:tracking-[0.36em]">
             {t.about.badge}
           </p>
 
           <h2
-            className={`text-[34px] font-black text-neutral-950 sm:text-[42px] lg:text-[48px] ${
+            className={`break-words text-[28px] font-black text-neutral-950 sm:text-[38px] lg:text-[48px] ${
               isAr
                 ? "leading-[1.32] tracking-[-0.01em]"
-                : "leading-[1.04] tracking-[-0.035em]"
+                : "leading-[1.08] tracking-[-0.035em]"
             }`}
           >
             {t.about.title}
-            <span className="block text-[#ee4036]">
-              {t.about.highlight}
-            </span>
+            <span className="block text-[#ee4036]">{t.about.highlight}</span>
           </h2>
 
-          <div className="mt-8 space-y-5 text-[15px] font-medium leading-8 text-neutral-800">
-            <p>{t.about.p1}</p>
-            <p>{t.about.p2}</p>
+          <div className="mt-6 space-y-4 text-[14px] font-medium leading-7 text-neutral-800 sm:mt-8 sm:text-[15px] sm:leading-8">
+            <p className="break-words">{t.about.p1}</p>
+            <p className="break-words">{t.about.p2}</p>
           </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
+          viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7, delay: 0.08 }}
-          className={`relative flex h-full flex-col rounded-[32px] border border-black/5 bg-white p-6 shadow-[0_30px_80px_rgba(0,0,0,0.09)] sm:p-7 ${
-            isAr ? "lg:[direction:rtl]" : ""
-          }`}
+          className="relative flex h-full flex-col rounded-[24px] border border-black/5 bg-white p-4 shadow-[0_24px_70px_rgba(0,0,0,0.08)] sm:rounded-[32px] sm:p-7"
         >
-          <p className="mb-7 text-[13px] font-black uppercase tracking-[0.36em] text-[#ee4036]">
+          <p className={`mb-5 break-words text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:mb-7 sm:text-[13px] sm:tracking-[0.36em] ${isAr ? "text-right" : "text-left"}`}>
             {t.about.coreBadge}
           </p>
 
-          <div className="flex flex-1 flex-col gap-4">
+          <div className="flex flex-1 flex-col gap-3 sm:gap-4">
             {points.map((item) => {
               const Icon = item.icon;
 
@@ -89,15 +80,15 @@ const AboutPreview = () => {
                   key={item.key}
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.22 }}
-                  className={`group flex flex-1 items-center gap-5 rounded-[18px] border border-black/10 bg-white px-5 py-4 shadow-[0_14px_34px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-red-600/25 ${
-                    isAr ? "text-right [direction:rtl]" : ""
+                  className={`group flex flex-1 items-start gap-4 rounded-[16px] border border-black/10 bg-white px-4 py-4 shadow-[0_14px_34px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-red-600/25 sm:items-center sm:gap-5 sm:rounded-[18px] sm:px-5 ${
+                    isAr ? "text-right" : "text-left"
                   }`}
                 >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[13px] bg-neutral-950 text-white transition-all duration-300 group-hover:bg-[#ee4036]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[13px] bg-neutral-950 text-white transition-all duration-300 group-hover:bg-[#ee4036] sm:h-11 sm:w-11">
                     <Icon size={19} strokeWidth={2.4} />
                   </div>
 
-                  <p className="text-[15px] font-semibold text-neutral-800">
+                  <p className="break-words text-[14px] font-semibold leading-7 text-neutral-800 sm:text-[15px]">
                     {t.about.points[item.key]}
                   </p>
                 </motion.div>

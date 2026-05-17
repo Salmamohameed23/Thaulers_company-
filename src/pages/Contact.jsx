@@ -32,28 +32,28 @@ const Contact = () => {
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* HERO */}
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,rgba(220,38,38,0.07),transparent_30%)]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 34 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-5xl"
+            className="max-w-5xl break-words"
           >
-            <p className="mb-6 text-sm font-bold uppercase tracking-[0.3em] text-red-600">
+            <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-red-600 sm:mb-6 sm:text-sm sm:tracking-[0.3em]">
               {t.contactPage.badge}
             </p>
 
-            <h1 className="max-w-5xl text-[38px] font-black leading-[1.3] tracking-[0.01em] sm:text-5xl lg:text-[64px]">
+            <h1 className="max-w-5xl text-[32px] font-black leading-[1.18] tracking-[-0.02em] sm:text-5xl lg:text-[64px] rtl:leading-[1.35]">
               {t.contactPage.title1}
-              <span className="block text-red-600 mt-3">
+              <span className="mt-2 block text-red-600 sm:mt-3">
                 {t.contactPage.title2}
               </span>
             </h1>
 
-            <p className="mt-6 max-w-3xl text-[16px] leading-8 text-neutral-600">
+            <p className="mt-5 max-w-3xl break-words text-[15px] leading-7 text-neutral-600 sm:mt-6 sm:text-[16px] sm:leading-8">
               {t.contactPage.desc}
             </p>
           </motion.div>
@@ -61,24 +61,24 @@ const Contact = () => {
       </section>
 
       {/* CONTENT */}
-      <section className="relative mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-2">
+      <section className="relative mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
           {/* LEFT SIDE */}
           <div>
-            <h2 className="text-2xl font-bold mb-6">
+            <h2 className="mb-5 text-xl font-bold sm:mb-6 sm:text-2xl">
               {t.contactPage.contactTitle}
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-5 sm:space-y-6">
               {contactInfo.map((item, i) => {
                 const Icon = item.icon;
 
                 return (
                   <div
                     key={i}
-                    className="flex items-start gap-4 border-b border-black/10 pb-5"
+                    className={`flex items-start gap-3 border-b border-black/10 pb-5 sm:gap-4 ${isAr ? "flex-row-reverse" : ""}`}
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-red-600 text-red-600">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-600">
                       <Icon size={18} />
                     </div>
 
@@ -86,7 +86,7 @@ const Contact = () => {
                       <p className="text-sm font-semibold text-neutral-500">
                         {item.title}
                       </p>
-                      <p className="text-[15px] font-medium text-neutral-800 leading-7">
+                      <p className="break-words text-[15px] font-medium leading-7 text-neutral-800">
                         {item.text}
                       </p>
                     </div>
@@ -96,50 +96,50 @@ const Contact = () => {
             </div>
 
             {/* ENQUIRY */}
-            <div className="mt-10">
-              <h3 className="text-lg font-bold mb-2">
+            <div className="mt-8 sm:mt-10">
+              <h3 className="mb-2 text-lg font-bold">
                 {t.contactPage.enquiryTitle}
               </h3>
-              <p className="text-neutral-600 leading-7 text-[15px]">
+              <p className="break-words text-[15px] leading-7 text-neutral-600">
                 {t.contactPage.enquiryText}
               </p>
             </div>
           </div>
 
           {/* RIGHT SIDE - FORM */}
-          <div className="rounded-[28px] border border-black/10 bg-white p-8 shadow-[0_20px_60px_rgba(0,0,0,0.07)]">
-            <h3 className="text-xl font-bold mb-6">
+          <div className="rounded-[24px] border border-black/10 bg-white p-5 shadow-[0_20px_60px_rgba(0,0,0,0.07)] sm:rounded-[28px] sm:p-8">
+            <h3 className="mb-5 text-lg font-bold sm:mb-6 sm:text-xl">
               {t.contactPage.formTitle}
             </h3>
 
-            <form className="space-y-5">
+            <form className="space-y-4 sm:space-y-5">
               <input
                 type="text"
                 placeholder={t.contactPage.name}
-                className="w-full rounded-xl border border-black/10 px-4 py-3 outline-none focus:border-red-500"
+                className="w-full rounded-xl border border-black/10 px-4 py-3 text-[15px] outline-none transition focus:border-red-500"
               />
 
               <input
                 type="email"
                 placeholder={t.contactPage.email}
-                className="w-full rounded-xl border border-black/10 px-4 py-3 outline-none focus:border-red-500"
+                className="w-full rounded-xl border border-black/10 px-4 py-3 text-[15px] outline-none transition focus:border-red-500"
               />
 
               <input
                 type="text"
                 placeholder={t.contactPage.company}
-                className="w-full rounded-xl border border-black/10 px-4 py-3 outline-none focus:border-red-500"
+                className="w-full rounded-xl border border-black/10 px-4 py-3 text-[15px] outline-none transition focus:border-red-500"
               />
 
               <textarea
                 rows="4"
                 placeholder={t.contactPage.message}
-                className="w-full rounded-xl border border-black/10 px-4 py-3 outline-none focus:border-red-500"
+                className="w-full rounded-xl border border-black/10 px-4 py-3 text-[15px] outline-none transition focus:border-red-500"
               />
 
               <button
                 type="submit"
-                className="w-full rounded-xl bg-red-600 py-3 text-white font-semibold transition hover:bg-red-700"
+                className="w-full rounded-xl bg-red-600 py-3.5 font-semibold text-white transition hover:bg-red-700"
               >
                 {t.contactPage.send}
               </button>

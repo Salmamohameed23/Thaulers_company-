@@ -667,6 +667,190 @@ export const translations = {
         },
       },
     },
+    rdPage: {
+      heroBadge: "Our Vision",
+      heroTitle1: "Powering the Future with",
+      heroTitleHighlight: "Smart Energy",
+      heroTitle2: "Innovation",
+      heroDesc:
+        "To become a leading energy technology company with strong technical capability, reliable lithium battery solutions, and meaningful contributions to the global renewable energy industry.",
+
+      platformBadge: "R&D Platform",
+      platformTitle1: "One Platform.",
+      platformTitle2: "Endless Possibilities.",
+      platformDesc:
+        "Our integrated R&D platform connects basic materials, battery cells, BMS, and complete energy systems into one advanced technology platform — enabling safer, more reliable, and higher-performance solutions for diverse project needs.",
+      platformList: [
+        "Battery materials research",
+        "Cell technology development",
+        "BMS design and integration",
+        "Complete system engineering",
+        "Safer and more reliable product performance",
+      ],
+
+      solutionsBadge: "Solutions",
+      solutionsTitle1: "Application-Oriented",
+      solutionsTitle2: "Energy Solutions",
+      solutionsDesc:
+        "We develop energy solutions based on real application needs — combining solar power systems, battery energy storage, system integration, and engineering support to deliver reliable project-ready solutions.",
+
+      teamBadge: "Our Team",
+      teamTitle1: "Expert Engineering",
+      teamTitle2: "& Research Team",
+      teamDesc:
+        "Our engineering-driven approach is supported by experienced researchers, technical specialists, and project teams who focus on performance, safety, reliability, and practical project execution.",
+      teamList: [
+        "Senior technical researchers",
+        "Energy system engineers",
+        "Project design support",
+        "Real application experience",
+        "Performance-focused development",
+      ],
+
+      qualityBadge: "Quality Management",
+      qualityTitle: "Strict Quality Management",
+      qualityDesc:
+        "Quality is at the core of every project. We focus on customer needs, high standards, stable performance, and continuous improvement to support long-term reliability and customer satisfaction.",
+      qualityList: [
+        "Customer-focused quality policy",
+        "High industry standards",
+        "Continuous improvement",
+        "Product and service reliability",
+        "Professional inspection process",
+      ],
+
+      testingBadge: "Testing Capability",
+      testingTitle: "Advanced Testing Capability",
+      testingList: [
+        "Battery material testing",
+        "Cell and module testing",
+        "System performance checks",
+        "Safety and reliability verification",
+        "Laboratory-based quality control",
+      ],
+
+      standardsBadge: "Global Standards",
+      standardsTitle1: "Aligned with",
+      standardsTitle2: "International Standards",
+      standardsDesc:
+        "Our solutions are developed in line with globally recognized standards to ensure safety, quality, and compliance across international markets.",
+
+      processBadge: "Our Process",
+      processTitle1: "Full Process Control from",
+      processTitle2: "Inspection to After-Sales",
+      processDesc:
+        "From raw material inspection to final testing, delivery, installation, commissioning, and after-sales support, TOUGH HAULERS manages the complete workflow with a clear, professional process.",
+      processSteps: [
+        "Raw Material Inspection",
+        "Production Control",
+        "Finished Product Testing",
+        "Delivery & Installation",
+        "After-Sales Service",
+      ],
+
+      ctaTitle1: "Build Your Next Energy Project",
+      ctaTitle2: "with Tough Haulers",
+      ctaDesc:
+        "With strong R&D, advanced technology, strict quality management, and full process control, we deliver reliable energy solutions and long-term project success.",
+    },
+    letsBuildPage: {
+      title: "Let’s Build Your Solar Solution",
+      subtitle: "Tell us about your project — takes less than 2 minutes",
+      prepared: "Your inquiry has been prepared successfully.",
+      stepLabel: "Step",
+      ofLabel: "of",
+
+      steps: ["Project Type", "Solution", "Scale", "Contact", "Review"],
+
+      projectQuestion: "What type of project are you planning?",
+      projectDesc: "Select the option that best describes your site.",
+
+      solutionQuestion: "What solution are you looking for?",
+      solutionDesc: "You can select more than one solution.",
+
+      scaleTitle: "Project scale & timeline",
+      scaleDesc:
+        "Help us understand the project size and expected delivery direction.",
+      sizeLabel: "Estimated system size",
+      timelineLabel: "Timeline",
+      locationLabel: "Project location / country",
+      locationPlaceholder: "Search city or country...",
+
+      weatherTitle: "Monthly Temperature Overview",
+      weatherDesc: "Average monthly temperature for",
+
+      contactTitle: "Your contact details",
+      contactDesc:
+        "We’ll use this information to prepare your enquiry for the team.",
+      fullName: "Full Name *",
+      company: "Company",
+      email: "Email Address *",
+      phone: "Phone / WhatsApp *",
+      extraDetails: "Extra details",
+      namePlaceholder: "Your name",
+      companyPlaceholder: "Company name",
+      emailPlaceholder: "you@example.com",
+      phonePlaceholder: "+1 234 567 890",
+      notesPlaceholder:
+        "Budget range, site conditions, special requirements...",
+
+      reviewTitle: "Review your inquiry",
+      reviewDesc: "Check the details before submitting.",
+      reviewFields: {
+        projectType: "Project type",
+        solutions: "Solutions",
+        systemSize: "System size",
+        timeline: "Timeline",
+        location: "Location",
+        name: "Name",
+        company: "Company",
+        email: "Email",
+        phone: "Phone",
+        notes: "Notes",
+      },
+
+      back: "Back",
+      next: "Next",
+      submit: "Submit Inquiry",
+
+      successTitle: "Inquiry Submitted Successfully",
+      successDesc:
+        "Thank you for your inquiry. Our engineering team will carefully study your application and technical requirements. We will contact you soon with feedback and the best suitable solution for your project.",
+      reference: "Reference:",
+      startNew: "Start New Inquiry",
+
+      projectTypes: [
+        { label: "Villa / Residence", sub: "Home or private estate" },
+        { label: "Resort / Hotel", sub: "Hospitality property" },
+        { label: "Commercial Building", sub: "Office or retail space" },
+        { label: "Industrial / Factory", sub: "Large-scale facility" },
+        { label: "Desert / Remote Camp", sub: "Off-grid location" },
+        { label: "Other", sub: "Custom requirement" },
+      ],
+
+      solutionTypes: [
+        { label: "Solar PV System", sub: "Generate clean energy" },
+        { label: "Battery Storage", sub: "Store and optimize power" },
+        { label: "Off-Grid System", sub: "Independent power solution" },
+        { label: "EPC / Full Turnkey", sub: "Design to execution" },
+      ],
+
+      sizes: [
+        "Small — under 20 kW",
+        "Medium — 20–100 kW",
+        "Large — 100–500 kW",
+        "Utility scale — 500 kW+",
+        "Not sure yet",
+      ],
+
+      timelines: [
+        "ASAP / urgent",
+        "Within 3 months",
+        "3–6 months",
+        "6–12 months",
+        "Planning stage",
+      ],
+    },
   },
 
   ar: {
@@ -1283,57 +1467,253 @@ export const translations = {
       ],
     },
     partnersPage: {
-  heroBadge: "سلسلة التوريد الرئيسية",
+      heroBadge: "سلسلة التوريد الرئيسية",
 
-  heroTitle1: "شبكة تكنولوجية عالمية",
-  heroTitle2: "تقود تنفيذ مشاريع الطاقة",
+      heroTitle1: "شبكة تكنولوجية عالمية",
+      heroTitle2: "تقود تنفيذ مشاريع الطاقة",
 
-  heroDesc:
-    "تعتمد منظومة سلسلة التوريد لدينا على شبكة قوية من الشركاء العالميين لدعم أنظمة الطاقة الشمسية، وحلول تخزين الطاقة، ومشاريع EPC، وتنفيذ المشاريع على نطاق عالمي بكفاءة وموثوقية عالية.",
+      heroDesc:
+        "تعتمد منظومة سلسلة التوريد لدينا على شبكة قوية من الشركاء العالميين لدعم أنظمة الطاقة الشمسية، وحلول تخزين الطاقة، ومشاريع EPC، وتنفيذ المشاريع على نطاق عالمي بكفاءة وموثوقية عالية.",
 
-  heroBox:
-    "تعزز الشراكات الاستراتيجية قدرتنا على تحسين التوريد، وتطوير التنسيق الهندسي، وضمان تنفيذ المشاريع بثقة واستقرار أعلى.",
+      heroBox:
+        "تعزز الشراكات الاستراتيجية قدرتنا على تحسين التوريد، وتطوير التنسيق الهندسي، وضمان تنفيذ المشاريع بثقة واستقرار أعلى.",
 
-  visit: "زيارة الموقع",
+      visit: "زيارة الموقع",
 
-  partners: {
-    rf: {
-      category: "شريك دعم هندسي",
-      label: "شريك",
-      description:
-        "تدعم شركة RF Box الأنشطة الهندسية الإقليمية في مصر، من خلال الربط بين التنسيق الفني، ودعم المشاريع، وتنفيذ الأعمال الهندسية على أرض الواقع.",
-      highlights: [
-        "دعم هندسي داخل مصر",
-        "تنسيق فني متكامل",
-        "دعم تنفيذ المشاريع",
+      partners: {
+        rf: {
+          category: "شريك دعم هندسي",
+          label: "شريك",
+          description:
+            "تدعم شركة RF Box الأنشطة الهندسية الإقليمية في مصر، من خلال الربط بين التنسيق الفني، ودعم المشاريع، وتنفيذ الأعمال الهندسية على أرض الواقع.",
+          highlights: [
+            "دعم هندسي داخل مصر",
+            "تنسيق فني متكامل",
+            "دعم تنفيذ المشاريع",
+          ],
+        },
+
+        eve: {
+          category: "تكنولوجيا تخزين الطاقة",
+          label: "مورد رئيسي",
+          description:
+            "تُعد EVE Energy جزءًا من منظومة تكنولوجيا البطاريات وسلسلة التوريد لدينا، حيث تدعم تطبيقات تخزين الطاقة المتقدمة لضمان تنفيذ مشاريع موثوقة وقابلة للتوسع.",
+          highlights: [
+            "أنظمة تخزين الطاقة",
+            "تطبيقات تخزين على نطاق واسع",
+            "سلسلة توريد تكنولوجية متقدمة",
+          ],
+        },
+
+        byd: {
+          category: "الطاقة المتجددة وأنظمة البطاريات",
+          label: "مورد رئيسي",
+          description:
+            "تعزز BYD وصولنا إلى أحدث تقنيات الطاقة، وحلول البطاريات، وقدرات سلسلة التوريد المتكاملة في قطاع الطاقة المتجددة.",
+          highlights: [
+            "منظومة بطاريات متكاملة",
+            "تقنيات الطاقة المتجددة",
+            "قدرات تكنولوجية عالمية",
+          ],
+        },
+      },
+    },
+    rdPage: {
+      heroBadge: "رؤيتنا",
+      heroTitle1: "نقود مستقبل الطاقة من خلال",
+      heroTitleHighlight: "الطاقة الذكية",
+      heroTitle2: "والابتكار",
+      heroDesc:
+        "نسعى لأن نكون شركة رائدة في تكنولوجيا الطاقة، بقدرات فنية متقدمة، وحلول موثوقة لبطاريات الليثيوم، ومساهمة حقيقية في تطوير قطاع الطاقة المتجددة عالميًا.",
+
+      platformBadge: "منصة البحث والتطوير",
+      platformTitle1: "منصة واحدة.",
+      platformTitle2: "إمكانات بلا حدود.",
+      platformDesc:
+        "تجمع منصة البحث والتطوير لدينا بين المواد الأساسية، وخلايا البطاريات، وأنظمة إدارة البطاريات BMS، وأنظمة الطاقة المتكاملة ضمن منظومة تقنية متقدمة، بما يتيح حلولًا أكثر أمانًا وموثوقية وكفاءة لمختلف احتياجات المشاريع.",
+      platformList: [
+        "أبحاث مواد البطاريات",
+        "تطوير تقنيات الخلايا",
+        "تصميم ودمج أنظمة BMS",
+        "هندسة أنظمة الطاقة المتكاملة",
+        "أداء أكثر أمانًا وموثوقية للمنتجات",
+      ],
+
+      solutionsBadge: "الحلول",
+      solutionsTitle1: "حلول طاقة مصممة",
+      solutionsTitle2: "وفق احتياجات التطبيق",
+      solutionsDesc:
+        "نطوّر حلول الطاقة بناءً على متطلبات التشغيل الفعلية، من خلال دمج أنظمة الطاقة الشمسية، وتخزين الطاقة، وتكامل الأنظمة، والدعم الهندسي لتقديم حلول جاهزة وموثوقة للمشاريع.",
+
+      teamBadge: "فريقنا",
+      teamTitle1: "فريق هندسي وبحثي",
+      teamTitle2: "متخصص",
+      teamDesc:
+        "يعتمد نهجنا الهندسي على باحثين ذوي خبرة، ومتخصصين تقنيين، وفرق مشاريع تركز على الأداء، والسلامة، والموثوقية، والتنفيذ العملي على أرض الواقع.",
+      teamList: [
+        "باحثون تقنيون ذوو خبرة",
+        "مهندسو أنظمة طاقة",
+        "دعم تصميم المشاريع",
+        "خبرة تطبيقية في المشاريع الواقعية",
+        "تطوير موجه نحو الأداء",
+      ],
+
+      qualityBadge: "إدارة الجودة",
+      qualityTitle: "إدارة جودة صارمة",
+      qualityDesc:
+        "تأتي الجودة في صميم كل مشروع. نركز على احتياجات العملاء، والمعايير العالية، وثبات الأداء، والتحسين المستمر لضمان موثوقية طويلة الأمد ورضا العملاء.",
+      qualityList: [
+        "سياسة جودة موجهة نحو العميل",
+        "الالتزام بمعايير صناعية عالية",
+        "تحسين مستمر",
+        "موثوقية المنتج والخدمة",
+        "عمليات فحص احترافية",
+      ],
+
+      testingBadge: "قدرات الاختبار",
+      testingTitle: "قدرات اختبار متقدمة",
+      testingList: [
+        "اختبار مواد البطاريات",
+        "اختبار الخلايا والوحدات",
+        "فحص أداء النظام",
+        "التحقق من السلامة والموثوقية",
+        "رقابة جودة معملية",
+      ],
+
+      standardsBadge: "المعايير العالمية",
+      standardsTitle1: "متوافقون مع",
+      standardsTitle2: "المعايير الدولية",
+      standardsDesc:
+        "يتم تطوير حلولنا بما يتماشى مع المعايير العالمية المعترف بها لضمان السلامة والجودة والامتثال في الأسواق الدولية.",
+
+      processBadge: "منهجية العمل",
+      processTitle1: "تحكم كامل في العملية من",
+      processTitle2: "الفحص إلى خدمات ما بعد البيع",
+      processDesc:
+        "من فحص المواد الخام إلى الاختبار النهائي، والتسليم، والتركيب، والتشغيل، وخدمات ما بعد البيع، تدير TOUGH HAULERS دورة العمل بالكامل بمنهجية واضحة واحترافية تركّز على الجودة.",
+      processSteps: [
+        "فحص المواد الخام",
+        "التحكم في الإنتاج",
+        "اختبار المنتج النهائي",
+        "التسليم والتركيب",
+        "خدمات ما بعد البيع",
+      ],
+
+      ctaTitle1: "ابدأ مشروع الطاقة القادم",
+      ctaTitle2: "مع Tough Haulers",
+      ctaDesc:
+        "من خلال البحث والتطوير، والتقنيات المتقدمة، وإدارة الجودة الصارمة، والتحكم الكامل في مراحل التنفيذ، نقدم حلول طاقة موثوقة تدعم نجاح المشاريع على المدى الطويل.",
+    },
+    letsBuildPage: {
+      title: "لنبدأ بناء حل الطاقة الشمسية الخاص بمشروعك",
+      subtitle: "شاركنا تفاصيل مشروعك — لن يستغرق الأمر أكثر من دقيقتين",
+      prepared: "تم إعداد طلبك بنجاح.",
+      stepLabel: "الخطوة",
+      ofLabel: "من",
+
+      steps: [
+        "نوع المشروع",
+        "الحل المطلوب",
+        "الحجم",
+        "بيانات التواصل",
+        "المراجعة",
+      ],
+
+      projectQuestion: "ما نوع المشروع الذي تخطط لتنفيذه؟",
+      projectDesc: "اختر التصنيف الأقرب لطبيعة موقعك أو منشأتك.",
+
+      solutionQuestion: "ما نوع الحل الذي تبحث عنه؟",
+      solutionDesc: "يمكنك اختيار أكثر من حل وفقًا لاحتياج المشروع.",
+
+      scaleTitle: "حجم المشروع والجدول الزمني",
+      scaleDesc:
+        "ساعدنا على فهم القدرة المطلوبة والإطار الزمني المتوقع للتنفيذ.",
+      sizeLabel: "القدرة التقديرية للنظام",
+      timelineLabel: "الإطار الزمني",
+      locationLabel: "موقع المشروع / الدولة",
+      locationPlaceholder: "ابحث باسم المدينة أو الدولة...",
+
+      weatherTitle: "نظرة عامة على درجات الحرارة الشهرية",
+      weatherDesc: "متوسط درجات الحرارة الشهرية في",
+
+      contactTitle: "بيانات التواصل",
+      contactDesc:
+        "سنستخدم هذه البيانات لإعداد طلبك ومشاركته مع الفريق المختص.",
+      fullName: "الاسم الكامل *",
+      company: "الشركة",
+      email: "البريد الإلكتروني *",
+      phone: "الهاتف / واتساب *",
+      extraDetails: "تفاصيل إضافية",
+      namePlaceholder: "اكتب اسمك",
+      companyPlaceholder: "اسم الشركة",
+      emailPlaceholder: "you@example.com",
+      phonePlaceholder: "+1 234 567 890",
+      notesPlaceholder:
+        "الميزانية المتوقعة، ظروف الموقع، أو أي متطلبات خاصة...",
+
+      reviewTitle: "مراجعة الطلب",
+      reviewDesc: "راجع بياناتك قبل إرسال الطلب.",
+      reviewFields: {
+        projectType: "نوع المشروع",
+        solutions: "الحلول المطلوبة",
+        systemSize: "حجم النظام",
+        timeline: "الإطار الزمني",
+        location: "الموقع",
+        name: "الاسم",
+        company: "الشركة",
+        email: "البريد الإلكتروني",
+        phone: "الهاتف",
+        notes: "الملاحظات",
+      },
+
+      back: "رجوع",
+      next: "التالي",
+      submit: "إرسال الطلب",
+
+      successTitle: "تم إرسال الطلب بنجاح",
+      successDesc:
+        "شكرًا لتواصلك معنا. سيقوم فريقنا الهندسي بدراسة متطلبات مشروعك بعناية، وسنتواصل معك قريبًا لتقديم التصور الأنسب والحل الأكثر ملاءمة لاحتياجاتك.",
+      reference: "رقم المرجع:",
+      startNew: "بدء طلب جديد",
+
+      projectTypes: [
+        { label: "فيلا / سكن خاص", sub: "منزل أو عقار خاص" },
+        { label: "منتجع / فندق", sub: "منشأة ضيافة أو سياحة" },
+        { label: "مبنى تجاري", sub: "مكاتب أو مساحات تجارية" },
+        { label: "منشأة صناعية / مصنع", sub: "منشأة تشغيلية واسعة النطاق" },
+        {
+          label: "مخيم صحراوي / موقع بعيد",
+          sub: "موقع خارج الشبكة أو منطقة نائية",
+        },
+        { label: "أخرى", sub: "متطلبات خاصة بالمشروع" },
+      ],
+
+      solutionTypes: [
+        { label: "نظام طاقة شمسية PV", sub: "إنتاج طاقة نظيفة وفعالة" },
+        {
+          label: "أنظمة تخزين البطاريات",
+          sub: "تخزين الطاقة وتحسين استخدامها",
+        },
+        { label: "نظام خارج الشبكة", sub: "حل طاقة مستقل بالكامل" },
+        { label: "EPC / حل متكامل", sub: "من التصميم إلى التنفيذ" },
+      ],
+
+      sizes: [
+        "صغير — أقل من 20 كيلوواط",
+        "متوسط — من 20 إلى 100 كيلوواط",
+        "كبير — من 100 إلى 500 كيلوواط",
+        "نطاق المرافق — أكثر من 500 كيلوواط",
+        "غير محدد بعد",
+      ],
+
+      timelines: [
+        "عاجل / في أقرب وقت",
+        "خلال 3 أشهر",
+        "من 3 إلى 6 أشهر",
+        "من 6 إلى 12 شهرًا",
+        "في مرحلة التخطيط",
       ],
     },
-
-    eve: {
-      category: "تكنولوجيا تخزين الطاقة",
-      label: "مورد رئيسي",
-      description:
-        "تُعد EVE Energy جزءًا من منظومة تكنولوجيا البطاريات وسلسلة التوريد لدينا، حيث تدعم تطبيقات تخزين الطاقة المتقدمة لضمان تنفيذ مشاريع موثوقة وقابلة للتوسع.",
-      highlights: [
-        "أنظمة تخزين الطاقة",
-        "تطبيقات تخزين على نطاق واسع",
-        "سلسلة توريد تكنولوجية متقدمة",
-      ],
-    },
-
-    byd: {
-      category: "الطاقة المتجددة وأنظمة البطاريات",
-      label: "مورد رئيسي",
-      description:
-        "تعزز BYD وصولنا إلى أحدث تقنيات الطاقة، وحلول البطاريات، وقدرات سلسلة التوريد المتكاملة في قطاع الطاقة المتجددة.",
-      highlights: [
-        "منظومة بطاريات متكاملة",
-        "تقنيات الطاقة المتجددة",
-        "قدرات تكنولوجية عالمية",
-      ],
-    },
-  },
-},
   },
   zh: {
     nav: {
@@ -1935,56 +2315,225 @@ export const translations = {
       ],
     },
     partnersPage: {
-  heroBadge: "核心供应链体系",
+      heroBadge: "核心供应链体系",
 
-  heroTitle1: "全球技术网络",
-  heroTitle2: "赋能能源项目交付",
+      heroTitle1: "全球技术网络",
+      heroTitle2: "赋能能源项目交付",
 
-  heroDesc:
-    "我们的供应链体系依托全球合作伙伴网络，为光伏系统、储能解决方案、EPC工程及全球项目执行提供稳定、高效、可靠的支持。",
+      heroDesc:
+        "我们的供应链体系依托全球合作伙伴网络，为光伏系统、储能解决方案、EPC工程及全球项目执行提供稳定、高效、可靠的支持。",
 
-  heroBox:
-    "强大的合作伙伴关系有助于提升采购能力、优化工程协同，并增强项目交付的稳定性与可靠性。",
+      heroBox:
+        "强大的合作伙伴关系有助于提升采购能力、优化工程协同，并增强项目交付的稳定性与可靠性。",
 
-  visit: "访问官网",
+      visit: "访问官网",
 
-  partners: {
-    rf: {
-      category: "工程支持合作伙伴",
-      label: "合作伙伴",
-      description:
-        "RF Box 公司为埃及地区提供工程支持，协助技术协调、项目执行及本地工程落地。",
-      highlights: [
-        "埃及本地工程支持",
-        "技术协调能力",
-        "项目执行支持",
+      partners: {
+        rf: {
+          category: "工程支持合作伙伴",
+          label: "合作伙伴",
+          description:
+            "RF Box 公司为埃及地区提供工程支持，协助技术协调、项目执行及本地工程落地。",
+          highlights: ["埃及本地工程支持", "技术协调能力", "项目执行支持"],
+        },
+
+        eve: {
+          category: "储能技术",
+          label: "核心供应链",
+          description:
+            "EVE Energy 是公司电池技术及供应链体系的重要组成部分，为大型储能应用提供稳定、高效的技术支持。",
+          highlights: ["储能系统解决方案", "大规模储能应用", "能源技术供应链"],
+        },
+
+        byd: {
+          category: "新能源与电池生态",
+          label: "核心供应链",
+          description:
+            "比亚迪为公司提供先进的能源技术、储能解决方案以及完整的新能源供应链支持能力。",
+          highlights: ["电池及储能生态", "新能源技术", "全球技术能力"],
+        },
+      },
+    },
+    rdPage: {
+      heroBadge: "我们的愿景",
+      heroTitle1: "以",
+      heroTitleHighlight: "智慧能源",
+      heroTitle2: "创新驱动未来",
+      heroDesc:
+        "致力于成为具备强大技术能力的领先能源科技企业，提供可靠的锂电池解决方案，并为全球可再生能源产业发展创造长期价值。",
+
+      platformBadge: "研发平台",
+      platformTitle1: "一个平台。",
+      platformTitle2: "无限可能。",
+      platformDesc:
+        "我们的综合研发平台将基础材料、电芯技术、BMS 电池管理系统与完整能源系统工程连接为一体，构建先进技术平台，为不同项目需求提供更安全、更可靠、更高性能的能源解决方案。",
+      platformList: [
+        "电池材料研究",
+        "电芯技术开发",
+        "BMS 设计与集成",
+        "完整系统工程",
+        "更安全可靠的产品性能",
+      ],
+
+      solutionsBadge: "解决方案",
+      solutionsTitle1: "面向应用场景的",
+      solutionsTitle2: "能源解决方案",
+      solutionsDesc:
+        "我们基于真实应用需求开发能源解决方案，整合光伏系统、储能系统、系统集成与工程支持，为客户提供可靠且可落地的项目解决方案。",
+
+      teamBadge: "我们的团队",
+      teamTitle1: "专业工程与",
+      teamTitle2: "研发团队",
+      teamDesc:
+        "我们的工程驱动型体系由经验丰富的研发人员、技术专家及项目团队共同支撑，专注于性能、安全、可靠性以及实际项目交付。",
+      teamList: [
+        "资深技术研发人员",
+        "能源系统工程师",
+        "项目设计支持",
+        "真实应用经验",
+        "以性能为导向的开发体系",
+      ],
+
+      qualityBadge: "质量管理",
+      qualityTitle: "严格的质量管理体系",
+      qualityDesc:
+        "质量贯穿每一个项目环节。我们以客户需求为核心，坚持高标准、稳定性能与持续改进，确保长期可靠性与客户满意度。",
+      qualityList: [
+        "以客户为中心的质量方针",
+        "高标准行业要求",
+        "持续改进机制",
+        "产品与服务可靠性",
+        "专业检验流程",
+      ],
+
+      testingBadge: "测试能力",
+      testingTitle: "先进测试能力",
+      testingList: [
+        "电池材料测试",
+        "电芯与模组测试",
+        "系统性能检测",
+        "安全与可靠性验证",
+        "实验室质量控制",
+      ],
+
+      standardsBadge: "国际标准",
+      standardsTitle1: "符合",
+      standardsTitle2: "国际标准体系",
+      standardsDesc:
+        "我们的解决方案按照国际公认标准进行开发，确保产品在全球市场中的安全性、质量稳定性与合规性。",
+
+      processBadge: "项目流程",
+      processTitle1: "从检验到售后",
+      processTitle2: "全流程质量控制",
+      processDesc:
+        "从原材料检验到最终测试、交付、安装、调试及售后服务，TOUGH HAULERS 以清晰、专业、注重质量的流程管理完整项目周期。",
+      processSteps: [
+        "原材料检验",
+        "生产过程控制",
+        "成品测试",
+        "交付与安装",
+        "售后服务",
+      ],
+
+      ctaTitle1: "与 Tough Haulers 一起",
+      ctaTitle2: "打造您的下一个能源项目",
+      ctaDesc:
+        "依托强大的研发能力、先进技术、严格质量管理与全流程控制，我们为客户交付可靠的能源解决方案，并支持项目长期成功。",
+    },
+    letsBuildPage: {
+      title: "共建您的太阳能解决方案",
+      subtitle: "告诉我们您的项目需求 — 不到两分钟即可完成",
+      prepared: "您的询价信息已成功准备。",
+      stepLabel: "第",
+      ofLabel: "步 / 共",
+
+      steps: ["项目类型", "解决方案", "项目规模", "联系方式", "确认信息"],
+
+      projectQuestion: "您正在规划哪一类项目？",
+      projectDesc: "请选择最符合项目场地或应用场景的类型。",
+
+      solutionQuestion: "您需要哪种能源解决方案？",
+      solutionDesc: "您可以根据项目需求选择多个解决方案。",
+
+      scaleTitle: "项目规模与时间计划",
+      scaleDesc: "请提供预计系统规模及交付时间，以便我们更准确地评估项目需求。",
+      sizeLabel: "预计系统容量",
+      timelineLabel: "项目时间计划",
+      locationLabel: "项目地点 / 国家",
+      locationPlaceholder: "搜索城市或国家...",
+
+      weatherTitle: "月度温度概览",
+      weatherDesc: "平均月度温度：",
+
+      contactTitle: "联系方式",
+      contactDesc: "我们将使用以下信息为您的项目准备初步咨询内容。",
+      fullName: "姓名 *",
+      company: "公司",
+      email: "电子邮箱 *",
+      phone: "电话 / WhatsApp *",
+      extraDetails: "补充说明",
+      namePlaceholder: "请输入您的姓名",
+      companyPlaceholder: "公司名称",
+      emailPlaceholder: "you@example.com",
+      phonePlaceholder: "+1 234 567 890",
+      notesPlaceholder: "预算范围、场地条件或特殊项目要求...",
+
+      reviewTitle: "确认您的询价信息",
+      reviewDesc: "提交前请核对以下项目资料。",
+      reviewFields: {
+        projectType: "项目类型",
+        solutions: "解决方案",
+        systemSize: "系统容量",
+        timeline: "时间计划",
+        location: "项目地点",
+        name: "姓名",
+        company: "公司",
+        email: "电子邮箱",
+        phone: "电话",
+        notes: "备注",
+      },
+
+      back: "返回",
+      next: "下一步",
+      submit: "提交询价",
+
+      successTitle: "询价提交成功",
+      successDesc:
+        "感谢您的咨询。我们的工程团队将认真评估您的应用场景与技术需求，并尽快与您联系，为您的项目提供合适的解决方案建议。",
+      reference: "参考编号：",
+      startNew: "提交新的询价",
+
+      projectTypes: [
+        { label: "别墅 / 住宅", sub: "家庭住宅或私人地产" },
+        { label: "度假村 / 酒店", sub: "酒店及旅游地产项目" },
+        { label: "商业建筑", sub: "办公楼或商业空间" },
+        { label: "工业 / 工厂项目", sub: "大型生产或运营设施" },
+        { label: "沙漠 / 偏远营地", sub: "离网或偏远地区场景" },
+        { label: "其他", sub: "定制化项目需求" },
+      ],
+
+      solutionTypes: [
+        { label: "太阳能光伏系统", sub: "高效清洁能源发电" },
+        { label: "电池储能系统", sub: "电能存储与优化管理" },
+        { label: "离网系统", sub: "独立供电解决方案" },
+        { label: "EPC / 交钥匙工程", sub: "从设计到完整交付" },
+      ],
+
+      sizes: [
+        "小型 — 20 kW 以下",
+        "中型 — 20–100 kW",
+        "大型 — 100–500 kW",
+        "公用事业级 — 500 kW 以上",
+        "暂不确定",
+      ],
+
+      timelines: [
+        "紧急 / 尽快启动",
+        "3个月内",
+        "3–6个月",
+        "6–12个月",
+        "规划阶段",
       ],
     },
-
-    eve: {
-      category: "储能技术",
-      label: "核心供应链",
-      description:
-        "EVE Energy 是公司电池技术及供应链体系的重要组成部分，为大型储能应用提供稳定、高效的技术支持。",
-      highlights: [
-        "储能系统解决方案",
-        "大规模储能应用",
-        "能源技术供应链",
-      ],
-    },
-
-    byd: {
-      category: "新能源与电池生态",
-      label: "核心供应链",
-      description:
-        "比亚迪为公司提供先进的能源技术、储能解决方案以及完整的新能源供应链支持能力。",
-      highlights: [
-        "电池及储能生态",
-        "新能源技术",
-        "全球技术能力",
-      ],
-    },
-  },
-},
   },
 };

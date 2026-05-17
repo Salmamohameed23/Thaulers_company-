@@ -38,23 +38,24 @@ const ServicesPreview = () => {
 
   return (
     <section
-      className={`relative overflow-hidden bg-white py-20 text-neutral-950 ${
+      dir={isAr ? "rtl" : "ltr"}
+      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-16 lg:py-20 ${
         isAr ? "font-[Cairo]" : ""
       }`}
     >
-      <div className="absolute left-[-160px] top-10 h-[340px] w-[340px] rounded-full bg-red-600/10 blur-[120px]" />
-      <div className="absolute right-[-160px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-red-600/10 blur-[130px]" />
+      <div className="pointer-events-none absolute left-[-160px] top-10 h-[260px] w-[260px] rounded-full bg-red-600/10 blur-[95px] sm:h-[340px] sm:w-[340px] sm:blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-[-120px] right-[-160px] h-[300px] w-[300px] rounded-full bg-red-600/10 blur-[100px] sm:h-[420px] sm:w-[420px] sm:blur-[130px]" />
 
-      <div className="relative mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-10">
         {/* HEADER */}
-        <div className={`mb-8 max-w-[520px] ${isAr ? "text-right" : ""}`}>
-          <p className="mb-3 text-s font-black uppercase tracking-[0.32em] text-[#ee4036]">
+        <div className={`mb-8 max-w-[560px] ${isAr ? "text-right" : "text-left"}`}>
+          <p className="mb-3 break-words text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.32em]">
             {t.services.badge}
           </p>
 
           <h2
-            className={`text-[32px] font-black leading-[1.1] tracking-[-0.025em] text-neutral-950 sm:text-[40px] lg:text-[44px] ${
-              isAr ? "leading-[1.3]" : ""
+            className={`break-words text-[28px] font-black tracking-[-0.025em] text-neutral-950 sm:text-[38px] lg:text-[44px] ${
+              isAr ? "leading-[1.32]" : "leading-[1.1]"
             }`}
           >
             {t.services.title1}
@@ -63,11 +64,7 @@ const ServicesPreview = () => {
         </div>
 
         {/* CARDS */}
-        <div
-          className={`grid gap-6 md:grid-cols-2 lg:grid-cols-3 ${
-            isAr ? "lg:[direction:rtl]" : ""
-          }`}
-        >
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((item, i) => {
             const Icon = item.icon;
 
@@ -78,20 +75,20 @@ const ServicesPreview = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
                 viewport={{ once: true }}
-                className="group flex h-full flex-col rounded-[26px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_65px_rgba(0,0,0,0.12)]"
+                className="group flex h-full flex-col rounded-[22px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_65px_rgba(0,0,0,0.12)] sm:rounded-[26px]"
               >
                 <Link to={item.path} className="flex h-full flex-col">
                   {/* IMAGE */}
-                  <div className="relative h-[200px] rounded-t-[26px]">
+                  <div className="relative h-[185px] overflow-hidden rounded-t-[22px] sm:h-[200px] sm:rounded-t-[26px]">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="h-full w-full rounded-t-[26px] object-cover"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
 
                     <div
                       className={`absolute -bottom-5 z-20 flex h-11 w-11 items-center justify-center rounded-xl bg-black text-white shadow-lg transition group-hover:bg-[#ee4036] ${
-                        isAr ? "right-6" : "left-6"
+                        isAr ? "right-5 sm:right-6" : "left-5 sm:left-6"
                       }`}
                     >
                       <Icon size={18} />
@@ -99,16 +96,12 @@ const ServicesPreview = () => {
                   </div>
 
                   {/* CONTENT */}
-                  <div
-                    className={`flex flex-1 flex-col px-6 pb-6 pt-8 ${
-                      isAr ? "text-right" : ""
-                    }`}
-                  >
-                    <h3 className="text-[18px] font-bold text-black">
+                  <div className={`flex flex-1 flex-col px-5 pb-6 pt-8 sm:px-6 ${isAr ? "text-right" : "text-left"}`}>
+                    <h3 className="break-words text-[18px] font-bold leading-7 text-black">
                       {item.title}
                     </h3>
 
-                    <p className="mt-3 text-[14px] leading-7 text-neutral-600">
+                    <p className="mt-3 break-words text-[14px] leading-7 text-neutral-600">
                       {item.desc}
                     </p>
 
@@ -116,7 +109,7 @@ const ServicesPreview = () => {
                     <div className="mt-auto pt-5">
                       <div className="inline-flex items-center gap-2 text-[12px] font-bold text-[#ee4036]">
                         <span>{t.services.explore}</span>
-                        <ArrowUpRight size={14} />
+                        <ArrowUpRight size={14} className={isAr ? "rotate-[-90deg]" : ""} />
                       </div>
                     </div>
                   </div>

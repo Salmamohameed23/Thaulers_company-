@@ -99,10 +99,10 @@ const FactoryPage = () => {
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-black/50 sm:bg-black/40 lg:bg-black/35" />
 
         <div
-          className={`absolute inset-y-0 w-[68%] ${
+          className={`absolute inset-y-0 hidden w-[68%] sm:block ${
             isAr
               ? "right-0 bg-gradient-to-l from-black via-black/78 to-transparent"
               : "left-0 bg-gradient-to-r from-black via-black/78 to-transparent"
@@ -111,7 +111,7 @@ const FactoryPage = () => {
 
         <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/80 to-transparent" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -125,13 +125,13 @@ const FactoryPage = () => {
               }`}
             >
               <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
-              <span className="text-s font-black uppercase tracking-[0.28em] text-white whitespace-nowrap">
+              <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white sm:text-xs sm:tracking-[0.28em]">
                 {t.factoryPage.heroBadge}
               </span>
             </div>
 
             <h1
-              className={`text-[42px] font-black text-white sm:text-5xl lg:text-[62px] ${
+              className={`break-words text-[34px] font-black text-white sm:text-5xl lg:text-[62px] ${
                 isAr
                   ? "leading-[1.18] tracking-[0em]"
                   : "leading-[1.02] tracking-[-0.045em]"
@@ -146,7 +146,7 @@ const FactoryPage = () => {
             </h1>
 
             <p
-              className={`mt-6 max-w-[560px] text-[15px] font-medium leading-7 text-white/85 ${
+              className={`mt-5 max-w-[560px] break-words text-[14px] font-medium leading-7 text-white/85 sm:mt-6 sm:text-[15px] ${
                 isAr ? "mr-auto" : ""
               }`}
             >
@@ -155,7 +155,7 @@ const FactoryPage = () => {
           </motion.div>
 
           <div
-            className={`mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5 ${
+            className={`mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 lg:grid-cols-5 ${
               isAr ? "lg:[direction:rtl]" : ""
             }`}
           >
@@ -187,21 +187,21 @@ const FactoryPage = () => {
       </section>
 
       {/* SERVICES */}
-      <section className="relative overflow-hidden bg-white py-14">
+      <section className="relative overflow-hidden bg-white py-12 sm:py-14">
         <div className="absolute left-[-160px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[120px]" />
         <div className="absolute right-[-160px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-red-600/10 blur-[130px]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-10 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 text-center sm:mb-10">
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
               {t.factoryPage.servicesBadge}
             </p>
 
-            <h2 className="text-[30px] font-black tracking-[-0.035em] sm:text-4xl">
+            <h2 className="break-words text-[26px] font-black leading-[1.15] tracking-[-0.025em] sm:text-4xl">
               {t.factoryPage.servicesTitle}
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-7 text-neutral-600">
+            <p className="mx-auto mt-4 max-w-2xl break-words text-[14px] leading-7 text-neutral-600">
               {t.factoryPage.servicesDesc}
             </p>
           </div>
@@ -238,11 +238,11 @@ const FactoryPage = () => {
                     <Icon size={20} />
                   </div>
 
-                  <h3 className="relative z-10 text-[16px] font-black text-neutral-950">
+                  <h3 className="relative z-10 break-words text-[16px] font-black text-neutral-950">
                     {item.title}
                   </h3>
 
-                  <p className="relative z-10 mt-3 text-[13px] leading-6 text-neutral-600">
+                  <p className="relative z-10 mt-3 break-words text-[13px] leading-6 text-neutral-600">
                     {item.text}
                   </p>
                 </motion.div>
@@ -253,14 +253,14 @@ const FactoryPage = () => {
       </section>
 
       {/* PROCESS */}
-      <section className="bg-neutral-50 py-14">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+      <section className="bg-neutral-50 py-12 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 text-center sm:mb-12">
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
               {t.factoryPage.processBadge}
             </p>
 
-            <h2 className="text-[28px] font-black tracking-[-0.035em] sm:text-4xl">
+            <h2 className="break-words text-[25px] font-black leading-[1.18] tracking-[-0.025em] sm:text-4xl">
               {t.factoryPage.processTitle1}
               <span className="text-[#ee4036]">
                 {" "}
@@ -321,14 +321,14 @@ const FactoryPage = () => {
       </section>
 
       {/* INDUSTRIAL CAPABILITIES */}
-      <section id="factory-capabilities" className="bg-white py-14">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-9 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+      <section id="factory-capabilities" className="bg-white py-12 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-7 text-center sm:mb-9">
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
               {t.factoryPage.capabilitiesBadge}
             </p>
 
-            <h2 className="text-[28px] font-black tracking-[-0.035em] sm:text-4xl">
+            <h2 className="break-words text-[25px] font-black leading-[1.18] tracking-[-0.025em] sm:text-4xl">
               {t.factoryPage.capabilitiesTitle}
               <span className="text-[#ee4036]">
                 {" "}
@@ -337,7 +337,7 @@ const FactoryPage = () => {
             </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {industrialCapabilities.map((item, index) => {
               const Icon = item.icon;
 
@@ -372,13 +372,13 @@ const FactoryPage = () => {
       </section>
 
       {/* FINAL SUPPORT SECTION */}
-      <section className="bg-neutral-50 py-14">
+      <section className="bg-neutral-50 py-12 sm:py-14">
         <div
-          className={`mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-2 lg:px-8 ${
+          className={`mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
           }`}
         >
-          <div className="min-h-[320px] overflow-hidden rounded-[28px] bg-black shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+          <div className="min-h-[240px] overflow-hidden rounded-[22px] bg-black shadow-[0_20px_60px_rgba(0,0,0,0.12)] sm:min-h-[320px] sm:rounded-[28px]">
             <img
               src={factoryend}
               alt="Factory execution"
@@ -388,15 +388,15 @@ const FactoryPage = () => {
 
           <div className={`flex items-center ${isAr ? "text-right" : ""}`}>
             <div>
-              <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+              <p className="mb-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#ee4036] sm:text-xs sm:tracking-[0.34em]">
                 {t.factoryPage.executionBadge}
               </p>
 
-              <h2 className="text-[32px] font-black leading-[1.12] tracking-[-0.025em] sm:text-4xl">
+              <h2 className="break-words text-[27px] font-black leading-[1.16] tracking-[-0.02em] sm:text-4xl">
                 {t.factoryPage.executionTitle}
               </h2>
 
-              <p className="mt-5 max-w-xl text-[15px] leading-7 text-neutral-600">
+              <p className="mt-5 max-w-xl break-words text-[15px] leading-7 text-neutral-600">
                 {t.factoryPage.executionDesc}
               </p>
 

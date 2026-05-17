@@ -85,13 +85,13 @@ export default function SmartStorage() {
 
   return (
     <main
-      className={`overflow-hidden bg-white text-neutral-950 ${
+      className={`overflow-x-hidden bg-white text-neutral-950 ${
         isAr ? "font-[Cairo]" : ""
       }`}
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* HERO */}
-      <section className="relative overflow-hidden bg-black text-white">
+      <section className="relative overflow-x-hidden bg-black text-white">
         <motion.img
           src={smartHero}
           alt="Battery energy storage systems"
@@ -104,7 +104,7 @@ export default function SmartStorage() {
         <div className="absolute inset-0 bg-black/35" />
 
         <div
-          className={`absolute inset-y-0 w-[68%] ${
+          className={`absolute inset-y-0 w-full lg:w-[68%] ${
             isAr
               ? "right-0 bg-gradient-to-l from-black via-black/78 to-transparent"
               : "left-0 bg-gradient-to-r from-black via-black/78 to-transparent"
@@ -112,8 +112,7 @@ export default function SmartStorage() {
         />
 
         <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/80 to-transparent" />
-
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -127,7 +126,7 @@ export default function SmartStorage() {
               }`}
             >
               <span className="h-2 w-2 rounded-full bg-[#ee4036]" />
-              <span className="text-s font-black uppercase tracking-[0.32em] text-white">
+              <span className="text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-white">
                 {t.smartStoragePage.heroBadge}
               </span>
             </div>
@@ -144,7 +143,7 @@ export default function SmartStorage() {
             </p>
           </motion.div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((item, index) => (
               <motion.div
                 key={item}
@@ -167,10 +166,10 @@ export default function SmartStorage() {
       </section>
 
       {/* PRODUCT RANGE */}
-      <section className="relative overflow-hidden bg-white py-14">
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="relative overflow-x-hidden bg-white py-14">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-9 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] sm:tracking-[0.34em] text-[#ee4036]">
               {t.smartStoragePage.productBadge}
             </p>
 
@@ -209,7 +208,7 @@ export default function SmartStorage() {
                   viewport={{ once: true, amount: 0.25 }}
                   variants={fadeUp}
                   transition={{ duration: 0.55, delay: index * 0.06 }}
-                  className="group min-w-[255px] overflow-hidden rounded-[18px] border border-transparent bg-white shadow-[0_18px_45px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:border-red-500/20 hover:shadow-[0_24px_70px_rgba(220,38,38,0.18)]"
+                  className="group min-w-[240px] sm:min-w-[255px] overflow-hidden rounded-[18px] border border-transparent bg-white shadow-[0_18px_45px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:border-red-500/20 hover:shadow-[0_24px_70px_rgba(220,38,38,0.18)]"
                 >
                   <div className="flex h-[185px] items-center justify-center bg-white p-6">
                     <img
@@ -245,9 +244,9 @@ export default function SmartStorage() {
 
       {/* APPLICATIONS */}
       <section className="bg-neutral-50 py-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] sm:tracking-[0.34em] text-[#ee4036]">
               {t.smartStoragePage.applicationsBadge}
             </p>
 
@@ -260,7 +259,7 @@ export default function SmartStorage() {
             </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
             {applications.map((item, index) => {
               const Icon = item.icon;
 
@@ -295,10 +294,10 @@ export default function SmartStorage() {
       </section>
 
       {/* ENGINEERING SCOPE */}
-      <section className="relative overflow-hidden bg-white py-14">
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="relative overflow-x-hidden bg-white py-14">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-9 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] sm:tracking-[0.34em] text-[#ee4036]">
               {t.smartStoragePage.engineeringBadge}
             </p>
 
@@ -315,7 +314,7 @@ export default function SmartStorage() {
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {engineeringScope.map((item, index) => {
               const Icon = item.icon;
 
@@ -358,9 +357,9 @@ export default function SmartStorage() {
 
       {/* PROCESS */}
       <section className="bg-neutral-50 py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <p className="mb-3 text-s font-black uppercase tracking-[0.34em] text-[#ee4036]">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] sm:tracking-[0.34em] text-[#ee4036]">
               {t.smartStoragePage.processBadge}
             </p>
 

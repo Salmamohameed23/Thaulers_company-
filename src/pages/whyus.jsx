@@ -44,24 +44,24 @@ const About = () => {
       }`}
       dir={isAr ? "rtl" : "ltr"}
     >
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-x-hidden bg-white py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,rgba(220,38,38,0.07),transparent_30%)]" />
         <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
         <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 34 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="max-w-5xl"
           >
-            <p className="mb-8 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
+            <p className="mb-8 text-xs font-black uppercase tracking-[0.18em] sm:tracking-[0.28em] text-[#ee4036]">
               {t.aboutPage.badge}
             </p>
 
             <h1
-              className={`max-w-5xl text-[38px] font-black 
+              className={`max-w-5xl text-[32px] font-black sm:text-[38px] 
 ${isAr ? "leading-[1.4] tracking-[0.02em]" : "leading-[1.4] tracking-[0em]"} 
 sm:text-5xl lg:text-[68px]`}
             >
@@ -90,7 +90,7 @@ sm:text-5xl lg:text-[68px]`}
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-14 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]">
+      <section className="relative overflow-x-hidden bg-white py-14 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]">
         <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
         <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
 
@@ -101,11 +101,11 @@ sm:text-5xl lg:text-[68px]`}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
+            <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] sm:tracking-[0.28em] text-[#ee4036]">
               {t.aboutPage.positioningBadge}
             </p>
 
-            <h2 className="text-[36px] font-black leading-[1.08] tracking-[-0.04em] sm:text-5xl">
+            <h2 className="text-[30px] font-black sm:text-[36px] leading-[1.08] tracking-[-0.04em] sm:text-5xl">
               {t.aboutPage.positioningTitle1}
               <span className="block text-[#ee4036]">
                 {t.aboutPage.positioningTitle2}
@@ -154,17 +154,17 @@ sm:text-5xl lg:text-[68px]`}
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-14">
+      <section className="relative overflow-x-hidden bg-white py-14">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="mb-4 text-s font-black uppercase tracking-[0.28em] text-[#ee4036]">
+              <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] sm:tracking-[0.28em] text-[#ee4036]">
                 {t.aboutPage.capabilitiesBadge}
               </p>
 
-              <h2 className="text-[38px] font-black leading-[1.05] tracking-[-0.04em] sm:text-5xl">
+              <h2 className="text-[32px] font-black sm:text-[38px] leading-[1.05] tracking-[-0.04em] sm:text-5xl">
                 {t.aboutPage.capabilitiesTitle1}
                 <span className="block text-[#ee4036]">
                   {t.aboutPage.capabilitiesTitle2}

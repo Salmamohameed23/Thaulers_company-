@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Building2, Handshake } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 
+import bgImg from "../assets/images/partner_bg.png";
 import eveVisit from "../assets/images/eve_visit.jpg";
 import bydVisit from "../assets/images/byd_visit.jpg";
 import rfBoxVisit from "../assets/images/rf_visit.jpg";
@@ -44,17 +45,23 @@ const Partners = () => {
     <main
       dir={isAr ? "rtl" : "ltr"}
       className={`bg-white text-neutral-950 ${isAr ? "font-[Cairo]" : ""}`}
+      style={{
+        backgroundImage: `url(${bgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "scroll",
+      }}
     >
       {/* HERO */}
-      <section className="relative overflow-hidden bg-white py-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="relative overflow-x-hidden bg-white/85 py-12 backdrop-blur-[2px]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className={isAr ? "text-right" : ""}>
-              <p className="mb-4 text-s font-black uppercase tracking-[0.3em] text-[#ee4036]">
+              <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[#ee4036]">
                 {t.partnersPage.heroBadge}
               </p>
 
-              <h1 className="text-5xl font-black leading-tight">
+              <h1 className="text-[34px] font-black leading-tight sm:text-5xl">
                 {t.partnersPage.heroTitle1}
                 <span className="block">{t.partnersPage.heroTitle2}</span>
               </h1>
@@ -76,7 +83,7 @@ const Partners = () => {
 
       {/* PARTNERS */}
       <section className="py-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10">
             {partners.map((partner, index) => (
               <a
@@ -95,7 +102,7 @@ const Partners = () => {
                 >
                   <div className="grid lg:grid-cols-2">
                     {/* IMAGE */}
-                    <div className="relative h-[320px] bg-neutral-100">
+                    <div className="relative h-[240px] sm:h-[300px] lg:h-[320px] bg-neutral-100">
                       {partner.image ? (
                         <img
                           src={partner.image}
