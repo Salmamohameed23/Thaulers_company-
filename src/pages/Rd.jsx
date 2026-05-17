@@ -52,7 +52,7 @@ const standards = [
     descKey: "EU Compliance",
     logoBox: "border-neutral-300 bg-neutral-50",
     logo: (
-      <div className="text-[30px] font-black sm:text-[36px] tracking-[-0.14em] text-black">
+      <div className="text-[36px] font-black tracking-[-0.14em] text-black">
         CE
       </div>
     ),
@@ -108,7 +108,7 @@ const CheckList = ({ items, dark = false, isAr = false }) => (
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, amount: 0.25 }}
-    className="mt-6 space-y-3"
+    className="mt-5 space-y-3 sm:mt-6"
   >
     {items.map((item) => (
       <motion.div
@@ -125,7 +125,7 @@ const CheckList = ({ items, dark = false, isAr = false }) => (
         />
 
         <p
-          className={`text-[14px] font-semibold leading-6 ${
+          className={`text-[13px] font-semibold leading-6 sm:text-[14px] ${
             dark ? "text-white/85" : "text-neutral-700"
           } ${isAr ? "text-right" : ""}`}
         >
@@ -151,12 +151,12 @@ export default function RDPage() {
     <main
       key={lang}
       dir={isAr ? "rtl" : "ltr"}
-      className={`overflow-x-hidden bg-white text-neutral-950 ${
+      className={`overflow-hidden bg-white text-neutral-950 ${
         isAr ? "font-[Cairo]" : ""
       }`}
     >
       {/* HERO */}
-      <section className="relative min-h-[520px] sm:min-h-[600px] lg:min-h-[640px] overflow-x-hidden bg-black">
+      <section className="relative min-h-[560px] overflow-hidden bg-black sm:min-h-[620px] lg:min-h-[640px]">
         <motion.img
           src={heroImg}
           alt="Smart Energy Innovation"
@@ -169,7 +169,7 @@ export default function RDPage() {
         <div className="absolute inset-0 bg-black/20" />
 
         <div
-          className={`absolute inset-y-0 w-full lg:w-[62%] ${
+          className={`absolute inset-y-0 w-full sm:w-[75%] lg:w-[62%] ${
             isAr
               ? "right-0 bg-gradient-to-l from-black/80 via-black/45 to-transparent"
               : "left-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent"
@@ -178,37 +178,33 @@ export default function RDPage() {
 
         <div className="absolute inset-x-0 bottom-0 h-[35%] bg-gradient-to-t from-black/70 to-transparent" />
 
-        <div className="relative z-10 mx-auto flex min-h-[520px] sm:min-h-[600px] lg:min-h-[640px] max-w-7xl items-center px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="relative z-10 mx-auto flex min-h-[560px] max-w-7xl items-center px-4 py-14 sm:min-h-[620px] sm:px-6 sm:py-16 lg:min-h-[640px] lg:px-8">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.75 }}
-            className={`max-w-[520px] rounded-[26px] border border-white/15 bg-black/45 p-8 shadow-[0_25px_80px_rgba(0,0,0,0.28)] backdrop-blur-md ${
+            className={`w-full max-w-[520px] rounded-[22px] border border-white/15 bg-black/45 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.28)] backdrop-blur-md sm:rounded-[26px] sm:p-8 ${
               isAr ? "mr-auto max-w-[560px] text-right lg:pr-10" : ""
             }`}
           >
             <div
-              className={`mb-6 inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/10 px-5 py-2.5 backdrop-blur-md ${
+              className={`mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2.5 backdrop-blur-md sm:mb-6 sm:gap-3 sm:px-5 ${
                 isAr ? "flex-row-reverse" : ""
               }`}
             >
               <span className="h-2.5 w-2.5 rounded-full bg-[#ee4036]" />
 
-              <span
-                className={`whitespace-nowrap font-black text-white ${
-                  isAr
-                    ? "text-[12px] tracking-normal text-right"
-                    : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
-                }`}
-              >
+              <span className="text-[10px] font-black uppercase tracking-[0.16em] text-white sm:whitespace-nowrap sm:text-xs sm:tracking-[0.32em]">
                 {page.heroBadge}
               </span>
             </div>
 
             <h1
-              className={`text-[32px] font-black leading-[1.12] text-white sm:text-5xl lg:text-[58px] ${
-                isAr ? "tracking-[-0.01em]" : "tracking-[-0.08em]"
+              className={`text-[34px] font-black leading-[1.12] text-white sm:text-5xl lg:text-[58px] ${
+                isAr
+                  ? "tracking-[-0.01em]"
+                  : "tracking-[-0.04em] sm:tracking-[-0.08em]"
               }`}
             >
               {page.heroTitle1}{" "}
@@ -216,7 +212,7 @@ export default function RDPage() {
               {page.heroTitle2}
             </h1>
 
-            <p className="mt-6 text-[15px] font-medium leading-7 text-white">
+            <p className="mt-5 text-[14px] font-medium leading-7 text-white sm:mt-6 sm:text-[15px]">
               {page.heroDesc}
             </p>
           </motion.div>
@@ -225,11 +221,11 @@ export default function RDPage() {
 
       {/* PLATFORM */}
       {/* PLATFORM */}
-      <section className="relative overflow-x-hidden bg-white py-16">
+      <section className="relative overflow-hidden bg-white py-12 sm:py-16">
         <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
         <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20 lg:px-8">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.65fr_1.35fr] lg:gap-28 lg:px-8">
           {/* TEXT */}
           <motion.div
             variants={fadeLeft}
@@ -237,20 +233,14 @@ export default function RDPage() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.65 }}
-            className={`max-w-[520px] ${isAr ? "text-right" : ""}`}
+            className={`max-w-[520px] ${isAr ? "text-right" : "lg:-ml-16"}`}
           >
-            <p
-              className={`mb-3 font-black text-[#ee4036] ${
-                isAr
-                  ? "text-[13px] tracking-normal text-right"
-                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
-              }`}
-            >
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.18em] text-[#ee4036] sm:text-xs sm:tracking-[0.32em]">
               {page.platformBadge}
             </p>
 
             <h2
-              className={`max-w-xl text-[30px] font-black sm:text-[36px] leading-[1.08] sm:text-5xl ${
+              className={`max-w-xl text-[30px] font-black leading-[1.12] sm:text-5xl lg:leading-[1.08] ${
                 isAr ? "tracking-[-0.01em]" : "tracking-[-0.04em]"
               }`}
             >
@@ -260,7 +250,7 @@ export default function RDPage() {
               </span>
             </h2>
 
-            <p className="mt-6 max-w-[500px] text-[15px] leading-7 text-neutral-600">
+            <p className="mt-5 max-w-[500px] text-[14px] leading-7 text-neutral-600 sm:mt-6 sm:text-[15px]">
               {page.platformDesc}
             </p>
           </motion.div>
@@ -274,8 +264,8 @@ export default function RDPage() {
             transition={{ duration: 0.65, delay: 0.08 }}
             className="relative"
           >
-            <div className="relative h-auto w-full overflow-hidden rounded-[24px] lg:ml-auto lg:h-[360px] lg:w-[82%] lg:overflow-visible lg:rounded-[28px]">
-              <div className="relative h-[240px] overflow-hidden rounded-[24px] shadow-[0_25px_80px_rgba(0,0,0,0.14)] sm:h-[300px] lg:left-[90px] lg:h-full lg:rounded-[28px]">
+            <div className="relative h-auto w-full overflow-visible rounded-[24px] lg:ml-auto lg:h-[360px] lg:w-[82%] lg:rounded-[28px]">
+              <div className="relative h-[240px] overflow-hidden rounded-[24px] shadow-[0_25px_80px_rgba(0,0,0,0.14)] sm:h-[320px] lg:left-[90px] lg:h-full lg:rounded-[28px]">
                 <motion.img
                   src={platformImg}
                   alt="Integrated R&D Platform"
@@ -295,7 +285,7 @@ export default function RDPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
-                className="mt-4 w-full space-y-2 lg:absolute lg:left-[-90px] lg:top-1/2 lg:mt-0 lg:w-[390px] lg:-translate-y-1/2 lg:space-y-1"
+                className="relative z-20 mt-4 space-y-2 px-1 sm:mt-5 sm:px-0 lg:absolute lg:left-[-90px] lg:right-auto lg:top-1/2 lg:mt-0 lg:w-[390px] lg:-translate-y-1/2 lg:space-y-1"
               >
                 {page.platformList.map((item) => (
                   <motion.div
@@ -303,7 +293,7 @@ export default function RDPage() {
                     variants={fadeLeft}
                     transition={{ duration: 0.45 }}
                     whileHover={{ x: 8, scale: 1.012 }}
-                    className="group relative overflow-hidden rounded-[18px] border border-black/5 bg-white/92 px-5 py-4 shadow-[0_14px_36px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-300 hover:border-red-500/20 hover:shadow-[0_22px_55px_rgba(220,38,38,0.16)]"
+                    className="group relative overflow-hidden rounded-[16px] border border-black/5 bg-white/92 px-3 py-2.5 shadow-[0_14px_36px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-300 hover:border-red-500/20 hover:shadow-[0_22px_55px_rgba(220,38,38,0.16)] sm:rounded-[18px] sm:px-5 sm:py-4"
                   >
                     <div className="pointer-events-none absolute right-[-40px] top-[-30px] h-20 w-20 rounded-full bg-red-600/0 blur-2xl transition duration-300 group-hover:bg-red-600/15" />
 
@@ -329,7 +319,7 @@ export default function RDPage() {
 
       {/* SOLUTIONS */}
       {/* SOLUTIONS */}
-      <section className="relative overflow-x-hidden bg-black py-24 text-white">
+      <section className="relative overflow-hidden bg-black py-16 text-white sm:py-20 lg:py-24">
         <motion.img
           src={solutionsImg}
           alt="Application-Oriented Energy Solutions"
@@ -343,7 +333,7 @@ export default function RDPage() {
         <div className="absolute inset-0 bg-black/10" />
 
         <div
-          className={`absolute inset-y-0 w-full lg:w-[58%] ${
+          className={`absolute inset-y-0 w-full sm:w-[75%] lg:w-[58%] ${
             isAr
               ? "right-0 bg-gradient-to-l from-black/90 via-black/65 to-transparent"
               : "left-0 bg-gradient-to-r from-black/95 via-black/75 to-transparent"
@@ -361,18 +351,12 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-[520px] ${isAr ? "mr-auto text-right" : ""}`}
           >
-            <p
-              className={`mb-5 font-black text-[#ee4036] ${
-                isAr
-                  ? "text-[13px] tracking-normal text-right"
-                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
-              }`}
-            >
+            <p className="mb-4 text-[11px] font-black uppercase tracking-[0.18em] text-[#ee4036] sm:mb-5 sm:text-xs sm:tracking-[0.32em]">
               {page.solutionsBadge}
             </p>
 
             <h2
-              className={`text-[30px] font-black sm:text-[36px] leading-[1.08] text-white sm:text-5xl lg:text-[50px] ${
+              className={`text-[30px] font-black leading-[1.12] text-white sm:text-5xl lg:text-[50px] lg:leading-[1.08] ${
                 isAr ? "tracking-[-0.01em]" : "tracking-[-0.01em]"
               }`}
             >
@@ -382,7 +366,7 @@ export default function RDPage() {
               </span>
             </h2>
 
-            <p className="mt-6 max-w-[500px] text-[15px] font-medium leading-8 text-white/82">
+            <p className="mt-5 max-w-[500px] text-[14px] font-medium leading-7 text-white/82 sm:mt-6 sm:text-[15px] sm:leading-8">
               {page.solutionsDesc}
             </p>
           </motion.div>
@@ -390,9 +374,9 @@ export default function RDPage() {
       </section>
 
       {/* TEAM */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-12 sm:py-16">
         <div
-          className={`mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-[1.02fr_0.98fr] lg:gap-24 lg:px-8 ${
+          className={`mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:gap-24 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
           }`}
         >
@@ -411,7 +395,7 @@ export default function RDPage() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 9, ease: "easeOut" }}
-              className="h-[260px] sm:h-[340px] lg:h-[420px] w-full object-cover"
+              className="h-[260px] w-full object-cover sm:h-[340px] lg:h-[420px]"
             />
           </motion.div>
 
@@ -423,18 +407,12 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-[620px] ${isAr ? "text-right" : ""}`}
           >
-            <p
-              className={`mb-5 font-black text-[#ee4036] ${
-                isAr
-                  ? "text-[13px] tracking-normal text-right"
-                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
-              }`}
-            >
+            <p className="mb-4 text-[11px] font-black uppercase tracking-[0.18em] text-[#ee4036] sm:mb-5 sm:text-xs sm:tracking-[0.32em]">
               {page.teamBadge}
             </p>
 
             <h2
-              className={`text-[34px] font-black leading-[1.04] sm:text-5xl ${
+              className={`text-[30px] font-black leading-[1.12] sm:text-5xl lg:leading-[1.04] ${
                 isAr ? "tracking-[-0.01em]" : "tracking-[-0.02em]"
               }`}
             >
@@ -452,9 +430,9 @@ export default function RDPage() {
       </section>
 
       {/* QUALITY */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-12 sm:py-16">
         <div
-          className={`mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2 lg:gap-24 lg:px-8 ${
+          className={`mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-24 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
           }`}
         >
@@ -466,18 +444,12 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-[620px] ${isAr ? "text-right" : ""}`}
           >
-            <p
-              className={`mb-5 font-black text-[#ee4036] ${
-                isAr
-                  ? "text-[13px] tracking-normal text-right"
-                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
-              }`}
-            >
+            <p className="mb-4 text-[11px] font-black uppercase tracking-[0.18em] text-[#ee4036] sm:mb-5 sm:text-xs sm:tracking-[0.32em]">
               {page.qualityBadge}
             </p>
 
             <h2
-              className={`text-[32px] font-black sm:text-[47px] leading-[1.08] ${
+              className={`text-[30px] font-black leading-[1.12] sm:text-5xl lg:leading-[1.08] ${
                 isAr ? "tracking-[-0.01em]" : "tracking-[-0.04em]"
               }`}
             >
@@ -506,19 +478,19 @@ export default function RDPage() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 9, ease: "easeOut" }}
-              className="h-[260px] sm:h-[340px] lg:h-[420px] w-full object-cover"
+              className="h-[260px] w-full object-cover sm:h-[340px] lg:h-[420px]"
             />
           </motion.div>
         </div>
       </section>
 
       {/* TESTING */}
-      <section className="relative overflow-hidden bg-[#07111d] py-16 text-white">
+      <section className="relative overflow-hidden bg-[#07111d] py-12 text-white sm:py-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_50%,rgba(59,130,246,0.18),transparent_70%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_50%,rgba(238,64,54,0.08),transparent_30%)]" />
 
         <div
-          className={`relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-24 lg:px-8 ${
+          className={`relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-24 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
           }`}
         >
@@ -537,7 +509,7 @@ export default function RDPage() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 9, ease: "easeOut" }}
-              className="h-[260px] sm:h-[320px] lg:h-[370px] w-full object-cover object-center"
+              className="h-[240px] w-full object-cover object-center sm:h-[320px] lg:h-[370px]"
             />
           </motion.div>
 
@@ -549,18 +521,12 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-[520px] ${isAr ? "text-right" : ""}`}
           >
-            <p
-              className={`mb-4 font-black text-[#ee4036] ${
-                isAr
-                  ? "text-[13px] tracking-normal text-right"
-                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
-              }`}
-            >
+            <p className="mb-4 text-s font-black uppercase tracking-[0.32em] text-[#ee4036]">
               {page.testingBadge}
             </p>
 
             <h2
-              className={`text-[32px] font-black sm:text-[47px] leading-[1.08] text-white ${
+              className={`text-[30px] font-black leading-[1.12] text-white sm:text-5xl lg:leading-[1.08] ${
                 isAr ? "tracking-[-0.01em]" : "tracking-[-0.035em]"
               }`}
             >
@@ -573,9 +539,9 @@ export default function RDPage() {
       </section>
 
       {/* GLOBAL STANDARDS */}
-      <section className="relative overflow-x-hidden bg-white py-16">
-        <div className="absolute left-[-180px] top-[-120px] h-[260px] sm:h-[340px] lg:h-[420px] w-[420px] rounded-full bg-red-600/5 blur-[140px]" />
-        <div className="absolute right-[-180px] bottom-[-140px] h-[260px] sm:h-[340px] lg:h-[420px] w-[420px] rounded-full bg-slate-400/10 blur-[140px]" />
+      <section className="relative overflow-hidden bg-white py-12 sm:py-16">
+        <div className="absolute left-[-180px] top-[-120px] h-[420px] w-[420px] rounded-full bg-red-600/5 blur-[140px]" />
+        <div className="absolute right-[-180px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-slate-400/10 blur-[140px]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -586,22 +552,17 @@ export default function RDPage() {
             transition={{ duration: 0.65 }}
             className={`max-w-3xl ${isAr ? "text-right" : ""}`}
           >
-            ر
-            <p
-              className={`mb-3 font-black text-[#ee4036] ${
-                isAr
-                  ? "text-[13px] tracking-normal text-right"
-                  : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
-              }`}
-            >
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.18em] text-[#ee4036] sm:text-xs sm:tracking-[0.32em]">
               {page.standardsBadge}
             </p>
-            <h2 className="text-[34px] font-black leading-[1.08] tracking-[-0.04em] text-neutral-950 sm:text-5xl">
+
+            <h2 className="text-[30px] font-black leading-[1.12] tracking-[-0.02em] text-neutral-950 sm:text-5xl lg:leading-[1.08] lg:tracking-[-0.04em]">
               {page.standardsTitle1}
               <span className="block text-[#ee4036]">
                 {page.standardsTitle2}
               </span>
             </h2>
+
             <p className="mt-5 max-w-2xl text-[15px] leading-7 text-neutral-600">
               {page.standardsDesc}
             </p>
@@ -612,7 +573,7 @@ export default function RDPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
-            className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-6"
+            className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-6"
           >
             {standards.map((item) => (
               <motion.div
@@ -620,7 +581,7 @@ export default function RDPage() {
                 variants={fadeUp}
                 transition={{ duration: 0.45 }}
                 whileHover={{ y: -6 }}
-                className="group flex min-h-[210px] flex-col items-center justify-center rounded-[18px] border border-black/5 bg-white p-6 text-center shadow-[0_18px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-red-500/20 hover:shadow-[0_24px_60px_rgba(220,38,38,0.14)]"
+                className="group flex min-h-[170px] flex-col items-center justify-center rounded-[18px] border border-black/5 bg-white p-5 text-center shadow-[0_18px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-red-500/20 hover:shadow-[0_24px_60px_rgba(220,38,38,0.14)] sm:min-h-[210px] sm:p-6"
               >
                 <div
                   className={`mb-6 flex h-[92px] w-[92px] items-center justify-center rounded-[18px] border ${item.logoBox}`}
@@ -638,9 +599,9 @@ export default function RDPage() {
       </section>
 
       {/* PROCESS */}
-      <section className="relative overflow-hidden bg-[#f6f7f9] py-16">
-        <div className="absolute left-[-180px] top-[-140px] h-[260px] sm:h-[340px] lg:h-[420px] w-[420px] rounded-full bg-red-600/5 blur-[140px]" />
-        <div className="absolute right-[-180px] bottom-[-140px] h-[260px] sm:h-[340px] lg:h-[420px] w-[420px] rounded-full bg-slate-400/10 blur-[140px]" />
+      <section className="relative overflow-hidden bg-[#f6f7f9] py-12 sm:py-16">
+        <div className="absolute left-[-180px] top-[-140px] h-[420px] w-[420px] rounded-full bg-red-600/5 blur-[140px]" />
+        <div className="absolute right-[-180px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-slate-400/10 blur-[140px]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-start gap-10 lg:grid-cols-[0.65fr_1.35fr]">
@@ -652,17 +613,11 @@ export default function RDPage() {
               transition={{ duration: 0.65 }}
               className={isAr ? "text-right" : ""}
             >
-              <p
-                className={`mb-3 font-black text-[#ee4036] ${
-                  isAr
-                    ? "text-[13px] tracking-normal text-right"
-                    : "text-xs uppercase tracking-[0.2em] sm:tracking-[0.32em]"
-                }`}
-              >
+              <p className="mb-3 text-[11px] font-black uppercase tracking-[0.18em] text-[#ee4036] sm:text-xs sm:tracking-[0.32em]">
                 {page.processBadge}
               </p>
 
-              <h2 className="text-[34px] font-black leading-[1.08] tracking-[-0.04em] text-neutral-950 sm:text-5xl">
+              <h2 className="text-[30px] font-black leading-[1.12] tracking-[-0.02em] text-neutral-950 sm:text-5xl lg:leading-[1.08] lg:tracking-[-0.04em]">
                 {page.processTitle1}
                 <span className="block text-[#ee4036]">
                   {page.processTitle2}
@@ -690,7 +645,7 @@ export default function RDPage() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 9, ease: "easeOut" }}
-                  className="h-[260px] w-full object-cover"
+                  className="h-[220px] w-full object-cover sm:h-[260px]"
                 />
               </motion.div>
 
@@ -702,7 +657,7 @@ export default function RDPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.25 }}
-                  className={`grid gap-y-10 md:grid-cols-3 lg:grid-cols-5 ${
+                  className={`grid gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-y-10 ${
                     isAr ? "lg:[direction:rtl]" : ""
                   }`}
                 >
@@ -750,7 +705,7 @@ export default function RDPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative flex min-h-[520px] items-center justify-center overflow-x-hidden bg-black text-white">
+      <section className="relative flex min-h-[440px] items-center justify-center overflow-hidden bg-black text-white sm:min-h-[520px]">
         <motion.img
           src={ctaImg}
           alt="Build Your Next Energy Project"
@@ -764,7 +719,7 @@ export default function RDPage() {
         <div className="absolute inset-0 bg-black/25" />
 
         <div
-          className={`absolute inset-y-0 w-full lg:w-[58%] ${
+          className={`absolute inset-y-0 w-full sm:w-[75%] lg:w-[58%] ${
             isAr
               ? "right-0 bg-gradient-to-l from-black/95 via-black/70 to-transparent"
               : "left-0 bg-gradient-to-r from-black/95 via-black/70 to-transparent"
@@ -779,14 +734,14 @@ export default function RDPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.65 }}
-          className="relative z-10 mx-auto max-w-3xl px-6 text-center"
+          className="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6"
         >
-          <h2 className="text-[30px] font-black sm:text-[36px] leading-[1.12] tracking-[-0.04em] sm:text-5xl">
+          <h2 className="text-[30px] font-black leading-[1.12] tracking-[-0.02em] sm:text-5xl sm:tracking-[-0.04em]">
             {page.ctaTitle1}
             <span className="block">{page.ctaTitle2}</span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-white/72">
+          <p className="mx-auto mt-5 max-w-2xl text-[14px] leading-7 text-white/72 sm:mt-6 sm:text-[15px]">
             {page.ctaDesc}
           </p>
         </motion.div>

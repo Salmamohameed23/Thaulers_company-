@@ -63,8 +63,8 @@ const sectionTitleClass = `flex min-h-[34px] items-center font-bold text-[#ee403
                 <img
                   src={logo}
                   alt="Tough Haulers"
-                  className={`mt-[-60px] h-auto w-[220px] max-w-full object-contain sm:w-[260px] lg:w-[285px] ${
-                    isAr ? "mr-[-15px]" : "ml-[-30px]"
+                  className={`mt-[-62px] -translate-x-[29px] w-[300px] object-contain ${
+                    isAr ? "translate-x-[35px]" : "-translate-x-[10px]"
                   }`}
                 />
               </Link>
@@ -126,20 +126,20 @@ const sectionTitleClass = `flex min-h-[34px] items-center font-bold text-[#ee403
           {/* Contact */}
           <div
             className={`lg:border-white/10 lg:px-8 ${
-              isAr ? "text-right lg:border-l" : "lg:border-r"
+              isAr ? "text-right lg:border-l lg:pr-3" : "lg:border-r lg:pl-3"
             }`}
           >
             <h4 className={sectionTitleClass}>{t.footer.contact}</h4>
             <div className={redLineClass} />
 
-            <div className="mt-4 sm:mt-5">
+            <div className="mt-3 sm:mt-4">
               <a
                 href={`mailto:${t.footer.email}`}
                 className={`group flex items-center gap-4 border-b border-white/10 py-3.5 text-[14px] font-semibold text-neutral-100 transition hover:text-red-400 sm:py-4 ${
                   isAr ? "flex-row-reverse text-right" : ""
                 }`}
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-500">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-500">
                   <Mail className="h-4 w-4" />
                 </span>
                 <span dir="ltr" className="break-all">
@@ -152,7 +152,7 @@ const sectionTitleClass = `flex min-h-[34px] items-center font-bold text-[#ee403
                   isAr ? "flex-row-reverse text-right" : ""
                 }`}
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-500">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-500">
                   <MapPin className="h-4 w-4" />
                 </span>
                 <span className="break-words">{t.footer.location1}</span>

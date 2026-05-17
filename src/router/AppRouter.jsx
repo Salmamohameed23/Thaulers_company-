@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Whyus from "../pages/whyus";
-import Solutions from "../pages/Solutions";
 import SmartStorage from "../pages/SmartStorage";
 import Factory from "../pages/Factory";
 import GigawattProjects from "../pages/GigawattProjects";
@@ -16,7 +15,6 @@ const AppRouter = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/whyus" element={<Whyus />} />
-      <Route path="/solutions" element={<Solutions />} />
       <Route path="/smart-storage" element={<SmartStorage />} />
       <Route path="/factory" element={<Factory />} />
       <Route path="/gigawatt-projects" element={<GigawattProjects />} />
