@@ -705,7 +705,7 @@ export default function RDPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative flex min-h-[440px] items-center justify-center overflow-hidden bg-black text-white sm:min-h-[520px]">
+      <section className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-black text-white ">
         <motion.img
           src={ctaImg}
           alt="Build Your Next Energy Project"

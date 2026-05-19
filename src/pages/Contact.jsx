@@ -32,8 +32,7 @@ const Contact = () => {
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* HERO */}
-      <section className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,rgba(220,38,38,0.07),transparent_30%)]" />
+      <section className="relative overflow-hidden bg-white py-12 sm:py-12 lg:py-14">
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -59,7 +58,7 @@ const Contact = () => {
               </span>
             </h1>
 
-            <p className="mt-5 max-w-3xl break-words text-[15px] leading-7 text-neutral-600 sm:mt-6 sm:text-[16px] sm:leading-8">
+            <p className="mt-5 max-w-3xl break-words text-[15px] leading-7 text-neutral-900 sm:mt-6 sm:text-[16px] sm:leading-8">
               {t.contactPage.desc}
             </p>
           </motion.div>

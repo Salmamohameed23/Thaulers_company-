@@ -91,18 +91,17 @@ export default function SmartStorage() {
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* HERO */}
-      <section className="relative overflow-x-hidden bg-black text-white">
+      <section className="relative min-h-[calc(100vh-88px)] overflow-hidden bg-black text-white">
+        {" "}
         <motion.img
           src={smartHero}
           alt="Battery energy storage systems"
           initial={{ scale: 1.03 }}
           animate={{ scale: 1 }}
           transition={{ duration: 12, ease: "easeOut" }}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
-
         <div className="absolute inset-0 bg-black/35" />
-
         <div
           className={`absolute inset-y-0 w-full lg:w-[68%] ${
             isAr
@@ -110,9 +109,9 @@ export default function SmartStorage() {
               : "left-0 bg-gradient-to-r from-black via-black/78 to-transparent"
           }`}
         />
-
         <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/80 to-transparent" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-88px)] max-w-7xl flex-col justify-center px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+          {" "}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -144,11 +143,13 @@ export default function SmartStorage() {
               </span>
             </h1>
 
-            <p className="mt-6 max-w-[560px] text-[15px] font-medium leading-7 text-white/85">
+            <p
+              style={{ fontFamily: "FS Future" }}
+              className="mt-6 max-w-[560px] text-[15px] font-medium leading-7 text-white/85"
+            >
               {t.smartStoragePage.heroDesc}
             </p>
           </motion.div>
-
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((item, index) => (
               <motion.div
@@ -238,14 +239,6 @@ export default function SmartStorage() {
                     <p className="mt-3 min-h-[72px] text-[13px] leading-6 text-neutral-600">
                       {product.description}
                     </p>
-
-                    <button className="mt-4 inline-flex items-center gap-2 text-[12px] font-black text-[#ee4036]">
-                      {product.action}
-                      <ChevronRight
-                        size={15}
-                        className={isAr ? "rotate-180" : ""}
-                      />
-                    </button>
                   </div>
                 </motion.article>
               ))}

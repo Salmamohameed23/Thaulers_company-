@@ -10,8 +10,13 @@ export default {
       16: "4rem",
     },
     extend: {
+      fontFamily: {
+        sans: ['"FS Future"', "sans-serif"],
+        future: ['"FS Future"', "sans-serif"],
+        cairo: ['"Cairo"', "sans-serif"],
+      },
       colors: {
-        "FirstColor": "#008170",
+        FirstColor: "#008170",
       },
       screens: {
         sm: "567px",

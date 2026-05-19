@@ -39,13 +39,11 @@ const ServicesPreview = () => {
   return (
     <section
       dir={isAr ? "rtl" : "ltr"}
-      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-16 lg:py-20 ${
+      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-16 lg:py-12 ${
         isAr ? "font-[Cairo]" : ""
       }`}
     >
-      <div className="pointer-events-none absolute left-[-160px] top-10 h-[260px] w-[260px] rounded-full bg-red-600/10 blur-[95px] sm:h-[340px] sm:w-[340px] sm:blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-[-120px] right-[-160px] h-[300px] w-[300px] rounded-full bg-red-600/10 blur-[100px] sm:h-[420px] sm:w-[420px] sm:blur-[130px]" />
-
+    
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8 lg:px-10">
         {/* HEADER */}
         <div

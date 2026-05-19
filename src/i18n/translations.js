@@ -344,37 +344,32 @@ export const translations = {
           title: "Residential ESS",
           description:
             "Compact residential energy storage for backup power and daily energy flexibility.",
-          action: "View Details",
         },
         {
           title: "Household ESS 10kWh",
           description:
             "Higher-capacity household storage designed for reliable home energy operation.",
-          action: "View Details",
         },
         {
           title: "Commercial ESS",
           description:
             "Scalable storage system for businesses, C&I facilities, and microgrids.",
-          action: "Send Inquiry",
         },
         {
           title: "Containerized Storage System",
           description:
             "High-capacity containerized solution built for utility and large-scale energy projects.",
-          action: "Send Inquiry",
+          
         },
         {
           title: "Industrial BESS Cabinet",
           description:
             "Industrial-grade battery storage cabinet designed for stable and continuous operation.",
-          action: "Send Inquiry",
         },
         {
           title: "Utility-Scale BESS",
           description:
             "Large-scale storage solution for grid support, peak shaving, and renewable integration.",
-          action: "Send Inquiry",
         },
       ],
 
@@ -1197,37 +1192,31 @@ export const translations = {
           title: "نظام تخزين منزلي ESS",
           description:
             "حل تخزين مدمج للمنازل يدعم الطاقة الاحتياطية ومرونة استخدام الطاقة اليومية.",
-          action: "عرض التفاصيل",
         },
         {
           title: "نظام منزلي ESS بقدرة 10kWh",
           description:
             "نظام تخزين منزلي بسعة أعلى مصمم لتشغيل موثوق وإدارة أفضل للطاقة المنزلية.",
-          action: "عرض التفاصيل",
         },
         {
           title: "نظام تخزين تجاري ESS",
           description:
             "نظام تخزين قابل للتوسع للشركات والمنشآت التجارية والصناعية والشبكات الصغيرة.",
-          action: "إرسال استفسار",
         },
         {
           title: "نظام تخزين حاوياتي",
           description:
             "حل تخزين عالي السعة مصمم للمرافق والمشاريع الصناعية ومشاريع الطاقة واسعة النطاق.",
-          action: "إرسال استفسار",
         },
         {
           title: "خزانة تخزين صناعية BESS",
           description:
             "خزانة تخزين بطاريات صناعية مصممة للتشغيل المستقر والمستمر في البيئات التشغيلية.",
-          action: "إرسال استفسار",
         },
         {
           title: "نظام BESS للمشاريع الكبرى",
           description:
             "حل تخزين واسع النطاق لدعم الشبكات، وتخفيف أحمال الذروة، ودمج الطاقة المتجددة.",
-          action: "إرسال استفسار",
         },
       ],
 
@@ -2050,33 +2039,27 @@ export const translations = {
         {
           title: "户用 ESS 储能系统",
           description: "紧凑型户用储能系统，适用于备用电源及日常能源灵活管理。",
-          action: "查看详情",
         },
         {
           title: "10kWh 家用 ESS",
           description: "更高容量的家用储能系统，专为可靠的家庭能源运行而设计。",
-          action: "查看详情",
         },
         {
           title: "商业 ESS 储能系统",
           description: "适用于企业、工商业设施及微电网的可扩展储能系统。",
-          action: "发送咨询",
         },
         {
           title: "集装箱式储能系统",
           description: "高容量集装箱式储能方案，适用于公用事业及大型能源项目。",
-          action: "发送咨询",
         },
         {
           title: "工业 BESS 储能柜",
           description: "工业级电池储能柜，面向稳定、持续运行场景设计。",
-          action: "发送咨询",
         },
         {
           title: "大型 BESS 储能系统",
           description:
             "适用于电网支撑、削峰填谷及可再生能源并网的大规模储能方案。",
-          action: "发送咨询",
         },
       ],
 

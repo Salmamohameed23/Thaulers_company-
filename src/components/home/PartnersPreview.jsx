@@ -21,13 +21,11 @@ const PartnersPreview = () => {
   return (
     <section
       dir={isAr ? "rtl" : "ltr"}
-      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-16 lg:py-20 ${
+      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-16 lg:py-12 ${
         isAr ? "font-[Cairo]" : ""
       }`}
     >
-      <div className="pointer-events-none absolute left-[-140px] top-20 h-[260px] w-[260px] rounded-full bg-red-600/10 blur-[95px] sm:h-[360px] sm:w-[360px] sm:blur-[110px]" />
-      <div className="pointer-events-none absolute bottom-[-120px] right-[-160px] h-[300px] w-[300px] rounded-full bg-red-600/10 blur-[100px] sm:h-[440px] sm:w-[440px] sm:blur-[120px]" />
-
+    
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 35 }}

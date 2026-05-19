@@ -39,16 +39,13 @@ const About = () => {
 
   return (
     <main
-      className={`bg-white text-neutral-950 ${
+      className={`bg-white text-neutral-950 overflow-x-hidden ${
         isAr ? "font-[Cairo] text-right" : ""
       }`}
       dir={isAr ? "rtl" : "ltr"}
     >
-      <section className="relative overflow-x-hidden bg-white py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,rgba(220,38,38,0.07),transparent_30%)]" />
-        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-
+      <section className="relative bg-white py-12">
+        {" "}
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 34 }}
@@ -57,10 +54,10 @@ const About = () => {
             className="max-w-5xl"
           >
             <p
-              className={`mb-8 text-xs font-black text-[#ee4036] ${
+              className={`mb-3 text-xs font-black text-[#ee4036] ${
                 isAr
                   ? "tracking-normal text-right"
-                  : "uppercase tracking-[0.18em] sm:tracking-[0.28em]"
+                  : "uppercase tracking-[0.13em] sm:tracking-[0.28em]"
               }`}
             >
               {t.aboutPage.badge}
@@ -82,17 +79,17 @@ const About = () => {
               </span>
             </h1>
 
-            <p className="mt-8 max-w-4xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
+            <p className="mt-3 max-w-4xl text-[17px] leading-8 text-neutral-900 sm:text-lg">
               {t.aboutPage.p1}
             </p>
 
-            <p className="mt-5 max-w-4xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
+            <p className="mt-3 max-w-4xl text-[17px] leading-8 text-neutral-900 sm:text-lg">
               {t.aboutPage.p2}
             </p>
 
-            <p className="mt-5 max-w-4xl text-[17px] leading-8 text-neutral-600 sm:text-lg">
+            <p className="mt-3 max-w-4xl text-[17px] leading-8 text-neutral-900 sm:text-lg">
               {t.aboutPage.goalLabel}
-              <span className="font-semibold text-neutral-950">
+              <span className="font-semibold text-[17px] text-[#ee4036]">
                 {" "}
                 {t.aboutPage.goalText}
               </span>
@@ -101,10 +98,8 @@ const About = () => {
         </div>
       </section>
 
-      <section className="relative overflow-x-hidden bg-white py-14 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]">
-        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-
+      <section className="relative bg-white py-12 ">
+        
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 34 }}
@@ -113,7 +108,7 @@ const About = () => {
             transition={{ duration: 0.7 }}
           >
             <p
-              className={`mb-4 text-xs font-black text-[#ee4036] ${
+              className={`mb-3 text-xs font-black text-[#ee4036] ${
                 isAr
                   ? "tracking-normal text-right"
                   : "uppercase tracking-[0.18em] sm:tracking-[0.28em]"
@@ -129,11 +124,11 @@ const About = () => {
               </span>
             </h2>
 
-            <p className="mt-6 text-[16px] leading-8 text-neutral-600">
+            <p className="mt-6 text-[16px] leading-8 text-neutral-900">
               {t.aboutPage.positioningP1}
             </p>
 
-            <p className="mt-5 text-[16px] leading-8 text-neutral-600">
+            <p className="mt-5 text-[16px] leading-8 text-neutral-900">
               {t.aboutPage.positioningP2}
             </p>
           </motion.div>
@@ -152,7 +147,7 @@ const About = () => {
                   className="rounded-3xl border border-black/10 bg-white p-5 shadow-[0_12px_32px_rgba(0,0,0,0.045)]"
                 >
                   <p className="mb-4 text-5xl font-black text-black/[0.05]">
-                    0{index + 1}
+                    {index + 1}
                   </p>
 
                   <div className="flex items-start gap-3">
@@ -171,9 +166,8 @@ const About = () => {
         </div>
       </section>
 
-      <section className="relative overflow-x-hidden bg-white py-14">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(220,38,38,0.055),transparent_30%)]" />
-
+      <section className="relative bg-white py-12">
+        {" "}
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
@@ -218,7 +212,7 @@ const About = () => {
                     {item.title}
                   </h3>
 
-                  <p className="mt-4 text-[15px] leading-7 text-neutral-600">
+                  <p className="mt-4 text-[15px] leading-7 text-neutral-900">
                     {item.text}
                   </p>
                 </motion.div>

@@ -24,12 +24,10 @@ const AboutPreview = () => {
   return (
     <section
       dir={isAr ? "rtl" : "ltr"}
-      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-16 lg:py-20 ${
+      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-16 lg:py-14 ${
         isAr ? "font-[Cairo]" : ""
       }`}
     >
-      <div className="pointer-events-none absolute left-[-180px] top-10 h-[280px] w-[280px] rounded-full bg-red-600/10 blur-[100px] sm:h-[380px] sm:w-[380px] sm:blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-[-120px] right-[-180px] h-[320px] w-[320px] rounded-full bg-red-600/10 blur-[110px] sm:h-[450px] sm:w-[450px] sm:blur-[130px]" />
 
       <div className="relative mx-auto grid max-w-[1180px] items-stretch gap-8 px-4 sm:gap-10 sm:px-6 md:px-8 lg:grid-cols-[0.95fr_1.15fr] lg:gap-14 lg:px-10">
         <motion.div

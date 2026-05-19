@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_48%,rgba(220,38,38,0.14),transparent_48%)]" />
 
       {/* CONTENT */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-82px)] max-w-[1540px] items-center px-4 py-16 sm:min-h-[calc(100svh-94px)] sm:px-6 sm:py-20 md:px-8 lg:px-12 xl:px-14">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-82px)] max-w-[1540px] items-center px-4 py-16 sm:min-h-[calc(100svh-94px)] sm:px-6 sm:py-12 md:px-8 lg:px-12 xl:px-14">
         <motion.div
           initial={{ opacity: 0, y: 34 }}
           animate={{ opacity: 1, y: 0 }}
