@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Building2 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -5,6 +6,16 @@ import { useLanguage } from "../i18n/LanguageContext";
 const Contact = () => {
   const { t, lang } = useLanguage();
   const isAr = lang === "ar";
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const contactInfo = [
     {
@@ -24,6 +35,56 @@ const Contact = () => {
     },
   ];
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitStatus(null);
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitStatus("error");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || "Failed to send message");
+      }
+
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main
       className={`bg-white text-neutral-950 ${
@@ -33,7 +94,6 @@ const Contact = () => {
     >
       {/* HERO */}
       <section className="relative overflow-hidden bg-white py-12 sm:py-12 lg:py-14">
-
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 34 }}
@@ -81,7 +141,9 @@ const Contact = () => {
                 return (
                   <div
                     key={i}
-                    className={`flex items-start gap-3 border-b border-black/10 pb-5 sm:gap-4 ${isAr ? "flex-row-reverse" : ""}`}
+                    className={`flex items-start gap-3 border-b border-black/10 pb-5 sm:gap-4 ${
+                      isAr ? "flex-row-reverse" : ""
+                    }`}
                   >
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-600 text-red-600">
                       <Icon size={18} />
@@ -117,36 +179,61 @@ const Contact = () => {
               {t.contactPage.formTitle}
             </h3>
 
-            <form className="space-y-4 sm:space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder={t.contactPage.name}
                 className="w-full rounded-xl border border-black/10 px-4 py-3 text-[15px] outline-none transition focus:border-red-500"
               />
 
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder={t.contactPage.email}
                 className="w-full rounded-xl border border-black/10 px-4 py-3 text-[15px] outline-none transition focus:border-red-500"
               />
 
               <input
                 type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
                 placeholder={t.contactPage.company}
                 className="w-full rounded-xl border border-black/10 px-4 py-3 text-[15px] outline-none transition focus:border-red-500"
               />
 
               <textarea
                 rows="4"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder={t.contactPage.message}
                 className="w-full rounded-xl border border-black/10 px-4 py-3 text-[15px] outline-none transition focus:border-red-500"
               />
 
+              {submitStatus === "success" && (
+                <p className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
+                  Message sent successfully.
+                </p>
+              )}
+
+              {submitStatus === "error" && (
+                <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+                  Please check your information and try again.
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="w-full rounded-xl bg-red-600 py-3.5 font-semibold text-white transition hover:bg-red-700"
+                disabled={loading}
+                className="w-full rounded-xl bg-red-600 py-3.5 font-semibold text-white transition hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-neutral-400"
               >
-                {t.contactPage.send}
+                {loading ? "Sending..." : t.contactPage.send}
               </button>
             </form>
           </div>
