@@ -64,11 +64,13 @@ const dropdownButtonClass = `flex items-center gap-1 text-[15px] xl:text-[16.5px
     { label: t.nav.contactUs, path: "/contact" },
   ];
 
-  const languages = [
-    { code: "en", label: "English", short: "EN" },
-    { code: "ar", label: "العربية", short: "AR" },
-    { code: "zh", label: "中文", short: "中文" },
-  ];
+const languages = [
+  { code: "en", label: "English", short: "EN" },
+  { code: "ar", label: "العربية", short: "AR" },
+  { code: "zh", label: "中文", short: "中文" },
+  { code: "ru", label: "Русский", short: "RU" },
+  { code: "de", label: "Deutsch", short: "DE" },
+];
 
   const currentLanguage = languages.find((item) => item.code === lang) || languages[0];
 

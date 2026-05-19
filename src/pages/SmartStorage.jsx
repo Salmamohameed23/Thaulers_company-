@@ -173,7 +173,7 @@ export default function SmartStorage() {
       </section>
 
       {/* PRODUCT RANGE */}
-      <section className="relative overflow-x-hidden bg-white py-14">
+      <section className="relative overflow-x-hidden bg-white py-12">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-9 text-center">
             <p
@@ -248,7 +248,7 @@ export default function SmartStorage() {
       </section>
 
       {/* APPLICATIONS */}
-      <section className="bg-neutral-50 py-12">
+      <section className=" py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center">
             <p
@@ -305,7 +305,7 @@ export default function SmartStorage() {
       </section>
 
       {/* ENGINEERING SCOPE */}
-      <section className="relative overflow-x-hidden bg-white py-14">
+      <section className="relative overflow-x-hidden bg-white py-12">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-9 text-center">
             <p
@@ -372,7 +372,7 @@ export default function SmartStorage() {
       </section>
 
       {/* PROCESS */}
-      <section className="bg-neutral-50 py-16">
+      <section className=" py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <p

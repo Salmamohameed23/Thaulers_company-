@@ -182,7 +182,7 @@ const GigaProjects = () => {
 
       {/* ABOUT GIGA PROJECTS */}
       <section className="relative overflow-hidden bg-white py-12 sm:py-14">
-        <div className="absolute left-[-160px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[120px]" />
+        <div className="absolute left-[-160px] top-20 h-[360px] w-[360px] rounded-full  blur-[120px]" />
 
         <div className="relative mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.35fr_1fr] lg:gap-10 lg:px-8">
           <motion.div
@@ -220,7 +220,7 @@ const GigaProjects = () => {
               {t.gigaPage.aboutTitle}
             </h2>
 
-            <p className="mt-5 max-w-4xl break-words text-[15px] leading-7 text-neutral-600">
+            <p className="mt-5 max-w-4xl break-words text-[15px] leading-7 text-neutral-900">
               {t.gigaPage.aboutDesc}
             </p>
           </motion.div>
@@ -228,8 +228,7 @@ const GigaProjects = () => {
       </section>
 
       {/* ENGINEERING SCOPE */}
-      <section className="relative overflow-hidden bg-neutral-50 py-12 sm:py-14">
-        <div className="absolute right-[-160px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-red-600/10 blur-[130px]" />
+      <section className="relative overflow-hidden  py-12 sm:py-14">
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center sm:mb-10">
@@ -247,7 +246,7 @@ const GigaProjects = () => {
               {t.gigaPage.scopeTitle}
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl break-words text-[14px] leading-7 text-neutral-600">
+            <p className="mx-auto mt-4 max-w-2xl break-words text-[14px] leading-7 text-neutral-900">
               {t.gigaPage.scopeDesc}
             </p>
           </div>
@@ -284,7 +283,7 @@ const GigaProjects = () => {
                     {item.title}
                   </h3>
 
-                  <p className="relative z-10 mt-3 break-words text-[13px] leading-6 text-neutral-600">
+                  <p className="relative z-10 mt-3 break-words text-[13px] leading-6 text-neutral-900">
                     {item.text}
                   </p>
                 </motion.div>
@@ -295,7 +294,7 @@ const GigaProjects = () => {
       </section>
 
       {/* PROCESS */}
-      <section className="bg-white py-12 sm:py-14">
+      <section className=" py-12 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center sm:mb-12">
             <p
@@ -365,7 +364,7 @@ const GigaProjects = () => {
       </section>
 
       {/* LARGE SCALE CAPABILITIES */}
-      <section className="bg-neutral-50 py-12 sm:py-14">
+      <section className=" py-12 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-7 text-center sm:mb-9">
             <p
@@ -414,7 +413,7 @@ const GigaProjects = () => {
       </section>
 
       {/* FINAL SECTION */}
-      <section className="bg-white py-12 sm:py-14">
+      <section className=" py-12 sm:py-14">
         <div
           className={`mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
@@ -444,7 +443,7 @@ const GigaProjects = () => {
                 {t.gigaPage.finalTitle}
               </h2>
 
-              <p className="mt-5 max-w-xl break-words text-[15px] leading-7 text-neutral-600">
+              <p className="mt-5 max-w-xl break-words text-[15px] leading-7 text-neutral-900">
                 {t.gigaPage.finalDesc}
               </p>
 

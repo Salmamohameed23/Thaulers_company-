@@ -81,11 +81,11 @@ const ServicesPreview = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
                 viewport={{ once: true }}
-                className="group flex h-full flex-col rounded-[22px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_65px_rgba(0,0,0,0.12)] sm:rounded-[26px]"
+                className="group flex z-10 h-full flex-col rounded-[22px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_65px_rgba(0,0,0,0.12)] sm:rounded-[26px]"
               >
                 <Link to={item.path} className="flex h-full flex-col">
                   {/* IMAGE */}
-                  <div className="relative h-[185px] overflow-hidden rounded-t-[22px] sm:h-[200px] sm:rounded-t-[26px]">
+                  <div className="relative z-0 h-[185px] overflow-visible rounded-t-[22px] sm:h-[200px] sm:rounded-t-[26px]">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -93,7 +93,7 @@ const ServicesPreview = () => {
                     />
 
                     <div
-                      className={`absolute -bottom-5 z-20 flex h-11 w-11 items-center justify-center rounded-xl bg-black text-white shadow-lg transition group-hover:bg-[#ee4036] ${
+                      className={`absolute -bottom-5 z-30 flex h-11 w-11 items-center justify-center rounded-xl bg-black text-white shadow-lg transition group-hover:bg-[#ee4036] ${
                         isAr ? "right-5 sm:right-6" : "left-5 sm:left-6"
                       }`}
                     >

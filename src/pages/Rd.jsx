@@ -9,9 +9,14 @@ import ctaImg from "../assets/images/R&D_7.png";
 import testingImg from "../assets/images/R&D_5.png";
 import qualityImg from "../assets/images/RD5.png";
 import teamImg from "../assets/images/R&D_4.png";
-import solutionsImg from "../assets/images/R&D_3.png";
+import solutionsImg from "../assets/images/rd_solution.png";
 import platformImg from "../assets/images/RD_2.png";
-
+import iso from "../assets/images/rd_logos_4.png";
+import ce from "../assets/images/rd_logos_3.png";
+import ul from "../assets/images/rd_logos_5.png";
+import un from "../assets/images/rd_logos_2.png";
+import rohs from "../assets/images/rd_logos_1.png";
+import iec from "../assets/images/rd_logos_6.png";
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 },
@@ -41,64 +46,37 @@ const standards = [
     title: "ISO",
     descKey: "Quality Management",
     logoBox: "border-[#2d73c9]/20 bg-[#2d73c9]/5",
-    logo: (
-      <div className="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#2d73c9] text-[22px] font-black text-[#2d73c9]">
-        ISO
-      </div>
-    ),
+    logo: iso,
   },
   {
     title: "CE",
     descKey: "EU Compliance",
     logoBox: "border-neutral-300 bg-neutral-50",
-    logo: (
-      <div className="text-[36px] font-black tracking-[-0.14em] text-black">
-        CE
-      </div>
-    ),
+    logo: ce,
   },
   {
     title: "UL",
     descKey: "Safety Requirements",
     logoBox: "border-[#e11d2e]/20 bg-[#e11d2e]/5",
-    logo: (
-      <div className="flex h-16 w-16 items-center justify-center rounded-full border-[4px] border-[#e11d2e] text-[24px] font-black text-[#e11d2e]">
-        UL
-      </div>
-    ),
+    logo: ul,
   },
   {
     title: "UN38.3",
     descKey: "Transport Safety",
     logoBox: "border-[#1f9d45]/20 bg-[#1f9d45]/5",
-    logo: (
-      <div className="text-[24px] font-black tracking-[-0.05em] text-[#1f9d45]">
-        UN38.3
-      </div>
-    ),
+    logo: un,
   },
   {
     title: "RoHS",
     descKey: "Environmental Compliance",
     logoBox: "border-[#1ca344]/20 bg-[#1ca344]/5",
-    logo: (
-      <div className="flex flex-col items-center leading-none">
-        <div className="text-[28px] font-black tracking-[-0.06em] text-[#1ca344]">
-          RoHS
-        </div>
-        <div className="mt-1 h-4 w-4 rotate-45 rounded-br-full bg-[#1ca344]" />
-      </div>
-    ),
+    logo: rohs,
   },
   {
     title: "IEC",
     descKey: "International Standards",
     logoBox: "border-[#1768b3]/20 bg-[#1768b3]/5",
-    logo: (
-      <div className="flex h-16 w-16 items-center justify-center rounded-[6px] bg-[#1768b3] text-[24px] font-black tracking-[-0.08em] text-white">
-        IEC
-      </div>
-    ),
+    logo: iec,
   },
 ];
 
@@ -220,11 +198,7 @@ export default function RDPage() {
       </section>
 
       {/* PLATFORM */}
-      {/* PLATFORM */}
-      <section className="relative overflow-hidden bg-white py-12 sm:py-16">
-        <div className="absolute left-[-140px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[110px]" />
-        <div className="absolute right-[-160px] bottom-[-120px] h-[440px] w-[440px] rounded-full bg-red-600/10 blur-[120px]" />
-
+      <section className="relative overflow-hidden py-12 sm:py-16">
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.65fr_1.35fr] lg:gap-28 lg:px-8">
           {/* TEXT */}
           <motion.div
@@ -250,7 +224,7 @@ export default function RDPage() {
               </span>
             </h2>
 
-            <p className="mt-5 max-w-[500px] text-[14px] leading-7 text-neutral-600 sm:mt-6 sm:text-[15px]">
+            <p className="mt-5 max-w-[500px] text-[14px] leading-7 text-neutral-900 sm:mt-6 sm:text-[15px]">
               {page.platformDesc}
             </p>
           </motion.div>
@@ -318,8 +292,7 @@ export default function RDPage() {
       </section>
 
       {/* SOLUTIONS */}
-      {/* SOLUTIONS */}
-      <section className="relative overflow-hidden bg-black py-16 text-white sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-black py-12 text-white sm:py-18 lg:py-20">
         <motion.img
           src={solutionsImg}
           alt="Application-Oriented Energy Solutions"
@@ -327,7 +300,7 @@ export default function RDPage() {
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 12, ease: "easeOut" }}
-          className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+          className="absolute inset-0 h-full w-full object-cover object-[center_84%]"
         />
 
         <div className="absolute inset-0 bg-black/10" />
@@ -374,7 +347,7 @@ export default function RDPage() {
       </section>
 
       {/* TEAM */}
-      <section className="bg-white py-12 sm:py-16">
+      <section className=" py-12 sm:py-16">
         <div
           className={`mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:gap-24 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
@@ -420,7 +393,7 @@ export default function RDPage() {
               <span className="block text-[#ee4036]">{page.teamTitle2}</span>
             </h2>
 
-            <p className="mt-6 text-[15px] leading-7 text-neutral-600">
+            <p className="mt-6 text-[15px] leading-7 text-neutral-900">
               {page.teamDesc}
             </p>
 
@@ -430,7 +403,7 @@ export default function RDPage() {
       </section>
 
       {/* QUALITY */}
-      <section className="bg-white py-12 sm:py-16">
+      <section className="py-12 sm:py-16">
         <div
           className={`mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-24 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
@@ -456,7 +429,7 @@ export default function RDPage() {
               {page.qualityTitle}
             </h2>
 
-            <p className="mt-6 text-[15px] leading-7 text-neutral-600">
+            <p className="mt-6 text-[15px] leading-7 text-neutral-900">
               {page.qualityDesc}
             </p>
 
@@ -486,9 +459,6 @@ export default function RDPage() {
 
       {/* TESTING */}
       <section className="relative overflow-hidden bg-[#07111d] py-12 text-white sm:py-16">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_50%,rgba(59,130,246,0.18),transparent_70%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_50%,rgba(238,64,54,0.08),transparent_30%)]" />
-
         <div
           className={`relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:gap-24 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
@@ -539,10 +509,7 @@ export default function RDPage() {
       </section>
 
       {/* GLOBAL STANDARDS */}
-      <section className="relative overflow-hidden bg-white py-12 sm:py-16">
-        <div className="absolute left-[-180px] top-[-120px] h-[420px] w-[420px] rounded-full bg-red-600/5 blur-[140px]" />
-        <div className="absolute right-[-180px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-slate-400/10 blur-[140px]" />
-
+      <section className="relative overflow-hidden  py-12 sm:py-16">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={fadeUp}
@@ -563,7 +530,7 @@ export default function RDPage() {
               </span>
             </h2>
 
-            <p className="mt-5 max-w-2xl text-[15px] leading-7 text-neutral-600">
+            <p className="mt-5 max-w-2xl text-[15px] leading-7 text-neutral-900">
               {page.standardsDesc}
             </p>
           </motion.div>
@@ -581,12 +548,16 @@ export default function RDPage() {
                 variants={fadeUp}
                 transition={{ duration: 0.45 }}
                 whileHover={{ y: -6 }}
-                className="group flex min-h-[170px] flex-col items-center justify-center rounded-[18px] border border-black/5 bg-white p-5 text-center shadow-[0_18px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-red-500/20 hover:shadow-[0_24px_60px_rgba(220,38,38,0.14)] sm:min-h-[210px] sm:p-6"
+                className="group flex min-h-[170px] flex-col items-center justify-center rounded-[18px] border border-black/5  p-5 text-center shadow-[0_18px_45px_rgba(0,0,0,0.07)] transition-all duration-300 hover:border-red-500/20 hover:shadow-[0_24px_60px_rgba(220,38,38,0.14)] sm:min-h-[210px] sm:p-6"
               >
                 <div
-                  className={`mb-6 flex h-[92px] w-[92px] items-center justify-center rounded-[18px] border ${item.logoBox}`}
+                  className={`mb-6 flex h-[92px] w-[92px] items-center justify-center overflow-hidden rounded-[18px] border bg-white ${item.logoBox}`}
                 >
-                  {item.logo}
+                  <img
+                    src={item.logo}
+                    alt={item.title}
+                    className="h-[55%] w-[55%] object-contain transition duration-300 group-hover:scale-105"
+                  />
                 </div>
 
                 <p className="min-h-[40px] text-[12px] font-black leading-5 text-neutral-700">
@@ -599,10 +570,7 @@ export default function RDPage() {
       </section>
 
       {/* PROCESS */}
-      <section className="relative overflow-hidden bg-[#f6f7f9] py-12 sm:py-16">
-        <div className="absolute left-[-180px] top-[-140px] h-[420px] w-[420px] rounded-full bg-red-600/5 blur-[140px]" />
-        <div className="absolute right-[-180px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-slate-400/10 blur-[140px]" />
-
+      <section className="relative overflow-hidden  py-12 sm:py-16">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-start gap-10 lg:grid-cols-[0.65fr_1.35fr]">
             <motion.div
@@ -624,7 +592,7 @@ export default function RDPage() {
                 </span>
               </h2>
 
-              <p className="mt-5 max-w-md text-[15px] leading-7 text-neutral-600">
+              <p className="mt-5 max-w-md text-[15px] leading-7 text-neutral-900">
                 {page.processDesc}
               </p>
             </motion.div>

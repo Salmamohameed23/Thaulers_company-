@@ -194,8 +194,6 @@ const FactoryPage = () => {
 
       {/* SERVICES */}
       <section className="relative overflow-hidden bg-white py-12 sm:py-14">
-        <div className="absolute left-[-160px] top-20 h-[360px] w-[360px] rounded-full bg-red-600/10 blur-[120px]" />
-        <div className="absolute right-[-160px] bottom-[-140px] h-[420px] w-[420px] rounded-full bg-red-600/10 blur-[130px]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center sm:mb-10">
@@ -265,7 +263,7 @@ const FactoryPage = () => {
       </section>
 
       {/* PROCESS */}
-      <section className="bg-neutral-50 py-12 sm:py-14">
+      <section className=" py-12 sm:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center sm:mb-12">
             <p
@@ -396,7 +394,7 @@ const FactoryPage = () => {
       </section>
 
       {/* FINAL SUPPORT SECTION */}
-      <section className="bg-neutral-50 py-12 sm:py-14">
+      <section className=" py-12 sm:py-14">
         <div
           className={`mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8 ${
             isAr ? "lg:[direction:rtl]" : ""
