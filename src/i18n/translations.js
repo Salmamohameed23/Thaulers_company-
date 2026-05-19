@@ -246,7 +246,7 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "Who We Are",
+      badge: "why us ",
       title1: "At Tough Haulers, we don’t just supply products —",
       title2: "we deliver complete, reliable, and long-term solutions.",
       p1: "With strong experience in solar power systems, smart energy storage, sourcing, and project execution, we support our clients from the first study until delivery, installation, and after-sales service.",
@@ -1100,7 +1100,7 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "من نحن",
+      badge: "لماذا نحن",
       title1: "في Tough Haulers،  نحن لا نكتفي بتوريد المنتجات —",
       title2: "بل نقدم حلولًا متكاملة وموثوقة وطويلة الأمد.",
       p1: "بخبرة واسعة في أنظمة الطاقة الشمسية، وحلول التخزين الذكي، والتوريد، وتنفيذ المشاريع، ندعم عملاءنا من مرحلة الدراسة الأولية وحتى التسليم والتركيب وخدمات ما بعد البيع.",
@@ -1954,7 +1954,7 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "关于我们",
+      badge: "为什么选择我们",
       title1: "在 Tough Haulers，我们不只是供应产品——",
       title2: "我们提供完整、可靠且长期稳定的解决方案。",
       p1: "凭借在太阳能系统、智能储能、采购供应及项目执行方面的丰富经验，我们从前期方案研究到交付、安装及售后服务，全流程支持客户项目落地。",
@@ -2771,7 +2771,7 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "О нас",
+      badge: "Почему мы",
       title1: "В Tough Haulers мы не просто поставляем продукты —",
       title2: "мы реализуем комплексные, надёжные и долгосрочные решения.",
       p1: "Обладая богатым опытом в области солнечных энергосистем, интеллектуального накопления энергии, закупок и реализации проектов, мы сопровождаем наших клиентов на всех этапах — от первоначального исследования до сдачи, монтажа и постпродажного обслуживания.",
@@ -3583,7 +3583,7 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "Über uns",
+      badge: "Warum wir",
       title1: "Bei Tough Haulers liefern wir nicht nur Produkte —",
       title2:
         "wir realisieren vollständige, zuverlässige und langfristige Lösungen.",
