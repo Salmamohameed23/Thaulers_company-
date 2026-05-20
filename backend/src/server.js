@@ -6,6 +6,10 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 
 import contactRoutes from "./routes/contactRoutes.js";
+import locationRoutes from "./routes/locationRoutes.js";
+import buildRequestRoutes from "./routes/buildRequestRoutes.js";
+
+
 
 dotenv.config();
 
@@ -40,6 +44,8 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/contact", contactRoutes);
+app.use("/api/locations", locationRoutes);
+app.use("/api/build-requests", buildRequestRoutes);
 
 const connectDB = async () => {
   try {

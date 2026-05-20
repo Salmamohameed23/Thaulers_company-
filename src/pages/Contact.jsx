@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Building2 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
+import { API_BASE_URL } from "../config/api";
 
 const Contact = () => {
   const { t, lang } = useLanguage();
@@ -56,13 +57,13 @@ const Contact = () => {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+     const res = await fetch(`${API_BASE_URL}/api/contact`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(formData),
+     });
 
       const data = await res.json();
 

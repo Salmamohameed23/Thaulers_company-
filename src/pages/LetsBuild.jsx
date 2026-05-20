@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Send } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
-
+import { API_BASE_URL } from "../config/api";
 import bgImg from "../assets/images/build_bg.png";
 
 import villaImg from "../assets/images/build_1.png";
@@ -79,20 +79,29 @@ const LetsBuild = () => {
   const [submitted, setSubmitted] = useState(false);
   const [locationQuery, setLocationQuery] = useState("");
   const [locationOpen, setLocationOpen] = useState(false);
-
-  const [form, setForm] = useState({
-    projectType: "",
-    solutions: [],
-    size: "",
-    timeline: "",
-    location: "",
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    notes: "",
-  });
-
+const [locationResults, setLocationResults] = useState([]);
+const [selectedLocation, setSelectedLocation] = useState(null);
+const [climateLoading, setClimateLoading] = useState(false);
+const [locationError, setLocationError] = useState("");
+const [form, setForm] = useState({
+  projectType: "",
+  solutions: [],
+  size: "",
+  timeline: "",
+  location: "",
+  latitude: "",
+  longitude: "",
+  timezone: "",
+  monthlyTemperatures: [],
+  name: "",
+  company: "",
+  email: "",
+  phone: "",
+  notes: "",
+});
+const [submitLoading, setSubmitLoading] = useState(false);
+const [submitError, setSubmitError] = useState("");
+const [referenceCode, setReferenceCode] = useState("");
   const projectTypes = page.projectTypes.map((item, index) => ({
     ...item,
     image: projectImages[index],
@@ -120,14 +129,82 @@ const LetsBuild = () => {
     });
   };
 
-  const filteredLocations = locations.filter((item) =>
-    item.name.toLowerCase().includes(locationQuery.toLowerCase()),
-  );
+const handleLocationSearch = async (value) => {
+  setLocationQuery(value);
+  setLocationOpen(true);
+  setLocationError("");
+  update("location", "");
+  setSelectedLocation(null);
 
-  const selectedLocation = locations.find(
-    (item) => item.name === form.location,
-  );
+  if (value.trim().length < 2) {
+    setLocationResults([]);
+    return;
+  }
 
+  try {
+    const res = await fetch(
+      `${API_BASE_URL}/api/locations/search?q=${encodeURIComponent(
+        value,
+      )}&lang=${lang}`,
+    );
+
+    const data = await res.json();
+
+    if (data.success) {
+      setLocationResults(data.data);
+    }
+  } catch (error) {
+    console.error(error);
+    setLocationError("Location search failed. Please try again.");
+  }
+};
+
+const handleSelectLocation = async (item) => {
+  setLocationQuery(item.displayName);
+
+  update("location", item.displayName);
+  update("latitude", item.latitude);
+  update("longitude", item.longitude);
+  update("timezone", item.timezone || "auto");
+
+  setLocationOpen(false);
+  setLocationResults([]);
+  setClimateLoading(true);
+  setLocationError("");
+
+  try {
+    const params = new URLSearchParams({
+      latitude: item.latitude,
+      longitude: item.longitude,
+      name: item.name,
+      country: item.country,
+      countryCode: item.countryCode || "",
+      timezone: item.timezone || "auto",
+    });
+
+   const res = await fetch(
+     `${API_BASE_URL}/api/locations/climate/monthly?${params.toString()}`,
+   );
+
+    const data = await res.json();
+
+    if (!data.success) {
+      throw new Error(data.message || "Climate request failed");
+    }
+
+    update("monthlyTemperatures", data.data.monthlyTemperatures);
+
+    setSelectedLocation({
+      ...item,
+      monthlyTemperatures: data.data.monthlyTemperatures,
+    });
+  } catch (error) {
+    console.error(error);
+    setLocationError("Climate data failed. Please select another city.");
+  } finally {
+    setClimateLoading(false);
+  }
+};
   const canContinue = useMemo(() => {
     if (step === 1) return Boolean(form.projectType);
     if (step === 2) return form.solutions.length > 0;
@@ -144,29 +221,66 @@ const LetsBuild = () => {
     if (step > 1) setStep((prev) => prev - 1);
   };
 
-  const submitInquiry = () => {
-    setSubmitted(true);
-  };
 
-  const resetWizard = () => {
-    setStep(1);
-    setSubmitted(false);
-    setLocationQuery("");
-    setLocationOpen(false);
-    setForm({
-      projectType: "",
-      solutions: [],
-      size: "",
-      timeline: "",
-      location: "",
-      name: "",
-      company: "",
-      email: "",
-      phone: "",
-      notes: "",
+
+const submitInquiry = async () => {
+  setSubmitLoading(true);
+  setSubmitError("");
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/build-requests`,  {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
     });
-  };
 
+    const data = await res.json();
+
+    if (!res.ok || !data.success) {
+      throw new Error(data.message || "Failed to submit request");
+    }
+
+    setReferenceCode(data.referenceCode);
+    setSubmitted(true);
+  } catch (error) {
+    console.error(error);
+    setSubmitError("Request submission failed. Please try again.");
+  } finally {
+    setSubmitLoading(false);
+  }
+};
+
+const resetWizard = () => {
+  setStep(1);
+  setSubmitted(false);
+  setLocationQuery("");
+  setLocationOpen(false);
+  setLocationResults([]);
+  setSelectedLocation(null);
+  setClimateLoading(false);
+  setLocationError("");
+  setSubmitError("");
+  setReferenceCode("");
+
+  setForm({
+    projectType: "",
+    solutions: [],
+    size: "",
+    timeline: "",
+    location: "",
+    latitude: "",
+    longitude: "",
+    timezone: "",
+    monthlyTemperatures: [],
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    notes: "",
+  });
+};
   const progress = submitted ? 100 : (step / 5) * 100;
 
   const renderOptionCard = (item, active, onClick) => (
@@ -413,36 +527,40 @@ const LetsBuild = () => {
                           type="text"
                           value={locationQuery || form.location}
                           onFocus={() => setLocationOpen(true)}
-                          onChange={(e) => {
-                            setLocationQuery(e.target.value);
-                            setLocationOpen(true);
-                            update("location", "");
-                          }}
+                          onChange={(e) => handleLocationSearch(e.target.value)}
                           placeholder={page.locationPlaceholder}
                           className={`h-14 w-full rounded-2xl border border-black/10 bg-white px-5 text-base font-medium outline-none sm:text-[15px] transition focus:border-red-600 ${
                             isAr ? "text-right" : ""
                           }`}
                         />
 
-                        {locationOpen && filteredLocations.length > 0 && (
+                        {locationOpen && locationResults.length > 0 && (
                           <div className="mt-3 max-h-[240px] overflow-y-auto rounded-2xl border border-black/10 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.10)]">
-                            {filteredLocations.map((item) => (
+                            {locationResults.map((item) => (
                               <button
-                                key={item.name}
+                                key={item.id}
                                 type="button"
-                                onClick={() => {
-                                  update("location", item.name);
-                                  setLocationQuery(item.name);
-                                  setLocationOpen(false);
-                                }}
+                                onClick={() => handleSelectLocation(item)}
                                 className={`block w-full px-5 py-4 text-[15px] font-semibold text-neutral-700 transition hover:bg-red-50 hover:text-red-600 ${
                                   isAr ? "text-right" : "text-left"
                                 }`}
                               >
-                                {item.name}
+                                {item.displayName}
                               </button>
                             ))}
                           </div>
+                        )}
+
+                        {climateLoading && (
+                          <p className="mt-3 text-sm font-semibold text-red-600">
+                            Loading monthly temperature data...
+                          </p>
+                        )}
+
+                        {locationError && (
+                          <p className="mt-3 text-sm font-semibold text-red-600">
+                            {locationError}
+                          </p>
                         )}
 
                         {selectedLocation && (
@@ -464,31 +582,34 @@ const LetsBuild = () => {
                             </div>
 
                             <div className="grid grid-cols-3 gap-3 sm:grid-cols-6 md:grid-cols-12">
-                              {selectedLocation.temps.map((temp, index) => {
-                                const height = Math.max(36, temp * 2.2);
+                              {selectedLocation.monthlyTemperatures.map(
+                                (item, index) => {
+                                  const temp = item.temp;
+                                  const height = Math.max(36, temp * 2.2);
 
-                                return (
-                                  <div
-                                    key={months[index]}
-                                    className="flex flex-col items-center gap-2"
-                                  >
-                                    <div className="flex h-[90px] sm:h-[110px] items-end">
-                                      <div
-                                        className="w-5 rounded-full bg-red-600/80 shadow-[0_8px_20px_rgba(220,38,38,0.22)]"
-                                        style={{ height: `${height}px` }}
-                                      />
+                                  return (
+                                    <div
+                                      key={item.month}
+                                      className="flex flex-col items-center gap-2"
+                                    >
+                                      <div className="flex h-[90px] sm:h-[110px] items-end">
+                                        <div
+                                          className="w-5 rounded-full bg-red-600/80 shadow-[0_8px_20px_rgba(220,38,38,0.22)]"
+                                          style={{ height: `${height}px` }}
+                                        />
+                                      </div>
+
+                                      <p className="text-[11px] font-bold text-neutral-400">
+                                        {item.month}{" "}
+                                      </p>
+
+                                      <p className="text-[12px] font-black text-neutral-900">
+                                        {temp}°
+                                      </p>
                                     </div>
-
-                                    <p className="text-[11px] font-bold text-neutral-400">
-                                      {months[index]}
-                                    </p>
-
-                                    <p className="text-[12px] font-black text-neutral-900">
-                                      {temp}°
-                                    </p>
-                                  </div>
-                                );
-                              })}
+                                  );
+                                },
+                              )}
                             </div>
                           </div>
                         )}
@@ -631,31 +752,34 @@ const LetsBuild = () => {
                           </div>
 
                           <div className="grid grid-cols-3 gap-3 sm:grid-cols-6 md:grid-cols-12">
-                            {selectedLocation.temps.map((temp, index) => {
-                              const height = Math.max(36, temp * 2.2);
+                            {selectedLocation.monthlyTemperatures.map(
+                              (item, index) => {
+                                const temp = item.temp;
+                                const height = Math.max(36, temp * 2.2);
 
-                              return (
-                                <div
-                                  key={months[index]}
-                                  className="flex flex-col items-center gap-2"
-                                >
-                                  <div className="flex h-[90px] sm:h-[110px] items-end">
-                                    <div
-                                      className="w-5 rounded-full bg-red-600/80 shadow-[0_8px_20px_rgba(220,38,38,0.22)]"
-                                      style={{ height: `${height}px` }}
-                                    />
+                                return (
+                                  <div
+                                    key={item.month}
+                                    className="flex flex-col items-center gap-2"
+                                  >
+                                    <div className="flex h-[90px] sm:h-[110px] items-end">
+                                      <div
+                                        className="w-5 rounded-full bg-red-600/80 shadow-[0_8px_20px_rgba(220,38,38,0.22)]"
+                                        style={{ height: `${height}px` }}
+                                      />
+                                    </div>
+
+                                    <p className="text-[11px] font-bold text-neutral-400">
+                                      {item.month}
+                                    </p>
+
+                                    <p className="text-[12px] font-black text-neutral-900">
+                                      {temp}°
+                                    </p>
                                   </div>
-
-                                  <p className="text-[11px] font-bold text-neutral-400">
-                                    {months[index]}
-                                  </p>
-
-                                  <p className="text-[12px] font-black text-neutral-900">
-                                    {temp}°
-                                  </p>
-                                </div>
-                              );
-                            })}
+                                );
+                              },
+                            )}
                           </div>
                         </motion.div>
                       )}
@@ -699,16 +823,25 @@ const LetsBuild = () => {
                         )}
                       </button>
                     ) : (
-                      <button
-                        type="button"
-                        onClick={submitInquiry}
-                        className={`inline-flex items-center gap-3 rounded-2xl bg-red-600 px-8 py-4 text-sm font-medium text-white transition hover:bg-neutral-950 ${
-                          isAr ? "flex-row-reverse" : ""
-                        }`}
-                      >
-                        {page.submit}
-                        <Send size={16} />
-                      </button>
+                      <div>
+                        <button
+                          type="button"
+                          onClick={submitInquiry}
+                          disabled={submitLoading}
+                          className={`inline-flex items-center gap-3 rounded-2xl bg-red-600 px-8 py-4 text-sm font-medium text-white transition hover:bg-neutral-950 disabled:cursor-not-allowed disabled:bg-neutral-300 ${
+                            isAr ? "flex-row-reverse" : ""
+                          }`}
+                        >
+                          {submitLoading ? "Submitting..." : page.submit}
+                          <Send size={16} />
+                        </button>
+
+                        {submitError && (
+                          <p className="mt-4 text-sm font-semibold text-red-600">
+                            {submitError}
+                          </p>
+                        )}
+                      </div>
                     )}
                   </div>
                 </>
@@ -734,7 +867,7 @@ const LetsBuild = () => {
                   <div className="mx-auto mt-7 w-fit rounded-2xl border border-black/10 bg-neutral-50 px-6 py-4 text-sm text-neutral-600">
                     {page.reference}{" "}
                     <span className="font-medium text-neutral-950">
-                      THL-{Date.now().toString().slice(-6)}
+                      {referenceCode}{" "}
                     </span>
                   </div>
 

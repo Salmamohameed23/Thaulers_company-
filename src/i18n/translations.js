@@ -133,7 +133,7 @@ export const translations = {
       location1:
         "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
-      copyright: "© 2026 Tough Haulers Trade Limited. All rights reserved.",
+      copyright: "Copy right ©  Tough Haulers Trade Limited 2026 - All rights reserved.",
       slogan: "Powering a sustainable future",
 
       links: {
