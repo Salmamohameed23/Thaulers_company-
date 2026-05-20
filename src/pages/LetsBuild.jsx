@@ -226,16 +226,13 @@ const submitInquiry = async () => {
   setSubmitError("");
 
   try {
-  const res = await fetch(
-    "https://thaulers-company.onrender.com/api/build-requests",
-    {
+    const res = await fetch(`${API_BASE_URL}/api/build-requests`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(form),
-    },
-  );
+    });
 
     const data = await res.json();
 
