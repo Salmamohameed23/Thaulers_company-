@@ -2,9 +2,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Send } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
-import { API_BASE_URL } from "../config/api";
 import bgImg from "../assets/images/build_bg.png";
-
 import villaImg from "../assets/images/build_1.png";
 import hotelImg from "../assets/images/build_2.png";
 import commercialImg from "../assets/images/build_3.png";
@@ -16,7 +14,7 @@ import solarImg from "../assets/images/build_7.png";
 import batteryImg from "../assets/images/build_8.png";
 import offgridImg from "../assets/images/build_9.png";
 import epcImg from "../assets/images/build_10.png";
-
+import API_BASE_URL from "../../backend/src/config/api.js";
 const projectImages = [
   villaImg,
   hotelImg,
@@ -143,7 +141,9 @@ const handleLocationSearch = async (value) => {
 
   try {
     const res = await fetch(
-      `https://thaulers-company.onrender.com/api/locations/search?q=${encodeURIComponent(value)}&lang=${lang}`,
+      `${API_BASE_URL}/api/locations/search?q=${encodeURIComponent(
+        value,
+      )}&lang=${lang}`,
     );
 
     const data = await res.json();
@@ -180,9 +180,9 @@ const handleSelectLocation = async (item) => {
       timezone: item.timezone || "auto",
     });
 
- const res = await fetch(
-   `https://thaulers-company.onrender.com/api/locations/climate/monthly?${params.toString()}`,
- );
+const res = await fetch(
+  `${API_BASE_URL}/api/locations/climate/monthly?${params.toString()}`,
+);
 
     const data = await res.json();
 

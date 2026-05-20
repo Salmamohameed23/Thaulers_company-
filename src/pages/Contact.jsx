@@ -2,8 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Building2 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
-import { API_BASE_URL } from "../config/api";
-
+import API_BASE_URL from "../../backend/src/config/api.js";
 const Contact = () => {
   const { t, lang } = useLanguage();
   const isAr = lang === "ar";
@@ -57,20 +56,17 @@ const Contact = () => {
     try {
       setLoading(true);
 
-    const res = await fetch(
-      "https://thaulers-company.onrender.com/api/contact",
-      {
+      const res = await fetch(`${API_BASE_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      },
-    );
+      });
 
       const data = await res.json();
 
-      if (!res.ok || !data.success) {
+      if (!res.ok) {
         throw new Error(data.message || "Failed to send message");
       }
 
