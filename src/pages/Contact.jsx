@@ -57,13 +57,16 @@ const Contact = () => {
     try {
       setLoading(true);
 
-     const res = await fetch(`${API_BASE_URL}/api/contact`, {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json",
-       },
-       body: JSON.stringify(formData),
-     });
+    const res = await fetch(
+      "https://thaulers-company.onrender.com/api/contact",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      },
+    );
 
       const data = await res.json();
 

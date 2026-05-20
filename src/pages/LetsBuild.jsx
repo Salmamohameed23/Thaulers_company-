@@ -143,9 +143,7 @@ const handleLocationSearch = async (value) => {
 
   try {
     const res = await fetch(
-      `${API_BASE_URL}/api/locations/search?q=${encodeURIComponent(
-        value,
-      )}&lang=${lang}`,
+      `https://thaulers-company.onrender.com/api/locations/search?q=${encodeURIComponent(value)}&lang=${lang}`,
     );
 
     const data = await res.json();
@@ -182,9 +180,9 @@ const handleSelectLocation = async (item) => {
       timezone: item.timezone || "auto",
     });
 
-   const res = await fetch(
-     `${API_BASE_URL}/api/locations/climate/monthly?${params.toString()}`,
-   );
+ const res = await fetch(
+   `https://thaulers-company.onrender.com/api/locations/climate/monthly?${params.toString()}`,
+ );
 
     const data = await res.json();
 
@@ -228,13 +226,16 @@ const submitInquiry = async () => {
   setSubmitError("");
 
   try {
-    const res = await fetch(`${API_BASE_URL}/api/build-requests`,  {
+  const res = await fetch(
+    "https://thaulers-company.onrender.com/api/build-requests",
+    {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(form),
-    });
+    },
+  );
 
     const data = await res.json();
 
