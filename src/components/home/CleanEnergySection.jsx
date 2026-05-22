@@ -11,11 +11,10 @@ const CleanEnergySection = () => {
   return (
     <section
       dir={isAr ? "rtl" : "ltr"}
-      className={`relative overflow-hidden bg-white py-12 text-black sm:py-16 lg:py-12 ${
+      className={`relative overflow-hidden bg-white py-12 sm:py-14 lg:py-16 ${
         isAr ? "font-[Cairo]" : ""
       }`}
     >
-     
       <div className="relative mx-auto grid max-w-6xl items-center gap-8 px-4 sm:gap-10 sm:px-6 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 26 }}

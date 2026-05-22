@@ -7,12 +7,17 @@ const Footer = () => {
   const { t, lang } = useLanguage();
   const isAr = lang === "ar";
 
-  const solutions = [
-    { name: t.footer.links.smart, path: "/smart-storage" },
-    { name: t.footer.links.factory, path: "/factory" },
-    { name: t.footer.links.giga, path: "/gigawatt-projects" },
-  ];
-
+const solutions = [
+  { name: t.footer.links.solarEnergy, path: "/solutions/solar-energy" },
+  { name: t.footer.links.bikes, path: "/solutions/bikes" },
+  { name: t.footer.links.kitchenware, path: "/solutions/kitchenware" },
+  {
+    name: t.footer.links.productionLines,
+    path: "/solutions/complete-industrial-production-lines",
+  },
+  { name: t.footer.links.hotel, path: "/solutions/hotel" },
+  { name: t.footer.links.tools, path: "/solutions/tools" },
+];
   const legal = [
     { name: t.footer.links.privacy, path: "/privacy-policy" },
     { name: t.footer.links.terms, path: "/terms-of-service" },
@@ -22,12 +27,12 @@ const Footer = () => {
     isAr ? "flex-row-reverse text-right" : ""
   }`;
 
-const sectionTitleClass = `flex min-h-[34px] items-center font-bold text-[#ee4036] ${
+const sectionTitleClass = `flex min-h-[15px] items-center font-bold text-[#ee4036] ${
   isAr
     ? "w-full text-[13px] tracking-normal text-right justify-start"
     : "text-[11px] uppercase tracking-[0.32em] sm:text-[12px] sm:tracking-[0.42em]"
 }`;
-  const redLineClass = `mt-5 h-[3px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)] sm:mt-8 ${
+  const redLineClass = `mt-[-4] h-[2px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)] sm:mt-8 ${
     isAr ? "ml-0 mr-auto lg:ml-auto lg:mr-0" : ""
   }`;
 
@@ -63,7 +68,7 @@ const sectionTitleClass = `flex min-h-[34px] items-center font-bold text-[#ee403
                 <img
                   src={logo}
                   alt="Tough Haulers"
-                  className={`mt-[-62px] -translate-x-[29px] w-[300px] object-contain ${
+                  className={`mt-[-70px] -translate-x-[29px] w-[300px] object-contain ${
                     isAr ? "translate-x-[35px]" : "-translate-x-[10px]"
                   }`}
                 />
@@ -86,7 +91,7 @@ const sectionTitleClass = `flex min-h-[34px] items-center font-bold text-[#ee403
 
           {/* Solutions */}
           <div
-            className={`lg:border-white/10 lg:px-8 ${
+            className={`lg:border-white/10 lg:px-8 mt-[-7] ${
               isAr ? "text-right lg:border-l" : "lg:border-r"
             }`}
           >

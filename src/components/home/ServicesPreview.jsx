@@ -39,7 +39,7 @@ const ServicesPreview = () => {
   return (
     <section
       dir={isAr ? "rtl" : "ltr"}
-      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-16 lg:py-12 ${
+      className={`relative overflow-hidden bg-white py-12 text-neutral-950 sm:py-14 lg:py-16 ${
         isAr ? "font-[Cairo]" : ""
       }`}
     >
@@ -70,7 +70,7 @@ const ServicesPreview = () => {
         </div>
 
         {/* CARDS */}
-        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((item, i) => {
             const Icon = item.icon;
 

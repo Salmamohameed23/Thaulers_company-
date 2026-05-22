@@ -133,13 +133,17 @@ export const translations = {
       location1:
         "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
-      copyright: "Copy right ©  Tough Haulers Trade Limited 2026 - All rights reserved.",
+      copyright:
+        "Copy right ©  Tough Haulers Trade Limited 2026 - All rights reserved.",
       slogan: "Powering a sustainable future",
 
       links: {
-        smart: "Smart Storage",
-        factory: "Factory Solutions",
-        giga: "Gigawatt Projects",
+        solarEnergy: "Solar Energy",
+        bikes: "Bikes",
+        kitchenware: "Kitchenware",
+        productionLines: "Complete Industrial Production Lines",
+        hotel: "Hotel",
+        tools: "Tools",
         privacy: "Privacy Policy",
         terms: "Terms of Service",
       },
@@ -851,6 +855,20 @@ export const translations = {
         "Planning stage",
       ],
     },
+    solarAction: {
+      letsBuild: {
+        badge: "Project Planning",
+        title: "Let’s Build Your Energy Project",
+        desc: "Start with project requirements, location, capacity, and technical specifications so our engineering team can design the right solar and energy storage solution.",
+        button: "View More",
+      },
+      rd: {
+        badge: "R&D Capability",
+        title: "Research, Testing & Engineering Support",
+        desc: "Discover how engineering development, testing, and technical validation support reliable energy solutions.",
+        button: "View More",
+      },
+    },
   },
 
   ar: {
@@ -991,9 +1009,12 @@ export const translations = {
       slogan: "نقود مستقبل الطاقة المستدامة",
 
       links: {
-        smart: "حلول التخزين الذكي ",
-        factory: "حلول المصانع والمنشأت",
-        giga: " مشاريع الطاقة العملاقة",
+        solarEnergy: "الطاقة الشمسية",
+        bikes: "الدراجات",
+        kitchenware: "أدوات المطبخ",
+        productionLines: "خطوط إنتاج صناعية متكاملة",
+        hotel: "مستلزمات الفنادق",
+        tools: "الأدوات",
         privacy: "سياسة الخصوصية",
         terms: "الشروط والأحكام العامة",
       },
@@ -1714,6 +1735,20 @@ export const translations = {
         "في مرحلة التخطيط",
       ],
     },
+    solarAction: {
+      letsBuild: {
+        badge: "تخطيط المشروع",
+        title: "لنبدأ تنفيذ مشروع الطاقة الخاص بك",
+        desc: "ابدأ بتحديد متطلبات المشروع والموقع والسعة والاحتياجات الفنية، ليقوم فريقنا الهندسي بتصميم الحل المناسب للطاقة الشمسية وأنظمة التخزين.",
+        button: "عرض التفاصيل",
+      },
+      rd: {
+        badge: "البحث والتطوير",
+        title: "البحث والاختبار والدعم الهندسي",
+        desc: "تعرّف على كيفية دعم الحلول الموثوقة من خلال التطوير الهندسي والاختبارات والتحقق الفني.",
+        button: "عرض التفاصيل",
+      },
+    },
   },
   zh: {
     nav: {
@@ -1852,9 +1887,12 @@ export const translations = {
       slogan: "推动可持续能源未来",
 
       links: {
-        smart: "储能系统",
-        factory: "工厂解决方案",
-        giga: "吉瓦级项目",
+        solarEnergy: "太阳能",
+        bikes: "自行车",
+        kitchenware: "厨具",
+        productionLines: "完整工业生产线",
+        hotel: "酒店用品",
+        tools: "工具",
         privacy: "隐私政策",
         terms: "服务条款",
       },
@@ -2535,6 +2573,20 @@ export const translations = {
         "规划阶段",
       ],
     },
+    solarAction: {
+      letsBuild: {
+        badge: "项目规划",
+        title: "启动您的能源项目",
+        desc: "提供项目需求、地点、容量及技术参数，我们的工程团队将为您设计合适的太阳能与储能解决方案。",
+        button: "查看详情",
+      },
+      rd: {
+        badge: "研发能力",
+        title: "研发、测试与工程支持",
+        desc: "了解我们如何通过工程开发、测试与技术验证，为能源项目提供可靠支持。",
+        button: "查看详情",
+      },
+    },
   },
   ru: {
     nav: {
@@ -2664,9 +2716,12 @@ export const translations = {
       copyright: "© 2026 Tough Haulers Trade Limited. Все права защищены.",
       slogan: "Обеспечивая устойчивое энергетическое будущее",
       links: {
-        smart: "Умные системы хранения",
-        factory: "Заводские решения",
-        giga: "Гигаваттные проекты",
+        solarEnergy: "Солнечная энергия",
+        bikes: "Велосипеды",
+        kitchenware: "Кухонные принадлежности",
+        productionLines: "Комплексные промышленные производственные линии",
+        hotel: "Товары для отелей",
+        tools: "Инструменты",
         privacy: "Политика конфиденциальности",
         terms: "Условия использования",
       },
@@ -3347,6 +3402,20 @@ export const translations = {
         "Стадия планирования",
       ],
     },
+    solarAction: {
+      letsBuild: {
+        badge: "Планирование проекта",
+        title: "Запустите ваш энергетический проект",
+        desc: "Укажите требования проекта, локацию, мощность и технические параметры, чтобы наша инженерная команда разработала подходящее решение для солнечной энергии и хранения.",
+        button: "Подробнее",
+      },
+      rd: {
+        badge: "R&D возможности",
+        title: "Исследования, тестирование и инженерная поддержка",
+        desc: "Узнайте, как инженерные разработки, тестирование и техническая проверка поддерживают надёжные энергетические решения.",
+        button: "Подробнее",
+      },
+    },
   },
 
   de: {
@@ -3476,9 +3545,12 @@ export const translations = {
       copyright: "© 2026 Tough Haulers Trade Limited. Alle Rechte vorbehalten.",
       slogan: "Eine nachhaltige Energiezukunft gestalten",
       links: {
-        smart: "Smart Storage",
-        factory: "Werkslösungen",
-        giga: "Gigawatt-Projekte",
+        solarEnergy: "Solarenergie",
+        bikes: "Fahrräder",
+        kitchenware: "Küchenwaren",
+        productionLines: "Komplette industrielle Produktionslinien",
+        hotel: "Hotelausstattung",
+        tools: "Werkzeuge",
         privacy: "Datenschutzrichtlinie",
         terms: "Nutzungsbedingungen",
       },
@@ -4161,6 +4233,20 @@ export const translations = {
         "6–12 Monate",
         "Planungsphase",
       ],
+    },
+    solarAction: {
+      letsBuild: {
+        badge: "Projektplanung",
+        title: "Starten Sie Ihr Energieprojekt",
+        desc: "Geben Sie Projektanforderungen, Standort, Kapazität und technische Details an, damit unser Ingenieurteam die passende Solar- und Speicherlösung entwickeln kann.",
+        button: "Mehr erfahren",
+      },
+      rd: {
+        badge: "F&E Kompetenz",
+        title: "Forschung, Tests & Engineering Support",
+        desc: "Erfahren Sie, wie technische Entwicklung, Tests und Validierung zuverlässige Energielösungen unterstützen.",
+        button: "Mehr erfahren",
+      },
     },
   },
 };
