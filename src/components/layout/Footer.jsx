@@ -8,15 +8,15 @@ const Footer = () => {
   const isAr = lang === "ar";
 
 const solutions = [
-  { name: t.footer.links.solarEnergy, path: "/solutions/solar-energy" },
-  { name: t.footer.links.bikes, path: "/solutions/bikes" },
+  { name: t.footer.links.solarPower, path: "/solutions/solar-power" },
+  { name: t.footer.links.scooters, path: "/solutions/electric-scooters" },
   { name: t.footer.links.kitchenware, path: "/solutions/kitchenware" },
   {
     name: t.footer.links.productionLines,
     path: "/solutions/complete-industrial-production-lines",
   },
-  { name: t.footer.links.hotel, path: "/solutions/hotel" },
-  { name: t.footer.links.tools, path: "/solutions/tools" },
+  { name: t.footer.links.hotelSupplies, path: "/solutions/hotel-supplies" },
+  { name: t.footer.links.toolsHardware, path: "/solutions/tools-hardware" },
 ];
   const legal = [
     { name: t.footer.links.privacy, path: "/privacy-policy" },
