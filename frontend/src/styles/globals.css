@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   FS FUTURE FONT
+========================= */
+@font-face {
+  font-family: "FS Future";
+  src: url("../assets/fonts/FUTURAB.TTF") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   CAIRO FONT (ARABIC)
+========================= */
+@font-face {
+  font-family: "Cairo";
+  src: url("../assets/fonts/Cairo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../assets/fonts/Cairo-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../assets/fonts/Cairo-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   GLOBAL RESET + FONT
+========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #07090c;
+  color: #f5f7fa;
+  font-family: "FS Future", Arial, sans-serif;
+}
+
+/* يخلي كل حاجة تورث الخط */
+body * {
+  font-family: inherit;
+}
+
+/* =========================
+   ARABIC OVERRIDE
+========================= */
+html[lang="ar"] body,
+html[lang="ar"] body * {
+  font-family: "Cairo", system-ui, sans-serif;
+}
+
+/* =========================
+   SCROLLBAR HIDE
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
