@@ -1,223 +1,274 @@
-import { motion } from "framer-motion";
 import {
+  Target,
+  Eye,
+  Sun,
   BatteryCharging,
-  Factory,
+  HardHat,
+  Globe2,
   ShieldCheck,
-  SunMedium,
-  Headphones,
+  Truck,
+  Users,
+  PackageCheck,
+  Factory,
+  Award,
+  Handshake,
+  Leaf,
+  MapPin,
+  Building2,
 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 
-const About = () => {
+const statIcons = [Building2, Globe2, Factory, PackageCheck];
+const whatIcons = [
+  Sun,
+  Factory,
+  Globe2,
+  BatteryCharging,
+  PackageCheck,
+  HardHat,
+  Eye,
+  ShieldCheck,
+];
+const reasonIcons = [ShieldCheck, Award, Handshake, Truck, Globe2, Leaf];
+const peopleIcons = [HardHat, Users, Handshake];
+
+const ImageBlock = ({ src, className = "", children }) => {
+  return (
+    <div className={`relative overflow-hidden bg-zinc-100 ${className}`}>
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${src})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-black/30" />
+      {children}
+    </div>
+  );
+};
+
+const Whyus = () => {
   const { t, lang } = useLanguage();
+  const page = t.aboutPage;
   const isAr = lang === "ar";
-
-  const capabilities = [
-    {
-      icon: SunMedium,
-      title: t.aboutPage.capabilities[0].title,
-      text: t.aboutPage.capabilities[0].text,
-    },
-    {
-      icon: BatteryCharging,
-      title: t.aboutPage.capabilities[1].title,
-      text: t.aboutPage.capabilities[1].text,
-    },
-    {
-      icon: Factory,
-      title: t.aboutPage.capabilities[2].title,
-      text: t.aboutPage.capabilities[2].text,
-    },
-    {
-      icon: Headphones,
-      title: t.aboutPage.capabilities[3].title,
-      text: t.aboutPage.capabilities[3].text,
-    },
-  ];
-
-  const positioning = t.aboutPage.positioningItems;
 
   return (
     <main
-      className={`bg-white text-neutral-950 overflow-x-hidden ${
-        isAr ? "font-[Cairo] text-right" : ""
-      }`}
       dir={isAr ? "rtl" : "ltr"}
+      className={`min-h-screen bg-white text-zinc-950 ${
+        isAr ? "font-[Cairo]" : "font-sans"
+      }`}
     >
-      <section className="relative bg-white py-12">
-        {" "}
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-5xl"
-          >
-            <p
-              className={`mb-3 text-xs font-black text-[#ee4036] ${
-                isAr
-                  ? "tracking-normal text-right"
-                  : "uppercase tracking-[0.13em] sm:tracking-[0.28em]"
-              }`}
-            >
-              {t.aboutPage.badge}
-            </p>
+      {/* HERO */}
+      <section className="relative min-h-[460px] overflow-hidden bg-black">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/about/about-hero.jpg')" }}
+        />
+        <div
+          className={`absolute inset-0 ${
+            isAr
+              ? "bg-gradient-to-l from-black via-black/70 to-black/20"
+              : "bg-gradient-to-r from-black via-black/70 to-black/20"
+          }`}
+        />
 
-            <h1
-              className={`max-w-5xl font-black 
-  text-[28px] sm:text-[34px] lg:text-[68px] 
-  ${
-    isAr
-      ? "leading-[1.5] tracking-normal text-right"
-      : "leading-[1.4] tracking-[0em]"
-  }`}
-            >
-              {t.aboutPage.title1}
-
-              <span className="block leading-[1.5] text-[#ee4036]">
-                {t.aboutPage.title2}
-              </span>
+        <div className="relative mx-auto flex min-h-[460px] max-w-7xl items-center px-5 lg:px-8">
+          <div className={`max-w-3xl ${isAr ? "mr-auto text-right" : ""}`}>
+            <h1 className="text-5xl font-black leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
+              {page.heroTitle}
             </h1>
-
-            <p className="mt-3 max-w-4xl text-[17px] leading-8 text-neutral-900 sm:text-lg">
-              {t.aboutPage.p1}
+            <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-zinc-100 md:text-xl">
+              {page.heroDesc}
             </p>
-
-            <p className="mt-3 max-w-4xl text-[17px] leading-8 text-neutral-900 sm:text-lg">
-              {t.aboutPage.p2}
-            </p>
-
-            <p className="mt-3 max-w-4xl text-[17px] leading-8 text-neutral-900 sm:text-lg">
-              {t.aboutPage.goalLabel}
-              <span className="font-semibold text-[17px] text-[#ee4036]">
-                {" "}
-                {t.aboutPage.goalText}
-              </span>
-            </p>
-          </motion.div>
+            <div
+              className={`mt-7 h-1 w-16 bg-[#ef3b35] ${isAr ? "mr-auto" : ""}`}
+            />
+          </div>
         </div>
       </section>
 
-      <section className="relative bg-white py-12 ">
-        
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.7 }}
-          >
-            <p
-              className={`mb-3 text-xs font-black text-[#ee4036] ${
-                isAr
-                  ? "tracking-normal text-right"
-                  : "uppercase tracking-[0.18em] sm:tracking-[0.28em]"
-              }`}
-            >
-              {t.aboutPage.positioningBadge}
-            </p>
-
-            <h2 className="text-[30px] font-black sm:text-[36px] leading-[1.08] tracking-[-0.04em] sm:text-5xl">
-              {t.aboutPage.positioningTitle1}
-              <span className="block text-[#ee4036]">
-                {t.aboutPage.positioningTitle2}
-              </span>
+      {/* OVERVIEW */}
+      <section className="bg-white py-16">
+        <div className="mx-auto grid max-w-7xl items-start gap-10 px-5 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
+          <div className={isAr ? "text-right" : ""}>
+            <h2 className="text-4xl font-black text-zinc-950">
+              {page.overviewTitle}
             </h2>
-
-            <p className="mt-6 text-[16px] leading-8 text-neutral-900">
-              {t.aboutPage.positioningP1}
+            <div
+              className={`mt-4 h-1 w-14 bg-[#ef3b35] ${isAr ? "mr-auto" : ""}`}
+            />
+            <p className="mt-6 text-lg leading-8 text-zinc-700">
+              {page.overviewP1}
+            </p>
+            <p className="mt-4 text-lg leading-8 text-zinc-700">
+              {page.overviewP2}
             </p>
 
-            <p className="mt-5 text-[16px] leading-8 text-neutral-900">
-              {t.aboutPage.positioningP2}
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="rounded-[34px] border border-black/10 bg-white p-5 shadow-[0_25px_70px_rgba(0,0,0,0.08)] sm:p-7"
-          >
-            <div className="grid gap-4 sm:grid-cols-2">
-              {positioning.map((item, index) => (
-                <div
-                  key={item}
-                  className="rounded-3xl border border-black/10 bg-white p-5 shadow-[0_12px_32px_rgba(0,0,0,0.045)]"
-                >
-                  <p className="mb-4 text-5xl font-black text-black/[0.05]">
-                    {index + 1}
-                  </p>
-
-                  <div className="flex items-start gap-3">
-                    <ShieldCheck
-                      size={20}
-                      className="mt-1 shrink-0 text-[#ee4036]"
-                    />
-                    <p className="text-[15px] font-semibold leading-7 text-neutral-800">
-                      {item}
+            <div className="mt-9 grid grid-cols-2 gap-6 md:grid-cols-4">
+              {page.stats.map(({ value, label }, index) => {
+                const Icon = statIcons[index] || Building2;
+                return (
+                  <div key={label}>
+                    <Icon className="text-zinc-950" size={30} />
+                    <p className="mt-3 text-2xl font-black text-[#ef3b35]">
+                      {value}
                     </p>
+                    <p className="text-sm font-bold text-zinc-600">{label}</p>
                   </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="relative bg-white py-12">
-        {" "}
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl">
-              <p
-                className={`mb-4 text-xs font-black text-[#ee4036] ${
-                  isAr
-                    ? "tracking-normal text-right"
-                    : "uppercase tracking-[0.18em] sm:tracking-[0.28em]"
-                }`}
-              >
-                {t.aboutPage.capabilitiesBadge}
-              </p>
-
-              <h2 className="text-[32px] font-black sm:text-[38px] leading-[1.05] tracking-[-0.04em] sm:text-5xl">
-                {t.aboutPage.capabilitiesTitle1}
-                <span className="block text-[#ee4036]">
-                  {t.aboutPage.capabilitiesTitle2}
-                </span>
-              </h2>
+                );
+              })}
             </div>
           </div>
 
-          <div className="mx-auto grid max-w-6xl gap-7 md:grid-cols-2 lg:grid-cols-4 justify-items-center">
-            {capabilities.map((item, index) => {
-              const Icon = item.icon;
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-3xl border border-zinc-100 bg-white p-8 shadow-sm">
+              <Target className="text-[#ef3b35]" size={38} />
+              <h3 className="mt-6 text-2xl font-black text-zinc-950">
+                {page.missionTitle}
+              </h3>
+              <div className="mt-3 h-1 w-10 bg-[#ef3b35]" />
+              <p className="mt-5 leading-8 text-zinc-600">{page.missionText}</p>
+            </div>
 
+            <div className="rounded-3xl border border-zinc-100 bg-white p-8 shadow-sm">
+              <Eye className="text-[#ef3b35]" size={38} />
+              <h3 className="mt-6 text-2xl font-black text-zinc-950">
+                {page.visionTitle}
+              </h3>
+              <div className="mt-3 h-1 w-10 bg-[#ef3b35]" />
+              <p className="mt-5 leading-8 text-zinc-600">{page.visionText}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE DO */}
+      <section className="bg-white py-14">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl font-black text-zinc-950 lg:text-5xl">
+              {page.whatWeDoTitle}
+            </h2>
+            <div className="mx-auto mt-4 h-1 w-14 bg-[#ef3b35]" />
+          </div>
+
+          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
+            {page.whatWeDo.map(({ title, desc }, index) => {
+              const Icon = whatIcons[index] || PackageCheck;
               return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 36 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.25 }}
-                  transition={{ duration: 0.6, delay: index * 0.08 }}
-                  whileHover={{ y: -7 }}
-                  className="group h-full rounded-[30px] border border-black/10 bg-white p-7 shadow-[0_20px_60px_rgba(0,0,0,0.075)] transition-all duration-300 hover:border-red-600/25 hover:shadow-[0_28px_70px_rgba(0,0,0,0.11)]"
+                <div
+                  key={title}
+                  className={`rounded-3xl border border-zinc-100 bg-white p-7 shadow-sm transition hover:shadow-xl ${
+                    isAr ? "text-right" : ""
+                  }`}
                 >
-                  <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-950 text-white transition group-hover:bg-red-600">
-                    <Icon size={21} />
-                  </div>
-
-                  <h3 className="text-[19px] font-semibold leading-7 text-neutral-950">
-                    {item.title}
+                  <Icon className="text-[#ef3b35]" size={42} />
+                  <h3 className="mt-5 text-xl font-black text-zinc-950">
+                    {title}
                   </h3>
-
-                  <p className="mt-4 text-[15px] leading-7 text-neutral-900">
-                    {item.text}
-                  </p>
-                </motion.div>
+                  <div
+                    className={`mt-3 h-1 w-10 bg-[#ef3b35] ${isAr ? "mr-auto" : ""}`}
+                  />
+                  <p className="mt-5 text-sm leading-7 text-zinc-600">{desc}</p>
+                </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* GLOBAL REACH */}
+      <section className="bg-white py-16">
+        <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 lg:grid-cols-[1fr_1fr] lg:px-8">
+          <div className={isAr ? "text-right" : ""}>
+            <h2 className="text-4xl font-black text-zinc-950 lg:text-5xl">
+              {page.globalReachTitle}
+            </h2>
+            <div
+              className={`mt-4 h-1 w-14 bg-[#ef3b35] ${isAr ? "mr-auto" : ""}`}
+            />
+            <p className="mt-6 text-lg leading-8 text-zinc-700">
+              {page.globalReachText}
+            </p>
+
+            <div className="relative mt-8 min-h-[280px] overflow-hidden rounded-3xl border border-zinc-100 bg-zinc-50 p-8">
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:18px_18px]" />
+              <div className="relative grid h-full grid-cols-3 place-items-center gap-4 text-[#ef3b35]">
+                {Array.from({ length: 18 }).map((_, i) => (
+                  <MapPin
+                    key={i}
+                    size={18 + (i % 3) * 4}
+                    className="opacity-80"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className={isAr ? "text-right" : ""}>
+            <h2 className="text-4xl font-black text-zinc-950 lg:text-5xl">
+              {page.whyClientsTitle}
+            </h2>
+            <div
+              className={`mt-4 h-1 w-14 bg-[#ef3b35] ${isAr ? "mr-auto" : ""}`}
+            />
+
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              {page.clientReasons.map(({ title, desc }, index) => {
+                const Icon = reasonIcons[index] || ShieldCheck;
+                return (
+                  <div key={title} className="flex gap-4">
+                    <Icon className="shrink-0 text-[#ef3b35]" size={34} />
+                    <div>
+                      <h3 className="font-black text-zinc-950">{title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-zinc-600">
+                        {desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PEOPLE */}
+      <section className="bg-white py-12">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="grid overflow-hidden rounded-3xl bg-black text-white lg:grid-cols-[.9fr_1.1fr]">
+            <ImageBlock
+              src="/images/about/our-people.jpg"
+              className="min-h-[340px]"
+            >
+              <div className="absolute inset-0 flex items-center justify-center text-white/40">
+                <Users size={90} />
+              </div>
+            </ImageBlock>
+
+            <div className="relative p-8 lg:p-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-black to-[#320404]" />
+              <div className={`relative ${isAr ? "text-right" : ""}`}>
+                <h2 className="text-4xl font-black">{page.peopleTitle}</h2>
+                <div
+                  className={`mt-4 h-1 w-14 bg-[#ef3b35] ${isAr ? "mr-auto" : ""}`}
+                />
+                <p className="mt-6 text-lg leading-8 text-zinc-200">
+                  {page.peopleText}
+                </p>
+
+                <div className="mt-9 grid gap-6 sm:grid-cols-3">
+                  {page.peopleStrength.map((title, index) => {
+                    const Icon = peopleIcons[index] || Users;
+                    return (
+                      <div key={title} className="text-center">
+                        <Icon className="mx-auto text-[#ef3b35]" size={36} />
+                        <p className="mt-3 font-black text-white">{title}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -225,4 +276,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Whyus;

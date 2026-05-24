@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { ROUTES } from "../config/siteRoutes";
 
 import Home from "../pages/Home";
 import SolarHome from "../pages/SolarHome";
@@ -28,51 +29,70 @@ const PlaceholderPage = ({ title }) => {
 const AppRouter = () => {
   return (
     <Routes>
-      {/* New Main Home */}
-      <Route path="/" element={<Home />} />
+      {/* Main Home */}
+      <Route path={ROUTES.home} element={<Home />} />
 
-      {/* Solar Energy Page */}
-      <Route path="/solutions/solar-energy" element={<SolarHome />} />
+      {/* Solutions */}
+      <Route path={ROUTES.solutions.solarEnergy} element={<SolarHome />} />
 
-      {/* Solutions (Temporary Pages) */}
       <Route
-        path="/solutions/bikes"
-        element={<PlaceholderPage title="Bikes" />}
+        path={ROUTES.solutions.electricScooters}
+        element={<PlaceholderPage title="Electric Scooters" />}
       />
+
       <Route
-        path="/solutions/kitchenware"
+        path={ROUTES.solutions.kitchenware}
         element={<PlaceholderPage title="Kitchenware" />}
       />
+
       <Route
-        path="/solutions/complete-industrial-production-lines"
+        path={ROUTES.solutions.productionLines}
         element={
           <PlaceholderPage title="Complete Industrial Production Lines" />
         }
       />
+
       <Route
-        path="/solutions/hotel"
-        element={<PlaceholderPage title="Hotel" />}
+        path={ROUTES.solutions.hotelSupplies}
+        element={<PlaceholderPage title="Hotel Supplies" />}
       />
+
       <Route
-        path="/solutions/tools"
-        element={<PlaceholderPage title="Tools" />}
+        path={ROUTES.solutions.toolsHardware}
+        element={<PlaceholderPage title="Tools & Hardware" />}
+      />
+
+      {/* OLD ROUTES (temporary support) */}
+      <Route
+        path={ROUTES.oldSolutions.bikes}
+        element={<PlaceholderPage title="Electric Scooters" />}
+      />
+
+      <Route
+        path={ROUTES.oldSolutions.hotel}
+        element={<PlaceholderPage title="Hotel Supplies" />}
+      />
+
+      <Route
+        path={ROUTES.oldSolutions.tools}
+        element={<PlaceholderPage title="Tools & Hardware" />}
       />
 
       {/* Existing Pages */}
-      <Route path="/whyus" element={<Whyus />} />
+      <Route path={ROUTES.whyUs} element={<Whyus />} />
+      <Route path={ROUTES.contact} element={<Contact />} />
+      <Route path={ROUTES.letsBuild} element={<LetsBuild />} />
+      <Route path={ROUTES.rd} element={<Rd />} />
+
+      {/* Optional (لو لسه محتاجينهم) */}
       <Route path="/smart-storage" element={<SmartStorage />} />
       <Route path="/factory" element={<Factory />} />
       <Route path="/gigawatt-projects" element={<GigawattProjects />} />
       <Route path="/partners" element={<Partners />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/lets-build" element={<LetsBuild />} />
-
-      {/* R&D (hidden from navbar) */}
-      <Route path="/rd" element={<Rd />} />
 
       {/* Legal */}
-      <Route path="/terms-of-service" element={<TermsOfService />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path={ROUTES.terms} element={<TermsOfService />} />
+      <Route path={ROUTES.privacy} element={<PrivacyPolicy />} />
     </Routes>
   );
 };

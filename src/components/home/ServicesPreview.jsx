@@ -7,7 +7,7 @@ import Factoryimg from "../../assets/images/factory 5.png";
 import gigawatt from "../../assets/images/gigawaa.png";
 
 import { useLanguage } from "../../i18n/LanguageContext";
-
+import { ROUTES } from "../../config/siteRoutes";
 const ServicesPreview = () => {
   const { t, lang } = useLanguage();
   const isAr = lang === "ar";
@@ -18,21 +18,21 @@ const ServicesPreview = () => {
       title: t.services.items[0].title,
       desc: t.services.items[0].desc,
       image: smartstorage,
-      path: "/smart-storage",
+      path: ROUTES.smartStorage,
     },
     {
       icon: Factory,
       title: t.services.items[1].title,
       desc: t.services.items[1].desc,
       image: Factoryimg,
-      path: "/factory",
+      path: ROUTES.factory,
     },
     {
       icon: Globe2,
       title: t.services.items[2].title,
       desc: t.services.items[2].desc,
       image: gigawatt,
-      path: "/gigawatt-projects",
+      path: ROUTES.gigawattProjects,
     },
   ];
 

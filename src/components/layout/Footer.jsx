@@ -2,26 +2,19 @@ import { Link } from "react-router-dom";
 import { ChevronRight, Mail, MapPin } from "lucide-react";
 import logo from "../../assets/logos/white_red_logo.png";
 import { useLanguage } from "../../i18n/LanguageContext";
-
+import { ROUTES, SOLUTIONS_LINKS } from "../../config/siteRoutes.js";
 const Footer = () => {
   const { t, lang } = useLanguage();
   const isAr = lang === "ar";
 
-const solutions = [
-  { name: t.footer.links.solarPower, path: "/solutions/solar-power" },
-  { name: t.footer.links.scooters, path: "/solutions/electric-scooters" },
-  { name: t.footer.links.kitchenware, path: "/solutions/kitchenware" },
-  {
-    name: t.footer.links.productionLines,
-    path: "/solutions/complete-industrial-production-lines",
-  },
-  { name: t.footer.links.hotelSupplies, path: "/solutions/hotel-supplies" },
-  { name: t.footer.links.toolsHardware, path: "/solutions/tools-hardware" },
+const solutions = SOLUTIONS_LINKS.map((item) => ({
+  name: t.footer.links[item.key],
+  path: item.path,
+}));
+const legal = [
+  { name: t.footer.links.privacy, path: ROUTES.privacy },
+  { name: t.footer.links.terms, path: ROUTES.terms },
 ];
-  const legal = [
-    { name: t.footer.links.privacy, path: "/privacy-policy" },
-    { name: t.footer.links.terms, path: "/terms-of-service" },
-  ];
 
   const linkRowClass = `group flex items-center justify-between border-b border-white/10 py-3.5 text-[14px] font-semibold text-neutral-200 transition hover:text-white sm:py-4 ${
     isAr ? "flex-row-reverse text-right" : ""
@@ -32,7 +25,7 @@ const sectionTitleClass = `flex min-h-[15px] items-center font-bold text-[#ee403
     ? "w-full text-[13px] tracking-normal text-right justify-start"
     : "text-[11px] uppercase tracking-[0.32em] sm:text-[12px] sm:tracking-[0.42em]"
 }`;
-  const redLineClass = `mt-[-4] h-[2px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)] sm:mt-8 ${
+  const redLineClass = `-mt-4 h-[2px] w-10 bg-red-600 shadow-[0_0_16px_rgba(220,38,38,0.95)] sm:mt-8 ${
     isAr ? "ml-0 mr-auto lg:ml-auto lg:mr-0" : ""
   }`;
 
@@ -60,7 +53,7 @@ const sectionTitleClass = `flex min-h-[15px] items-center font-bold text-[#ee403
           >
             <div className="flex min-h-[34px] items-center">
               <Link
-                to="/"
+                to={ROUTES.home}
                 className={`flex w-full items-center ${
                   isAr ? "justify-end" : "justify-start"
                 }`}
@@ -91,7 +84,7 @@ const sectionTitleClass = `flex min-h-[15px] items-center font-bold text-[#ee403
 
           {/* Solutions */}
           <div
-            className={`lg:border-white/10 lg:px-8 mt-[-7] ${
+            className={`lg:border-white/10 lg:px-8 -mt-7 ${
               isAr ? "text-right lg:border-l" : "lg:border-r"
             }`}
           >
@@ -137,7 +130,7 @@ const sectionTitleClass = `flex min-h-[15px] items-center font-bold text-[#ee403
             <h4 className={sectionTitleClass}>{t.footer.contact}</h4>
             <div className={redLineClass} />
 
-            <div className="mt-3 ml-[3-px] sm:mt-4">
+            <div className="mt-3 ml-[3px] sm:mt-4">
               <a
                 href={`mailto:${t.footer.email}`}
                 className={`group flex items-center gap-2 border-b border-white/10 py-3.5 text-[14px] font-semibold text-neutral-100 transition hover:text-red-400 sm:py-4 ${

@@ -139,11 +139,11 @@ export const translations = {
 
       links: {
         solarEnergy: "Solar Energy",
-        bikes: "Bikes",
-        kitchenware: "Kitchenware",
         productionLines: "Complete Industrial Production Lines",
-        hotel: "Hotel",
-        tools: "Tools",
+        electricScooters: "Electric Scooters",
+        kitchenware: "Kitchenware",
+        hotelSupplies: "Hotel Supplies",
+        toolsHardware: "Tools & Hardware",
         privacy: "Privacy Policy",
         terms: "Terms of Service",
       },
@@ -250,51 +250,105 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "why us ",
-      title1: "At Tough Haulers, we don’t just supply products —",
-      title2: "we deliver complete, reliable, and long-term solutions.",
-      p1: "With strong experience in solar power systems, smart energy storage, sourcing, and project execution, we support our clients from the first study until delivery, installation, and after-sales service.",
-      p2: "We work with trusted partners and professional engineering teams to provide high-quality solutions that match each project’s real needs, whether it is a small system, a commercial project, or a large-scale power station.",
-      goalLabel: "Our goal is simple:",
-      goalText:
-        "To deliver the right solution, with the right quality, at the right time.",
+      heroTitle: "About TOUGH HAULERS",
+      heroDesc:
+        "A China-based global trading and industrial solutions partner delivering power, reliability, and value worldwide.",
 
-      positioningBadge: "Company Positioning",
-      positioningTitle1: "Engineering Power.",
-      positioningTitle2: "Delivering Reliability.",
-      positioningP1:
-        "With operations based in China and engineering support in Egypt, the company combines supply chain strength with technical expertise to deliver scalable solar and energy storage solutions.",
-      positioningP2:
-        "The company supports global projects through integrated solutions covering solar power systems, BESS, EPC engineering, factory solutions, and technology transfer.",
+      overviewTitle: "Company Overview",
+      overviewP1:
+        "TOUGH HAULERS is a China-based global trading and industrial solutions company supporting solar power, battery energy storage, industrial production lines, product sourcing, and supply chain services.",
+      overviewP2:
+        "We connect reliable manufacturers with global clients, helping businesses access practical, cost-effective, and scalable solutions across energy, industry, mobility, hospitality, and hardware sectors.",
 
-      positioningItems: [
-        "China-based supply chain capability",
-        "Engineering support from Egypt",
-        "Global project execution mindset",
-        "From kW-scale to Gigawatt-scale projects",
+      stats: [
+        { value: "China", label: "Operational Base" },
+        { value: "Global", label: "Trading Network" },
+        { value: "Multi-Sector", label: "Business Scope" },
+        { value: "End-to-End", label: "Support Model" },
       ],
 
-      capabilitiesBadge: "Core Capabilities",
-      capabilitiesTitle1: "Integrated energy solutions",
-      capabilitiesTitle2: "across design, supply & execution.",
+      missionTitle: "Our Mission",
+      missionText:
+        "To deliver reliable trading, sourcing, and industrial project support that helps clients access the right products, factories, and technical solutions with confidence.",
+      visionTitle: "Our Vision",
+      visionText:
+        "To become a trusted international partner connecting global demand with China-based supply strength, engineering support, and long-term business value.",
 
-      capabilities: [
+      whatWeDoTitle: "What We Do",
+      whatWeDo: [
         {
-          title: "Solar Power Systems",
-          text: "Integrated solar power solutions designed for reliable performance and scalable deployment.",
+          title: "Solar Power & Energy Storage",
+          desc: "Solar systems, batteries, inverters, EPC support, and clean energy project solutions.",
         },
         {
-          title: "Battery Energy Storage Systems",
-          text: "Advanced BESS solutions supporting stable, optimized, and continuous energy performance.",
+          title: "Complete Production Lines",
+          desc: "Industrial production lines, supplier sourcing, technical study, layout support, and project coordination.",
         },
         {
-          title: "Factory Solutions",
-          text: "Turnkey factory solutions, technology transfer, and manufacturing support for energy systems.",
+          title: "Global Trading & Sourcing",
+          desc: "China-based sourcing for reliable products, factories, quotations, samples, and export support.",
         },
         {
-          title: "After-Sales Support",
-          text: "Comprehensive after-sales service and technical support to ensure long-term value and reliability.",
+          title: "Electric Mobility",
+          desc: "Electric scooters, spare parts, model development, customization, and business supply support.",
         },
+        {
+          title: "Consumer & Hospitality Products",
+          desc: "Kitchenware, hotel supplies, amenities, packaging, branding, and retail-ready products.",
+        },
+        {
+          title: "Tools & Industrial Hardware",
+          desc: "Hand tools, power tools, workshop equipment, fasteners, and industrial hardware sourcing.",
+        },
+        {
+          title: "R&D / Customization",
+          desc: "OEM / ODM development, product design, samples, 3D visualization, and custom packaging.",
+        },
+        {
+          title: "EPC & Project Support",
+          desc: "Technical review, supplier coordination, shipment follow-up, installation, and commissioning support.",
+        },
+      ],
+
+      globalReachTitle: "Global Reach",
+      globalReachText:
+        "We support international clients through China-based sourcing, supplier coordination, export follow-up, and project communication across different markets and business sectors.",
+
+      whyClientsTitle: "Why Clients Work With Us",
+      clientReasons: [
+        {
+          title: "Reliable Quality",
+          desc: "We focus on suitable suppliers, product checking, and quality-oriented coordination.",
+        },
+        {
+          title: "Competitive Value",
+          desc: "We help clients access practical factory-based solutions with strong value.",
+        },
+        {
+          title: "End-to-End Service",
+          desc: "From inquiry and supplier matching to shipment follow-up and after-sales coordination.",
+        },
+        {
+          title: "Delivery Follow-Up",
+          desc: "We support communication, production tracking, packing, and shipping coordination.",
+        },
+        {
+          title: "Global Business Mindset",
+          desc: "We work with different markets and understand international trading expectations.",
+        },
+        {
+          title: "Sustainable Focus",
+          desc: "We support clean energy, efficient sourcing, and responsible long-term cooperation.",
+        },
+      ],
+
+      peopleTitle: "Our People, Our Strength",
+      peopleText:
+        "Behind every project is a team focused on communication, execution, and practical problem solving. Our work combines sourcing experience, technical awareness, and a client-first mindset.",
+      peopleStrength: [
+        "Experienced Industry Support",
+        "Collaborative Teamwork",
+        "Client-Centric Approach",
       ],
     },
     contactPage: {
@@ -869,6 +923,123 @@ export const translations = {
         button: "View More",
       },
     },
+    mainHome: {
+      heroBadge: "TOUGH HAULERS TRADE LIMITED",
+      heroTitle: "Global Trading, Industrial Solutions & Clean Energy Projects",
+      heroDesc:
+        "Tough Haulers connects global markets with reliable products, advanced production lines, and sustainable energy solutions.",
+      exploreSolutions: "Explore Our Solutions",
+      requestQuotation: "Request a Quotation",
+
+      whoBadge: "Who We Are",
+      whoTitle: "Your Trusted Partner in Global Trade and Industrial Solutions",
+      whoDesc:
+        "Tough Haulers Trade Limited is a China-based trading and project solutions company supporting industrial equipment, consumer goods, clean energy projects, and supply chain services.",
+      learnMore: "Learn More About Us",
+
+      features: [
+        {
+          title: "Global Sourcing",
+          desc: "China-based sourcing support.",
+        },
+        {
+          title: "Reliable Quality",
+          desc: "Quality-focused supply coordination.",
+        },
+        {
+          title: "End-to-End Support",
+          desc: "From sourcing to delivery follow-up.",
+        },
+      ],
+
+      categoriesBadge: "Main Business Categories",
+      categoriesTitle: "Diverse Solutions for Every Industry",
+      viewDetails: "View Details",
+
+      categories: {
+        solarEnergy: {
+          title: "Solar Energy",
+          desc: "Systems & components",
+        },
+        productionLines: {
+          title: "Complete Industrial Production Lines",
+          desc: "Advanced manufacturing equipment",
+        },
+        electricScooters: {
+          title: "Electric Scooters",
+          desc: "Smart & sustainable mobility",
+        },
+        kitchenware: {
+          title: "Kitchenware",
+          desc: "Modern, durable & stylish",
+        },
+        hotelSupplies: {
+          title: "Hotel Supplies",
+          desc: "Quality products for hospitality",
+        },
+        toolsHardware: {
+          title: "Tools & Hardware",
+          desc: "Reliable tools for every industry",
+        },
+      },
+
+      productionBadge: "Featured Production Lines",
+      productionTitle: "Precision. Performance. Productivity.",
+
+      productionLines: [
+        {
+          title: "Metal Pipe Production Line",
+          desc: "High-frequency welded pipe mill with high efficiency and precision.",
+        },
+        {
+          title: "Steel Coil Slitting Line",
+          desc: "High-speed slitting for carbon steel, stainless steel and aluminum.",
+        },
+        {
+          title: "Roll Forming Production Line",
+          desc: "Automated roll forming for roofing, framing and structural profiles.",
+        },
+        {
+          title: "Cable Tray Production Line",
+          desc: "High-speed production for cable management systems.",
+        },
+      ],
+
+      whyBadge: "Why Choose Tough Haulers",
+      whyTitle: "Built on Trust. Driven by Results.",
+
+      whyItems: [
+        {
+          title: "Global Sourcing",
+          desc: "China-based sourcing support for different business categories.",
+        },
+        {
+          title: "Quality Focus",
+          desc: "Supplier coordination and product quality follow-up.",
+        },
+        {
+          title: "Competitive Supply",
+          desc: "Factory-direct sourcing for better project value.",
+        },
+        {
+          title: "Logistics Support",
+          desc: "Support from sourcing stage to shipment coordination.",
+        },
+        {
+          title: "After-Sales Support",
+          desc: "Responsive support for long-term cooperation.",
+        },
+        {
+          title: "Solution Mindset",
+          desc: "Practical product and project solutions for global clients.",
+        },
+      ],
+
+      ctaTitle: "Ready to Build Your Next Project?",
+      ctaDesc:
+        "Let’s work together with reliable products, industrial solutions, and professional supply support.",
+      letsBuild: "Let’s Build Together",
+    },
   },
 
   ar: {
@@ -1010,13 +1181,13 @@ export const translations = {
 
       links: {
         solarEnergy: "الطاقة الشمسية",
-        bikes: "الدراجات",
-        kitchenware: "أدوات المطبخ",
         productionLines: "خطوط إنتاج صناعية متكاملة",
-        hotel: "مستلزمات الفنادق",
-        tools: "الأدوات",
+        electricScooters: "السكوترات الكهربائية",
+        kitchenware: "معدات وأدوات المطبخ",
+        hotelSupplies: "تجهيزات الفنادق",
+        toolsHardware: "العدد والأدوات الصناعية",
         privacy: "سياسة الخصوصية",
-        terms: "الشروط والأحكام العامة",
+        terms: "شروط الاستخدام",
       },
     },
     privacy: {
@@ -1121,50 +1292,105 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "لماذا نحن",
-      title1: "في Tough Haulers،  نحن لا نكتفي بتوريد المنتجات —",
-      title2: "بل نقدم حلولًا متكاملة وموثوقة وطويلة الأمد.",
-      p1: "بخبرة واسعة في أنظمة الطاقة الشمسية، وحلول التخزين الذكي، والتوريد، وتنفيذ المشاريع، ندعم عملاءنا من مرحلة الدراسة الأولية وحتى التسليم والتركيب وخدمات ما بعد البيع.",
-      p2: "نعمل مع شركاء موثوقين وفرق هندسية محترفة لتقديم حلول عالية الجودة تتوافق مع الاحتياجات الفعلية لكل مشروع، سواء كان نظامًا صغيرًا، أو مشروعًا تجاريًا، أو محطة طاقة واسعة النطاق.",
-      goalLabel: "هدفنا واضح:",
-      goalText: "تقديم الحل المناسب، بالجودة المناسبة، وفي الوقت المناسب.",
+      heroTitle: "عن TOUGH HAULERS",
+      heroDesc:
+        "شريك عالمي في التجارة والحلول الصناعية من الصين، يقدم الموثوقية والقيمة والدعم العملي للأسواق الدولية.",
 
-      positioningBadge: "مكانتنا التشغيلية",
-      positioningTitle1: "هندسة الطاقة.",
-      positioningTitle2: "وتقديم الاعتمادية.",
-      positioningP1:
-        "من خلال عملياتنا القائمة في الصين والدعم الهندسي من مصر، تجمع الشركة بين قوة سلسلة الإمداد والخبرة الفنية لتقديم حلول طاقة شمسية وتخزين طاقة قابلة للتوسع.",
-      positioningP2:
-        "تدعم الشركة المشاريع العالمية من خلال حلول متكاملة تشمل أنظمة الطاقة الشمسية، وأنظمة تخزين الطاقة BESS، والهندسة والتنفيذ EPC، وحلول المصانع، ونقل التكنولوجيا.",
+      overviewTitle: "نظرة عامة على الشركة",
+      overviewP1:
+        "TOUGH HAULERS هي شركة تجارة عالمية وحلول صناعية مقرها الصين، تدعم مجالات الطاقة الشمسية، وتخزين الطاقة، وخطوط الإنتاج الصناعية، وتوريد المنتجات، وخدمات سلاسل الإمداد.",
+      overviewP2:
+        "نربط المصنّعين الموثوقين بالعملاء حول العالم، ونساعد الشركات على الوصول إلى حلول عملية وفعالة وقابلة للتوسع في قطاعات الطاقة والصناعة والتنقل والضيافة والأدوات الصناعية.",
 
-      positioningItems: [
-        "قدرات قوية في سلسلة الإمداد من الصين",
-        "دعم هندسي متخصص من مصر",
-        "منهجية تنفيذ عالمية للمشاريع",
-        "من أنظمة الكيلوواط إلى مشاريع الجيجاواط",
+      stats: [
+        { value: "الصين", label: "قاعدة التشغيل" },
+        { value: "عالمي", label: "شبكة تجارية" },
+        { value: "متعدد القطاعات", label: "نطاق الأعمال" },
+        { value: "متكامل", label: "نموذج الدعم" },
       ],
 
-      capabilitiesBadge: "القدرات الأساسية",
-      capabilitiesTitle1: "حلول طاقة متكاملة",
-      capabilitiesTitle2: "تشمل التصميم والتوريد والتنفيذ.",
+      missionTitle: "مهمتنا",
+      missionText:
+        "تقديم دعم موثوق في التجارة والتوريد والمشاريع الصناعية، يساعد العملاء على الوصول إلى المنتجات والمصانع والحلول الفنية المناسبة بثقة.",
+      visionTitle: "رؤيتنا",
+      visionText:
+        "أن نكون شريكًا دوليًا موثوقًا يربط الطلب العالمي بقوة التوريد من الصين، مع دعم هندسي وقيمة تجارية طويلة الأمد.",
 
-      capabilities: [
+      whatWeDoTitle: "ما الذي نقدمه",
+      whatWeDo: [
         {
-          title: "أنظمة الطاقة الشمسية",
-          text: "حلول طاقة شمسية متكاملة مصممة لتحقيق أداء موثوق وقابلية توسع عالية.",
+          title: "الطاقة الشمسية وتخزين الطاقة",
+          desc: "أنظمة طاقة شمسية، بطاريات، عواكس، دعم EPC، وحلول مشاريع طاقة نظيفة.",
         },
         {
-          title: "أنظمة تخزين الطاقة بالبطاريات",
-          text: "حلول BESS متقدمة تدعم استقرار الطاقة وتحسين الأداء واستمرارية التشغيل.",
+          title: "خطوط إنتاج صناعية متكاملة",
+          desc: "خطوط إنتاج صناعية، توريد موردين، دراسة فنية، دعم تخطيط، وتنسيق المشاريع.",
         },
         {
-          title: "حلول المصانع",
-          text: "حلول مصانع متكاملة تشمل التنفيذ الجاهز، ونقل التكنولوجيا، ودعم التصنيع لأنظمة الطاقة.",
+          title: "التجارة والتوريد العالمي",
+          desc: "توريد من الصين للمنتجات والمصانع وعروض الأسعار والعينات ودعم التصدير.",
         },
         {
-          title: "خدمات ما بعد البيع",
-          text: "دعم فني وخدمات ما بعد البيع لضمان القيمة طويلة الأمد والاعتمادية المستمرة.",
+          title: "التنقل الكهربائي",
+          desc: "سكوترات كهربائية، قطع غيار، تطوير موديلات، تخصيص، ودعم توريد تجاري.",
         },
+        {
+          title: "منتجات الاستهلاك والضيافة",
+          desc: "أدوات مطبخ، مستلزمات فنادق، تغليف، علامات تجارية، ومنتجات جاهزة للبيع.",
+        },
+        {
+          title: "الأدوات والمعدات الصناعية",
+          desc: "عدد يدوية، أدوات كهربائية، معدات ورش، مثبتات، ومستلزمات صناعية.",
+        },
+        {
+          title: "البحث والتطوير والتخصيص",
+          desc: "تطوير OEM / ODM، تصميم منتجات، عينات، تصور ثلاثي الأبعاد، وتغليف مخصص.",
+        },
+        {
+          title: "دعم EPC والمشاريع",
+          desc: "مراجعة فنية، تنسيق الموردين، متابعة الشحن، ودعم التركيب والتشغيل.",
+        },
+      ],
+
+      globalReachTitle: "انتشار عالمي",
+      globalReachText:
+        "ندعم العملاء الدوليين من خلال التوريد من الصين، وتنسيق الموردين، ومتابعة التصدير، والتواصل التشغيلي عبر أسواق وقطاعات مختلفة.",
+
+      whyClientsTitle: "لماذا يعمل العملاء معنا",
+      clientReasons: [
+        {
+          title: "جودة موثوقة",
+          desc: "نركز على اختيار المورد المناسب، ومتابعة المنتج، والتنسيق القائم على الجودة.",
+        },
+        {
+          title: "قيمة تنافسية",
+          desc: "نساعد العملاء على الوصول إلى حلول عملية من المصانع بقيمة قوية.",
+        },
+        {
+          title: "خدمة متكاملة",
+          desc: "من الاستفسار ومطابقة المورد حتى متابعة الشحن وتنسيق ما بعد البيع.",
+        },
+        {
+          title: "متابعة التسليم",
+          desc: "ندعم التواصل، ومتابعة الإنتاج، والتغليف، وتنسيق الشحن.",
+        },
+        {
+          title: "فهم تجاري عالمي",
+          desc: "نعمل مع أسواق مختلفة ونفهم متطلبات التجارة الدولية.",
+        },
+        {
+          title: "تركيز مستدام",
+          desc: "ندعم الطاقة النظيفة، والتوريد الفعال، والتعاون طويل الأمد.",
+        },
+      ],
+
+      peopleTitle: "فريقنا هو قوتنا",
+      peopleText:
+        "وراء كل مشروع فريق يركز على التواصل والتنفيذ وحل المشكلات عمليًا. يجمع عملنا بين خبرة التوريد، والوعي الفني، ومنهجية تضع العميل أولًا.",
+      peopleStrength: [
+        "دعم صناعي بخبرة عملية",
+        "عمل جماعي متكامل",
+        "منهجية تركز على العميل",
       ],
     },
     contactPage: {
@@ -1749,6 +1975,123 @@ export const translations = {
         button: "عرض التفاصيل",
       },
     },
+    mainHome: {
+      heroBadge: "TOUGH HAULERS TRADE LIMITED",
+      heroTitle: "تجارة عالمية، حلول صناعية، ومشاريع طاقة نظيفة",
+      heroDesc:
+        "تربط Tough Haulers الأسواق العالمية بمنتجات موثوقة، وخطوط إنتاج متقدمة، وحلول طاقة مستدامة.",
+      exploreSolutions: "استكشف حلولنا",
+      requestQuotation: "اطلب عرض سعر",
+
+      whoBadge: "من نحن",
+      whoTitle: "شريكك الموثوق في التجارة العالمية والحلول الصناعية",
+      whoDesc:
+        "Tough Haulers Trade Limited شركة تجارية وحلول مشاريع مقرها الصين، تدعم المعدات الصناعية، والمنتجات الاستهلاكية، ومشاريع الطاقة النظيفة، وخدمات سلاسل التوريد.",
+      learnMore: "اعرف المزيد عن الشركة",
+
+      features: [
+        {
+          title: "توريد عالمي",
+          desc: "دعم توريد من الصين.",
+        },
+        {
+          title: "جودة موثوقة",
+          desc: "تنسيق توريد يركز على الجودة.",
+        },
+        {
+          title: "دعم متكامل",
+          desc: "من مرحلة التوريد حتى متابعة التسليم.",
+        },
+      ],
+
+      categoriesBadge: "القطاعات الرئيسية",
+      categoriesTitle: "حلول متنوعة لمختلف الصناعات",
+      viewDetails: "عرض التفاصيل",
+
+      categories: {
+        solarEnergy: {
+          title: "الطاقة الشمسية",
+          desc: "أنظمة ومكونات متكاملة",
+        },
+        productionLines: {
+          title: "خطوط إنتاج صناعية متكاملة",
+          desc: "معدات تصنيع متقدمة",
+        },
+        electricScooters: {
+          title: "السكوترات الكهربائية",
+          desc: "حلول تنقل ذكية ومستدامة",
+        },
+        kitchenware: {
+          title: "معدات وأدوات المطبخ",
+          desc: "تصميم عصري وجودة تدوم",
+        },
+        hotelSupplies: {
+          title: "تجهيزات الفنادق",
+          desc: "منتجات عالية الجودة لقطاع الضيافة",
+        },
+        toolsHardware: {
+          title: "العدد والأدوات الصناعية",
+          desc: "معدات موثوقة لمختلف الصناعات",
+        },
+      },
+
+      productionBadge: "خطوط إنتاج مختارة",
+      productionTitle: "دقة. أداء. إنتاجية.",
+
+      productionLines: [
+        {
+          title: "خط إنتاج الأنابيب المعدنية",
+          desc: "خط لحام أنابيب عالي التردد بكفاءة تشغيل ودقة عالية.",
+        },
+        {
+          title: "خط تقطيع لفائف الصلب",
+          desc: "تقطيع عالي السرعة للفولاذ الكربوني والفولاذ المقاوم للصدأ والألومنيوم.",
+        },
+        {
+          title: "خط التشكيل بالدرفلة",
+          desc: "أنظمة تشكيل أوتوماتيكية للأسقف والهياكل والقطاعات المعدنية.",
+        },
+        {
+          title: "خط إنتاج حوامل الكابلات",
+          desc: "إنتاج سريع وفعال لأنظمة إدارة الكابلات.",
+        },
+      ],
+
+      whyBadge: "لماذا تختار Tough Haulers",
+      whyTitle: "ثقة في التعامل. ونتائج في التنفيذ.",
+
+      whyItems: [
+        {
+          title: "توريد عالمي",
+          desc: "دعم توريد من الصين لمختلف قطاعات الأعمال.",
+        },
+        {
+          title: "تركيز على الجودة",
+          desc: "تنسيق مع الموردين ومتابعة جودة المنتجات.",
+        },
+        {
+          title: "توريد تنافسي",
+          desc: "توريد مباشر من المصانع لتحقيق قيمة أفضل للمشاريع.",
+        },
+        {
+          title: "دعم لوجستي",
+          desc: "دعم من مرحلة التوريد حتى تنسيق الشحن.",
+        },
+        {
+          title: "دعم ما بعد البيع",
+          desc: "استجابة مستمرة لدعم التعاون طويل الأمد.",
+        },
+        {
+          title: "منهجية حلول",
+          desc: "حلول عملية للمنتجات والمشاريع لعملاء عالميين.",
+        },
+      ],
+
+      ctaTitle: "هل أنت مستعد لبناء مشروعك القادم؟",
+      ctaDesc:
+        "لنعمل معًا من خلال منتجات موثوقة، وحلول صناعية، ودعم توريد احترافي.",
+      letsBuild: "لنبدأ البناء معًا",
+    },
   },
   zh: {
     nav: {
@@ -1887,12 +2230,12 @@ export const translations = {
       slogan: "推动可持续能源未来",
 
       links: {
-        solarEnergy: "太阳能",
-        bikes: "自行车",
-        kitchenware: "厨具",
+        solarEnergy: "太阳能解决方案",
         productionLines: "完整工业生产线",
-        hotel: "酒店用品",
-        tools: "工具",
+        electricScooters: "电动滑板车",
+        kitchenware: "厨房设备与用品",
+        hotelSupplies: "酒店用品",
+        toolsHardware: "五金工具",
         privacy: "隐私政策",
         terms: "服务条款",
       },
@@ -1992,50 +2335,105 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "为什么选择我们",
-      title1: "在 Tough Haulers，我们不只是供应产品——",
-      title2: "我们提供完整、可靠且长期稳定的解决方案。",
-      p1: "凭借在太阳能系统、智能储能、采购供应及项目执行方面的丰富经验，我们从前期方案研究到交付、安装及售后服务，全流程支持客户项目落地。",
-      p2: "我们与值得信赖的合作伙伴和专业工程团队协作，提供符合项目实际需求的高质量解决方案，无论是小型系统、商业项目，还是大型电站项目。",
-      goalLabel: "我们的目标很清晰：",
-      goalText: "在正确的时间，以可靠的质量，交付真正合适的解决方案。",
+      heroTitle: "关于 TOUGH HAULERS",
+      heroDesc:
+        "一家以中国为运营基础的全球贸易与工业解决方案合作伙伴，为国际市场提供可靠性、执行力与长期价值。",
 
-      positioningBadge: "公司定位",
-      positioningTitle1: "工程驱动能源。",
-      positioningTitle2: "交付可靠价值。",
-      positioningP1:
-        "依托中国的供应链资源与埃及的工程技术支持，公司将供应链能力与专业工程经验相结合，为客户提供可扩展的太阳能与储能解决方案。",
-      positioningP2:
-        "公司通过一体化解决方案支持全球项目，涵盖太阳能系统、BESS 电池储能系统、EPC 工程、工厂解决方案及技术转移。",
+      overviewTitle: "公司概览",
+      overviewP1:
+        "TOUGH HAULERS 是一家以中国为运营基础的全球贸易与工业解决方案公司，服务于太阳能、电池储能、工业生产线、产品采购及供应链服务。",
+      overviewP2:
+        "我们连接可靠制造商与全球客户，帮助企业在能源、工业、出行、酒店用品及五金工具等领域获得务实、高性价比且可扩展的解决方案。",
 
-      positioningItems: [
-        "基于中国的供应链能力",
-        "来自埃及的工程技术支持",
-        "面向全球项目的执行思维",
-        "覆盖千瓦级至吉瓦级项目",
+      stats: [
+        { value: "中国", label: "运营基础" },
+        { value: "全球", label: "贸易网络" },
+        { value: "多行业", label: "业务范围" },
+        { value: "全流程", label: "支持模式" },
       ],
 
-      capabilitiesBadge: "核心能力",
-      capabilitiesTitle1: "一体化能源解决方案",
-      capabilitiesTitle2: "覆盖设计、供应与执行。",
+      missionTitle: "我们的使命",
+      missionText:
+        "提供可靠的贸易、采购与工业项目支持，帮助客户更有信心地找到合适的产品、工厂与技术解决方案。",
+      visionTitle: "我们的愿景",
+      visionText:
+        "成为连接全球需求与中国供应链优势、工程支持和长期商业价值的可信国际合作伙伴。",
 
-      capabilities: [
+      whatWeDoTitle: "我们的业务",
+      whatWeDo: [
         {
-          title: "太阳能系统",
-          text: "提供一体化太阳能解决方案，兼顾可靠性能与可扩展部署。",
+          title: "太阳能与储能",
+          desc: "太阳能系统、电池、逆变器、EPC 支持及清洁能源项目解决方案。",
         },
         {
-          title: "电池储能系统",
-          text: "先进的 BESS 储能解决方案，支持稳定、优化且持续的能源运行。",
+          title: "完整工业生产线",
+          desc: "工业生产线、供应商采购、技术研究、布局支持及项目协调。",
         },
         {
-          title: "工厂解决方案",
-          text: "提供交钥匙工厂方案、技术转移及能源系统制造支持。",
+          title: "全球贸易与采购",
+          desc: "基于中国的产品采购、工厂匹配、报价、样品及出口支持。",
         },
         {
-          title: "售后支持",
-          text: "提供全面的售后服务与技术支持，确保长期价值与持续可靠性。",
+          title: "电动出行",
+          desc: "电动滑板车、零配件、车型开发、定制及商业供应支持。",
         },
+        {
+          title: "消费品与酒店用品",
+          desc: "厨房用品、酒店用品、配套产品、包装、品牌定制及零售产品。",
+        },
+        {
+          title: "五金工具与工业配件",
+          desc: "手工具、电动工具、车间设备、紧固件及工业五金采购。",
+        },
+        {
+          title: "研发与定制",
+          desc: "OEM / ODM 开发、产品设计、样品、3D 可视化及定制包装。",
+        },
+        {
+          title: "EPC 与项目支持",
+          desc: "技术审核、供应商协调、发货跟进、安装及调试支持。",
+        },
+      ],
+
+      globalReachTitle: "全球业务覆盖",
+      globalReachText:
+        "我们通过中国采购、供应商协调、出口跟进及项目沟通，为不同市场和行业的国际客户提供支持。",
+
+      whyClientsTitle: "客户为什么选择我们",
+      clientReasons: [
+        {
+          title: "可靠质量",
+          desc: "我们注重合适供应商选择、产品跟进以及以质量为导向的协调。",
+        },
+        {
+          title: "竞争力价值",
+          desc: "帮助客户获得务实且具备价值优势的工厂解决方案。",
+        },
+        {
+          title: "全流程服务",
+          desc: "从询价、供应商匹配到发货跟进和售后协调。",
+        },
+        {
+          title: "交付跟进",
+          desc: "支持沟通、生产跟踪、包装和物流协调。",
+        },
+        {
+          title: "全球业务思维",
+          desc: "服务不同市场，理解国际贸易中的实际需求。",
+        },
+        {
+          title: "可持续关注",
+          desc: "支持清洁能源、高效采购和长期合作。",
+        },
+      ],
+
+      peopleTitle: "团队是我们的力量",
+      peopleText:
+        "每一个项目背后，都有专注沟通、执行和实际问题解决的团队。我们的工作融合采购经验、技术理解和以客户为先的理念。",
+      peopleStrength: [
+        "经验丰富的行业支持",
+        "协作型团队合作",
+        "以客户为中心的方法",
       ],
     },
     contactPage: {
@@ -2587,6 +2985,122 @@ export const translations = {
         button: "查看详情",
       },
     },
+    mainHome: {
+      heroBadge: "TOUGH HAULERS TRADE LIMITED",
+      heroTitle: "全球贸易、工业解决方案与清洁能源项目",
+      heroDesc:
+        "Tough Haulers 连接全球市场，提供可靠产品、先进生产线以及可持续能源解决方案。",
+      exploreSolutions: "探索我们的解决方案",
+      requestQuotation: "获取报价",
+
+      whoBadge: "关于我们",
+      whoTitle: "您在全球贸易与工业解决方案领域的可靠伙伴",
+      whoDesc:
+        "Tough Haulers Trade Limited 是一家以中国为运营基础的贸易与项目解决方案公司，服务于工业设备、消费品、清洁能源项目及供应链服务。",
+      learnMore: "了解更多",
+
+      features: [
+        {
+          title: "全球采购",
+          desc: "基于中国的采购支持。",
+        },
+        {
+          title: "可靠质量",
+          desc: "以质量为核心的供应协调。",
+        },
+        {
+          title: "全流程支持",
+          desc: "从采购到交付跟进。",
+        },
+      ],
+
+      categoriesBadge: "主要业务类别",
+      categoriesTitle: "面向不同行业的多元化解决方案",
+      viewDetails: "查看详情",
+
+      categories: {
+        solarEnergy: {
+          title: "太阳能解决方案",
+          desc: "系统与核心组件",
+        },
+        productionLines: {
+          title: "完整工业生产线",
+          desc: "先进制造设备",
+        },
+        electricScooters: {
+          title: "电动滑板车",
+          desc: "智能可持续出行方案",
+        },
+        kitchenware: {
+          title: "厨房设备与用品",
+          desc: "现代设计，经久耐用",
+        },
+        hotelSupplies: {
+          title: "酒店用品",
+          desc: "面向酒店行业的高品质产品",
+        },
+        toolsHardware: {
+          title: "五金工具",
+          desc: "适用于各类行业的可靠工具",
+        },
+      },
+
+      productionBadge: "精选生产线",
+      productionTitle: "精准。高效。高产能。",
+
+      productionLines: [
+        {
+          title: "金属管生产线",
+          desc: "高频焊管设备，具备高效率与高精度。",
+        },
+        {
+          title: "钢卷分条生产线",
+          desc: "适用于碳钢、不锈钢及铝材的高速分条加工。",
+        },
+        {
+          title: "辊压成型生产线",
+          desc: "用于屋顶、结构件及型材的自动化成型系统。",
+        },
+        {
+          title: "电缆桥架生产线",
+          desc: "用于电缆管理系统的高速生产设备。",
+        },
+      ],
+
+      whyBadge: "为什么选择 Tough Haulers",
+      whyTitle: "以信任为基础，以结果为导向。",
+
+      whyItems: [
+        {
+          title: "全球采购",
+          desc: "为不同业务类别提供中国采购支持。",
+        },
+        {
+          title: "质量导向",
+          desc: "供应商协调与产品质量跟进。",
+        },
+        {
+          title: "竞争力供应",
+          desc: "工厂直供，为项目创造更高价值。",
+        },
+        {
+          title: "物流支持",
+          desc: "从采购阶段到发货协调的全流程支持。",
+        },
+        {
+          title: "售后支持",
+          desc: "快速响应，支持长期合作。",
+        },
+        {
+          title: "解决方案思维",
+          desc: "为全球客户提供务实的产品与项目解决方案。",
+        },
+      ],
+
+      ctaTitle: "准备启动您的下一个项目了吗？",
+      ctaDesc: "让我们通过可靠产品、工业解决方案和专业供应支持共同推进项目。",
+      letsBuild: "一起启动项目",
+    },
   },
   ru: {
     nav: {
@@ -2717,11 +3231,11 @@ export const translations = {
       slogan: "Обеспечивая устойчивое энергетическое будущее",
       links: {
         solarEnergy: "Солнечная энергия",
-        bikes: "Велосипеды",
-        kitchenware: "Кухонные принадлежности",
-        productionLines: "Комплексные промышленные производственные линии",
-        hotel: "Товары для отелей",
-        tools: "Инструменты",
+        productionLines: "Комплексные производственные линии",
+        electricScooters: "Электроскутеры",
+        kitchenware: "Кухонное оборудование",
+        hotelSupplies: "Гостиничные принадлежности",
+        toolsHardware: "Инструменты и оборудование",
         privacy: "Политика конфиденциальности",
         terms: "Условия использования",
       },
@@ -2826,47 +3340,105 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "Почему мы",
-      title1: "В Tough Haulers мы не просто поставляем продукты —",
-      title2: "мы реализуем комплексные, надёжные и долгосрочные решения.",
-      p1: "Обладая богатым опытом в области солнечных энергосистем, интеллектуального накопления энергии, закупок и реализации проектов, мы сопровождаем наших клиентов на всех этапах — от первоначального исследования до сдачи, монтажа и постпродажного обслуживания.",
-      p2: "Мы сотрудничаем с надёжными партнёрами и профессиональными инженерными командами для предоставления высококачественных решений, отвечающих реальным потребностям каждого проекта — будь то небольшая система, коммерческий объект или крупная электростанция.",
-      goalLabel: "Наша цель проста:",
-      goalText:
-        "Предоставить правильное решение с нужным качеством в нужное время.",
-      positioningBadge: "Позиционирование компании",
-      positioningTitle1: "Инжиниринг энергии.",
-      positioningTitle2: "Надёжность на практике.",
-      positioningP1:
-        "Располагая операционной базой в Китае и инженерной поддержкой в Египте, компания объединяет мощь цепочки поставок с технической экспертизой для реализации масштабируемых решений в области солнечной энергетики и накопления энергии.",
-      positioningP2:
-        "Компания поддерживает глобальные проекты через интегрированные решения, охватывающие солнечные энергосистемы, BESS, EPC-инжиниринг, заводские решения и передачу технологий.",
-      positioningItems: [
-        "Цепочка поставок на базе Китая",
-        "Инженерная поддержка из Египта",
-        "Ориентация на глобальную реализацию проектов",
-        "Проекты от кВт до гигаватт",
+      heroTitle: "О TOUGH HAULERS",
+      heroDesc:
+        "Глобальный торговый и промышленный партнёр на базе Китая, обеспечивающий надёжность, практическую поддержку и ценность для международных рынков.",
+
+      overviewTitle: "Обзор компании",
+      overviewP1:
+        "TOUGH HAULERS — глобальная торговая и промышленная компания на базе Китая, поддерживающая солнечную энергетику, накопление энергии, промышленные производственные линии, поставку продукции и услуги цепочки поставок.",
+      overviewP2:
+        "Мы соединяем надёжных производителей с глобальными клиентами, помогая компаниям получать практичные, экономически эффективные и масштабируемые решения в энергетике, промышленности, мобильности, гостиничном секторе и промышленном оборудовании.",
+
+      stats: [
+        { value: "Китай", label: "Операционная база" },
+        { value: "Глобальная", label: "Торговая сеть" },
+        { value: "Мульти-сектор", label: "Сфера бизнеса" },
+        { value: "Полный цикл", label: "Модель поддержки" },
       ],
-      capabilitiesBadge: "Ключевые компетенции",
-      capabilitiesTitle1: "Интегрированные энергетические решения",
-      capabilitiesTitle2: "в области проектирования, поставок и реализации.",
-      capabilities: [
+
+      missionTitle: "Наша миссия",
+      missionText:
+        "Предоставлять надёжную торговую, закупочную и промышленную поддержку, помогая клиентам уверенно находить подходящие продукты, заводы и технические решения.",
+      visionTitle: "Наше видение",
+      visionText:
+        "Стать надёжным международным партнёром, соединяющим глобальный спрос с силой китайской цепочки поставок, инженерной поддержкой и долгосрочной деловой ценностью.",
+
+      whatWeDoTitle: "Чем мы занимаемся",
+      whatWeDo: [
         {
-          title: "Системы солнечной энергетики",
-          text: "Интегрированные решения в области солнечной энергетики, ориентированные на надёжную работу и масштабируемое развёртывание.",
+          title: "Солнечная энергетика и накопление энергии",
+          desc: "Солнечные системы, батареи, инверторы, EPC-поддержка и решения для проектов чистой энергии.",
         },
         {
-          title: "Системы накопления энергии",
-          text: "Передовые решения BESS для стабильной, оптимизированной и непрерывной работы энергосистем.",
+          title: "Комплексные производственные линии",
+          desc: "Промышленные линии, поиск поставщиков, техническое изучение, поддержка планировки и координация проектов.",
         },
         {
-          title: "Заводские решения",
-          text: "Комплексные заводские решения «под ключ», передача технологий и производственная поддержка для энергетических систем.",
+          title: "Глобальная торговля и закупки",
+          desc: "Закупки в Китае: продукты, заводы, предложения, образцы и экспортная поддержка.",
         },
         {
-          title: "Послепродажная поддержка",
-          text: "Комплексное послепродажное обслуживание и техническая поддержка для обеспечения долгосрочной ценности и надёжности.",
+          title: "Электрическая мобильность",
+          desc: "Электроскутеры, запчасти, разработка моделей, кастомизация и поддержка поставок.",
         },
+        {
+          title: "Потребительские и гостиничные товары",
+          desc: "Кухонные товары, гостиничные принадлежности, упаковка, брендинг и товары для розницы.",
+        },
+        {
+          title: "Инструменты и промышленная фурнитура",
+          desc: "Ручные инструменты, электроинструменты, оборудование для мастерских, крепёж и промышленная фурнитура.",
+        },
+        {
+          title: "R&D / Кастомизация",
+          desc: "OEM / ODM разработка, дизайн продукции, образцы, 3D-визуализация и индивидуальная упаковка.",
+        },
+        {
+          title: "EPC и проектная поддержка",
+          desc: "Техническая проверка, координация поставщиков, отслеживание отгрузки, поддержка монтажа и пусконаладки.",
+        },
+      ],
+
+      globalReachTitle: "Глобальный охват",
+      globalReachText:
+        "Мы поддерживаем международных клиентов через закупки в Китае, координацию поставщиков, экспортное сопровождение и проектную коммуникацию на разных рынках.",
+
+      whyClientsTitle: "Почему клиенты работают с нами",
+      clientReasons: [
+        {
+          title: "Надёжное качество",
+          desc: "Мы фокусируемся на подходящих поставщиках, проверке продукции и координации с акцентом на качество.",
+        },
+        {
+          title: "Конкурентная ценность",
+          desc: "Помогаем клиентам получать практичные заводские решения с сильной ценностью.",
+        },
+        {
+          title: "Сервис полного цикла",
+          desc: "От запроса и подбора поставщика до отгрузки и послепродажной координации.",
+        },
+        {
+          title: "Контроль поставки",
+          desc: "Поддерживаем коммуникацию, отслеживание производства, упаковку и координацию доставки.",
+        },
+        {
+          title: "Глобальный бизнес-подход",
+          desc: "Работаем с разными рынками и понимаем ожидания международной торговли.",
+        },
+        {
+          title: "Фокус на устойчивость",
+          desc: "Поддерживаем чистую энергетику, эффективные закупки и долгосрочное сотрудничество.",
+        },
+      ],
+
+      peopleTitle: "Наша команда — наша сила",
+      peopleText:
+        "За каждым проектом стоит команда, ориентированная на коммуникацию, исполнение и практическое решение задач. Мы объединяем опыт закупок, техническое понимание и клиентский подход.",
+      peopleStrength: [
+        "Опытная промышленная поддержка",
+        "Командная работа",
+        "Клиентоориентированный подход",
       ],
     },
     contactPage: {
@@ -3416,6 +3988,125 @@ export const translations = {
         button: "Подробнее",
       },
     },
+    mainHome: {
+      heroBadge: "TOUGH HAULERS TRADE LIMITED",
+      heroTitle:
+        "Глобальная торговля, промышленные решения и проекты чистой энергии",
+      heroDesc:
+        "Tough Haulers соединяет мировые рынки с надёжными продуктами, современными производственными линиями и устойчивыми энергетическими решениями.",
+      exploreSolutions: "Изучить решения",
+      requestQuotation: "Запросить предложение",
+
+      whoBadge: "О компании",
+      whoTitle:
+        "Ваш надёжный партнёр в глобальной торговле и промышленных решениях",
+      whoDesc:
+        "Tough Haulers Trade Limited — торговая и проектная компания с операционной базой в Китае, поддерживающая промышленное оборудование, потребительские товары, проекты чистой энергии и услуги цепочки поставок.",
+      learnMore: "Узнать больше",
+
+      features: [
+        {
+          title: "Глобальный сорсинг",
+          desc: "Поддержка закупок из Китая.",
+        },
+        {
+          title: "Надёжное качество",
+          desc: "Координация поставок с фокусом на качество.",
+        },
+        {
+          title: "Полная поддержка",
+          desc: "От закупки до контроля поставки.",
+        },
+      ],
+
+      categoriesBadge: "Основные направления бизнеса",
+      categoriesTitle: "Разнообразные решения для разных отраслей",
+      viewDetails: "Подробнее",
+
+      categories: {
+        solarEnergy: {
+          title: "Солнечная энергия",
+          desc: "Системы и компоненты",
+        },
+        productionLines: {
+          title: "Комплексные производственные линии",
+          desc: "Современное производственное оборудование",
+        },
+        electricScooters: {
+          title: "Электроскутеры",
+          desc: "Умная и устойчивая мобильность",
+        },
+        kitchenware: {
+          title: "Кухонное оборудование",
+          desc: "Современный дизайн и надёжность",
+        },
+        hotelSupplies: {
+          title: "Гостиничные принадлежности",
+          desc: "Качественные решения для сферы гостеприимства",
+        },
+        toolsHardware: {
+          title: "Инструменты и оборудование",
+          desc: "Надёжные инструменты для различных отраслей",
+        },
+      },
+
+      productionBadge: "Избранные производственные линии",
+      productionTitle: "Точность. Производительность. Эффективность.",
+
+      productionLines: [
+        {
+          title: "Линия производства металлических труб",
+          desc: "Высокочастотная сварная трубная линия с высокой эффективностью и точностью.",
+        },
+        {
+          title: "Линия продольной резки стальных рулонов",
+          desc: "Высокоскоростная резка углеродистой стали, нержавеющей стали и алюминия.",
+        },
+        {
+          title: "Линия роликовой формовки",
+          desc: "Автоматизированная формовка для кровли, каркасов и металлических профилей.",
+        },
+        {
+          title: "Линия производства кабельных лотков",
+          desc: "Высокоскоростное производство систем управления кабелями.",
+        },
+      ],
+
+      whyBadge: "Почему выбирают Tough Haulers",
+      whyTitle: "Основано на доверии. Ориентировано на результат.",
+
+      whyItems: [
+        {
+          title: "Глобальный сорсинг",
+          desc: "Поддержка закупок из Китая для разных бизнес-направлений.",
+        },
+        {
+          title: "Фокус на качестве",
+          desc: "Координация поставщиков и контроль качества продукции.",
+        },
+        {
+          title: "Конкурентные поставки",
+          desc: "Прямые поставки с заводов для повышения ценности проекта.",
+        },
+        {
+          title: "Логистическая поддержка",
+          desc: "Поддержка от этапа закупки до координации отгрузки.",
+        },
+        {
+          title: "Послепродажная поддержка",
+          desc: "Оперативная поддержка для долгосрочного сотрудничества.",
+        },
+        {
+          title: "Подход решений",
+          desc: "Практичные продуктовые и проектные решения для глобальных клиентов.",
+        },
+      ],
+
+      ctaTitle: "Готовы запустить ваш следующий проект?",
+      ctaDesc:
+        "Давайте работать вместе с надёжными продуктами, промышленными решениями и профессиональной поддержкой поставок.",
+      letsBuild: "Начать вместе",
+    },
   },
 
   de: {
@@ -3546,11 +4237,11 @@ export const translations = {
       slogan: "Eine nachhaltige Energiezukunft gestalten",
       links: {
         solarEnergy: "Solarenergie",
-        bikes: "Fahrräder",
-        kitchenware: "Küchenwaren",
-        productionLines: "Komplette industrielle Produktionslinien",
-        hotel: "Hotelausstattung",
-        tools: "Werkzeuge",
+        productionLines: "Komplette Industrie-Produktionslinien",
+        electricScooters: "Elektroroller",
+        kitchenware: "Küchenausstattung",
+        hotelSupplies: "Hotelausstattung",
+        toolsHardware: "Werkzeuge & Hardware",
         privacy: "Datenschutzrichtlinie",
         terms: "Nutzungsbedingungen",
       },
@@ -3655,48 +4346,105 @@ export const translations = {
       ],
     },
     aboutPage: {
-      badge: "Warum wir",
-      title1: "Bei Tough Haulers liefern wir nicht nur Produkte —",
-      title2:
-        "wir realisieren vollständige, zuverlässige und langfristige Lösungen.",
-      p1: "Mit starker Erfahrung in Solarenergiesystemen, intelligentem Energiespeicher, Beschaffung und Projektausführung begleiten wir unsere Kunden vom ersten Gutachten bis zur Lieferung, Installation und dem Kundendienst nach dem Kauf.",
-      p2: "Wir arbeiten mit vertrauenswürdigen Partnern und professionellen Ingenieurteams zusammen, um hochwertige Lösungen zu liefern, die den realen Anforderungen jedes Projekts entsprechen — ob kleines System, Handelsprojekt oder großes Kraftwerk.",
-      goalLabel: "Unser Ziel ist einfach:",
-      goalText:
-        "Die richtige Lösung, mit der richtigen Qualität, zur richtigen Zeit zu liefern.",
-      positioningBadge: "Unternehmenspositionierung",
-      positioningTitle1: "Energie durch Engineering.",
-      positioningTitle2: "Zuverlässigkeit in der Praxis.",
-      positioningP1:
-        "Mit Betrieb in China und Ingenieurunterstützung in Ägypten kombiniert das Unternehmen Lieferkettenkapazität mit technischer Expertise, um skalierbare Solar- und Energiespeicherlösungen zu liefern.",
-      positioningP2:
-        "Das Unternehmen unterstützt globale Projekte durch integrierte Lösungen, die Solarenergiesysteme, BESS, EPC-Engineering, Werkslösungen und Technologietransfer abdecken.",
-      positioningItems: [
-        "China-basierte Lieferkettenkapazität",
-        "Ingenieurunterstützung aus Ägypten",
-        "Globale Projektausführungsmentalität",
-        "Von kW- bis Gigawatt-Projekten",
+      heroTitle: "Über TOUGH HAULERS",
+      heroDesc:
+        "Ein China-basierter Partner für globalen Handel und industrielle Lösungen, der Zuverlässigkeit, Umsetzungskraft und langfristigen Wert liefert.",
+
+      overviewTitle: "Unternehmensübersicht",
+      overviewP1:
+        "TOUGH HAULERS ist ein in China basiertes globales Handels- und Industrieunternehmen, das Solarenergie, Batteriespeicher, industrielle Produktionslinien, Produktbeschaffung und Lieferkettenservices unterstützt.",
+      overviewP2:
+        "Wir verbinden zuverlässige Hersteller mit globalen Kunden und helfen Unternehmen, praktische, kosteneffiziente und skalierbare Lösungen in Energie, Industrie, Mobilität, Hotellerie und Hardware zu erhalten.",
+
+      stats: [
+        { value: "China", label: "Operative Basis" },
+        { value: "Global", label: "Handelsnetzwerk" },
+        { value: "Multi-Sektor", label: "Geschäftsumfang" },
+        { value: "End-to-End", label: "Supportmodell" },
       ],
-      capabilitiesBadge: "Kernkompetenzen",
-      capabilitiesTitle1: "Integrierte Energielösungen",
-      capabilitiesTitle2: "in Design, Beschaffung & Ausführung.",
-      capabilities: [
+
+      missionTitle: "Unsere Mission",
+      missionText:
+        "Zuverlässige Unterstützung in Handel, Beschaffung und Industrieprojekten zu liefern, damit Kunden passende Produkte, Fabriken und technische Lösungen mit Vertrauen erreichen.",
+      visionTitle: "Unsere Vision",
+      visionText:
+        "Ein vertrauenswürdiger internationaler Partner zu werden, der globale Nachfrage mit China-basierter Lieferkettenstärke, Engineering-Support und langfristigem Geschäftswert verbindet.",
+
+      whatWeDoTitle: "Was wir tun",
+      whatWeDo: [
         {
-          title: "Solarenergiesysteme",
-          text: "Integrierte Solarenergielösungen für zuverlässige Leistung und skalierbaren Einsatz.",
+          title: "Solarenergie & Energiespeicher",
+          desc: "Solarsysteme, Batterien, Wechselrichter, EPC-Support und Lösungen für Clean-Energy-Projekte.",
         },
         {
-          title: "Batteriespeichersysteme",
-          text: "Fortschrittliche BESS-Lösungen für stabile, optimierte und kontinuierliche Energieleistung.",
+          title: "Komplette Produktionslinien",
+          desc: "Industrielle Linien, Lieferantensuche, technische Prüfung, Layout-Unterstützung und Projektkoordination.",
         },
         {
-          title: "Werkslösungen",
-          text: "Schlüsselfertige Werkslösungen, Technologietransfer und Fertigungsunterstützung für Energiesysteme.",
+          title: "Globaler Handel & Beschaffung",
+          desc: "China-basierte Beschaffung für Produkte, Fabriken, Angebote, Muster und Exportunterstützung.",
         },
         {
-          title: "After-Sales-Support",
-          text: "Umfassender After-Sales-Service und technischer Support für langfristigen Mehrwert und Zuverlässigkeit.",
+          title: "Elektromobilität",
+          desc: "Elektroroller, Ersatzteile, Modellentwicklung, Anpassung und geschäftliche Lieferunterstützung.",
         },
+        {
+          title: "Konsum- & Hotelprodukte",
+          desc: "Küchenwaren, Hotelbedarf, Ausstattung, Verpackung, Branding und verkaufsfertige Produkte.",
+        },
+        {
+          title: "Werkzeuge & Industriehardware",
+          desc: "Handwerkzeuge, Elektrowerkzeuge, Werkstattausrüstung, Befestigungselemente und Industriehardware.",
+        },
+        {
+          title: "F&E / Anpassung",
+          desc: "OEM / ODM-Entwicklung, Produktdesign, Muster, 3D-Visualisierung und kundenspezifische Verpackung.",
+        },
+        {
+          title: "EPC & Projektunterstützung",
+          desc: "Technische Prüfung, Lieferantenkoordination, Versandverfolgung, Installations- und Inbetriebnahmesupport.",
+        },
+      ],
+
+      globalReachTitle: "Globale Reichweite",
+      globalReachText:
+        "Wir unterstützen internationale Kunden durch China-basierte Beschaffung, Lieferantenkoordination, Exportverfolgung und Projektkommunikation in unterschiedlichen Märkten.",
+
+      whyClientsTitle: "Warum Kunden mit uns arbeiten",
+      clientReasons: [
+        {
+          title: "Zuverlässige Qualität",
+          desc: "Wir konzentrieren uns auf passende Lieferanten, Produktprüfung und qualitätsorientierte Koordination.",
+        },
+        {
+          title: "Wettbewerbsfähiger Wert",
+          desc: "Wir helfen Kunden, praktische fabrikbasierte Lösungen mit starkem Wert zu erhalten.",
+        },
+        {
+          title: "End-to-End-Service",
+          desc: "Von Anfrage und Lieferantenmatching bis Versandverfolgung und After-Sales-Koordination.",
+        },
+        {
+          title: "Lieferverfolgung",
+          desc: "Wir unterstützen Kommunikation, Produktionsverfolgung, Verpackung und Versandkoordination.",
+        },
+        {
+          title: "Globales Business-Mindset",
+          desc: "Wir arbeiten mit verschiedenen Märkten und verstehen internationale Handelsanforderungen.",
+        },
+        {
+          title: "Nachhaltiger Fokus",
+          desc: "Wir unterstützen saubere Energie, effiziente Beschaffung und langfristige Zusammenarbeit.",
+        },
+      ],
+
+      peopleTitle: "Unser Team, unsere Stärke",
+      peopleText:
+        "Hinter jedem Projekt steht ein Team, das sich auf Kommunikation, Umsetzung und praktische Problemlösung konzentriert. Unsere Arbeit verbindet Beschaffungserfahrung, technisches Verständnis und eine kundenorientierte Denkweise.",
+      peopleStrength: [
+        "Erfahrene Branchenunterstützung",
+        "Kollaborative Teamarbeit",
+        "Kundenorientierter Ansatz",
       ],
     },
     contactPage: {
@@ -4247,6 +4995,125 @@ export const translations = {
         desc: "Erfahren Sie, wie technische Entwicklung, Tests und Validierung zuverlässige Energielösungen unterstützen.",
         button: "Mehr erfahren",
       },
+    },
+    mainHome: {
+      heroBadge: "TOUGH HAULERS TRADE LIMITED",
+      heroTitle:
+        "Globaler Handel, industrielle Lösungen und Projekte für saubere Energie",
+      heroDesc:
+        "Tough Haulers verbindet globale Märkte mit zuverlässigen Produkten, modernen Produktionslinien und nachhaltigen Energielösungen.",
+      exploreSolutions: "Unsere Lösungen entdecken",
+      requestQuotation: "Angebot anfordern",
+
+      whoBadge: "Wer wir sind",
+      whoTitle:
+        "Ihr zuverlässiger Partner für globalen Handel und industrielle Lösungen",
+      whoDesc:
+        "Tough Haulers Trade Limited ist ein in China basiertes Handels- und Projektlösungsunternehmen für Industrieausrüstung, Konsumgüter, Clean-Energy-Projekte und Lieferkettenservices.",
+      learnMore: "Mehr über uns erfahren",
+
+      features: [
+        {
+          title: "Global Sourcing",
+          desc: "Beschaffungsunterstützung aus China.",
+        },
+        {
+          title: "Zuverlässige Qualität",
+          desc: "Qualitätsorientierte Lieferkoordination.",
+        },
+        {
+          title: "End-to-End Support",
+          desc: "Von der Beschaffung bis zur Liefernachverfolgung.",
+        },
+      ],
+
+      categoriesBadge: "Hauptgeschäftsbereiche",
+      categoriesTitle: "Vielfältige Lösungen für jede Branche",
+      viewDetails: "Details anzeigen",
+
+      categories: {
+        solarEnergy: {
+          title: "Solarenergie",
+          desc: "Systeme und Komponenten",
+        },
+        productionLines: {
+          title: "Komplette Industrie-Produktionslinien",
+          desc: "Moderne Fertigungsausrüstung",
+        },
+        electricScooters: {
+          title: "Elektroroller",
+          desc: "Intelligente und nachhaltige Mobilität",
+        },
+        kitchenware: {
+          title: "Küchenausstattung",
+          desc: "Modern, langlebig und funktional",
+        },
+        hotelSupplies: {
+          title: "Hotelausstattung",
+          desc: "Qualitätsprodukte für die Hotellerie",
+        },
+        toolsHardware: {
+          title: "Werkzeuge & Hardware",
+          desc: "Zuverlässige Werkzeuge für verschiedene Branchen",
+        },
+      },
+
+      productionBadge: "Ausgewählte Produktionslinien",
+      productionTitle: "Präzision. Leistung. Produktivität.",
+
+      productionLines: [
+        {
+          title: "Metallrohr-Produktionslinie",
+          desc: "Hochfrequenz-geschweißte Rohrlinie mit hoher Effizienz und Präzision.",
+        },
+        {
+          title: "Stahlcoil-Spaltanlage",
+          desc: "Hochgeschwindigkeits-Spaltung für Kohlenstoffstahl, Edelstahl und Aluminium.",
+        },
+        {
+          title: "Rollform-Produktionslinie",
+          desc: "Automatisierte Rollformung für Dächer, Rahmen und Strukturprofile.",
+        },
+        {
+          title: "Kabeltrassen-Produktionslinie",
+          desc: "Schnelle und effiziente Produktion von Kabelmanagementsystemen.",
+        },
+      ],
+
+      whyBadge: "Warum Tough Haulers",
+      whyTitle: "Auf Vertrauen gebaut. Auf Ergebnisse ausgerichtet.",
+
+      whyItems: [
+        {
+          title: "Global Sourcing",
+          desc: "China-basierte Beschaffungsunterstützung für verschiedene Geschäftsbereiche.",
+        },
+        {
+          title: "Qualitätsfokus",
+          desc: "Lieferantenkoordination und Produktqualitätsverfolgung.",
+        },
+        {
+          title: "Wettbewerbsfähige Lieferung",
+          desc: "Direktbeschaffung ab Werk für besseren Projektwert.",
+        },
+        {
+          title: "Logistikunterstützung",
+          desc: "Unterstützung von der Beschaffung bis zur Versandkoordination.",
+        },
+        {
+          title: "After-Sales Support",
+          desc: "Reaktionsschnelle Unterstützung für langfristige Zusammenarbeit.",
+        },
+        {
+          title: "Lösungsorientierter Ansatz",
+          desc: "Praktische Produkt- und Projektlösungen für globale Kunden.",
+        },
+      ],
+
+      ctaTitle: "Bereit für Ihr nächstes Projekt?",
+      ctaDesc:
+        "Lassen Sie uns gemeinsam mit zuverlässigen Produkten, industriellen Lösungen und professioneller Lieferunterstützung arbeiten.",
+      letsBuild: "Gemeinsam starten",
     },
   },
 };

@@ -8,7 +8,7 @@ import {
   Globe,
   ArrowUpRight,
 } from "lucide-react";
-
+import { ROUTES, SOLUTIONS_LINKS } from "../../config/siteRoutes.js";
 import logo from "../../assets/logos/logo2.png";
 import { useLanguage } from "../../i18n/LanguageContext";
 
@@ -63,17 +63,10 @@ const Navbar = () => {
    isAr ? "flex-row-reverse text-right" : ""
  }`;
 
-  const solutionsLinks = [
-    { label: "Solar Energy", path: "/solutions/solar-energy" },
-    { label: "Bikes", path: "/solutions/bikes" },
-    { label: "Kitchenware", path: "/solutions/kitchenware" },
-    {
-      label: "Complete Industrial Production Lines",
-      path: "/solutions/complete-industrial-production-lines",
-    },
-    { label: "Hotel", path: "/solutions/hotel" },
-    { label: "Tools", path: "/solutions/tools" },
-  ];
+const solutionsLinks = SOLUTIONS_LINKS.map((item) => ({
+  label: t.footer.links[item.key],
+  path: item.path,
+}));
 
   const aboutLinks = [
     {
@@ -81,8 +74,8 @@ const Navbar = () => {
       path: "/company-profile.pdf",
       download: true,
     },
-    { label: t.nav.whyUs, path: "/whyus" },
-    { label: t.nav.contactUs, path: "/contact" },
+    { label: t.nav.whyUs, path: ROUTES.whyUs },
+    { label: t.nav.contactUs, path: ROUTES.contact },
   ];
 
   const languages = [
@@ -118,7 +111,11 @@ const Navbar = () => {
           scrolled ? "h-[68px] lg:h-[72px]" : "h-[74px] sm:h-[78px] lg:h-[82px]"
         }`}
       >
-        <Link to="/" onClick={closeAll} className="flex shrink-0 items-center">
+        <Link
+          to={ROUTES.home}
+          onClick={closeAll}
+          className="flex shrink-0 items-center"
+        >
           <img
             src={logo}
             alt="TOUGH HAULERS TRADE LIMITED"
@@ -131,7 +128,7 @@ const Navbar = () => {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          <NavLink to="/" className={navItemClass}>
+          <NavLink to={ROUTES.home} className={navItemClass}>
             {t.nav.home}
           </NavLink>
 
@@ -234,7 +231,7 @@ const Navbar = () => {
           </span> */}
 
           {/* <Link
-            to="/lets-build"
+            to={ROUTES.letsBuild}
             className="rounded-full bg-neutral-950 px-6 py-3 text-[14px] font-black text-white transition duration-300 hover:-translate-y-0.5 hover:bg-red-600 hover:shadow-[0_14px_35px_rgba(220,38,38,0.25)]"
           >
             {t.nav.letsBuild}
@@ -271,7 +268,7 @@ const Navbar = () => {
                       key={item.code}
                       type="button"
                       onClick={() => handleLanguageChange(item.code)}
-                      className={`block w-full rounded-2xl px-4 py-3 text-[15] font-bold transition ${
+                      className={`block w-full rounded-2xl px-4 py-3 text-[15px] font-bold transition ${
                         isAr ? "text-right" : "text-left"
                       } ${
                         lang === item.code
@@ -306,7 +303,11 @@ const Navbar = () => {
               isAr ? "text-right" : ""
             }`}
           >
-            <NavLink to="/" onClick={closeAll} className={mobileNavItemClass}>
+            <NavLink
+              to={ROUTES.home}
+              onClick={closeAll}
+              className={mobileNavItemClass}
+            >
               {t.nav.home}
             </NavLink>
 
@@ -369,17 +370,17 @@ const Navbar = () => {
               ))}
             </div>
 
-            <span className="mt-4 px-4 text-[14px] font-bold text-neutral-500">
+            {/* <span className="mt-4 px-4 text-[14px] font-bold text-neutral-500">
               {t.nav.startProject}
-            </span>
+            </span> */}
 
-            <Link
-              to="/lets-build"
+            {/* <Link
+              to={ROUTES.letsBuild}
               onClick={closeAll}
               className="mt-1 rounded-full bg-neutral-950 px-6 py-4 text-center text-[15px] font-black text-white transition hover:bg-red-600"
             >
               {t.nav.letsBuild}
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}

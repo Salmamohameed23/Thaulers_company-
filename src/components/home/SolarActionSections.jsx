@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ClipboardCheck, FlaskConical } from "lucide-react";
 import { useLanguage } from "../../i18n/LanguageContext";
-
+import { ROUTES } from "../../config/siteRoutes";
 const SolarActionSections = () => {
   const { t, lang } = useLanguage();
   const isAr = lang === "ar";
@@ -13,7 +13,7 @@ const SolarActionSections = () => {
       badge: t.solarAction.letsBuild.badge,
       title: t.solarAction.letsBuild.title,
       desc: t.solarAction.letsBuild.desc,
-      path: "/lets-build",
+      path: ROUTES.letsBuild,
       button: t.solarAction.letsBuild.button,
     },
     {
@@ -21,7 +21,7 @@ const SolarActionSections = () => {
       badge: t.solarAction.rd.badge,
       title: t.solarAction.rd.title,
       desc: t.solarAction.rd.desc,
-      path: "/rd",
+      path: ROUTES.rd,
       button: t.solarAction.rd.button,
     },
   ];

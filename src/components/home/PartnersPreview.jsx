@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
+import { ROUTES } from "../../config/siteRoutes";
 import bydLogo from "../../assets/logos/BYD_logo_clean_final.png";
 import RFLogo from "../../assets/logos/rfbox logo.jpg";
 import EVELogo from "../../assets/logos/EVE_logo_transparent.png";
@@ -25,7 +25,6 @@ const PartnersPreview = () => {
         isAr ? "font-[Cairo]" : ""
       }`}
     >
-    
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 35 }}
@@ -49,7 +48,7 @@ const PartnersPreview = () => {
           </div>
 
           <Link
-            to="/partners"
+            to={ROUTES.partners}
             className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-full bg-neutral-950 px-5 py-3 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-red-600 sm:px-7 sm:py-4"
           >
             <span>{t.partners.viewAll}</span>
