@@ -68,90 +68,88 @@ const Home = () => {
       }`}
     >
       {/* HERO */}
-     <section className="relative min-h-[620px] overflow-hidden bg-black">
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/src/assets/home_imgs/hero.png')" }}
-  />
+      <section className="relative min-h-[620px] overflow-hidden bg-black">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/home_imgs/hero.png')" }}
+        />
 
-  {/* Strong readable overlay */}
-  <div className="absolute inset-0 bg-black/30" />
-  <div
-    className={`absolute inset-0 ${
-      isAr
-        ? "bg-gradient-to-l from-black/85 via-black/55 to-black/20"
-        : "bg-gradient-to-r from-black/85 via-black/55 to-black/20"
-    }`}
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
+        {/* Strong readable overlay */}
+        <div className="absolute inset-0 bg-black/30" />
+        <div
+          className={`absolute inset-0 ${
+            isAr
+              ? "bg-gradient-to-l from-black/85 via-black/55 to-black/20"
+              : "bg-gradient-to-r from-black/85 via-black/55 to-black/20"
+          }`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
 
-  <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-5 py-16 lg:px-8">
-    <div
-      className={`w-full pt-10 ${
-        isAr
-          ? "ml-auto max-w-[820px] text-right"
-          : isLongHeroLang
-          ? "max-w-[720px] text-left"
-          : "max-w-3xl text-left"
-      }`}
-    >
-      <div
-        className={`mb-7 flex ${
-          isAr ? "justify-end" : "justify-start"
-        }`}
-      >
-        <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 shadow-[0_14px_35px_rgba(0,0,0,0.18)] backdrop-blur-md sm:gap-3 sm:px-5 sm:py-2.5">
-          <span className="h-2 w-2 shrink-0 rounded-full bg-[#ee4036] sm:h-2.5 sm:w-2.5" />
-          <span className="break-words font-black text-white">
-            {home.heroBadge}
-          </span>
+        <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-5 py-16 lg:px-8">
+          <div
+            className={`w-full pt-10 ${
+              isAr
+                ? "ml-auto max-w-[820px] text-right"
+                : isLongHeroLang
+                  ? "max-w-[720px] text-left"
+                  : "max-w-3xl text-left"
+            }`}
+          >
+            <div
+              className={`mb-7 flex ${isAr ? "justify-end" : "justify-start"}`}
+            >
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 shadow-[0_14px_35px_rgba(0,0,0,0.18)] backdrop-blur-md sm:gap-3 sm:px-5 sm:py-2.5">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-[#ee4036] sm:h-2.5 sm:w-2.5" />
+                <span className="break-words font-black text-white">
+                  {home.heroBadge}
+                </span>
+              </div>
+            </div>
+
+            <h1
+              className={`font-black tracking-tight text-white drop-shadow-[0_8px_22px_rgba(0,0,0,0.75)] ${
+                isAr
+                  ? "text-[42px] leading-[1.12] sm:text-[56px] lg:text-[70px]"
+                  : isLongHeroLang
+                    ? "text-[34px] leading-[1.08] sm:text-[46px] lg:text-[58px]"
+                    : "text-[42px] leading-[0.98] sm:text-6xl lg:text-7xl"
+              }`}
+            >
+              {home.heroTitle}
+            </h1>
+
+            <p
+              className={`mt-8 max-w-xl text-lg font-semibold leading-8 text-zinc-100 drop-shadow-[0_4px_14px_rgba(0,0,0,0.75)] md:text-xl ${
+                isAr ? "mr-auto" : ""
+              }`}
+            >
+              {home.heroDesc}
+            </p>
+
+            <div
+              className={`mt-10 flex flex-col gap-4 sm:flex-row ${
+                isAr ? "sm:justify-end" : "sm:justify-start"
+              }`}
+            >
+              <Link
+                to={ROUTES.solutions.solarEnergy}
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#ef3b35] px-8 py-4 font-black text-white shadow-2xl shadow-red-500/20 transition hover:bg-red-600"
+              >
+                {home.exploreSolutions}
+                <ArrowRight size={20} className={isAr ? "rotate-180" : ""} />
+              </Link>
+
+              <Link
+                to={ROUTES.contact}
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 font-black text-black transition hover:bg-zinc-100"
+              >
+                {home.requestQuotation}
+                <ArrowRight size={20} className={isAr ? "rotate-180" : ""} />
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <h1
-        className={`font-black tracking-tight text-white drop-shadow-[0_8px_22px_rgba(0,0,0,0.75)] ${
-          isAr
-            ? "text-[42px] leading-[1.12] sm:text-[56px] lg:text-[70px]"
-            : isLongHeroLang
-            ? "text-[34px] leading-[1.08] sm:text-[46px] lg:text-[58px]"
-            : "text-[42px] leading-[0.98] sm:text-6xl lg:text-7xl"
-        }`}
-      >
-        {home.heroTitle}
-      </h1>
-
-      <p
-        className={`mt-8 max-w-xl text-lg font-semibold leading-8 text-zinc-100 drop-shadow-[0_4px_14px_rgba(0,0,0,0.75)] md:text-xl ${
-          isAr ? "mr-auto" : ""
-        }`}
-      >
-        {home.heroDesc}
-      </p>
-
-      <div
-        className={`mt-10 flex flex-col gap-4 sm:flex-row ${
-          isAr ? "sm:justify-end" : "sm:justify-start"
-        }`}
-      >
-        <Link
-          to={ROUTES.solutions.solarEnergy}
-          className="inline-flex items-center justify-center gap-3 rounded-full bg-[#ef3b35] px-8 py-4 font-black text-white shadow-2xl shadow-red-500/20 transition hover:bg-red-600"
-        >
-          {home.exploreSolutions}
-          <ArrowRight size={20} className={isAr ? "rotate-180" : ""} />
-        </Link>
-
-        <Link
-          to={ROUTES.contact}
-          className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 font-black text-black transition hover:bg-zinc-100"
-        >
-          {home.requestQuotation}
-          <ArrowRight size={20} className={isAr ? "rotate-180" : ""} />
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* WHO WE ARE */}
       <section className="bg-white py-12 lg:py-14">
@@ -181,11 +179,11 @@ const Home = () => {
           <div className="grid items-center gap-8 md:grid-cols-[1.2fr_.8fr]">
             <div className="group relative">
               <ImageBlock
-                src="/src/assets/home_imgs/about1.png"
+                src="/images/home_imgs/about1.png"
                 className="h-[360px] rounded-3xl shadow-2xl"
               />
               <ImageBlock
-                src="/src/assets/home_imgs/about2.png"
+                src="/images/home_imgs/about2.png"
                 className={`absolute -bottom-8 hidden h-40 w-64 rounded-2xl border-8 border-white shadow-xl md:block ${
                   isAr ? "-right-8" : "-left-8"
                 }`}
