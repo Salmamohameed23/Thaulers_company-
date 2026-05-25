@@ -10,12 +10,10 @@ const Home = () => {
     <>
       <Hero />
       <CleanEnergySection />
-      {/* <AboutPreview /> */}
       <ServicesPreview />
       <SolarActionSections />
 
-      {/* <PartnersPreview />
-      <WhyChooseUs /> */}
+    
     </>
   );
 };

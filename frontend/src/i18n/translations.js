@@ -919,7 +919,7 @@ export const translations = {
         badge: "Project Planning",
         title: "Let’s Build Your Energy Project",
         desc: "Start with project requirements, location, capacity, and technical specifications so our engineering team can design the right solar and energy storage solution.",
-        button: "View More",
+        button: "Let’s Build",
       },
       rd: {
         badge: "R&D Capability",
@@ -1977,7 +1977,7 @@ export const translations = {
         badge: "تخطيط المشروع",
         title: "لنبدأ تنفيذ مشروع الطاقة الخاص بك",
         desc: "ابدأ بتحديد متطلبات المشروع والموقع والسعة والاحتياجات الفنية، ليقوم فريقنا الهندسي بتصميم الحل المناسب للطاقة الشمسية وأنظمة التخزين.",
-        button: "عرض التفاصيل",
+        button: "لنبدأ المشروع",
       },
       rd: {
         badge: "البحث والتطوير",
@@ -2993,7 +2993,7 @@ export const translations = {
         badge: "项目规划",
         title: "启动您的能源项目",
         desc: "提供项目需求、地点、容量及技术参数，我们的工程团队将为您设计合适的太阳能与储能解决方案。",
-        button: "查看详情",
+        button: "开始您的项目",
       },
       rd: {
         badge: "研发能力",
@@ -4003,7 +4003,7 @@ export const translations = {
         badge: "Планирование проекта",
         title: "Запустите ваш энергетический проект",
         desc: "Укажите требования проекта, локацию, мощность и технические параметры, чтобы наша инженерная команда разработала подходящее решение для солнечной энергии и хранения.",
-        button: "Подробнее",
+        button: "Давайте начнём проект",
       },
       rd: {
         badge: "R&D возможности",
@@ -5017,7 +5017,7 @@ export const translations = {
         badge: "Projektplanung",
         title: "Starten Sie Ihr Energieprojekt",
         desc: "Geben Sie Projektanforderungen, Standort, Kapazität und technische Details an, damit unser Ingenieurteam die passende Solar- und Speicherlösung entwickeln kann.",
-        button: "Mehr erfahren",
+        button: "Projekt starten",
       },
       rd: {
         badge: "F&E Kompetenz",
