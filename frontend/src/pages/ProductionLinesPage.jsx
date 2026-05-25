@@ -62,11 +62,10 @@ export default function ProductionLinesPage() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {" "}
             {productionLines.map((line) => (
               <div
                 key={line.slug}
-                className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:border-red-500"
+                className="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-red-500 hover:shadow-xl"
               >
                 <div className="h-48 overflow-hidden bg-gray-100">
                   <img
@@ -76,18 +75,18 @@ export default function ProductionLinesPage() {
                   />
                 </div>
 
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-base font-black text-black">
                     {line.title}
                   </h3>
 
-                  <p className="mt-2 min-h-[44px] text-sm leading-6 text-gray-600">
+                  <p className="mt-2 text-sm leading-6 text-gray-600">
                     {line.application}
                   </p>
 
                   <div className="mt-4 grid grid-cols-2 gap-4 border-t border-gray-200 pt-4 text-xs">
                     <div className="flex gap-2">
-                      <Gauge className="h-5 w-5 text-gray-500" />
+                      <Gauge className="h-5 w-5 shrink-0 text-gray-500" />
                       <div>
                         <p className="font-bold text-black">Capacity</p>
                         <p className="text-gray-600">{line.capacity}</p>
@@ -95,7 +94,7 @@ export default function ProductionLinesPage() {
                     </div>
 
                     <div className="flex gap-2">
-                      <Package className="h-5 w-5 text-gray-500" />
+                      <Package className="h-5 w-5 shrink-0 text-gray-500" />
                       <div>
                         <p className="font-bold text-black">Application</p>
                         <p className="text-gray-600">
@@ -105,19 +104,12 @@ export default function ProductionLinesPage() {
                     </div>
                   </div>
 
-                  <div className="mt-5 grid grid-cols-2 gap-3">
+                  <div className="mt-auto pt-5">
                     <Link
                       to={`/solutions/complete-industrial-production-lines/${line.slug}`}
-                      className="border border-gray-300 py-3 text-center text-xs font-bold text-gray-800 transition hover:border-red-600 hover:text-red-600"
+                      className="block w-full border border-gray-300 py-3 text-center text-sm font-bold text-black transition hover:border-red-600 hover:bg-red-50 hover:text-red-600"
                     >
                       View Details
-                    </Link>
-
-                    <Link
-                      to="/lets-build"
-                      className="bg-red-600 py-3 text-center text-xs font-black text-white transition hover:bg-red-700"
-                    >
-                      Request Quotation
                     </Link>
                   </div>
                 </div>
@@ -126,7 +118,6 @@ export default function ProductionLinesPage() {
           </div>
         </div>
       </section>
-
       {/* CTA */}
       <section className="bg-black px-6 py-10 text-white">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 md:flex-row md:items-center">
@@ -141,7 +132,7 @@ export default function ProductionLinesPage() {
           </div>
 
           <Link
-            to="/lets-build"
+            to="/solutions/production-lines/let-build"
             className="inline-flex items-center gap-3 bg-red-600 px-8 py-4 text-sm font-black text-white transition hover:bg-red-700"
           >
             Request Technical Proposal

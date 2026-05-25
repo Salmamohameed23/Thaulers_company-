@@ -93,7 +93,7 @@ export default function ProductionLineDetails() {
 
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
-                  to="/lets-build"
+                  to="/contact"
                   className="inline-flex items-center gap-3 bg-red-600 px-8 py-4 text-sm font-black text-white transition hover:bg-red-700"
                 >
                   Request Quotation
@@ -101,7 +101,7 @@ export default function ProductionLineDetails() {
                 </Link>
 
                 <Link
-                  to="/lets-build"
+                  to={`/solutions/production-lines/let-build?line=${line.slug}`}
                   className="inline-flex items-center gap-3 border border-gray-300 px-8 py-4 text-sm font-black text-black transition hover:border-red-600 hover:text-red-600"
                 >
                   Let’s Build
