@@ -19,7 +19,15 @@ import {
 import { ROUTES } from "../config/siteRoutes";
 import { homeData } from "../data/homeData";
 import { useLanguage } from "../i18n/LanguageContext";
-
+import { productionLines } from "../data/productionLinesData";
+const featuredProductionLines = productionLines.filter((line) =>
+  [
+    "metal-pipe-production-line",
+    "steel-coil-slitting-line",
+    "automatic-filling-packing-line",
+    "aluminum-recycling-to-cable-production-line",
+  ].includes(line.slug),
+);
 const MotionLink = motion(Link);
 
 const ICONS = {
@@ -74,7 +82,6 @@ const Home = () => {
           style={{ backgroundImage: "url('/images/home_imgs/hero.png')" }}
         />
 
-        {/* Strong readable overlay */}
         <div className="absolute inset-0 bg-black/30" />
         <div
           className={`absolute inset-0 ${
@@ -215,7 +222,7 @@ const Home = () => {
       </section>
 
       {/* CATEGORIES */}
-      <section className="bg-zinc-50 py-12 lg:py-14">
+      <section className="py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mb-14 text-center">
             <p className="text-xs font-black uppercase tracking-[0.3em] text-[#ef3b35]">
@@ -241,11 +248,13 @@ const Home = () => {
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.25 }}
                   whileHover={{ y: -8 }}
-                  className="group overflow-hidden rounded-[26px] border border-zinc-100 bg-white shadow-[0_16px_45px_rgba(0,0,0,0.06)] transition hover:border-red-500/20 hover:shadow-[0_28px_80px_rgba(0,0,0,0.13)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-[26px] border border-zinc-100 bg-white shadow-[0_16px_45px_rgba(0,0,0,0.06)] transition hover:border-red-500/20 hover:shadow-[0_28px_80px_rgba(0,0,0,0.13)]"
                 >
                   <ImageBlock src={image} className="h-48 lg:h-56" />
 
-                  <div className={`p-6 ${isAr ? "text-right" : ""}`}>
+                  <div
+                    className={`flex flex-1 flex-col p-6 ${isAr ? "text-right" : ""}`}
+                  >
                     <div
                       className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-[#ef3b35] transition duration-300 group-hover:scale-110 group-hover:bg-[#ef3b35] group-hover:text-white ${
                         isAr ? "mr-0 ml-auto" : ""
@@ -258,12 +267,12 @@ const Home = () => {
                       {item.title}
                     </h3>
 
-                    <p className="mt-2 min-h-[44px] text-[15px] text-zinc-500">
+                    <p className="mt-2 text-[15px] leading-6 text-zinc-500">
                       {item.desc}
                     </p>
 
                     <div
-                      className={`mt-5 flex items-center gap-2 text-sm font-black text-[#ef3b35] opacity-0 transition duration-300 group-hover:opacity-100 ${
+                      className={`mt-auto pt-5 flex items-center gap-2 text-sm font-black text-[#ef3b35] transition duration-300 ${
                         isAr
                           ? "justify-end group-hover:-translate-x-1"
                           : "group-hover:translate-x-1"
@@ -290,40 +299,47 @@ const Home = () => {
             <p className="text-xs font-black uppercase tracking-[0.3em] text-[#ef3b35]">
               {home.productionBadge}
             </p>
+
             <h2 className="mt-3 text-4xl font-black text-zinc-950 lg:text-5xl">
               {home.productionTitle}
             </h2>
           </div>
 
           <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-            {homeData.productionLines.map((line, index) => {
-              const item = home.productionLines[index];
+            {featuredProductionLines.map((line, index) => (
+              <motion.article
+                key={line.slug}
+                custom={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.25 }}
+                whileHover={{ y: -6 }}
+                className="group flex h-full flex-col overflow-hidden rounded-[26px] border border-zinc-100 bg-white shadow-[0_14px_40px_rgba(0,0,0,0.06)] transition hover:border-red-500/20 hover:shadow-[0_26px_70px_rgba(0,0,0,0.12)]"
+              >
+                <div className="h-48 overflow-hidden bg-zinc-200">
+                  <img
+                    src={line.image}
+                    alt={line.title}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
 
-              return (
-                <motion.article
-                  key={item.title}
-                  custom={index}
-                  variants={cardVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.25 }}
-                  whileHover={{ y: -6 }}
-                  className="group overflow-hidden rounded-[26px] border border-zinc-100 bg-white shadow-[0_14px_40px_rgba(0,0,0,0.06)] transition hover:border-red-500/20 hover:shadow-[0_26px_70px_rgba(0,0,0,0.12)]"
+                <div
+                  className={`flex flex-1 flex-col p-6 ${isAr ? "text-right" : ""}`}
                 >
-                  <ImageBlock src={line.image} className="h-48" />
+                  <h3 className="text-[18px] font-black text-zinc-950 transition group-hover:text-[#ef3b35]">
+                    {line.title}
+                  </h3>
 
-                  <div className={`p-6 ${isAr ? "text-right" : ""}`}>
-                    <h3 className="text-[18px] font-black text-zinc-950 transition group-hover:text-[#ef3b35]">
-                      {item.title}
-                    </h3>
+                  <p className="mt-3 text-[14px] leading-6 text-zinc-500">
+                    {line.application}
+                  </p>
 
-                    <p className="mt-3 text-[14px] leading-6 text-zinc-500">
-                      {item.desc}
-                    </p>
-
+                  <div className="mt-auto pt-5">
                     <Link
-                      to={ROUTES.solutions.productionLines}
-                      className={`mt-5 inline-flex items-center gap-2 text-sm font-black text-[#ef3b35] transition ${
+                      to={`/solutions/complete-industrial-production-lines/${line.slug}`}
+                      className={`inline-flex items-center gap-2 text-sm font-black text-[#ef3b35] transition ${
                         isAr
                           ? "group-hover:-translate-x-1"
                           : "group-hover:translate-x-1"
@@ -336,15 +352,15 @@ const Home = () => {
                       />
                     </Link>
                   </div>
-                </motion.article>
-              );
-            })}
+                </div>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="bg-zinc-50 py-12 lg:py-14">
+      <section className=" py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mb-14 text-center">
             <p className="text-xs font-black uppercase tracking-[0.3em] text-[#ef3b35]">
@@ -372,43 +388,6 @@ const Home = () => {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-white py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-5 lg:flex-row lg:px-8">
-          <div className={isAr ? "text-right" : ""}>
-            <h2 className="text-3xl font-black text-zinc-950 lg:text-4xl">
-              {home.ctaTitle}
-            </h2>
-            <p className="mt-3 max-w-2xl text-zinc-600">{home.ctaDesc}</p>
-          </div>
-
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link
-              to={ROUTES.letsBuild}
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#ef3b35] px-8 py-4 font-black text-white transition duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:bg-red-600 hover:shadow-[0_15px_40px_rgba(239,59,53,0.35)]"
-            >
-              {home.letsBuild}
-              <ArrowRight
-                size={18}
-                className={`transition duration-300 ${
-                  isAr
-                    ? "rotate-180 group-hover:-translate-x-1"
-                    : "group-hover:translate-x-1"
-                }`}
-              />
-            </Link>
-
-            <Link
-              to={ROUTES.contact}
-              className="inline-flex items-center justify-center gap-3 rounded-full border border-zinc-300 px-8 py-4 font-black text-black transition hover:border-[#ef3b35] hover:text-[#ef3b35]"
-            >
-              {home.requestQuotation}
-              <ArrowRight size={18} className={isAr ? "rotate-180" : ""} />
-            </Link>
           </div>
         </div>
       </section>

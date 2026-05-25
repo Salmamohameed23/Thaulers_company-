@@ -20,6 +20,7 @@ export default function ProductionLinesPage() {
           <h1 className="max-w-3xl text-4xl font-black uppercase leading-tight text-white md:text-6xl">
             Complete Industrial Production Lines
           </h1>
+          <div className="mt-3 h-[3px] w-14 bg-red-600" />
 
           <p className="mt-5 max-w-3xl text-sm leading-7 text-gray-200 md:text-base">
             We supply complete production line solutions from China, including

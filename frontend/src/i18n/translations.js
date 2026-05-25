@@ -139,7 +139,7 @@ export const translations = {
         "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
       copyright:
-        "Copy right ©  Tough Haulers Trade Limited 2026 - All rights reserved.",
+        "Copyright ©  TOUGH HAULERS Trade Limited 2026 - All rights reserved.",
       slogan: "Powering a sustainable future",
 
       links: {
@@ -156,7 +156,7 @@ export const translations = {
     privacy: {
       title: "Privacy Policy",
       intro:
-        "This Privacy Policy explains how Tough Haulers collects, uses, and protects the information you provide when using our website or contacting us. We are committed to safeguarding your privacy and handling your information responsibly.",
+        "This Privacy Policy explains how TOUGH HAULERS collects, uses, and protects the information you provide when using our website or contacting us. We are committed to safeguarding your privacy and handling your information responsibly.",
 
       sections: [
         {
@@ -213,12 +213,12 @@ export const translations = {
     terms: {
       title: "Terms of Service",
       intro:
-        "Welcome to the Tough Haulers website. By accessing or using our website, you agree to the following Terms of Service. Please read them carefully before using the website.",
+        "Welcome to the TOUGH HAULERS website. By accessing or using our website, you agree to the following Terms of Service. Please read them carefully before using the website.",
 
       sections: [
         {
           title: "Website Purpose",
-          text: "This website is intended to present information about Tough Haulers, including our products, services, catalogues, and company details.",
+          text: "This website is intended to present information about TOUGH HAULERS, including our products, services, catalogues, and company details.",
         },
         {
           title: "Use of Website",
@@ -234,7 +234,7 @@ export const translations = {
         },
         {
           title: "Intellectual Property",
-          text: "All website content is owned by Tough Haulers and may not be copied, reproduced, or used without prior written permission.",
+          text: "All website content is owned by TOUGH HAULERS and may not be copied, reproduced, or used without prior written permission.",
         },
         {
           title: "External Links",
@@ -242,7 +242,7 @@ export const translations = {
         },
         {
           title: "Limitation of Liability",
-          text: "Tough Haulers is not liable for any damages resulting from the use of this website or reliance on its content.",
+          text: "TOUGH HAULERS is not liable for any damages resulting from the use of this website or reliance on its content.",
         },
         {
           title: "Changes to These Terms",
@@ -360,7 +360,7 @@ export const translations = {
       badge: "Contact Us",
       title1: "Start your",
       title2: "energy project with us.",
-      desc: "Contact Tough Haulers for solar power systems, battery energy storage, EPC engineering, factory solutions, and global project support.",
+      desc: "Contact TOUGH HAULERS for solar power systems, battery energy storage, EPC engineering, factory solutions, and global project support.",
 
       contactTitle: "Company Contact",
 
@@ -506,7 +506,7 @@ export const translations = {
       heroTitle2A: "Industrial",
       heroTitle2B: "Energy Projects.",
       heroDesc:
-        "Tough Haulers supports industrial and energy projects through China-based manufacturing coordination, component sourcing, factory setup, quality control, and technical engineering support.",
+        "TOUGH HAULERS supports industrial and energy projects through China-based manufacturing coordination, component sourcing, factory setup, quality control, and technical engineering support.",
 
       heroCapabilities: [
         "Factory Coordination",
@@ -592,7 +592,7 @@ export const translations = {
       heroTitle2B: "and Gigawatt Projects",
 
       heroDesc:
-        "Tough Haulers delivers large-scale solar and energy storage solutions, from kW systems to multi-MW and gigawatt-level projects. We combine EPC engineering, BESS integration, and China-based supply chain strength to ensure reliable, scalable, and execution-focused delivery.",
+        "TOUGH HAULERS delivers large-scale solar and energy storage solutions, from kW systems to multi-MW and gigawatt-level projects. We combine EPC engineering, BESS integration, and China-based supply chain strength to ensure reliable, scalable, and execution-focused delivery.",
 
       heroCapabilities: [
         "Utility-Scale Solar",
@@ -812,7 +812,7 @@ export const translations = {
       ],
 
       ctaTitle1: "Build Your Next Energy Project",
-      ctaTitle2: "with Tough Haulers",
+      ctaTitle2: "with TOUGH HAULERS",
       ctaDesc:
         "With strong R&D, advanced technology, strict quality management, and full process control, we deliver reliable energy solutions and long-term project success.",
     },
@@ -932,14 +932,14 @@ export const translations = {
       heroBadge: "TOUGH HAULERS TRADE LIMITED",
       heroTitle: "Global Trading, Industrial Solutions & Clean Energy Projects",
       heroDesc:
-        "Tough Haulers connects global markets with reliable products, advanced production lines, and sustainable energy solutions.",
+        "TOUGH HAULERS connects global markets with reliable products, advanced production lines, and sustainable energy solutions.",
       exploreSolutions: "Explore Our Solutions",
       requestQuotation: "Request a Quotation",
 
       whoBadge: "Who We Are",
       whoTitle: "Your Trusted Partner in Global Trade and Industrial Solutions",
       whoDesc:
-        "Tough Haulers Trade Limited is a China-based trading and project solutions company supporting industrial equipment, consumer goods, clean energy projects, and supply chain services.",
+        "TOUGH HAULERS Trade Limited is a China-based trading and project solutions company supporting industrial equipment, consumer goods, clean energy projects, and supply chain services.",
       learnMore: "Learn More About Us",
 
       features: [
@@ -1010,7 +1010,7 @@ export const translations = {
         },
       ],
 
-      whyBadge: "Why Choose Tough Haulers",
+      whyBadge: "Why Choose TOUGH HAULERS",
       whyTitle: "Built on Trust. Driven by Results.",
 
       whyItems: [
@@ -1187,7 +1187,8 @@ export const translations = {
       location1:
         "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
-      copyright: "© 2026 جميع الحقوق محفوظة لشركة Tough Haulers Trade Limited",
+      copyright:
+        "حقوق النشر © شركة TOUGH HAULERS للتجارة المحدودة 2026 - جميع الحقوق محفوظة.",
       slogan: "نقود مستقبل الطاقة المستدامة",
 
       links: {
@@ -1204,7 +1205,7 @@ export const translations = {
     privacy: {
       title: "سياسة الخصوصية",
       intro:
-        "توضح سياسة الخصوصية هذه كيفية قيام شركة Tough Haulers بجمع واستخدام وحماية المعلومات التي تقدمها عند استخدامك للموقع أو عند التواصل معنا. نحن ملتزمون بحماية خصوصيتك والتعامل مع بياناتك بمسؤولية وشفافية.",
+        "توضح سياسة الخصوصية هذه كيفية قيام شركة TOUGH HAULERS بجمع واستخدام وحماية المعلومات التي تقدمها عند استخدامك للموقع أو عند التواصل معنا. نحن ملتزمون بحماية خصوصيتك والتعامل مع بياناتك بمسؤولية وشفافية.",
 
       sections: [
         {
@@ -1261,7 +1262,7 @@ export const translations = {
     terms: {
       title: "شروط الاستخدام",
       intro:
-        "مرحبًا بك في موقع Tough Haulers. باستخدامك لهذا الموقع، فإنك توافق على شروط الاستخدام التالية. يرجى قراءتها بعناية قبل المتابعة.",
+        "مرحبًا بك في موقع TOUGH HAULERS. باستخدامك لهذا الموقع، فإنك توافق على شروط الاستخدام التالية. يرجى قراءتها بعناية قبل المتابعة.",
 
       sections: [
         {
@@ -1408,7 +1409,7 @@ export const translations = {
       badge: "تواصل معنا",
       title1: "ابدأ مشروعك",
       title2: "في مجال الطاقة معنا",
-      desc: "تواصل مع Tough Haulers للحصول على حلول الطاقة الشمسية، وأنظمة تخزين الطاقة، وخدمات EPC الهندسية، وحلول المصانع، ودعم المشاريع على المستوى العالمي.",
+      desc: "تواصل مع TOUGH HAULERS للحصول على حلول الطاقة الشمسية، وأنظمة تخزين الطاقة، وخدمات EPC الهندسية، وحلول المصانع، ودعم المشاريع على المستوى العالمي.",
 
       contactTitle: "معلومات التواصل",
 
@@ -1554,7 +1555,7 @@ export const translations = {
       heroTitle2A: "للمشاريع الصناعية",
       heroTitle2B: "ومشاريع الطاقة.",
       heroDesc:
-        "تدعم Tough Haulers المشاريع الصناعية ومشاريع الطاقة من خلال تنسيق التصنيع داخل الصين، وتوريد المكونات، وتجهيز المصانع، ومراقبة الجودة، والدعم الهندسي الفني.",
+        "تدعم TOUGH HAULERS المشاريع الصناعية ومشاريع الطاقة من خلال تنسيق التصنيع داخل الصين، وتوريد المكونات، وتجهيز المصانع، ومراقبة الجودة، والدعم الهندسي الفني.",
 
       heroCapabilities: [
         "تنسيق المصانع",
@@ -1638,7 +1639,7 @@ export const translations = {
       heroTitle2B: "على مستوى الجيجاواط",
 
       heroDesc:
-        "تدعم Tough Haulers مشاريع الطاقة الشمسية وأنظمة تخزين الطاقة على نطاق واسع، بدءًا من الأنظمة الصغيرة وحتى المشاريع متعددة الجيجاواط، من خلال تكامل حلول EPC، وأنظمة التخزين BESS، وسلاسل التوريد المعتمدة من الصين، مع تنفيذ عملي يركز على الكفاءة والموثوقية.",
+        "تدعم TOUGH HAULERS مشاريع الطاقة الشمسية وأنظمة تخزين الطاقة على نطاق واسع، بدءًا من الأنظمة الصغيرة وحتى المشاريع متعددة الجيجاواط، من خلال تكامل حلول EPC، وأنظمة التخزين BESS، وسلاسل التوريد المعتمدة من الصين، مع تنفيذ عملي يركز على الكفاءة والموثوقية.",
 
       heroCapabilities: [
         "محطات طاقة شمسية على نطاق المرافق",
@@ -1858,7 +1859,7 @@ export const translations = {
       ],
 
       ctaTitle1: "ابدأ مشروع الطاقة القادم",
-      ctaTitle2: "مع Tough Haulers",
+      ctaTitle2: "مع TOUGH HAULERS",
       ctaDesc:
         "من خلال البحث والتطوير، والتقنيات المتقدمة، وإدارة الجودة الصارمة، والتحكم الكامل في مراحل التنفيذ، نقدم حلول طاقة موثوقة تدعم نجاح المشاريع على المدى الطويل.",
     },
@@ -1990,14 +1991,14 @@ export const translations = {
       heroBadge: "TOUGH HAULERS TRADE LIMITED",
       heroTitle: "تجارة عالمية، حلول صناعية، ومشاريع طاقة نظيفة",
       heroDesc:
-        "تربط Tough Haulers الأسواق العالمية بمنتجات موثوقة، وخطوط إنتاج متقدمة، وحلول طاقة مستدامة.",
+        "تربط TOUGH HAULERS الأسواق العالمية بمنتجات موثوقة، وخطوط إنتاج متقدمة، وحلول طاقة مستدامة.",
       exploreSolutions: "استكشف حلولنا",
       requestQuotation: "اطلب عرض سعر",
 
       whoBadge: "من نحن",
       whoTitle: "شريكك الموثوق في التجارة العالمية والحلول الصناعية",
       whoDesc:
-        "Tough Haulers Trade Limited شركة تجارية وحلول مشاريع مقرها الصين، تدعم المعدات الصناعية، والمنتجات الاستهلاكية، ومشاريع الطاقة النظيفة، وخدمات سلاسل التوريد.",
+        "TOUGH HAULERS Trade Limited شركة تجارية وحلول مشاريع مقرها الصين، تدعم المعدات الصناعية، والمنتجات الاستهلاكية، ومشاريع الطاقة النظيفة، وخدمات سلاسل التوريد.",
       learnMore: "اعرف المزيد عن الشركة",
 
       features: [
@@ -2068,7 +2069,7 @@ export const translations = {
         },
       ],
 
-      whyBadge: "لماذا تختار Tough Haulers",
+      whyBadge: "لماذا تختار TOUGH HAULERS",
       whyTitle: "ثقة في التعامل. ونتائج في التنفيذ.",
 
       whyItems: [
@@ -2243,7 +2244,7 @@ export const translations = {
       email: "Sales@toughhaulers.cn.com",
       location1: "中国浙江省义乌市工人北路454号楼201室",
 
-      copyright: "© 2026 Tough Haulers Trade Limited. 版权所有。",
+      copyright: "版权 © TOUGH HAULERS 贸易有限公司 2026 — 保留所有权利。",
       slogan: "推动可持续能源未来",
 
       links: {
@@ -2260,7 +2261,7 @@ export const translations = {
     privacy: {
       title: "隐私政策",
       intro:
-        "本隐私政策说明 Tough Haulers 在您使用我们的网站或与我们联系时，如何收集、使用及保护您的信息。我们致力于以负责任和安全的方式处理您的数据。",
+        "本隐私政策说明 TOUGH HAULERS 在您使用我们的网站或与我们联系时，如何收集、使用及保护您的信息。我们致力于以负责任和安全的方式处理您的数据。",
 
       sections: [
         {
@@ -2310,7 +2311,7 @@ export const translations = {
     terms: {
       title: "服务条款",
       intro:
-        "欢迎访问 Tough Haulers 网站。使用本网站即表示您同意以下服务条款，请在使用前仔细阅读。",
+        "欢迎访问 TOUGH HAULERS 网站。使用本网站即表示您同意以下服务条款，请在使用前仔细阅读。",
 
       sections: [
         {
@@ -2457,7 +2458,7 @@ export const translations = {
       badge: "联系我们",
       title1: "开启您的",
       title2: "能源项目合作",
-      desc: "欢迎联系 Tough Haulers，我们提供太阳能系统、电池储能解决方案、EPC 工程服务、工厂解决方案以及全球项目支持。",
+      desc: "欢迎联系 TOUGH HAULERS，我们提供太阳能系统、电池储能解决方案、EPC 工程服务、工厂解决方案以及全球项目支持。",
 
       contactTitle: "联系信息",
 
@@ -2598,7 +2599,7 @@ export const translations = {
       heroTitle2A: "工厂解决方案",
       heroTitle2B: "能源项目。",
       heroDesc:
-        "Tough Haulers 通过中国本地制造协调、零部件采购、工厂搭建、质量控制及技术工程支持，为工业与能源项目提供可靠的执行支持。",
+        "TOUGH HAULERS 通过中国本地制造协调、零部件采购、工厂搭建、质量控制及技术工程支持，为工业与能源项目提供可靠的执行支持。",
 
       heroCapabilities: [
         "工厂协调",
@@ -2682,7 +2683,7 @@ export const translations = {
       heroTitle2B: "与吉瓦级能源系统",
 
       heroDesc:
-        "Tough Haulers 为大规模光伏及储能项目提供全流程支持，从千瓦级系统到多兆瓦乃至吉瓦级项目，结合 EPC 工程能力、BESS 集成、中国供应链优势及高效项目执行能力，确保项目可靠交付。",
+        "TOUGH HAULERS 为大规模光伏及储能项目提供全流程支持，从千瓦级系统到多兆瓦乃至吉瓦级项目，结合 EPC 工程能力、BESS 集成、中国供应链优势及高效项目执行能力，确保项目可靠交付。",
 
       heroCapabilities: [
         "公用事业级光伏系统",
@@ -2888,7 +2889,7 @@ export const translations = {
         "售后服务",
       ],
 
-      ctaTitle1: "与 Tough Haulers 一起",
+      ctaTitle1: "与 TOUGH HAULERS 一起",
       ctaTitle2: "打造您的下一个能源项目",
       ctaDesc:
         "依托强大的研发能力、先进技术、严格质量管理与全流程控制，我们为客户交付可靠的能源解决方案，并支持项目长期成功。",
@@ -3006,14 +3007,14 @@ export const translations = {
       heroBadge: "TOUGH HAULERS TRADE LIMITED",
       heroTitle: "全球贸易、工业解决方案与清洁能源项目",
       heroDesc:
-        "Tough Haulers 连接全球市场，提供可靠产品、先进生产线以及可持续能源解决方案。",
+        "TOUGH HAULERS 连接全球市场，提供可靠产品、先进生产线以及可持续能源解决方案。",
       exploreSolutions: "探索我们的解决方案",
       requestQuotation: "获取报价",
 
       whoBadge: "关于我们",
       whoTitle: "您在全球贸易与工业解决方案领域的可靠伙伴",
       whoDesc:
-        "Tough Haulers Trade Limited 是一家以中国为运营基础的贸易与项目解决方案公司，服务于工业设备、消费品、清洁能源项目及供应链服务。",
+        "TOUGH HAULERS Trade Limited 是一家以中国为运营基础的贸易与项目解决方案公司，服务于工业设备、消费品、清洁能源项目及供应链服务。",
       learnMore: "了解更多",
 
       features: [
@@ -3084,7 +3085,7 @@ export const translations = {
         },
       ],
 
-      whyBadge: "为什么选择 Tough Haulers",
+      whyBadge: "为什么选择 TOUGH HAULERS",
       whyTitle: "以信任为基础，以结果为导向。",
 
       whyItems: [
@@ -3251,7 +3252,8 @@ export const translations = {
       email: "Sales@toughhaulers.cn.com",
       location1:
         "Офис 201, Здание № 454, Северная дорога Гунжэнь, г. Иу, пров. Чжэцзян, Китай",
-      copyright: "© 2026 Tough Haulers Trade Limited. Все права защищены.",
+      copyright:
+        "Авторские права © TOUGH HAULERS Trade Limited 2026 — Все права защищены.",
       slogan: "Обеспечивая устойчивое энергетическое будущее",
       links: {
         solarEnergy: "Солнечная энергия",
@@ -3267,7 +3269,7 @@ export const translations = {
     privacy: {
       title: "Политика конфиденциальности",
       intro:
-        "Настоящая Политика конфиденциальности разъясняет, каким образом компания Tough Haulers собирает, использует и защищает информацию, предоставляемую вами при использовании нашего сайта или при обращении к нам. Мы обязуемся защищать вашу конфиденциальность и обращаться с вашими данными ответственно.",
+        "Настоящая Политика конфиденциальности разъясняет, каким образом компания TOUGH HAULERS собирает, использует и защищает информацию, предоставляемую вами при использовании нашего сайта или при обращении к нам. Мы обязуемся защищать вашу конфиденциальность и обращаться с вашими данными ответственно.",
       sections: [
         {
           title: "Собираемая информация",
@@ -3323,11 +3325,11 @@ export const translations = {
     terms: {
       title: "Условия использования",
       intro:
-        "Добро пожаловать на сайт Tough Haulers. Используя наш сайт, вы соглашаетесь с нижеследующими Условиями использования. Пожалуйста, внимательно ознакомьтесь с ними перед началом использования сайта.",
+        "Добро пожаловать на сайт TOUGH HAULERS. Используя наш сайт, вы соглашаетесь с нижеследующими Условиями использования. Пожалуйста, внимательно ознакомьтесь с ними перед началом использования сайта.",
       sections: [
         {
           title: "Назначение сайта",
-          text: "Настоящий сайт предназначен для представления информации о компании Tough Haulers, включая наши продукты, услуги, каталоги и корпоративные сведения.",
+          text: "Настоящий сайт предназначен для представления информации о компании TOUGH HAULERS, включая наши продукты, услуги, каталоги и корпоративные сведения.",
         },
         {
           title: "Использование сайта",
@@ -3343,7 +3345,7 @@ export const translations = {
         },
         {
           title: "Интеллектуальная собственность",
-          text: "Весь контент сайта является собственностью Tough Haulers и не может быть скопирован, воспроизведён или использован без предварительного письменного разрешения.",
+          text: "Весь контент сайта является собственностью TOUGH HAULERS и не может быть скопирован, воспроизведён или использован без предварительного письменного разрешения.",
         },
         {
           title: "Внешние ссылки",
@@ -3351,7 +3353,7 @@ export const translations = {
         },
         {
           title: "Ограничение ответственности",
-          text: "Компания Tough Haulers не несёт ответственности за какой-либо ущерб, возникший в результате использования настоящего сайта или доверия к его содержанию.",
+          text: "Компания TOUGH HAULERS не несёт ответственности за какой-либо ущерб, возникший в результате использования настоящего сайта или доверия к его содержанию.",
         },
         {
           title: "Изменение условий",
@@ -3469,7 +3471,7 @@ export const translations = {
       badge: "Связаться с нами",
       title1: "Начните ваш",
       title2: "энергетический проект с нами.",
-      desc: "Свяжитесь с Tough Haulers по вопросам солнечных энергосистем, систем накопления энергии, EPC-инжиниринга, заводских решений и поддержки глобальных проектов.",
+      desc: "Свяжитесь с TOUGH HAULERS по вопросам солнечных энергосистем, систем накопления энергии, EPC-инжиниринга, заводских решений и поддержки глобальных проектов.",
       contactTitle: "Контактная информация",
       info: [
         {
@@ -3608,7 +3610,7 @@ export const translations = {
       heroTitle2A: "для промышленных проектов",
       heroTitle2B: "и энергетических объектов.",
       heroDesc:
-        "Tough Haulers обеспечивает поддержку промышленных и энергетических проектов через координацию производства в Китае, поставку компонентов, оснащение заводов, контроль качества и техническую инженерную поддержку.",
+        "TOUGH HAULERS обеспечивает поддержку промышленных и энергетических проектов через координацию производства в Китае, поставку компонентов, оснащение заводов, контроль качества и техническую инженерную поддержку.",
       heroCapabilities: [
         "Координация производства",
         "Оснащение производства",
@@ -3686,7 +3688,7 @@ export const translations = {
       heroTitle2A: "для масштабных солнечных проектов",
       heroTitle2B: "на уровне гигаватт",
       heroDesc:
-        "Tough Haulers обеспечивает полный цикл поддержки крупных солнечных и энергонакопительных проектов — от небольших систем до многогигаваттных установок — на основе EPC-инжиниринга, интеграции BESS, надёжных китайских цепочек поставок и эффективного управления проектами.",
+        "TOUGH HAULERS обеспечивает полный цикл поддержки крупных солнечных и энергонакопительных проектов — от небольших систем до многогигаваттных установок — на основе EPC-инжиниринга, интеграции BESS, надёжных китайских цепочек поставок и эффективного управления проектами.",
       heroCapabilities: [
         "Солнечные станции коммунального масштаба",
         "Интеграция Solar + BESS",
@@ -3879,7 +3881,7 @@ export const translations = {
         "Послепродажное обслуживание",
       ],
       ctaTitle1: "Реализуйте ваш следующий энергетический проект",
-      ctaTitle2: "с Tough Haulers",
+      ctaTitle2: "с TOUGH HAULERS",
       ctaDesc:
         "Опираясь на мощные НИОКР, передовые технологии, строгий контроль качества и полноцикловое управление процессами, мы реализуем надёжные энергетические решения и долгосрочный успех проектов.",
     },
@@ -4017,7 +4019,7 @@ export const translations = {
       heroTitle:
         "Глобальная торговля, промышленные решения и проекты чистой энергии",
       heroDesc:
-        "Tough Haulers соединяет мировые рынки с надёжными продуктами, современными производственными линиями и устойчивыми энергетическими решениями.",
+        "TOUGH HAULERS соединяет мировые рынки с надёжными продуктами, современными производственными линиями и устойчивыми энергетическими решениями.",
       exploreSolutions: "Изучить решения",
       requestQuotation: "Запросить предложение",
 
@@ -4025,7 +4027,7 @@ export const translations = {
       whoTitle:
         "Ваш надёжный партнёр в глобальной торговле и промышленных решениях",
       whoDesc:
-        "Tough Haulers Trade Limited — торговая и проектная компания с операционной базой в Китае, поддерживающая промышленное оборудование, потребительские товары, проекты чистой энергии и услуги цепочки поставок.",
+        "TOUGH HAULERS Trade Limited — торговая и проектная компания с операционной базой в Китае, поддерживающая промышленное оборудование, потребительские товары, проекты чистой энергии и услуги цепочки поставок.",
       learnMore: "Узнать больше",
 
       features: [
@@ -4096,7 +4098,7 @@ export const translations = {
         },
       ],
 
-      whyBadge: "Почему выбирают Tough Haulers",
+      whyBadge: "Почему выбирают TOUGH HAULERS",
       whyTitle: "Основано на доверии. Ориентировано на результат.",
 
       whyItems: [
@@ -4263,7 +4265,8 @@ export const translations = {
       email: "Sales@toughhaulers.cn.com",
       location1:
         "Büro 201, Gebäude Nr. 454, Gongren North Road, Yiwu City, Provinz Zhejiang, China",
-      copyright: "© 2026 Tough Haulers Trade Limited. Alle Rechte vorbehalten.",
+      copyright:
+        "Urheberrecht © TOUGH HAULERS Trade Limited 2026 – Alle Rechte vorbehalten.",
       slogan: "Eine nachhaltige Energiezukunft gestalten",
       links: {
         solarEnergy: "Solarenergie",
@@ -4279,7 +4282,7 @@ export const translations = {
     privacy: {
       title: "Datenschutzrichtlinie",
       intro:
-        "Diese Datenschutzrichtlinie erläutert, wie Tough Haulers die Informationen, die Sie bei der Nutzung unserer Website oder bei der Kontaktaufnahme mit uns bereitstellen, erhebt, verwendet und schützt. Wir verpflichten uns zum Schutz Ihrer Privatsphäre und zur verantwortungsvollen Verarbeitung Ihrer Daten.",
+        "Diese Datenschutzrichtlinie erläutert, wie TOUGH HAULERS die Informationen, die Sie bei der Nutzung unserer Website oder bei der Kontaktaufnahme mit uns bereitstellen, erhebt, verwendet und schützt. Wir verpflichten uns zum Schutz Ihrer Privatsphäre und zur verantwortungsvollen Verarbeitung Ihrer Daten.",
       sections: [
         {
           title: "Erhobene Informationen",
@@ -4335,11 +4338,11 @@ export const translations = {
     terms: {
       title: "Nutzungsbedingungen",
       intro:
-        "Willkommen auf der Tough Haulers-Website. Durch den Zugriff auf oder die Nutzung unserer Website stimmen Sie den folgenden Nutzungsbedingungen zu. Bitte lesen Sie diese sorgfältig durch, bevor Sie die Website nutzen.",
+        "Willkommen auf der TOUGH HAULERS-Website. Durch den Zugriff auf oder die Nutzung unserer Website stimmen Sie den folgenden Nutzungsbedingungen zu. Bitte lesen Sie diese sorgfältig durch, bevor Sie die Website nutzen.",
       sections: [
         {
           title: "Zweck der Website",
-          text: "Diese Website dient der Präsentation von Informationen über Tough Haulers, einschließlich unserer Produkte, Dienstleistungen, Kataloge und Unternehmensdetails.",
+          text: "Diese Website dient der Präsentation von Informationen über TOUGH HAULERS, einschließlich unserer Produkte, Dienstleistungen, Kataloge und Unternehmensdetails.",
         },
         {
           title: "Nutzung der Website",
@@ -4355,7 +4358,7 @@ export const translations = {
         },
         {
           title: "Geistiges Eigentum",
-          text: "Alle Website-Inhalte sind Eigentum von Tough Haulers und dürfen ohne vorherige schriftliche Genehmigung nicht kopiert, reproduziert oder verwendet werden.",
+          text: "Alle Website-Inhalte sind Eigentum von TOUGH HAULERS und dürfen ohne vorherige schriftliche Genehmigung nicht kopiert, reproduziert oder verwendet werden.",
         },
         {
           title: "Externe Links",
@@ -4363,7 +4366,7 @@ export const translations = {
         },
         {
           title: "Haftungsbeschränkung",
-          text: "Tough Haulers haftet nicht für Schäden, die aus der Nutzung dieser Website oder dem Vertrauen auf deren Inhalte entstehen.",
+          text: "TOUGH HAULERS haftet nicht für Schäden, die aus der Nutzung dieser Website oder dem Vertrauen auf deren Inhalte entstehen.",
         },
         {
           title: "Änderungen dieser Bedingungen",
@@ -4481,7 +4484,7 @@ export const translations = {
       badge: "Kontakt",
       title1: "Starten Sie Ihr",
       title2: "Energieprojekt mit uns.",
-      desc: "Kontaktieren Sie Tough Haulers für Solarenergiesysteme, Batteriespeicher, EPC-Engineering, Werkslösungen und globale Projektunterstützung.",
+      desc: "Kontaktieren Sie TOUGH HAULERS für Solarenergiesysteme, Batteriespeicher, EPC-Engineering, Werkslösungen und globale Projektunterstützung.",
       contactTitle: "Unternehmensinformationen",
       info: [
         {
@@ -4620,7 +4623,7 @@ export const translations = {
       heroTitle2A: "für Industrieprojekte",
       heroTitle2B: "und Energieanlagen.",
       heroDesc:
-        "Tough Haulers unterstützt Industrie- und Energieprojekte durch Fertigungskoordination in China, Komponentenbeschaffung, Werksaufbau, Qualitätskontrolle und technische Ingenieurunterstützung.",
+        "TOUGH HAULERS unterstützt Industrie- und Energieprojekte durch Fertigungskoordination in China, Komponentenbeschaffung, Werksaufbau, Qualitätskontrolle und technische Ingenieurunterstützung.",
       heroCapabilities: [
         "Werkskoordination",
         "Produktionsaufbau",
@@ -4698,7 +4701,7 @@ export const translations = {
       heroTitle2A: "für großangelegte Solarprojekte",
       heroTitle2B: "auf Gigawatt-Ebene",
       heroDesc:
-        "Tough Haulers bietet vollständige Unterstützung für großangelegte Solar- und Energiespeicherprojekte — von kleinen Systemen bis hin zu Multi-Gigawatt-Installationen — durch EPC-Engineering, BESS-Integration, zuverlässige chinesische Lieferketten und effizientes Projektmanagement.",
+        "TOUGH HAULERS bietet vollständige Unterstützung für großangelegte Solar- und Energiespeicherprojekte — von kleinen Systemen bis hin zu Multi-Gigawatt-Installationen — durch EPC-Engineering, BESS-Integration, zuverlässige chinesische Lieferketten und effizientes Projektmanagement.",
       heroCapabilities: [
         "Solarkraftwerke auf Versorgungsebene",
         "Solar + BESS-Integration",
@@ -4891,7 +4894,7 @@ export const translations = {
         "After-Sales-Service",
       ],
       ctaTitle1: "Realisieren Sie Ihr nächstes Energieprojekt",
-      ctaTitle2: "mit Tough Haulers",
+      ctaTitle2: "mit TOUGH HAULERS",
       ctaDesc:
         "Mit starker F&E, fortschrittlicher Technologie, striktem Qualitätsmanagement und vollständiger Prozesskontrolle liefern wir zuverlässige Energielösungen und langfristigen Projekterfolg.",
     },
@@ -5031,7 +5034,7 @@ export const translations = {
       heroTitle:
         "Globaler Handel, industrielle Lösungen und Projekte für saubere Energie",
       heroDesc:
-        "Tough Haulers verbindet globale Märkte mit zuverlässigen Produkten, modernen Produktionslinien und nachhaltigen Energielösungen.",
+        "TOUGH HAULERS verbindet globale Märkte mit zuverlässigen Produkten, modernen Produktionslinien und nachhaltigen Energielösungen.",
       exploreSolutions: "Unsere Lösungen entdecken",
       requestQuotation: "Angebot anfordern",
 
@@ -5039,7 +5042,7 @@ export const translations = {
       whoTitle:
         "Ihr zuverlässiger Partner für globalen Handel und industrielle Lösungen",
       whoDesc:
-        "Tough Haulers Trade Limited ist ein in China basiertes Handels- und Projektlösungsunternehmen für Industrieausrüstung, Konsumgüter, Clean-Energy-Projekte und Lieferkettenservices.",
+        "TOUGH HAULERS Trade Limited ist ein in China basiertes Handels- und Projektlösungsunternehmen für Industrieausrüstung, Konsumgüter, Clean-Energy-Projekte und Lieferkettenservices.",
       learnMore: "Mehr über uns erfahren",
 
       features: [
@@ -5110,7 +5113,7 @@ export const translations = {
         },
       ],
 
-      whyBadge: "Warum Tough Haulers",
+      whyBadge: "Warum TOUGH HAULERS",
       whyTitle: "Auf Vertrauen gebaut. Auf Ergebnisse ausgerichtet.",
 
       whyItems: [
