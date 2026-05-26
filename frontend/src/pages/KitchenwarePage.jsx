@@ -19,10 +19,11 @@ const KitchenwarePage = () => {
     <main className="bg-white text-zinc-950">
       {/* HERO */}
       <section className="relative h-[520px] overflow-hidden">
-        <img
-          src="/images/kitchenware/categories/hero.png"
-          alt="Kitchenware"
-          className="absolute inset-0 h-full w-full object-cover"
+        <div
+          className="absolute inset-0 bg-cover bg-center scale-100"
+          style={{
+            backgroundImage: "url('/images/kitchenware/categories/hero.png ')",
+          }}
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
@@ -35,7 +36,7 @@ const KitchenwarePage = () => {
 
             <div className="mt-4 h-[3px] w-16 bg-red-600" />
 
-            <p className="mt-6 text-base font-semibold leading-7 text-white/90">
+            <p className="mt-6 text-base text-s font-semibold leading-7 text-white/90">
               Premium quality kitchenware designed for durability, performance,
               and modern everyday use.
             </p>
@@ -142,9 +143,9 @@ const KitchenwarePage = () => {
 
       {/* PACKAGING */}
       {/* PACKAGING + WHY US */}
+      {/* PACKAGING */}
       <section className="bg-white py-14 text-zinc-950">
         <div className="mx-auto max-w-7xl px-6">
-          {/* Packaging */}
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr]">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -205,70 +206,69 @@ const KitchenwarePage = () => {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
 
-          {/* Why Source With Us */}
-          <div className="mt-16">
-            <div className="text-center">
-              <h2 className="text-3xl font-black text-zinc-950">
-                Why Source With Us
-              </h2>
-              <div className="mx-auto mt-3 h-[3px] w-16 bg-red-600" />
-            </div>
+      {/* WHY SOURCE WITH US */}
+      <section className="bg-black px-6 py-16 text-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <p className="text-[11px] font-black uppercase tracking-[0.45em] text-red-600">
+              Supply Chain Advantage
+            </p>
 
-            <div className="mt-10 grid gap-0 rounded-2xl bg-white md:grid-cols-2 lg:grid-cols-5">
-              {[
-                {
-                  icon: BadgeCheck,
-                  title: "High-Quality Materials",
-                  desc: "Food-grade, safe & durable materials.",
-                },
-                {
-                  icon: Factory,
-                  title: "Advanced Manufacturing",
-                  desc: "Modern facilities with strict quality control.",
-                },
-                {
-                  icon: PackageCheck,
-                  title: "Competitive Pricing",
-                  desc: "Factory-direct pricing with excellent value.",
-                },
-                {
-                  icon: Truck,
-                  title: "Reliable Delivery",
-                  desc: "On-time delivery with strong supply chain support.",
-                },
-                {
-                  icon: ArrowRight,
-                  title: "Global Experience",
-                  desc: "Trusted by clients in worldwide markets.",
-                },
-              ].map((item, index) => {
-                const Icon = item.icon;
+            <h2 className="mt-4 text-4xl font-black">Why Source With Us</h2>
+          </div>
 
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: index * 0.08 }}
-                    whileHover={{ y: -6 }}
-                    className="group flex gap-4 border-r border-gray-200 px-5 py-5 last:border-r-0"
-                  >
-                    <Icon className="mt-1 h-8 w-8 shrink-0 text-red-600 transition group-hover:-translate-y-1 group-hover:scale-110" />
+          <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              {
+                icon: BadgeCheck,
+                title: "High-Quality Materials",
+                desc: "Food-grade, safe & durable materials.",
+              },
+              {
+                icon: Factory,
+                title: "Advanced Manufacturing",
+                desc: "Modern facilities with strict quality control.",
+              },
+              {
+                icon: PackageCheck,
+                title: "Competitive Pricing",
+                desc: "Factory-direct pricing with excellent value.",
+              },
+              {
+                icon: Truck,
+                title: "Reliable Delivery",
+                desc: "On-time delivery with strong supply chain support.",
+              },
+              {
+                icon: ArrowRight,
+                title: "Global Experience",
+                desc: "Trusted by clients in worldwide markets.",
+              },
+            ].map((item, index) => {
+              const Icon = item.icon;
 
-                    <div className="text-left">
-                      <h3 className="text-sm font-black text-zinc-950 transition group-hover:text-red-600">
-                        {item.title}
-                      </h3>
-                      <p className="mt-1 text-xs font-semibold leading-5 text-gray-600">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                  className="border-r border-white/15 px-4 text-center last:border-r-0"
+                >
+                  <Icon className="mx-auto mb-5 h-8 w-8 text-red-500" />
+
+                  <h3 className="text-sm font-black">{item.title}</h3>
+
+                  <p className="mt-3 text-xs font-medium leading-6 text-white/70">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

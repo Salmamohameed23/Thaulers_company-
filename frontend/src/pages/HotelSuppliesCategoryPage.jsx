@@ -1,18 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import {
-  kitchenwareProducts,
-  kitchenwareCategories,
-} from "../data/kitchenwareData";
+import { hotelCategories, hotelProducts } from "../data/hotelSuppliesData";
 
-const KitchenwareCategoryPage = () => {
+const HotelSuppliesCategoryPage = () => {
   const { categorySlug } = useParams();
 
-  const category = kitchenwareCategories.find((c) => c.slug === categorySlug);
-
-  const products = kitchenwareProducts.filter(
-    (p) => p.categorySlug === categorySlug,
+  const category = hotelCategories.find((item) => item.slug === categorySlug);
+  const products = hotelProducts.filter(
+    (item) => item.categorySlug === categorySlug,
   );
 
   if (!category) {
@@ -23,23 +19,24 @@ const KitchenwareCategoryPage = () => {
     );
   }
 
+  const Icon = category.icon;
+
   return (
     <main className="bg-white text-zinc-950">
-      {/* HERO */}
       <section className="bg-gray-50 px-6 py-14">
         <div className="mx-auto max-w-7xl">
           <Link
-            to="/solutions/kitchenware"
+            to="/solutions/hotel-supplies"
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-gray-300 px-5 py-3 text-sm font-black text-zinc-950 transition hover:border-red-600 hover:text-red-600"
           >
             <ArrowLeft size={15} />
-            Back to Kitchenware
+            Back to Hotel Supplies
           </Link>
 
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="mb-5 text-[11px] font-black uppercase tracking-[0.45em] text-red-600">
-                Kitchenware Collection
+                Hotel Supplies
               </p>
 
               <h1 className="text-5xl font-black leading-tight text-zinc-950">
@@ -53,20 +50,43 @@ const KitchenwareCategoryPage = () => {
               <p className="mt-5 max-w-xl text-sm font-semibold leading-7 text-gray-600">
                 {category.desc}
               </p>
+
+              <div className="mt-7 flex flex-wrap gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-3 bg-red-600 px-8 py-4 text-sm font-black text-white transition hover:bg-red-700"
+                >
+                  Request Quotation
+                  <ArrowRight size={16} />
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-3 border border-gray-300 px-8 py-4 text-sm font-black text-zinc-950 transition hover:border-red-600 hover:text-red-600"
+                >
+                  Request Catalog
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
 
             <div className="overflow-hidden rounded-[30px] bg-gray-100 shadow-2xl">
-              <img
-                src={category.image}
-                alt={category.title}
-                className="h-[360px] w-full object-cover"
-              />
+              {category.image ? (
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="h-[360px] w-full object-cover"
+                />
+              ) : (
+                <div className="flex h-[360px] items-center justify-center">
+                  <Icon className="h-20 w-20 text-gray-400" />
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* PRODUCTS */}
       <section className="px-6 py-14">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
@@ -96,7 +116,7 @@ const KitchenwareCategoryPage = () => {
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="h-full w-full object-contain p-3 transition duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>
 
@@ -106,11 +126,11 @@ const KitchenwareCategoryPage = () => {
                   </h3>
 
                   <p className="mt-2 text-xs font-semibold leading-6 text-gray-600">
-                    {product.shortDesc}
+                    {product.desc}
                   </p>
 
                   <Link
-                    to={`/solutions/kitchenware/${product.categorySlug}/${product.slug}`}
+                    to={`/solutions/hotel-supplies/${product.categorySlug}/${product.slug}`}
                     className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-black text-red-600 transition group-hover:translate-x-1"
                   >
                     View Details
@@ -126,4 +146,4 @@ const KitchenwareCategoryPage = () => {
   );
 };
 
-export default KitchenwareCategoryPage;
+export default HotelSuppliesCategoryPage;
