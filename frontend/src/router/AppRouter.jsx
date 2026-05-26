@@ -27,25 +27,17 @@ import KitchenwareProductDetails from "../pages/KitchenwareProductDetails";
 import HotelSuppliesPage from "../pages/HotelSuppliesPage";
 import HotelSuppliesCategoryPage from "../pages/HotelSuppliesCategoryPage";
 import HotelSupplyDetailsPage from "../pages/HotelSupplyDetailsPage";
-// Placeholder component
-const PlaceholderPage = ({ title }) => {
-  return (
-    <main className="min-h-screen bg-white px-6 py-32 text-center">
-      <h1 className="text-4xl font-black text-neutral-950">{title}</h1>
-      <p className="mt-4 text-neutral-600">This page will be designed later.</p>
-    </main>
-  );
-};
 
+// tools and hardware 
+import ToolsHardwarePage from "../pages/ToolsHardwarePage";
+import ToolsHardwareCategoryPage from "../pages/ToolsHardwareCategoryPage";
+import ToolsHardwareProductDetails from "../pages/ToolsHardwareProductDetails";
 const AppRouter = () => {
   return (
     <Routes>
       {/* Main Home */}
       <Route path={ROUTES.home} element={<Home />} />
-      <Route
-        path={ROUTES.solutions.electricScooters}
-        element={<PlaceholderPage title="Electric Scooters" />}
-      />
+      
       <Route path={ROUTES.whyUs} element={<Whyus />} />
       <Route path={ROUTES.contact} element={<Contact />} />
       <Route path={ROUTES.letsBuild} element={<LetsBuild />} />
@@ -53,15 +45,13 @@ const AppRouter = () => {
       {/* Legal */}
       <Route path={ROUTES.terms} element={<TermsOfService />} />
       <Route path={ROUTES.privacy} element={<PrivacyPolicy />} />
-
-{/*  */}
+      {/*  */}
       {/* solar */}
       <Route path={ROUTES.solutions.solarEnergy} element={<SolarHome />} />{" "}
       <Route path="/smart-storage" element={<SmartStorage />} />
       <Route path="/factory" element={<Factory />} />
       <Route path="/gigawatt-projects" element={<GigawattProjects />} />
       <Route path={ROUTES.rd} element={<Rd />} />
-
       {/*  */}
       {/* productions lines  */}
       <Route
@@ -98,29 +88,20 @@ const AppRouter = () => {
         path="/solutions/hotel-supplies/:categorySlug/:productSlug"
         element={<HotelSupplyDetailsPage />}
       />
-
       {/*  */}
       {/* toolsand hardware */}
+      <Route path="/solutions/tools-hardware" element={<ToolsHardwarePage />} />
       <Route
-        path={ROUTES.solutions.toolsHardware}
-        element={<PlaceholderPage title="Tools & Hardware" />}
+        path="/solutions/tools-hardware/:categorySlug"
+        element={<ToolsHardwareCategoryPage />}
       />
+      <Route
+        path="/solutions/tools-hardware/:categorySlug/:productSlug"
+        element={<ToolsHardwareProductDetails />}
+      />
+      
       {/*  */}
       {/* bikes  */}
-      <Route
-        path={ROUTES.solutions.electricScooters}
-        element={<PlaceholderPage title="Electric Scooters" />}
-      />
-      {/* OLD ROUTES (temporary support) */}
-      <Route
-        path={ROUTES.oldSolutions.bikes}
-        element={<PlaceholderPage title="Electric Scooters" />}
-      />
-    
-      <Route
-        path={ROUTES.oldSolutions.tools}
-        element={<PlaceholderPage title="Tools & Hardware" />}
-      />
     </Routes>
   );
 };
