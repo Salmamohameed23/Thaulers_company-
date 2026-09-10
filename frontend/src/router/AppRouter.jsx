@@ -21,8 +21,6 @@ import ProductionLineDetails from "../pages/ProductionLineDetails";
 import ProjectBriefFormPage from "../pages/ProjectBriefFormPage";
 // kitchenware
 import KitchenwarePage from "../pages/KitchenwarePage";
-import KitchenwareCategoryPage from "../pages/KitchenwareCategoryPage";
-import KitchenwareProductDetails from "../pages/KitchenwareProductDetails";
 // hotel supplies
 import HotelSuppliesPage from "../pages/HotelSuppliesPage";
 import HotelSuppliesCategoryPage from "../pages/HotelSuppliesCategoryPage";
@@ -69,14 +67,7 @@ const AppRouter = () => {
       {/*  */}
       {/* kitchen */}
       <Route path="/solutions/kitchenware" element={<KitchenwarePage />} />
-      <Route
-        path="/solutions/kitchenware/:categorySlug"
-        element={<KitchenwareCategoryPage />}
-      />
-      <Route
-        path="/solutions/kitchenware/:categorySlug/:productSlug"
-        element={<KitchenwareProductDetails />}
-      />
+
       {/*  */}
       {/* hotel */}
       <Route path="/solutions/hotel-supplies" element={<HotelSuppliesPage />} />

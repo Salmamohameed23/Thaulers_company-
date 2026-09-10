@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -7,39 +6,75 @@ import {
   Truck,
   Factory,
 } from "lucide-react";
-import {
-  kitchenwareCategories,
-  kitchenwareProducts,
-} from "../data/kitchenwareData";
+import { useLanguage } from "../i18n/LanguageContext";
+
+const kitchenwareCategories = [
+  {
+    slug: "cookware-sets",
+    image: "/src/assets/images/kitchen/cookware-sets.png",
+  },
+  {
+    slug: "drinkware-bottles",
+    image: "/src/assets/images/kitchen/drinkware-bottles.png",
+  },
+  {
+    slug: "electric-kitchen-appliances",
+    image: "/src/assets/images/kitchen/electric-kitchen-appliances.png",
+  },
+  {
+    slug: "kitchen-tools-utensils",
+    image: "/src/assets/images/kitchen/kitchen-tools-utensils.png",
+  },
+  {
+    slug: "major-home-appliances",
+    image: "/src/assets/images/kitchen/major-home-appliances.png",
+  },
+  {
+    slug: "private-label-kitchen-sets",
+    image: "/src/assets/images/kitchen/private-label-kitchen-sets.png",
+  },
+  {
+    slug: "storage-organization",
+    image: "/src/assets/images/kitchen/storage-organization.png",
+  },
+];
 
 const KitchenwarePage = () => {
-  const featuredProducts = kitchenwareProducts.slice(0, 6);
+  const { t } = useLanguage();
+  const content = t.kitchenwarePage;
 
   return (
     <main className="bg-white text-zinc-950">
       {/* HERO */}
-      <section className="relative h-[520px] overflow-hidden">
+      <section className="relative min-h-[620px] overflow-hidden lg:min-h-[700px]">
         <div
-          className="absolute inset-0 bg-cover bg-center scale-100"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/kitchenware/categories/hero.png ')",
+            backgroundImage: "url('/src/assets/images/kitchen/hero.png')",
           }}
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/10" />
 
-        <div className="relative mx-auto flex h-full max-w-7xl items-center px-6">
-          <div className="max-w-xl text-white">
-            <h1 className="text-5xl font-black leading-tight md:text-6xl">
-              Kitchenware
+        <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-6 py-20 lg:min-h-[700px]">
+          <div className="max-w-2xl text-white">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/30 bg-black/20 px-5 py-3 text-[11px] font-black uppercase tracking-[0.35em] backdrop-blur-sm">
+              <span className="h-2 w-2 rounded-full bg-red-600" />
+              {content.heroBadge}
+            </div>
+
+            <h1 className="mt-8 text-5xl font-black leading-[1.05] md:text-7xl">
+              {content.heroTitlePrefix}{" "}
+              <span className="text-red-600">{content.heroHighlight}</span>
+              <br />
+              {content.heroTitleSuffix}
             </h1>
 
-            <div className="mt-4 h-[3px] w-16 bg-red-600" />
-
-            <p className="mt-6 text-base text-s font-semibold leading-7 text-white/90">
-              Premium quality kitchenware designed for durability, performance,
-              and modern everyday use.
-            </p>
+            <div className="mt-8 max-w-xl rounded-3xl border border-white/30 bg-black/35 p-7 backdrop-blur-sm">
+              <p className="text-base font-semibold leading-8 text-white/90 md:text-lg">
+                {content.heroDescription}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -49,94 +84,53 @@ const KitchenwarePage = () => {
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center">
             <p className="text-xs font-black uppercase tracking-[0.35em] text-red-600">
-              Kitchenware Collection
+              {content.collectionBadge}
             </p>
             <h2 className="mt-3 text-3xl font-black text-zinc-950 md:text-4xl">
-              Product Categories
+              {content.categoriesTitle}
             </h2>
             <div className="mx-auto mt-4 h-[3px] w-16 bg-red-600" />
           </div>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {kitchenwareCategories.map((cat) => (
-              <Link
-                key={cat.slug}
-                to={`/solutions/kitchenware/${cat.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-2 hover:border-red-500/30 hover:shadow-xl"
-              >
-                <div className="h-48 overflow-hidden bg-gray-100">
-                  <img
-                    src={cat.image}
-                    alt={cat.title}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                  />
-                </div>
+          <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            {kitchenwareCategories.map((cat, index) => {
+              const category = content.categories[index];
 
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-lg font-black text-zinc-950">
-                    {cat.title}
-                  </h3>
-
-                  <p className="mt-2 text-sm font-semibold leading-6 text-gray-600">
-                    {cat.desc}
-                  </p>
-
-                  <div className="mt-auto flex items-center gap-2 pt-5 text-sm font-black text-red-600 transition group-hover:translate-x-1">
-                    Explore
-                    <ArrowRight size={16} />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED PRODUCTS */}
-      <section id="products" className=" py-16 text-zinc-950">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center">
-            <p className="text-xs font-black uppercase tracking-[0.35em] text-red-600">
-              Selected Items
-            </p>
-            <h2 className="mt-3 text-3xl font-black text-zinc-950 md:text-4xl">
-              Featured Products
-            </h2>
-            <div className="mx-auto mt-4 h-[3px] w-16 bg-red-600" />
-          </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-            {featuredProducts.map((product) => (
-              <motion.div
-                key={product.slug}
-                whileHover={{ y: -6 }}
-                className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:border-red-500/30 hover:shadow-lg"
-              >
-                <div className="h-36 overflow-hidden rounded-lg bg-gray-100">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="h-full w-full object-contain p-2"
-                  />
-                </div>
-
-                <h3 className="mt-4 text-sm font-black leading-5 text-zinc-950">
-                  {product.title}
-                </h3>
-
-                <p className="mt-2 text-xs font-semibold leading-5 text-gray-600">
-                  {product.shortDesc}
-                </p>
-
-                <Link
-                  to={`/solutions/kitchenware/${product.categorySlug}/${product.slug}`}
-                  className="mt-auto inline-flex items-center gap-2 pt-4 text-xs font-black text-red-600 transition hover:translate-x-1"
+              return (
+                <motion.article
+                  key={cat.slug}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -10 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: index * 0.07 },
+                    y: { duration: 0.35, delay: index * 0.07 },
+                  }}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow duration-300 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.13)]"
                 >
-                  View Details
-                  <ArrowRight size={14} />
-                </Link>
-              </motion.div>
-            ))}
+                  <div className="relative h-52 overflow-hidden bg-gray-100">
+                    <img
+                      src={cat.image}
+                      alt={category.title}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
+
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="text-lg font-black text-zinc-950">
+                      {category.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm font-semibold leading-6 text-gray-600">
+                      {category.desc}
+                    </p>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-red-600 transition-transform duration-300 group-hover:scale-x-100" />
+                </motion.article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -156,7 +150,7 @@ const KitchenwarePage = () => {
             >
               <img
                 src="/images/kitchenware/packaging.png"
-                alt="Packaging & Custom Branding"
+                alt={content.packagingTitle}
                 className="h-[300px] w-full object-cover"
               />
             </motion.div>
@@ -168,22 +162,21 @@ const KitchenwarePage = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h2 className="text-3xl font-black text-zinc-950">
-                Packaging & Custom Branding
+                {content.packagingTitle}
               </h2>
 
               <div className="mt-3 h-[3px] w-16 bg-red-600" />
 
               <p className="mt-5 max-w-xl text-sm font-semibold leading-7 text-gray-600">
-                We provide tailored packaging solutions and private label
-                options to help your brand stand out in the market.
+                {content.packagingDescription}
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-0 md:grid-cols-4">
                 {[
-                  { icon: BadgeCheck, title: "Custom Logo Printing" },
-                  { icon: PackageCheck, title: "Color Box Design" },
-                  { icon: Factory, title: "Barcode & Label Service" },
-                  { icon: Truck, title: "Retail-Ready Packaging" },
+                  { icon: BadgeCheck, title: content.packagingFeatures[0] },
+                  { icon: PackageCheck, title: content.packagingFeatures[1] },
+                  { icon: Factory, title: content.packagingFeatures[2] },
+                  { icon: Truck, title: content.packagingFeatures[3] },
                 ].map((item, index) => {
                   const Icon = item.icon;
 
@@ -214,38 +207,38 @@ const KitchenwarePage = () => {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="text-[11px] font-black uppercase tracking-[0.45em] text-red-600">
-              Supply Chain Advantage
+              {content.whyBadge}
             </p>
 
-            <h2 className="mt-4 text-4xl font-black">Why Source With Us</h2>
+            <h2 className="mt-4 text-4xl font-black">{content.whyTitle}</h2>
           </div>
 
           <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-5">
             {[
               {
                 icon: BadgeCheck,
-                title: "High-Quality Materials",
-                desc: "Food-grade, safe & durable materials.",
+                title: content.whyItems[0].title,
+                desc: content.whyItems[0].desc,
               },
               {
                 icon: Factory,
-                title: "Advanced Manufacturing",
-                desc: "Modern facilities with strict quality control.",
+                title: content.whyItems[1].title,
+                desc: content.whyItems[1].desc,
               },
               {
                 icon: PackageCheck,
-                title: "Competitive Pricing",
-                desc: "Factory-direct pricing with excellent value.",
+                title: content.whyItems[2].title,
+                desc: content.whyItems[2].desc,
               },
               {
                 icon: Truck,
-                title: "Reliable Delivery",
-                desc: "On-time delivery with strong supply chain support.",
+                title: content.whyItems[3].title,
+                desc: content.whyItems[3].desc,
               },
               {
                 icon: ArrowRight,
-                title: "Global Experience",
-                desc: "Trusted by clients in worldwide markets.",
+                title: content.whyItems[4].title,
+                desc: content.whyItems[4].desc,
               },
             ].map((item, index) => {
               const Icon = item.icon;
