@@ -1,43 +1,115 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import {
-  hotelCategories,
-  hotelProducts,
-  hotelPartnerItems,
-} from "../data/hotelSuppliesData";
+import { hotelPartnerItems } from "../data/hotelSuppliesData";
+import { useLanguage } from "../i18n/LanguageContext";
+
+const hotelCategories = [
+  {
+    slug: "amenities-guest-room",
+    title: "Guest Room Amenities",
+    desc: "Thoughtfully selected essentials that enhance comfort and elevate the guest experience.",
+    image: "/images/Hotelsupply/category-amenities-guest-room.png",
+  },
+  {
+    slug: "bathroom-accessories",
+    title: "Bathroom Accessories",
+    desc: "Refined and functional bathroom accessories designed for modern hospitality spaces.",
+    image: "/images/Hotelsupply/category-bathroom-accessories.png",
+  },
+  {
+    slug: "bedding-linen",
+    title: "Bedding & Linen",
+    desc: "Premium bedding and linen collections created for lasting comfort and presentation.",
+    image: "/images/Hotelsupply/category-bedding-linen.png",
+  },
+  {
+    slug: "front-office-stationery",
+    title: "Front Office Stationery",
+    desc: "Professional stationery and desk accessories that support polished guest services.",
+    image: "/images/Hotelsupply/category-front-office-stationery.png",
+  },
+  {
+    slug: "housekeeping-supplies",
+    title: "Housekeeping Supplies",
+    desc: "Reliable housekeeping products for efficient daily operations and consistent standards.",
+    image: "/images/Hotelsupply/category-housekeeping-supplies.png",
+  },
+  {
+    slug: "mattress-protectors",
+    title: "Mattress Protectors",
+    desc: "Durable protective solutions designed to preserve hygiene, comfort, and mattress quality.",
+    image: "/images/Hotelsupply/category-mattress-protectors.png",
+  },
+  {
+    slug: "packaging-branding",
+    title: "Packaging & Branding",
+    desc: "Custom packaging and branding solutions tailored to your hotel's identity.",
+    image: "/images/Hotelsupply/category-packaging-branding.png",
+  },
+  {
+    slug: "pillows-duvets",
+    title: "Pillows & Duvets",
+    desc: "Comfort-focused pillows and duvets engineered for restful, memorable stays.",
+    image: "/images/Hotelsupply/category-pillows-duvets.png",
+  },
+  {
+    slug: "restaurant-buffet-supplies",
+    title: "Restaurant & Buffet Supplies",
+    desc: "Elegant, dependable solutions for professional dining and buffet presentation.",
+    image: "/images/Hotelsupply/category-restaurant-buffet-supplies.png",
+  },
+  {
+    slug: "room-slippers",
+    title: "Room Slippers",
+    desc: "Comfortable guest slippers available in hospitality-ready styles and finishes.",
+    image: "/images/Hotelsupply/category-room-slippers.png",
+  },
+  {
+    slug: "towels-bath-textiles",
+    title: "Towels & Bath Textiles",
+    desc: "Soft, absorbent bath textiles developed for everyday hospitality performance.",
+    image: "/images/Hotelsupply/category-towels-bath-textiles.png",
+  },
+];
 
 const HotelSuppliesPage = () => {
-  const featuredProducts = hotelProducts.slice(0, 4);
+  const { t } = useLanguage();
+  const content = t.hotelSuppliesPage;
 
   return (
     <main className="bg-white text-zinc-950">
       {/* HERO */}
-      <section className="relative h-[520px] overflow-hidden text-white">
+      <section className="relative min-h-[620px] overflow-hidden text-white lg:min-h-[700px]">
         {/* IMAGE */}
         <div
-          className="absolute inset-0 bg-cover bg-center scale-105"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/Hotelsupply/hero.png')",
+            backgroundImage: "url('/images/Hotelsupply/hero.jpg')",
           }}
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/10" />
 
         {/* CONTENT */}
-        <div className="relative mx-auto flex h-full max-w-7xl items-center px-6">
-          <div>
-            <h1 className="text-5xl font-black leading-tight md:text-6xl">
-              Hotel Supplies
+        <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-6 py-20 lg:min-h-[700px]">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/30 bg-black/20 px-5 py-3 text-[11px] font-black uppercase tracking-[0.35em] backdrop-blur-sm">
+              <span className="h-2 w-2 rounded-full bg-red-600" />
+              {content.heroBadge}
+            </div>
+
+            <h1 className="mt-8 text-5xl font-black leading-[1.05] md:text-7xl">
+              {content.heroTitlePrefix}{" "}
+              <span className="text-red-600">{content.heroHighlight}</span>
+              <br />
+              {content.heroTitleSuffix}
             </h1>
 
-            <div className="mt-5 h-[3px] w-16 bg-red-600" />
-
-            <p className="mt-6 max-w-xl text-sm font-semibold leading-7 text-white/90">
-              Premium hotel amenities, guest room essentials, and hospitality
-              solutions that elevate every stay.
-            </p>
+            <div className="mt-8 max-w-xl rounded-3xl border border-white/30 bg-black/35 p-7 backdrop-blur-sm">
+              <p className="text-base font-semibold leading-8 text-white/90 md:text-lg">
+                {content.heroDescription}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -46,112 +118,53 @@ const HotelSuppliesPage = () => {
       <section className="bg-white px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <p className="text-[11px] font-black uppercase tracking-[0.45em] text-red-600">
-              Hotel Solutions
-            </p>
-
-            <h2 className="mt-3 text-4xl font-black text-zinc-950">
-              Explore Categories
+            <h2 className="text-4xl font-black text-zinc-950">
+              {content.categoriesTitle}
             </h2>
 
             <div className="mx-auto mt-4 h-[3px] w-16 bg-red-600" />
           </div>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {hotelCategories.map((cat, index) => {
-              const Icon = cat.icon;
+              const category = content.categories[index];
 
               return (
-                <motion.div
+                <motion.article
                   key={cat.slug}
-                  initial={{ opacity: 0, y: 25 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: index * 0.08 }}
-                  whileHover={{ y: -8 }}
-                  className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:border-red-500/30 hover:shadow-xl"
+                  whileHover={{ y: -10 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: index * 0.07 },
+                    y: { duration: 0.35, delay: index * 0.07 },
+                  }}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow duration-300 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.13)]"
                 >
-                  {/* ICON */}
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-red-600 transition group-hover:scale-110 group-hover:bg-red-600 group-hover:text-white">
-                    <Icon size={26} />
+                  <div className="relative h-52 overflow-hidden bg-gray-100">
+                    <img
+                      src={cat.image}
+                      alt={category.title}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
 
-                  {/* TITLE */}
-                  <h3 className="text-xl font-black text-zinc-950 transition group-hover:text-red-600">
-                    {cat.title}
-                  </h3>
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="text-lg font-black text-zinc-950 transition-colors duration-300 group-hover:text-red-600">
+                      {category.title}
+                    </h3>
 
-                  {/* DESC */}
-                  <p className="mt-3 text-sm font-semibold leading-7 text-gray-600">
-                    {cat.desc}
-                  </p>
+                    <p className="mt-2 text-sm font-semibold leading-6 text-gray-600">
+                      {category.desc}
+                    </p>
+                  </div>
 
-                  {/* CTA */}
-                  <Link
-                    to={`/solutions/hotel-supplies/${cat.slug}`}
-                    className="mt-auto pt-6 text-sm font-black text-red-600 transition group-hover:translate-x-1"
-                  >
-                    Explore Collection →
-                  </Link>
-                </motion.div>
+                  <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-red-600 transition-transform duration-300 group-hover:scale-x-100" />
+                </motion.article>
               );
             })}
-          </div>
-        </div>
-      </section>
-      {/* FEATURED */}
-      <section className="bg-gray-50 px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <p className="text-[11px] font-black uppercase tracking-[0.45em] text-red-600">
-              Featured Collections
-            </p>
-
-            <h2 className="mt-4 text-4xl font-black text-zinc-950">
-              Curated for Hospitality Excellence
-            </h2>
-
-            <div className="mx-auto mt-4 h-[3px] w-16 bg-red-600" />
-          </div>
-
-          <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredProducts.map((product, index) => (
-              <motion.article
-                key={product.slug}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
-                whileHover={{ y: -7 }}
-                className="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:border-red-500/30 hover:shadow-xl"
-              >
-                <div className="h-48 overflow-hidden bg-gray-100">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-sm font-black text-zinc-950">
-                    {product.title}
-                  </h3>
-
-                  <p className="mt-2 text-xs font-semibold leading-6 text-gray-600">
-                    {product.desc}
-                  </p>
-
-                  <Link
-                    to={`/solutions/hotel-supplies/${product.categorySlug}/${product.slug}`}
-                    className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-black text-red-600 transition group-hover:translate-x-1"
-                  >
-                    View Details
-                    <ArrowRight size={14} />
-                  </Link>
-                </div>
-              </motion.article>
-            ))}
           </div>
         </div>
       </section>
@@ -161,21 +174,20 @@ const HotelSuppliesPage = () => {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="text-[11px] font-black uppercase tracking-[0.45em] text-red-600">
-              Built for Hotel Projects
+              {content.whyBadge}
             </p>
 
-            <h2 className="mt-4 text-4xl font-black">
-              Why Partner with TOUGH HAULERS
-            </h2>
+            <h2 className="mt-4 text-4xl font-black">{content.whyTitle}</h2>
           </div>
 
           <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-5">
             {hotelPartnerItems.map((item, index) => {
               const Icon = item.icon;
+              const translatedItem = content.whyItems[index];
 
               return (
                 <motion.div
-                  key={item.title}
+                  key={translatedItem.title}
                   initial={{ opacity: 0, y: 22 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -184,50 +196,14 @@ const HotelSuppliesPage = () => {
                 >
                   <Icon className="mx-auto mb-5 h-8 w-8 text-red-500" />
 
-                  <h3 className="text-sm font-black">{item.title}</h3>
+                  <h3 className="text-sm font-black">{translatedItem.title}</h3>
 
                   <p className="mt-3 text-xs font-medium leading-6 text-white/70">
-                    {item.desc}
+                    {translatedItem.desc}
                   </p>
                 </motion.div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* REQUEST AREA */}
-      <section className="bg-white px-6 py-14">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="overflow-hidden rounded-2xl bg-gray-100 shadow-sm">
-            <img
-              src="/images/hotel-supplies/catalog.jpg"
-              alt="Hotel Supplies Catalog"
-              className="h-[260px] w-full object-cover"
-            />
-          </div>
-
-          <div>
-            <h2 className="text-4xl font-black leading-tight text-zinc-950">
-              Request a Catalog or Quotation
-            </h2>
-
-            <p className="mt-4 max-w-xl text-sm font-semibold leading-7 text-gray-600">
-              Get our latest hotel supplies catalog and personalized quotation
-              for your project.
-            </p>
-
-            <div className="mt-7 flex flex-wrap gap-4">
-             
-
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-3 border border-gray-300 px-8 py-4 text-sm font-black text-zinc-950 transition hover:border-red-600 hover:text-red-600"
-              >
-                Request a Quotation
-                <ArrowRight size={16} />
-              </Link>
-            </div>
           </div>
         </div>
       </section>

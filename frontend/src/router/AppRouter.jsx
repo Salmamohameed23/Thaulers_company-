@@ -13,29 +13,23 @@ import Factory from "../pages/Factory";
 import GigawattProjects from "../pages/GigawattProjects";
 import LetsBuild from "../pages/LetsBuild";
 import Rd from "../pages/Rd";
-// import Partners from "../pages/Partners";
 
 // import Production Lines
 import ProductionLinesPage from "../pages/ProductionLinesPage";
-import ProductionLineDetails from "../pages/ProductionLineDetails";
 import ProjectBriefFormPage from "../pages/ProjectBriefFormPage";
 // kitchenware
 import KitchenwarePage from "../pages/KitchenwarePage";
 // hotel supplies
 import HotelSuppliesPage from "../pages/HotelSuppliesPage";
-import HotelSuppliesCategoryPage from "../pages/HotelSuppliesCategoryPage";
-import HotelSupplyDetailsPage from "../pages/HotelSupplyDetailsPage";
-
 // tools and hardware 
 import ToolsHardwarePage from "../pages/ToolsHardwarePage";
-import ToolsHardwareCategoryPage from "../pages/ToolsHardwareCategoryPage";
-import ToolsHardwareProductDetails from "../pages/ToolsHardwareProductDetails";
+// electric scooters 
+import ElectricScootersPage from "../pages/ElectricScootersPage";
 const AppRouter = () => {
   return (
     <Routes>
       {/* Main Home */}
       <Route path={ROUTES.home} element={<Home />} />
-      
       <Route path={ROUTES.whyUs} element={<Whyus />} />
       <Route path={ROUTES.contact} element={<Contact />} />
       <Route path={ROUTES.letsBuild} element={<LetsBuild />} />
@@ -53,10 +47,6 @@ const AppRouter = () => {
       {/*  */}
       {/* productions lines  */}
       <Route
-        path="/solutions/complete-industrial-production-lines/:slug"
-        element={<ProductionLineDetails />}
-      />
-      <Route
         path="/solutions/complete-industrial-production-lines"
         element={<ProductionLinesPage />}
       />
@@ -67,32 +57,15 @@ const AppRouter = () => {
       {/*  */}
       {/* kitchen */}
       <Route path="/solutions/kitchenware" element={<KitchenwarePage />} />
-
       {/*  */}
       {/* hotel */}
       <Route path="/solutions/hotel-supplies" element={<HotelSuppliesPage />} />
-      <Route
-        path="/solutions/hotel-supplies/:categorySlug"
-        element={<HotelSuppliesCategoryPage />}
-      />
-      <Route
-        path="/solutions/hotel-supplies/:categorySlug/:productSlug"
-        element={<HotelSupplyDetailsPage />}
-      />
       {/*  */}
       {/* toolsand hardware */}
       <Route path="/solutions/tools-hardware" element={<ToolsHardwarePage />} />
-      <Route
-        path="/solutions/tools-hardware/:categorySlug"
-        element={<ToolsHardwareCategoryPage />}
-      />
-      <Route
-        path="/solutions/tools-hardware/:categorySlug/:productSlug"
-        element={<ToolsHardwareProductDetails />}
-      />
-      
       {/*  */}
       {/* bikes  */}
+      <Route path="/solutions/electric-scooters" element={<ElectricScootersPage />} />
     </Routes>
   );
 };

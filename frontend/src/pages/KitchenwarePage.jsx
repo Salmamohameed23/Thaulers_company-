@@ -11,31 +11,34 @@ import { useLanguage } from "../i18n/LanguageContext";
 const kitchenwareCategories = [
   {
     slug: "cookware-sets",
-    image: "/src/assets/images/kitchen/cookware-sets.png",
+    image: "../../public/images/kitchenware/categories/cookware-sets.png",
   },
   {
     slug: "drinkware-bottles",
-    image: "/src/assets/images/kitchen/drinkware-bottles.png",
+    image: "../../public/images/kitchenware/categories/drinkware-bottles.png",
   },
   {
     slug: "electric-kitchen-appliances",
-    image: "/src/assets/images/kitchen/electric-kitchen-appliances.png",
+    image: "../../public/images/kitchenware/categories/electric-kitchen-appliances.png",
   },
   {
     slug: "kitchen-tools-utensils",
-    image: "/src/assets/images/kitchen/kitchen-tools-utensils.png",
+    image: "../../public/images/kitchenware/categories/kitchen-tools-utensils.png",
   },
   {
     slug: "major-home-appliances",
-    image: "/src/assets/images/kitchen/major-home-appliances.png",
+    image:
+      "../../public/images/kitchenware/categories/major-home-appliances.png",
   },
   {
     slug: "private-label-kitchen-sets",
-    image: "/src/assets/images/kitchen/private-label-kitchen-sets.png",
+    image:
+      "../../public/images/kitchenware/categories/private-label-kitchen-sets.png",
   },
   {
     slug: "storage-organization",
-    image: "/src/assets/images/kitchen/storage-organization.png",
+    image:
+      "../../public/images/kitchenware/categories/storage-organization.png",
   },
 ];
 
@@ -50,7 +53,7 @@ const KitchenwarePage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/src/assets/images/kitchen/hero.png')",
+            backgroundImage: "url('../../public/images/kitchenware/categories/hero.png')",
           }}
         />
 
@@ -136,8 +139,6 @@ const KitchenwarePage = () => {
       </section>
 
       {/* PACKAGING */}
-      {/* PACKAGING + WHY US */}
-      {/* PACKAGING */}
       <section className="bg-white py-14 text-zinc-950">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_1fr]">
@@ -149,7 +150,7 @@ const KitchenwarePage = () => {
               className="overflow-hidden rounded-2xl bg-gray-100 shadow-sm"
             >
               <img
-                src="/images/kitchenware/packaging.png"
+                src="../../public/images/kitchenware/categories/brand.jpg"
                 alt={content.packagingTitle}
                 className="h-[300px] w-full object-cover"
               />
