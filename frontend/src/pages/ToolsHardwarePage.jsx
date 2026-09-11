@@ -94,7 +94,7 @@ const ToolsHardwarePage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/public/images/Toolsandhardware/hero.png')",
+            backgroundImage: "url('/images/Toolsandhardware/hero.png')",
           }}
         />
 
