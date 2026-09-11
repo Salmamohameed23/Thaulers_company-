@@ -11,34 +11,31 @@ import { useLanguage } from "../i18n/LanguageContext";
 const kitchenwareCategories = [
   {
     slug: "cookware-sets",
-    image: "../../public/images/kitchenware/categories/cookware-sets.png",
+    image: "/images/kitchenware/categories/cookware-sets.png",
   },
   {
     slug: "drinkware-bottles",
-    image: "../../public/images/kitchenware/categories/drinkware-bottles.png",
+    image: "/images/kitchenware/categories/drinkware-bottles.png",
   },
   {
     slug: "electric-kitchen-appliances",
-    image: "../../public/images/kitchenware/categories/electric-kitchen-appliances.png",
+    image: "/images/kitchenware/categories/electric-kitchen-appliances.png",
   },
   {
     slug: "kitchen-tools-utensils",
-    image: "../../public/images/kitchenware/categories/kitchen-tools-utensils.png",
+    image: "/images/kitchenware/categories/kitchen-tools-utensils.png",
   },
   {
     slug: "major-home-appliances",
-    image:
-      "../../public/images/kitchenware/categories/major-home-appliances.png",
+    image: "/images/kitchenware/categories/major-home-appliances.png",
   },
   {
     slug: "private-label-kitchen-sets",
-    image:
-      "../../public/images/kitchenware/categories/private-label-kitchen-sets.png",
+    image: "/images/kitchenware/categories/private-label-kitchen-sets.png",
   },
   {
     slug: "storage-organization",
-    image:
-      "../../public/images/kitchenware/categories/storage-organization.png",
+    image: "/images/kitchenware/categories/storage-organization.png",
   },
 ];
 
@@ -53,7 +50,7 @@ const KitchenwarePage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('../../public/images/kitchenware/categories/hero.png')",
+            backgroundImage: "url('/images/kitchenware/categories/hero.png')",
           }}
         />
 
