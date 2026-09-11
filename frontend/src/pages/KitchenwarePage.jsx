@@ -147,7 +147,7 @@ const KitchenwarePage = () => {
               className="overflow-hidden rounded-2xl bg-gray-100 shadow-sm"
             >
               <img
-                src="../../public/images/kitchenware/categories/brand.jpg"
+                src="/images/kitchenware/categories/brand.jpg"
                 alt={content.packagingTitle}
                 className="h-[300px] w-full object-cover"
               />
