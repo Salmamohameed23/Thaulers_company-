@@ -27,6 +27,24 @@ const scooterCategories = [
     desc: "Powerful models combining responsive acceleration, extended range, and bold design.",
     image: "/images/bikes/high-performance-scooters.jpg",
   },
+  {
+    slug: "adventure-scooters",
+    title: "Adventure Scooters",
+    desc: "Rugged models built for rough roads, outdoor journeys, and confident all-terrain mobility.",
+    image: "/images/bikes/adventure-scooters.jpg",
+  },
+  {
+    slug: "classic-scooters",
+    title: "Classic Scooters",
+    desc: "Retro-inspired models combining elegant design, comfortable seating, and reliable everyday performance.",
+    image: "/images/bikes/classic-scooters.jpg",
+  },
+  {
+    slug: "utility-scooters",
+    title: "Utility Scooters",
+    desc: "Versatile, durable models designed for daily tasks with stability, strength, and practical features.",
+    image: "/images/bikes/utility-scooters.jpg",
+  },
 ];
 
 const advantages = [
@@ -138,13 +156,13 @@ const ElectricScootersPage = () => {
                   }}
                   className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow duration-300 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.13)]"
                 >
-                  <div className="relative h-60 overflow-hidden bg-gray-100">
+                  <div className="relative flex h-72 items-center justify-center overflow-hidden bg-white p-5">
                     <img
                       src={category.image}
                       alt={translatedCategory.title}
-                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      className="h-full w-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="pointer-events-none absolute inset-x-5 bottom-0 h-px bg-gray-100" />
                   </div>
 
                   <div className="flex flex-1 flex-col p-6">

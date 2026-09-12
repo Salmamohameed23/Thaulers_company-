@@ -22,6 +22,18 @@ const electricScootersTranslations = {
         title: "High-Performance Scooters",
         desc: "Powerful models combining responsive acceleration, extended range, and confident road presence.",
       },
+      {
+        title: "Adventure Scooters",
+        desc: "Rugged models built for rough roads, outdoor journeys, and confident all-terrain mobility.",
+      },
+      {
+        title: "Classic Scooters",
+        desc: "Retro-inspired models combining elegant design, comfortable seating, and reliable everyday performance.",
+      },
+      {
+        title: "Utility Scooters",
+        desc: "Versatile, durable models designed for daily tasks with stability, strength, and practical features.",
+      },
     ],
     whyBadge: "Built for Global Mobility",
     whyTitle: "Why Choose TOUGH HAULERS",
@@ -71,6 +83,18 @@ const electricScootersTranslations = {
         title: "سكوترات عالية الأداء",
         desc: "موديلات قوية تجمع بين التسارع السريع والمدى الممتد والحضور المميز على الطريق.",
       },
+      {
+        title: "سكوترات المغامرات",
+        desc: "موديلات قوية مصممة للطرق الوعرة والرحلات الخارجية، وتوفر ثباتًا وأداءً موثوقًا على مختلف التضاريس.",
+      },
+      {
+        title: "السكوترات الكلاسيكية",
+        desc: "موديلات مستوحاة من الطابع الكلاسيكي، تجمع بين التصميم الأنيق والمقاعد المريحة والأداء الموثوق للتنقل اليومي.",
+      },
+      {
+        title: "سكوترات الاستخدام العملي",
+        desc: "موديلات متعددة الاستخدامات ومتينة، مصممة للمهام اليومية وتجمع بين الثبات والقوة والتجهيزات العملية.",
+      },
     ],
     whyBadge: "مصمم للتنقل العالمي",
     whyTitle: "لماذا تختار TOUGH HAULERS؟",
@@ -113,6 +137,18 @@ const electricScootersTranslations = {
       },
       { title: "配送踏板车", desc: "适合高频末端配送作业的实用可靠商用车型。" },
       { title: "高性能踏板车", desc: "兼具强劲加速、长续航与鲜明道路表现。" },
+      {
+        title: "探险电动踏板车",
+        desc: "坚固耐用，适合崎岖路况与户外出行，在多种地形下提供稳定可靠的驾乘体验。",
+      },
+      {
+        title: "经典电动踏板车",
+        desc: "复古灵感设计，兼具优雅外观、舒适座椅与可靠的日常出行性能。",
+      },
+      {
+        title: "实用型电动踏板车",
+        desc: "多功能耐用车型，为日常任务而设计，兼具稳定性、强度与实用配置。",
+      },
     ],
     whyBadge: "为全球出行而生",
     whyTitle: "为何选择 TOUGH HAULERS",
@@ -158,6 +194,18 @@ const electricScootersTranslations = {
       {
         title: "Высокопроизводительные электроскутеры",
         desc: "Мощные модели с быстрым разгоном, увеличенным запасом хода и выразительным дизайном.",
+      },
+      {
+        title: "Приключенческие электроскутеры",
+        desc: "Прочные модели для неровных дорог и поездок на природе, обеспечивающие устойчивость и надёжность на разных покрытиях.",
+      },
+      {
+        title: "Классические электроскутеры",
+        desc: "Модели в ретро-стиле, сочетающие элегантный дизайн, комфортную посадку и надёжность для ежедневных поездок.",
+      },
+      {
+        title: "Утилитарные электроскутеры",
+        desc: "Универсальные и долговечные модели для повседневных задач, сочетающие устойчивость, прочность и практичное оснащение.",
       },
     ],
     whyBadge: "Создано для глобальной мобильности",
@@ -207,6 +255,18 @@ const electricScootersTranslations = {
       {
         title: "Hochleistungs-Elektroroller",
         desc: "Kraftvolle Modelle mit direkter Beschleunigung, hoher Reichweite und markantem Auftritt.",
+      },
+      {
+        title: "Adventure-Elektroroller",
+        desc: "Robuste Modelle für unebene Straßen und Outdoor-Touren mit zuverlässiger Stabilität auf unterschiedlichen Untergründen.",
+      },
+      {
+        title: "Klassische Elektroroller",
+        desc: "Retro-inspirierte Modelle mit elegantem Design, komfortabler Sitzposition und zuverlässiger Leistung im Alltag.",
+      },
+      {
+        title: "Utility-Elektroroller",
+        desc: "Vielseitige, langlebige Modelle für tägliche Aufgaben mit Stabilität, Belastbarkeit und praktischer Ausstattung.",
       },
     ],
     whyBadge: "Für globale Mobilität entwickelt",
@@ -1728,7 +1788,7 @@ export const translations = {
     footer: {
       tagline1: "Engineering Power.",
       tagline2: "Delivering Reliability.",
-      desc: "Solar power, battery energy storage, EPC engineering, global projects, and China-based supply chain support.",
+      desc: "Solar power, battery energy storage, global projects, and China-based supply chain support.",
 
       solutions: "Solutions",
       contact: "Contact",
@@ -1739,8 +1799,9 @@ export const translations = {
         "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
       copyright:
-        "Copyright ©  TOUGH HAULERS Trade Limited 2026 - All rights reserved.",
+        "Copyright © TOUGH HAULERS TRADE LIMITED 2026 — All rights reserved.",
       slogan: "Powering a sustainable future",
+      designedBy: "Designed & Developed by",
 
       links: {
         solarEnergy: "Solar Energy",
@@ -1958,9 +2019,9 @@ export const translations = {
     },
     contactPage: {
       badge: "Contact Us",
-      title1: "Start your",
-      title2: "energy project with us.",
-      desc: "Contact TOUGH HAULERS for solar power systems, battery energy storage, EPC engineering, factory solutions, and global project support.",
+      title1: "Start your next",
+      title2: "project with us.",
+      desc: "From China-based sourcing and manufacturing to engineering solutions, product development, quality control, export coordination, logistics, and complete project support — TOUGH HAULERS helps clients manage every stage from idea to delivery.",
 
       contactTitle: "Company Contact",
 
@@ -2539,7 +2600,7 @@ export const translations = {
       whoBadge: "Who We Are",
       whoTitle: "Your Trusted Partner in Global Trade and Industrial Solutions",
       whoDesc:
-        "TOUGH HAULERS Trade Limited is a China-based trading and project solutions company supporting industrial equipment, consumer goods, clean energy projects, and supply chain services.",
+        "TOUGH HAULERS TRADE LIMITED is a China-based trading and project solutions company supporting industrial equipment, consumer goods, clean energy projects, and supply chain services.",
       learnMore: "Learn More About Us",
 
       features: [
@@ -2587,28 +2648,6 @@ export const translations = {
           desc: "Reliable tools for every industry",
         },
       },
-
-      productionBadge: "Featured Production Lines",
-      productionTitle: "Precision. Performance. Productivity.",
-
-      productionLines: [
-        {
-          title: "Metal Pipe Production Line",
-          desc: "High-frequency welded pipe mill with high efficiency and precision.",
-        },
-        {
-          title: "Steel Coil Slitting Line",
-          desc: "High-speed slitting for carbon steel, stainless steel and aluminum.",
-        },
-        {
-          title: "Roll Forming Production Line",
-          desc: "Automated roll forming for roofing, framing and structural profiles.",
-        },
-        {
-          title: "Cable Tray Production Line",
-          desc: "High-speed production for cable management systems.",
-        },
-      ],
 
       whyBadge: "Why Choose TOUGH HAULERS",
       whyTitle: "Built on Trust. Driven by Results.",
@@ -2855,7 +2894,7 @@ export const translations = {
     footer: {
       tagline1: "هندسة الطاقة.",
       tagline2: "ثقة في التنفيذ.",
-      desc: "حلول متكاملة مع خدمات هندسية متخصصة تشمل التوريد والتصميم والتنفيذ والتشغيل بدعم من السلاسل توريد قوية من الصين.",
+      desc: "حلول متكاملة وخدمات هندسية متخصصة تشمل التوريد والتصميم والتنفيذ والتشغيل، بدعم من سلاسل توريد قوية في الصين.",
 
       solutions: "الحلول",
       contact: "التواصل",
@@ -2866,8 +2905,9 @@ export const translations = {
         "Office 201, Building No. 454, Gongren North Road, Yiwu City, Zhejiang Province, China",
 
       copyright:
-        "حقوق النشر © شركة TOUGH HAULERS للتجارة المحدودة 2026 - جميع الحقوق محفوظة.",
+        "حقوق النشر © TOUGH HAULERS TRADE LIMITED 2026 — جميع الحقوق محفوظة.",
       slogan: "نقود مستقبل الطاقة المستدامة",
+      designedBy: "تصميم وتطوير",
 
       links: {
         solarEnergy: "الطاقة الشمسية",
@@ -3085,9 +3125,9 @@ export const translations = {
     },
     contactPage: {
       badge: "تواصل معنا",
-      title1: "ابدأ مشروعك",
-      title2: "في مجال الطاقة معنا",
-      desc: "تواصل مع TOUGH HAULERS للحصول على حلول الطاقة الشمسية، وأنظمة تخزين الطاقة، وخدمات EPC الهندسية، وحلول المصانع، ودعم المشاريع على المستوى العالمي.",
+      title1: "ابدأ مشروعك القادم",
+      title2: "معنا.",
+      desc: "من التوريد والتصنيع عبر شبكتنا في الصين إلى الحلول الهندسية وتطوير المنتجات ومراقبة الجودة وتنسيق التصدير والخدمات اللوجستية والدعم المتكامل للمشروعات، تساعد TOUGH HAULERS عملاءها على إدارة كل مرحلة، من الفكرة حتى التسليم.",
 
       contactTitle: "معلومات التواصل",
 
@@ -3676,7 +3716,7 @@ export const translations = {
       whoBadge: "من نحن",
       whoTitle: "شريكك الموثوق في التجارة العالمية والحلول الصناعية",
       whoDesc:
-        "TOUGH HAULERS Trade Limited شركة تجارية وحلول مشاريع مقرها الصين، تدعم المعدات الصناعية، والمنتجات الاستهلاكية، ومشاريع الطاقة النظيفة، وخدمات سلاسل التوريد.",
+        "TOUGH HAULERS TRADE LIMITED شركة تجارية وحلول مشاريع مقرها الصين، تدعم المعدات الصناعية، والمنتجات الاستهلاكية، ومشاريع الطاقة النظيفة، وخدمات سلاسل التوريد.",
       learnMore: "اعرف المزيد عن الشركة",
 
       features: [
@@ -3724,28 +3764,6 @@ export const translations = {
           desc: "معدات موثوقة لمختلف الصناعات",
         },
       },
-
-      productionBadge: "خطوط إنتاج مختارة",
-      productionTitle: "دقة. أداء. إنتاجية.",
-
-      productionLines: [
-        {
-          title: "خط إنتاج الأنابيب المعدنية",
-          desc: "خط لحام أنابيب عالي التردد بكفاءة تشغيل ودقة عالية.",
-        },
-        {
-          title: "خط تقطيع لفائف الصلب",
-          desc: "تقطيع عالي السرعة للفولاذ الكربوني والفولاذ المقاوم للصدأ والألومنيوم.",
-        },
-        {
-          title: "خط التشكيل بالدرفلة",
-          desc: "أنظمة تشكيل أوتوماتيكية للأسقف والهياكل والقطاعات المعدنية.",
-        },
-        {
-          title: "خط إنتاج حوامل الكابلات",
-          desc: "إنتاج سريع وفعال لأنظمة إدارة الكابلات.",
-        },
-      ],
 
       whyBadge: "لماذا تختار TOUGH HAULERS",
       whyTitle: "ثقة في التعامل. ونتائج في التنفيذ.",
@@ -3990,7 +4008,7 @@ export const translations = {
     footer: {
       tagline1: "工程驱动能源。",
       tagline2: "交付值得信赖。",
-      desc: "提供太阳能系统、电池储能解决方案 ，以及全球项目与中国供应链支持。",
+      desc: "提供太阳能系统、电池储能、全球项目支持及中国供应链服务。",
 
       solutions: "解决方案",
       contact: "联系我们",
@@ -3999,8 +4017,9 @@ export const translations = {
       email: "Sales@toughhaulers.cn.com",
       location1: "中国浙江省义乌市工人北路454号楼201室",
 
-      copyright: "版权 © TOUGH HAULERS 贸易有限公司 2026 — 保留所有权利。",
+      copyright: "版权所有 © TOUGH HAULERS TRADE LIMITED 2026。保留所有权利。",
       slogan: "推动可持续能源未来",
+      designedBy: "设计与开发：",
 
       links: {
         solarEnergy: "太阳能解决方案",
@@ -4211,9 +4230,9 @@ export const translations = {
     },
     contactPage: {
       badge: "联系我们",
-      title1: "开启您的",
-      title2: "能源项目合作",
-      desc: "欢迎联系 TOUGH HAULERS，我们提供太阳能系统、电池储能解决方案、EPC 工程服务、工厂解决方案以及全球项目支持。",
+      title1: "携手开启您的",
+      title2: "下一个项目。",
+      desc: "从依托中国的采购与制造，到工程解决方案、产品开发、质量控制、出口协调、物流及全流程项目支持，TOUGH HAULERS 协助客户高效管理从构想到交付的每一个环节。",
 
       contactTitle: "联系信息",
 
@@ -4769,7 +4788,7 @@ export const translations = {
       whoBadge: "关于我们",
       whoTitle: "您在全球贸易与工业解决方案领域的可靠伙伴",
       whoDesc:
-        "TOUGH HAULERS Trade Limited 是一家以中国为运营基础的贸易与项目解决方案公司，服务于工业设备、消费品、清洁能源项目及供应链服务。",
+        "TOUGH HAULERS TRADE LIMITED 是一家以中国为运营基础的贸易与项目解决方案公司，服务于工业设备、消费品、清洁能源项目及供应链服务。",
       learnMore: "了解更多",
 
       features: [
@@ -4817,28 +4836,6 @@ export const translations = {
           desc: "适用于各类行业的可靠工具",
         },
       },
-
-      productionBadge: "精选生产线",
-      productionTitle: "精准。高效。高产能。",
-
-      productionLines: [
-        {
-          title: "金属管生产线",
-          desc: "高频焊管设备，具备高效率与高精度。",
-        },
-        {
-          title: "钢卷分条生产线",
-          desc: "适用于碳钢、不锈钢及铝材的高速分条加工。",
-        },
-        {
-          title: "辊压成型生产线",
-          desc: "用于屋顶、结构件及型材的自动化成型系统。",
-        },
-        {
-          title: "电缆桥架生产线",
-          desc: "用于电缆管理系统的高速生产设备。",
-        },
-      ],
 
       whyBadge: "为什么选择 TOUGH HAULERS",
       whyTitle: "以信任为基础，以结果为导向。",
@@ -5071,16 +5068,16 @@ export const translations = {
     footer: {
       tagline1: "Инжиниринг энергии.",
       tagline2: "Надёжность на практике.",
-      desc: "Солнечная энергетика, системы накопления энергии, EPC-инжиниринг, глобальные проекты и поддержка цепочки поставок на базе Китая.",
+      desc: "Солнечная энергетика, системы накопления энергии, глобальные проекты и поддержка цепочки поставок в Китае.",
       solutions: "Решения",
       contact: "Контакты",
       legal: "Юридическая информация",
       email: "Sales@toughhaulers.cn.com",
       location1:
         "Офис 201, Здание № 454, Северная дорога Гунжэнь, г. Иу, пров. Чжэцзян, Китай",
-      copyright:
-        "Авторские права © TOUGH HAULERS Trade Limited 2026 — Все права защищены.",
+      copyright: "© 2026 TOUGH HAULERS TRADE LIMITED. Все права защищены.",
       slogan: "Обеспечивая устойчивое энергетическое будущее",
+      designedBy: "Дизайн и разработка:",
       links: {
         solarEnergy: "Солнечная энергия",
         productionLines: "Комплексные производственные линии",
@@ -5295,9 +5292,9 @@ export const translations = {
     },
     contactPage: {
       badge: "Связаться с нами",
-      title1: "Начните ваш",
-      title2: "энергетический проект с нами.",
-      desc: "Свяжитесь с TOUGH HAULERS по вопросам солнечных энергосистем, систем накопления энергии, EPC-инжиниринга, заводских решений и поддержки глобальных проектов.",
+      title1: "Начните следующий проект",
+      title2: "вместе с нами.",
+      desc: "От закупок и производства в Китае до инженерных решений, разработки продукции, контроля качества, экспортной координации, логистики и комплексного сопровождения — TOUGH HAULERS помогает клиентам управлять каждым этапом проекта: от идеи до поставки.",
       contactTitle: "Контактная информация",
       info: [
         {
@@ -5853,7 +5850,7 @@ export const translations = {
       whoTitle:
         "Ваш надёжный партнёр в глобальной торговле и промышленных решениях",
       whoDesc:
-        "TOUGH HAULERS Trade Limited — торговая и проектная компания с операционной базой в Китае, поддерживающая промышленное оборудование, потребительские товары, проекты чистой энергии и услуги цепочки поставок.",
+        "TOUGH HAULERS TRADE LIMITED — торговая и проектная компания с операционной базой в Китае, поддерживающая промышленное оборудование, потребительские товары, проекты чистой энергии и услуги цепочки поставок.",
       learnMore: "Узнать больше",
 
       features: [
@@ -5901,28 +5898,6 @@ export const translations = {
           desc: "Надёжные инструменты для различных отраслей",
         },
       },
-
-      productionBadge: "Избранные производственные линии",
-      productionTitle: "Точность. Производительность. Эффективность.",
-
-      productionLines: [
-        {
-          title: "Линия производства металлических труб",
-          desc: "Высокочастотная сварная трубная линия с высокой эффективностью и точностью.",
-        },
-        {
-          title: "Линия продольной резки стальных рулонов",
-          desc: "Высокоскоростная резка углеродистой стали, нержавеющей стали и алюминия.",
-        },
-        {
-          title: "Линия роликовой формовки",
-          desc: "Автоматизированная формовка для кровли, каркасов и металлических профилей.",
-        },
-        {
-          title: "Линия производства кабельных лотков",
-          desc: "Высокоскоростное производство систем управления кабелями.",
-        },
-      ],
 
       whyBadge: "Почему выбирают TOUGH HAULERS",
       whyTitle: "Основано на доверии. Ориентировано на результат.",
@@ -6161,16 +6136,16 @@ export const translations = {
     footer: {
       tagline1: "Energie durch Engineering.",
       tagline2: "Zuverlässigkeit in der Praxis.",
-      desc: "Solarenergie, Batteriespeicher, EPC-Engineering, globale Projekte und China-basierte Lieferkettenunterstützung.",
+      desc: "Solarenergie, Batteriespeicher, globale Projekte und Lieferkettenunterstützung aus China.",
       solutions: "Lösungen",
       contact: "Kontakt",
       legal: "Rechtliches",
       email: "Sales@toughhaulers.cn.com",
       location1:
         "Büro 201, Gebäude Nr. 454, Gongren North Road, Yiwu City, Provinz Zhejiang, China",
-      copyright:
-        "Urheberrecht © TOUGH HAULERS Trade Limited 2026 – Alle Rechte vorbehalten.",
+      copyright: "© 2026 TOUGH HAULERS TRADE LIMITED. Alle Rechte vorbehalten.",
       slogan: "Eine nachhaltige Energiezukunft gestalten",
+      designedBy: "Design & Entwicklung:",
       links: {
         solarEnergy: "Solarenergie",
         productionLines: "Komplette Industrie-Produktionslinien",
@@ -6385,9 +6360,9 @@ export const translations = {
     },
     contactPage: {
       badge: "Kontakt",
-      title1: "Starten Sie Ihr",
-      title2: "Energieprojekt mit uns.",
-      desc: "Kontaktieren Sie TOUGH HAULERS für Solarenergiesysteme, Batteriespeicher, EPC-Engineering, Werkslösungen und globale Projektunterstützung.",
+      title1: "Starten Sie Ihr nächstes",
+      title2: "Projekt mit uns.",
+      desc: "Von Beschaffung und Fertigung in China über technische Lösungen, Produktentwicklung und Qualitätskontrolle bis hin zu Exportkoordination, Logistik und umfassender Projektbetreuung unterstützt TOUGH HAULERS seine Kunden in jeder Phase — von der Idee bis zur Lieferung.",
       contactTitle: "Unternehmensinformationen",
       info: [
         {
@@ -6945,7 +6920,7 @@ export const translations = {
       whoTitle:
         "Ihr zuverlässiger Partner für globalen Handel und industrielle Lösungen",
       whoDesc:
-        "TOUGH HAULERS Trade Limited ist ein in China basiertes Handels- und Projektlösungsunternehmen für Industrieausrüstung, Konsumgüter, Clean-Energy-Projekte und Lieferkettenservices.",
+        "TOUGH HAULERS TRADE LIMITED ist ein in China basiertes Handels- und Projektlösungsunternehmen für Industrieausrüstung, Konsumgüter, Clean-Energy-Projekte und Lieferkettenservices.",
       learnMore: "Mehr über uns erfahren",
 
       features: [
@@ -6993,28 +6968,6 @@ export const translations = {
           desc: "Zuverlässige Werkzeuge für verschiedene Branchen",
         },
       },
-
-      productionBadge: "Ausgewählte Produktionslinien",
-      productionTitle: "Präzision. Leistung. Produktivität.",
-
-      productionLines: [
-        {
-          title: "Metallrohr-Produktionslinie",
-          desc: "Hochfrequenz-geschweißte Rohrlinie mit hoher Effizienz und Präzision.",
-        },
-        {
-          title: "Stahlcoil-Spaltanlage",
-          desc: "Hochgeschwindigkeits-Spaltung für Kohlenstoffstahl, Edelstahl und Aluminium.",
-        },
-        {
-          title: "Rollform-Produktionslinie",
-          desc: "Automatisierte Rollformung für Dächer, Rahmen und Strukturprofile.",
-        },
-        {
-          title: "Kabeltrassen-Produktionslinie",
-          desc: "Schnelle und effiziente Produktion von Kabelmanagementsystemen.",
-        },
-      ],
 
       whyBadge: "Warum TOUGH HAULERS",
       whyTitle: "Auf Vertrauen gebaut. Auf Ergebnisse ausgerichtet.",

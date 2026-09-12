@@ -13,7 +13,6 @@ import {
   Award,
   Handshake,
   Leaf,
-  MapPin,
   Building2,
 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -190,17 +189,13 @@ const Whyus = () => {
               {page.globalReachText}
             </p>
 
-            <div className="relative mt-8 min-h-[280px] overflow-hidden rounded-3xl border border-zinc-100 bg-zinc-50 p-8">
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:18px_18px]" />
-              <div className="relative grid h-full grid-cols-3 place-items-center gap-4 text-[#ef3b35]">
-                {Array.from({ length: 18 }).map((_, i) => (
-                  <MapPin
-                    key={i}
-                    size={18 + (i % 3) * 4}
-                    className="opacity-80"
-                  />
-                ))}
-              </div>
+            <div className="relative mt-8 aspect-video overflow-hidden rounded-3xl bg-white shadow-sm">
+              <img
+                src="/images/home_imgs/global-reach.png"
+                alt={page.globalReachTitle}
+                className="h-full w-full object-cover object-center"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -237,13 +232,9 @@ const Whyus = () => {
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid overflow-hidden rounded-3xl bg-black text-white lg:grid-cols-[.9fr_1.1fr]">
             <ImageBlock
-              src="/images/about/our-people.jpg"
+              src="/images/home_imgs/our-ppl.png"
               className="min-h-[340px]"
-            >
-              <div className="absolute inset-0 flex items-center justify-center text-white/40">
-                <Users size={90} />
-              </div>
-            </ImageBlock>
+            ></ImageBlock>
 
             <div className="relative p-8 lg:p-10">
               <div className="absolute inset-0 bg-gradient-to-br from-black to-[#320404]" />
