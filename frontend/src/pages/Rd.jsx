@@ -3,20 +3,20 @@ import { CheckCircle2, Layers3 } from "lucide-react";
 import PropTypes from "prop-types";
 import { useLanguage } from "../i18n/LanguageContext";
 
-import heroImg from "../assets/images/RD_1.png";
-import processImg from "../assets/images/R&D_6.png";
-import ctaImg from "../assets/images/R&D_7.png";
-import testingImg from "../assets/images/R&D_5.png";
-import qualityImg from "../assets/images/RD5.png";
-import teamImg from "../assets/images/R&D_4.png";
-import solutionsImg from "../assets/images/rd_solution.png";
-import platformImg from "../assets/images/RD_2.png";
+import heroImg from "../assets/images/RD_1.webp";
+import processImg from "../assets/images/R&D_6.webp";
+import ctaImg from "../assets/images/R&D_7.webp";
+import testingImg from "../assets/images/R&D_5.webp";
+import qualityImg from "../assets/images/RD5.webp";
+import teamImg from "../assets/images/R&D_4.webp";
+import solutionsImg from "../assets/images/rd_solution.webp";
+import platformImg from "../assets/images/RD_2.webp";
 import iso from "../assets/images/rd_logos_4.png";
 import ce from "../assets/images/rd_logos_3.png";
 import ul from "../assets/images/rd_logos_5.png";
 import un from "../assets/images/rd_logos_2.png";
 import rohs from "../assets/images/rd_logos_1.png";
-import iec from "../assets/images/rd_logos_6.png";
+import iec from "../assets/images/rd_logos_6.webp";
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 },

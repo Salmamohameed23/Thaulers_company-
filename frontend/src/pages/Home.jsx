@@ -19,15 +19,7 @@ import {
 import { ROUTES } from "../config/siteRoutes";
 import { homeData } from "../data/homeData";
 import { useLanguage } from "../i18n/LanguageContext";
-import { productionLines } from "../data/productionLinesData";
-const featuredProductionLines = productionLines.filter((line) =>
-  [
-    "metal-pipe-production-line",
-    "steel-coil-slitting-line",
-    "automatic-filling-packing-line",
-    "aluminum-recycling-to-cable-production-line",
-  ].includes(line.slug),
-);
+
 const MotionLink = motion(Link);
 
 const ICONS = {
@@ -79,7 +71,7 @@ const Home = () => {
       <section className="relative min-h-[620px] overflow-hidden bg-black">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/home_imgs/hero.png')" }}
+          style={{ backgroundImage: "url('/images/home_imgs/hero2.jpg')" }}
         />
 
         <div className="absolute inset-0 bg-black/30" />
@@ -186,11 +178,11 @@ const Home = () => {
           <div className="grid items-center gap-8 md:grid-cols-[1.2fr_.8fr]">
             <div className="group relative">
               <ImageBlock
-                src="/images/home_imgs/about1.png"
+                src="/images/home_imgs/about1.webp"
                 className="h-[360px] rounded-3xl shadow-2xl"
               />
               <ImageBlock
-                src="/images/home_imgs/about2.png"
+                src="/images/home_imgs/about2.webp"
                 className={`absolute -bottom-8 hidden h-40 w-64 rounded-2xl border-8 border-white shadow-xl md:block ${
                   isAr ? "-right-8" : "-left-8"
                 }`}

@@ -5,45 +5,38 @@ export const homeData = {
     {
       key: "solarEnergy",
       icon: "sun",
-      image: "/images/home_imgs/categories1.png",
+      image: "/images/home_imgs/categories1.webp",
       path: ROUTES.solutions.solarEnergy,
     },
     {
       key: "productionLines",
       icon: "factory",
-      image: "/images/home_imgs/categories2.png",
+      image: "/images/production-lines/hero.webp",
       path: ROUTES.solutions.productionLines,
     },
     {
       key: "electricScooters",
       icon: "bike",
-      image: "/images/home_imgs/categories5.png",
+      image: "/images/bikes/city-scooters.jpg",
       path: ROUTES.solutions.electricScooters,
     },
     {
       key: "kitchenware",
       icon: "utensils",
-      image: "/images/home_imgs/categories6.png",
+      image: "/images/kitchenware/categories/hero.webp",
       path: ROUTES.solutions.kitchenware,
     },
     {
       key: "hotelSupplies",
       icon: "hotel",
-      image: "/images/home_imgs/categories4.png",
+      image: "/images/Hotelsupply/hero.jpg",
       path: ROUTES.solutions.hotelSupplies,
     },
     {
       key: "toolsHardware",
       icon: "wrench",
-      image: "/images/home_imgs/categories3.png",
+      image: "/images/Toolsandhardware/hero.webp",
       path: ROUTES.solutions.toolsHardware,
     },
-  ],
-
-  productionLines: [
-    { image: "/images/home_imgs/LINES1.png" },
-    { image: "/images/home_imgs/LINES2.png" },
-    { image: "/images/home_imgs/LINES3.png" },
-    { image: "/images/home_imgs/LINES4.png" },
   ],
 };

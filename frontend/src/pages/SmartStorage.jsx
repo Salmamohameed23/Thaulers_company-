@@ -20,8 +20,8 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 import smartHero from "../assets/images/hero4.jpg";
 import ess5 from "../assets/images/5 kw 1.png";
-import ess10 from "../assets/images/5 kw 6.png";
-import essIndustrial from "../assets/images/6.png";
+import ess10 from "../assets/images/5 kw 6.webp";
+import essIndustrial from "../assets/images/6.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 26 },

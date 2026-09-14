@@ -60,7 +60,7 @@ const Whyus = () => {
       <section className="relative min-h-[460px] overflow-hidden bg-black">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/about/about-hero.jpg')" }}
+          style={{ backgroundImage: "url('/images/home_imgs/about2.webp')" }}
         />
         <div
           className={`absolute inset-0 ${
@@ -191,7 +191,7 @@ const Whyus = () => {
 
             <div className="relative mt-8 aspect-video overflow-hidden rounded-3xl bg-white shadow-sm">
               <img
-                src="/images/home_imgs/global-reach.png"
+                src="/images/home_imgs/global-reach.webp"
                 alt={page.globalReachTitle}
                 className="h-full w-full object-cover object-center"
                 loading="lazy"
@@ -232,7 +232,7 @@ const Whyus = () => {
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid overflow-hidden rounded-3xl bg-black text-white lg:grid-cols-[.9fr_1.1fr]">
             <ImageBlock
-              src="/images/home_imgs/our-ppl.png"
+              src="/images/home_imgs/our-ppl.webp"
               className="min-h-[340px]"
             ></ImageBlock>
 

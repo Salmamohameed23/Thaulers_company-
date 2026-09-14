@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, BatteryCharging, Factory, Globe2 } from "lucide-react";
 
 import smartstorage from "../../assets/images/hero4.jpg";
-import Factoryimg from "../../assets/images/factory 5.png";
-import gigawatt from "../../assets/images/gigawaa.png";
+import Factoryimg from "../../assets/images/factory 5.webp";
+import gigawatt from "../../assets/images/gigawaa.webp";
 
 import { useLanguage } from "../../i18n/LanguageContext";
 import { ROUTES } from "../../config/siteRoutes";

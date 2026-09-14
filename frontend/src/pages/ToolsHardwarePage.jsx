@@ -1,6 +1,8 @@
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { toolsHardwarePartnerItems } from "../data/toolsHardwareData";
 import { useLanguage } from "../i18n/LanguageContext";
+import { API_BASE_URL } from "../config/api";
 
 const toolsHardwareCategories = [
   {
@@ -84,8 +86,50 @@ const toolsHardwareCategories = [
 }));
 
 const ToolsHardwarePage = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const content = t.toolsHardwarePage;
+  const [apiCategories, setApiCategories] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const loadCategories = async () => {
+      try {
+        const baseUrl = API_BASE_URL.replace(/\/$/, "");
+        const response = await fetch(
+          `${baseUrl}/api/categories?section=tools-hardware`,
+          { signal: controller.signal },
+        );
+        if (!response.ok) throw new Error("Could not load tools categories");
+        const result = await response.json();
+        setApiCategories(Array.isArray(result.data) ? result.data : []);
+      } catch (error) {
+        if (error.name !== "AbortError") setApiCategories(null);
+      }
+    };
+    loadCategories();
+    return () => controller.abort();
+  }, []);
+
+  const displayedCategories = useMemo(() => {
+    if (apiCategories === null) {
+      return toolsHardwareCategories.map((category, index) => ({
+        ...category,
+        title: content.categories?.[index]?.title || category.title,
+        desc: content.categories?.[index]?.desc || category.desc,
+      }));
+    }
+
+    return apiCategories.map((category) => ({
+      slug: category.slug,
+      title: category.name?.[lang] || category.name?.en || "",
+      desc: category.description?.[lang] || category.description?.en || "",
+      image:
+        category.image?.url ||
+        toolsHardwareCategories.find((item) => item.slug === category.slug)
+          ?.image ||
+        "",
+    }));
+  }, [apiCategories, content.categories, lang]);
 
   return (
     <main className="bg-white text-zinc-950">
@@ -94,7 +138,7 @@ const ToolsHardwarePage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/Toolsandhardware/hero.png')",
+            backgroundImage: "url('/images/Toolsandhardware/hero.webp')",
           }}
         />
 
@@ -139,12 +183,10 @@ const ToolsHardwarePage = () => {
           </div>
 
           <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {toolsHardwareCategories.map((cat, index) => {
-              const category = content.categories[index];
-
+            {displayedCategories.map((category, index) => {
               return (
                 <motion.article
-                  key={cat.slug}
+                  key={category.slug}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   whileHover={{ y: -10 }}
@@ -157,8 +199,10 @@ const ToolsHardwarePage = () => {
                 >
                   <div className="relative h-52 overflow-hidden bg-gray-100">
                     <img
-                      src={cat.image}
+                      src={category.image}
                       alt={category.title}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

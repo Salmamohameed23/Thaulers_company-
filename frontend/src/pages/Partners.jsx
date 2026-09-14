@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Building2, Handshake } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 
-import bgImg from "../assets/images/partner_bg.png";
+import bgImg from "../assets/images/partner_bg.webp";
 import eveVisit from "../assets/images/eve_visit.jpg";
 import bydVisit from "../assets/images/byd_visit.jpg";
 import rfBoxVisit from "../assets/images/rf_visit.jpg";

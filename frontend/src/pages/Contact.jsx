@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Building2 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
-import API_BASE_URL from "../../../backend/src/config/api.js";
+import { API_BASE_URL } from "../config/api";
 const Contact = () => {
   const { t, lang } = useLanguage();
   const isAr = lang === "ar";

@@ -1,79 +1,122 @@
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { hotelPartnerItems } from "../data/hotelSuppliesData";
 import { useLanguage } from "../i18n/LanguageContext";
+import { API_BASE_URL } from "../config/api";
 
 const hotelCategories = [
   {
     slug: "amenities-guest-room",
     title: "Guest Room Amenities",
     desc: "Thoughtfully selected essentials that enhance comfort and elevate the guest experience.",
-    image: "/images/Hotelsupply/category-amenities-guest-room.png",
+    image: "/images/Hotelsupply/category-amenities-guest-room.webp",
   },
   {
     slug: "bathroom-accessories",
     title: "Bathroom Accessories",
     desc: "Refined and functional bathroom accessories designed for modern hospitality spaces.",
-    image: "/images/Hotelsupply/category-bathroom-accessories.png",
+    image: "/images/Hotelsupply/category-bathroom-accessories.webp",
   },
   {
     slug: "bedding-linen",
     title: "Bedding & Linen",
     desc: "Premium bedding and linen collections created for lasting comfort and presentation.",
-    image: "/images/Hotelsupply/category-bedding-linen.png",
+    image: "/images/Hotelsupply/category-bedding-linen.webp",
   },
   {
     slug: "front-office-stationery",
     title: "Front Office Stationery",
     desc: "Professional stationery and desk accessories that support polished guest services.",
-    image: "/images/Hotelsupply/category-front-office-stationery.png",
+    image: "/images/Hotelsupply/category-front-office-stationery.webp",
   },
   {
     slug: "housekeeping-supplies",
     title: "Housekeeping Supplies",
     desc: "Reliable housekeeping products for efficient daily operations and consistent standards.",
-    image: "/images/Hotelsupply/category-housekeeping-supplies.png",
+    image: "/images/Hotelsupply/category-housekeeping-supplies.webp",
   },
   {
     slug: "mattress-protectors",
     title: "Mattress Protectors",
     desc: "Durable protective solutions designed to preserve hygiene, comfort, and mattress quality.",
-    image: "/images/Hotelsupply/category-mattress-protectors.png",
+    image: "/images/Hotelsupply/category-mattress-protectors.webp",
   },
   {
     slug: "packaging-branding",
     title: "Packaging & Branding",
     desc: "Custom packaging and branding solutions tailored to your hotel's identity.",
-    image: "/images/Hotelsupply/category-packaging-branding.png",
+    image: "/images/Hotelsupply/category-packaging-branding.webp",
   },
   {
     slug: "pillows-duvets",
     title: "Pillows & Duvets",
     desc: "Comfort-focused pillows and duvets engineered for restful, memorable stays.",
-    image: "/images/Hotelsupply/category-pillows-duvets.png",
+    image: "/images/Hotelsupply/category-pillows-duvets.webp",
   },
   {
     slug: "restaurant-buffet-supplies",
     title: "Restaurant & Buffet Supplies",
     desc: "Elegant, dependable solutions for professional dining and buffet presentation.",
-    image: "/images/Hotelsupply/category-restaurant-buffet-supplies.png",
+    image: "/images/Hotelsupply/category-restaurant-buffet-supplies.webp",
   },
   {
     slug: "room-slippers",
     title: "Room Slippers",
     desc: "Comfortable guest slippers available in hospitality-ready styles and finishes.",
-    image: "/images/Hotelsupply/category-room-slippers.png",
+    image: "/images/Hotelsupply/category-room-slippers.webp",
   },
   {
     slug: "towels-bath-textiles",
     title: "Towels & Bath Textiles",
     desc: "Soft, absorbent bath textiles developed for everyday hospitality performance.",
-    image: "/images/Hotelsupply/category-towels-bath-textiles.png",
+    image: "/images/Hotelsupply/category-towels-bath-textiles.webp",
   },
 ];
 
 const HotelSuppliesPage = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const content = t.hotelSuppliesPage;
+  const [apiCategories, setApiCategories] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const loadCategories = async () => {
+      try {
+        const baseUrl = API_BASE_URL.replace(/\/$/, "");
+        const response = await fetch(
+          `${baseUrl}/api/categories?section=hotel-supplies`,
+          { signal: controller.signal },
+        );
+        if (!response.ok) throw new Error("Could not load hotel categories");
+        const result = await response.json();
+        setApiCategories(Array.isArray(result.data) ? result.data : []);
+      } catch (error) {
+        if (error.name !== "AbortError") setApiCategories(null);
+      }
+    };
+    loadCategories();
+    return () => controller.abort();
+  }, []);
+
+  const displayedCategories = useMemo(() => {
+    if (apiCategories === null) {
+      return hotelCategories.map((category, index) => ({
+        ...category,
+        title: content.categories?.[index]?.title || category.title,
+        desc: content.categories?.[index]?.desc || category.desc,
+      }));
+    }
+
+    return apiCategories.map((category) => ({
+      slug: category.slug,
+      title: category.name?.[lang] || category.name?.en || "",
+      desc: category.description?.[lang] || category.description?.en || "",
+      image:
+        category.image?.url ||
+        hotelCategories.find((item) => item.slug === category.slug)?.image ||
+        "",
+    }));
+  }, [apiCategories, content.categories, lang]);
 
   return (
     <main className="bg-white text-zinc-950">
@@ -126,12 +169,10 @@ const HotelSuppliesPage = () => {
           </div>
 
           <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {hotelCategories.map((cat, index) => {
-              const category = content.categories[index];
-
+            {displayedCategories.map((category, index) => {
               return (
                 <motion.article
-                  key={cat.slug}
+                  key={category.slug}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   whileHover={{ y: -10 }}
@@ -144,8 +185,10 @@ const HotelSuppliesPage = () => {
                 >
                   <div className="relative h-52 overflow-hidden bg-gray-100">
                     <img
-                      src={cat.image}
+                      src={category.image}
                       alt={category.title}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

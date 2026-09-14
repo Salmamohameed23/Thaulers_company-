@@ -14,6 +14,7 @@ import {
   Send,
   User,
 } from "lucide-react";
+import { API_BASE_URL } from "../config/api";
 
 const supportScope = [
   "Technical requirement collection",
@@ -76,6 +77,10 @@ const factorySpaces = [
 
 export default function ProjectBriefFormPage() {
   const [step, setStep] = useState("form");
+  const [submitLoading, setSubmitLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [referenceCode, setReferenceCode] = useState("");
+  const [attachments, setAttachments] = useState([]);
 
   const [form, setForm] = useState({
     fullName: "",
@@ -125,16 +130,51 @@ export default function ProjectBriefFormPage() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    setSubmitError("");
+    if (
+      !form.fullName.trim() ||
+      !form.email.trim() ||
+      !form.phone.trim() ||
+      !form.country ||
+      !form.city ||
+      !form.productionLineType
+    ) {
+      setSubmitError("Please complete all required fields.");
+      return;
+    }
     setStep("summary");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const finalSubmit = () => {
-    console.log("Project Brief:", {
-      ...form,
-      country: countryName,
-    });
-    alert("Project brief submitted successfully.");
+  const finalSubmit = async () => {
+    setSubmitLoading(true);
+    setSubmitError("");
+    try {
+      const payload = new FormData();
+      payload.append("payload", JSON.stringify({
+        ...form,
+        country: countryName,
+        countryCode: form.country,
+      }));
+      attachments.forEach((file) => payload.append("attachments", file));
+
+      const response = await fetch(`${API_BASE_URL}/api/project-briefs`, {
+        method: "POST",
+        body: payload,
+      });
+      const data = await response.json();
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Submission failed");
+      }
+      setReferenceCode(data.referenceCode);
+      setStep("success");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (error) {
+      console.error("Project brief submission error:", error);
+      setSubmitError(error.message || "Submission failed. Please try again.");
+    } finally {
+      setSubmitLoading(false);
+    }
   };
 
   const SummaryRow = ({ label, value }) => (
@@ -152,7 +192,7 @@ export default function ProjectBriefFormPage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/production-lines/hero.png')",
+            backgroundImage: "url('/images/production-lines/hero.webp')",
           }}
         />
 
@@ -322,8 +362,9 @@ export default function ProjectBriefFormPage() {
                     <div className="relative">
                       <Calendar className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
                       <input
+                        type="date"
                         className={inputWithIcon}
-                        placeholder="Expected timeline"
+                        min={new Date().toISOString().split("T")[0]}
                         value={form.targetDate}
                         onChange={(e) => update("targetDate", e.target.value)}
                       />
@@ -447,9 +488,47 @@ export default function ProjectBriefFormPage() {
                         final product samples, capacity target, existing
                         quotation, or reference machine pictures.
                       </p>
+                      <label className="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-xl bg-black px-5 py-3 text-xs font-black text-white transition hover:bg-red-600">
+                        <FileText className="h-4 w-4" />
+                        Choose attachments
+                        <input
+                          type="file"
+                          multiple
+                          accept=".jpg,.jpeg,.png,.webp,.avif,.pdf,.doc,.docx,.xls,.xlsx"
+                          className="hidden"
+                          onChange={(e) => {
+                            const selected = Array.from(e.target.files || []);
+                            if (selected.some((file) => file.size > 10 * 1024 * 1024)) {
+                              setSubmitError("Each attachment must be 10 MB or smaller.");
+                              e.target.value = "";
+                              return;
+                            }
+                            setAttachments((current) => [...current, ...selected].slice(0, 5));
+                            setSubmitError("");
+                            e.target.value = "";
+                          }}
+                        />
+                      </label>
+                      <p className="mt-2 text-[11px] text-gray-500">Up to 5 files · 10 MB each · Images, PDF, Word or Excel</p>
                     </div>
                   </div>
+                  {attachments.length > 0 && (
+                    <div className="mt-4 grid gap-2">
+                      {attachments.map((file, index) => (
+                        <div key={`${file.name}-${index}`} className="flex items-center justify-between rounded-lg border bg-white px-4 py-3 text-xs">
+                          <span className="min-w-0 truncate font-bold">{file.name}</span>
+                          <button type="button" onClick={() => setAttachments((files) => files.filter((_, itemIndex) => itemIndex !== index))} className="ml-3 font-black text-red-600">Remove</button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
+
+                {submitError && (
+                  <p className="mt-5 rounded-xl bg-red-50 p-4 text-sm font-bold text-red-700">
+                    {submitError}
+                  </p>
+                )}
 
                 <button
                   type="submit"
@@ -459,7 +538,7 @@ export default function ProjectBriefFormPage() {
                   <Send className="h-4 w-4" />
                 </button>
               </form>
-            ) : (
+            ) : step === "summary" ? (
               <div>
                 <p className="mb-4 text-[11px] font-black uppercase tracking-[0.45em] text-red-600">
                   Project Brief Summary
@@ -534,11 +613,28 @@ export default function ProjectBriefFormPage() {
                   <button
                     type="button"
                     onClick={finalSubmit}
-                    className="w-full bg-red-600 px-8 py-4 text-sm font-black text-white transition hover:bg-red-700"
+                    disabled={submitLoading}
+                    className="w-full bg-red-600 px-8 py-4 text-sm font-black text-white transition hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    Submit Final Brief
+                    {submitLoading ? "Submitting..." : "Submit Final Brief"}
                   </button>
                 </div>
+                {submitError && (
+                  <p className="mt-5 rounded-xl bg-red-50 p-4 text-sm font-bold text-red-700">
+                    {submitError}
+                  </p>
+                )}
+              </div>
+            ) : (
+              <div className="py-16 text-center">
+                <CheckCircle className="mx-auto h-16 w-16 text-emerald-600" />
+                <h2 className="mt-6 text-3xl font-black">Project brief received</h2>
+                <p className="mt-3 text-gray-600">
+                  Our team will review your requirements and contact you shortly.
+                </p>
+                <p className="mt-5 font-black text-red-600">
+                  Reference: {referenceCode}
+                </p>
               </div>
             )}
           </div>

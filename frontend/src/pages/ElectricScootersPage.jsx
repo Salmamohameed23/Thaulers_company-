@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
   BatteryCharging,
@@ -7,6 +8,7 @@ import {
   Truck,
 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
+import { API_BASE_URL } from "../config/api";
 
 const scooterCategories = [
   {
@@ -25,25 +27,25 @@ const scooterCategories = [
     slug: "high-performance-scooters",
     title: "High-Performance Scooters",
     desc: "Powerful models combining responsive acceleration, extended range, and bold design.",
-    image: "/images/bikes/high-performance-scooters.jpg",
+    image: "/images/bikes/high-performance-scooters.webp",
   },
   {
     slug: "adventure-scooters",
     title: "Adventure Scooters",
     desc: "Rugged models built for rough roads, outdoor journeys, and confident all-terrain mobility.",
-    image: "/images/bikes/adventure-scooters.jpg",
+    image: "/images/bikes/adventure-scooters.webp",
   },
   {
     slug: "classic-scooters",
     title: "Classic Scooters",
     desc: "Retro-inspired models combining elegant design, comfortable seating, and reliable everyday performance.",
-    image: "/images/bikes/classic-scooters.jpg",
+    image: "/images/bikes/classic-scooters.webp",
   },
   {
     slug: "utility-scooters",
     title: "Utility Scooters",
     desc: "Versatile, durable models designed for daily tasks with stability, strength, and practical features.",
-    image: "/images/bikes/utility-scooters.jpg",
+    image: "/images/bikes/utility-scooters.webp",
   },
 ];
 
@@ -79,6 +81,56 @@ const ElectricScootersPage = () => {
   const { t, lang } = useLanguage();
   const content = t.electricScootersPage;
   const isArabic = lang === "ar";
+  const [apiCategories, setApiCategories] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const loadCategories = async () => {
+      try {
+        const baseUrl = API_BASE_URL.replace(/\/$/, "");
+        const response = await fetch(
+          `${baseUrl}/api/categories?section=electric-scooters`,
+          { signal: controller.signal },
+        );
+
+        if (!response.ok) {
+          throw new Error("Could not load electric scooter categories");
+        }
+
+        const result = await response.json();
+        setApiCategories(Array.isArray(result.data) ? result.data : []);
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          // Keep the current static content as a fallback if the API is offline.
+          setApiCategories(null);
+        }
+      }
+    };
+
+    loadCategories();
+    return () => controller.abort();
+  }, []);
+
+  const displayedCategories = useMemo(() => {
+    if (apiCategories === null) {
+      return scooterCategories.map((category, index) => ({
+        ...category,
+        title: content.categories?.[index]?.title || category.title,
+        desc: content.categories?.[index]?.desc || category.desc,
+      }));
+    }
+
+    return apiCategories.map((category) => ({
+      slug: category.slug,
+      title: category.name?.[lang] || category.name?.en || "",
+      desc: category.description?.[lang] || category.description?.en || "",
+      image:
+        category.image?.url ||
+        scooterCategories.find((item) => item.slug === category.slug)?.image ||
+        "",
+    }));
+  }, [apiCategories, content.categories, lang]);
 
   return (
     <main className="bg-white text-zinc-950">
@@ -87,7 +139,7 @@ const ElectricScootersPage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/bikes/scooter-hero.png')",
+            backgroundImage: "url('/images/bikes/scooter-hero.webp')",
           }}
         />
 
@@ -139,42 +191,44 @@ const ElectricScootersPage = () => {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
-            {scooterCategories.map((category, index) => {
-              const translatedCategory = content.categories[index];
-
+          <div className="mt-12 grid justify-items-center gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {displayedCategories.map((category, index) => {
               return (
                 <motion.article
                   key={category.slug}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -10 }}
+                  whileHover={{ y: -6 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{
                     opacity: { duration: 0.5, delay: index * 0.08 },
                     y: { duration: 0.35, delay: index * 0.08 },
                   }}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow duration-300 hover:border-red-200 hover:shadow-[0_20px_50px_rgba(0,0,0,0.13)]"
+                  className="group relative flex h-full w-full max-w-[290px] flex-col overflow-hidden rounded-[22px] border border-zinc-200 bg-white shadow-[0_8px_28px_rgba(15,23,42,0.06)] transition-[border-color,box-shadow] duration-300 hover:border-red-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.12)]"
                 >
-                  <div className="relative flex h-72 items-center justify-center overflow-hidden bg-white p-5">
+                  <div className="relative h-[308px] w-full overflow-hidden bg-white">
                     <img
                       src={category.image}
-                      alt={translatedCategory.title}
-                      className="h-full w-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                      alt={category.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="block h-full w-full object-contain object-center"
                     />
-                    <div className="pointer-events-none absolute inset-x-5 bottom-0 h-px bg-gray-100" />
                   </div>
 
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-xl font-black transition-colors duration-300 group-hover:text-red-600">
-                      {translatedCategory.title}
+                  <div className="mx-5 h-px bg-zinc-100" />
+
+                  <div className="flex flex-1 flex-col px-6 pb-7 pt-5">
+                    <div className="mb-3 h-[3px] w-9 rounded-full bg-red-600 transition-all duration-300 group-hover:w-14" />
+                    <h3 className="text-lg font-black leading-snug text-zinc-950 transition-colors duration-300 group-hover:text-red-600">
+                      {category.title}
                     </h3>
-                    <p className="mt-3 text-sm font-semibold leading-7 text-gray-600">
-                      {translatedCategory.desc}
+                    <p className="mt-2 text-[13px] font-medium leading-6 text-zinc-600">
+                      {category.desc}
                     </p>
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-red-600 transition-transform duration-300 group-hover:scale-x-100" />
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-transparent transition duration-300 group-hover:ring-red-500/15" />
                 </motion.article>
               );
             })}

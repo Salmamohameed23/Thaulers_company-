@@ -1,73 +1,53 @@
-import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
 import { ROUTES } from "../config/siteRoutes";
-// home
-import Home from "../pages/Home";
-import Whyus from "../pages/whyus";
-import Contact from "../pages/Contact";
-import TermsOfService from "../pages/TermsOfService";
-import PrivacyPolicy from "../pages/PrivacyPolicy";
-// solar
-import SolarHome from "../pages/SolarHome";
-import SmartStorage from "../pages/SmartStorage";
-import Factory from "../pages/Factory";
-import GigawattProjects from "../pages/GigawattProjects";
-import LetsBuild from "../pages/LetsBuild";
-import Rd from "../pages/Rd";
 
-// import Production Lines
-import ProductionLinesPage from "../pages/ProductionLinesPage";
-import ProjectBriefFormPage from "../pages/ProjectBriefFormPage";
-// kitchenware
-import KitchenwarePage from "../pages/KitchenwarePage";
-// hotel supplies
-import HotelSuppliesPage from "../pages/HotelSuppliesPage";
-// tools and hardware 
-import ToolsHardwarePage from "../pages/ToolsHardwarePage";
-// electric scooters 
-import ElectricScootersPage from "../pages/ElectricScootersPage";
-const AppRouter = () => {
-  return (
+const Home = lazy(() => import("../pages/Home"));
+const Whyus = lazy(() => import("../pages/whyus"));
+const Contact = lazy(() => import("../pages/Contact"));
+const TermsOfService = lazy(() => import("../pages/TermsOfService"));
+const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
+const SolarHome = lazy(() => import("../pages/SolarHome"));
+const SmartStorage = lazy(() => import("../pages/SmartStorage"));
+const Factory = lazy(() => import("../pages/Factory"));
+const GigawattProjects = lazy(() => import("../pages/GigawattProjects"));
+const LetsBuild = lazy(() => import("../pages/LetsBuild"));
+const Rd = lazy(() => import("../pages/Rd"));
+const ProductionLinesPage = lazy(() => import("../pages/ProductionLinesPage"));
+const ProjectBriefFormPage = lazy(() => import("../pages/ProjectBriefFormPage"));
+const KitchenwarePage = lazy(() => import("../pages/KitchenwarePage"));
+const HotelSuppliesPage = lazy(() => import("../pages/HotelSuppliesPage"));
+const ToolsHardwarePage = lazy(() => import("../pages/ToolsHardwarePage"));
+const ElectricScootersPage = lazy(() => import("../pages/ElectricScootersPage"));
+
+const PageLoader = () => (
+  <div className="flex min-h-[45vh] items-center justify-center bg-white">
+    <div className="h-10 w-10 animate-spin rounded-full border-4 border-neutral-200 border-t-red-600" />
+  </div>
+);
+
+const AppRouter = () => (
+  <Suspense fallback={<PageLoader />}>
     <Routes>
-      {/* Main Home */}
       <Route path={ROUTES.home} element={<Home />} />
       <Route path={ROUTES.whyUs} element={<Whyus />} />
       <Route path={ROUTES.contact} element={<Contact />} />
       <Route path={ROUTES.letsBuild} element={<LetsBuild />} />
-      {/* <Route path="/partners" element={<Partners />} /> */}
-      {/* Legal */}
       <Route path={ROUTES.terms} element={<TermsOfService />} />
       <Route path={ROUTES.privacy} element={<PrivacyPolicy />} />
-      {/*  */}
-      {/* solar */}
-      <Route path={ROUTES.solutions.solarEnergy} element={<SolarHome />} />{" "}
+      <Route path={ROUTES.solutions.solarEnergy} element={<SolarHome />} />
       <Route path="/smart-storage" element={<SmartStorage />} />
       <Route path="/factory" element={<Factory />} />
       <Route path="/gigawatt-projects" element={<GigawattProjects />} />
       <Route path={ROUTES.rd} element={<Rd />} />
-      {/*  */}
-      {/* productions lines  */}
-      <Route
-        path="/solutions/complete-industrial-production-lines"
-        element={<ProductionLinesPage />}
-      />
-      <Route
-        path="/solutions/production-lines/let-build"
-        element={<ProjectBriefFormPage />}
-      />
-      {/*  */}
-      {/* kitchen */}
+      <Route path="/solutions/complete-industrial-production-lines" element={<ProductionLinesPage />} />
+      <Route path="/solutions/production-lines/let-build" element={<ProjectBriefFormPage />} />
       <Route path="/solutions/kitchenware" element={<KitchenwarePage />} />
-      {/*  */}
-      {/* hotel */}
       <Route path="/solutions/hotel-supplies" element={<HotelSuppliesPage />} />
-      {/*  */}
-      {/* toolsand hardware */}
       <Route path="/solutions/tools-hardware" element={<ToolsHardwarePage />} />
-      {/*  */}
-      {/* bikes  */}
       <Route path="/solutions/electric-scooters" element={<ElectricScootersPage />} />
     </Routes>
-  );
-};
+  </Suspense>
+);
 
 export default AppRouter;

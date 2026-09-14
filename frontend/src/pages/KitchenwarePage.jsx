@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -7,41 +8,88 @@ import {
   Factory,
 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
+import { API_BASE_URL } from "../config/api";
 
 const kitchenwareCategories = [
   {
     slug: "cookware-sets",
-    image: "/images/kitchenware/categories/cookware-sets.png",
+    image: "/images/kitchenware/categories/cookware-sets.webp",
   },
   {
     slug: "drinkware-bottles",
-    image: "/images/kitchenware/categories/drinkware-bottles.png",
+    image: "/images/kitchenware/categories/drinkware-bottles.webp",
   },
   {
     slug: "electric-kitchen-appliances",
-    image: "/images/kitchenware/categories/electric-kitchen-appliances.png",
+    image: "/images/kitchenware/categories/electric-kitchen-appliances.webp",
   },
   {
     slug: "kitchen-tools-utensils",
-    image: "/images/kitchenware/categories/kitchen-tools-utensils.png",
+    image: "/images/kitchenware/categories/kitchen-tools-utensils.webp",
   },
   {
     slug: "major-home-appliances",
-    image: "/images/kitchenware/categories/major-home-appliances.png",
+    image: "/images/kitchenware/categories/major-home-appliances.webp",
   },
   {
     slug: "private-label-kitchen-sets",
-    image: "/images/kitchenware/categories/private-label-kitchen-sets.png",
+    image: "/images/kitchenware/categories/private-label-kitchen-sets.webp",
   },
   {
     slug: "storage-organization",
-    image: "/images/kitchenware/categories/storage-organization.png",
+    image: "/images/kitchenware/categories/storage-organization.webp",
   },
 ];
 
 const KitchenwarePage = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const content = t.kitchenwarePage;
+  const [apiCategories, setApiCategories] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const loadCategories = async () => {
+      try {
+        const baseUrl = API_BASE_URL.replace(/\/$/, "");
+        const response = await fetch(
+          `${baseUrl}/api/categories?section=kitchenware`,
+          { signal: controller.signal },
+        );
+        if (!response.ok)
+          throw new Error("Could not load kitchenware categories");
+
+        const result = await response.json();
+        setApiCategories(Array.isArray(result.data) ? result.data : []);
+      } catch (error) {
+        if (error.name !== "AbortError") setApiCategories(null);
+      }
+    };
+
+    loadCategories();
+    return () => controller.abort();
+  }, []);
+
+  const displayedCategories = useMemo(() => {
+    if (apiCategories === null) {
+      return kitchenwareCategories.map((category, index) => ({
+        ...category,
+        title: content.categories?.[index]?.title || "",
+        desc: content.categories?.[index]?.desc || "",
+      }));
+    }
+
+    return apiCategories.map((category) => ({
+      slug: category.slug,
+      title: category.name?.[lang] || category.name?.en || "",
+      desc: category.description?.[lang] || category.description?.en || "",
+      image:
+        category.image?.url ||
+        kitchenwareCategories.find((item) => item.slug === category.slug)
+          ?.image ||
+        "",
+    }));
+  }, [apiCategories, content.categories, lang]);
 
   return (
     <main className="bg-white text-zinc-950">
@@ -50,7 +98,7 @@ const KitchenwarePage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/kitchenware/categories/hero.png')",
+            backgroundImage: "url('/images/kitchenware/categories/hero.webp')",
           }}
         />
 
@@ -93,12 +141,10 @@ const KitchenwarePage = () => {
           </div>
 
           <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {kitchenwareCategories.map((cat, index) => {
-              const category = content.categories[index];
-
+            {displayedCategories.map((category, index) => {
               return (
                 <motion.article
-                  key={cat.slug}
+                  key={category.slug}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   whileHover={{ y: -10 }}
@@ -111,7 +157,7 @@ const KitchenwarePage = () => {
                 >
                   <div className="relative h-52 overflow-hidden bg-gray-100">
                     <img
-                      src={cat.image}
+                      src={category.image}
                       alt={category.title}
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     />

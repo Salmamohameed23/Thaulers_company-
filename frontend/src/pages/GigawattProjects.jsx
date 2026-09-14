@@ -17,8 +17,8 @@ import {
 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 
-import gigaHero from "../assets/images/gigawaa.png";
-import gigaEnd from "../assets/images/gigawat2.png";
+import gigaHero from "../assets/images/gigawaa.webp";
+import gigaEnd from "../assets/images/gigawat2.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 26 },

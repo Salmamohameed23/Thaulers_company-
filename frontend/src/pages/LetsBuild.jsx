@@ -2,19 +2,19 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Send } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
-import bgImg from "../assets/images/build_bg.png";
-import villaImg from "../assets/images/build_1.png";
-import hotelImg from "../assets/images/build_2.png";
-import commercialImg from "../assets/images/build_3.png";
-import factoryImg from "../assets/images/build_4.png";
-import desertImg from "../assets/images/build_5.png";
-import otherImg from "../assets/images/build_6.png";
+import bgImg from "../assets/images/build_bg.webp";
+import villaImg from "../assets/images/build_1.webp";
+import hotelImg from "../assets/images/build_2.webp";
+import commercialImg from "../assets/images/build_3.webp";
+import factoryImg from "../assets/images/build_4.webp";
+import desertImg from "../assets/images/build_5.webp";
+import otherImg from "../assets/images/build_6.webp";
 
-import solarImg from "../assets/images/build_7.png";
-import batteryImg from "../assets/images/build_8.png";
-import offgridImg from "../assets/images/build_9.png";
-import epcImg from "../assets/images/build_10.png";
-import API_BASE_URL from "../../../backend/src/config/api.js";
+import solarImg from "../assets/images/build_7.webp";
+import batteryImg from "../assets/images/build_8.webp";
+import offgridImg from "../assets/images/build_9.webp";
+import epcImg from "../assets/images/build_10.webp";
+import { API_BASE_URL } from "../config/api";
 const projectImages = [
   villaImg,
   hotelImg,

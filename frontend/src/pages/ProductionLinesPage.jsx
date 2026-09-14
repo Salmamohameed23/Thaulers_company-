@@ -1,12 +1,58 @@
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { productionLines } from "../data/productionLinesData";
 import { useLanguage } from "../i18n/LanguageContext";
+import { API_BASE_URL } from "../config/api";
 
 export default function ProductionLinesPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const content = t.productionLinesPage;
+  const [apiCategories, setApiCategories] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const loadCategories = async () => {
+      try {
+        const baseUrl = API_BASE_URL.replace(/\/$/, "");
+        const response = await fetch(
+          `${baseUrl}/api/categories?section=production-lines`,
+          { signal: controller.signal },
+        );
+        if (!response.ok) throw new Error("Could not load production lines");
+        const result = await response.json();
+        setApiCategories(Array.isArray(result.data) ? result.data : []);
+      } catch (error) {
+        if (error.name !== "AbortError") setApiCategories(null);
+      }
+    };
+
+    loadCategories();
+    return () => controller.abort();
+  }, []);
+
+  const displayedLines = useMemo(() => {
+    if (apiCategories === null) {
+      return productionLines.map((line, index) => ({
+        ...line,
+        title: content.lines?.[index]?.title || "",
+        description: content.lines?.[index]?.description || "",
+      }));
+    }
+
+    return apiCategories.map((category) => ({
+      slug: category.slug,
+      title: category.name?.[lang] || category.name?.en || "",
+      description:
+        category.description?.[lang] || category.description?.en || "",
+      image:
+        category.image?.url ||
+        productionLines.find((line) => line.slug === category.slug)?.image ||
+        "",
+    }));
+  }, [apiCategories, content.lines, lang]);
 
   return (
     <main className="bg-white">
@@ -15,7 +61,7 @@ export default function ProductionLinesPage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/production-lines/hero.png')",
+            backgroundImage: "url('/images/production-lines/hero.webp')",
           }}
         />
 
@@ -57,9 +103,7 @@ export default function ProductionLinesPage() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {productionLines.map((line, index) => {
-              const translatedLine = content.lines[index];
-
+            {displayedLines.map((line, index) => {
               return (
                 <motion.article
                   key={line.slug}
@@ -76,7 +120,7 @@ export default function ProductionLinesPage() {
                   <div className="relative h-52 overflow-hidden bg-gray-100">
                     <img
                       src={line.image}
-                      alt={translatedLine.title}
+                      alt={line.title}
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -84,11 +128,11 @@ export default function ProductionLinesPage() {
 
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="text-lg font-black text-black transition-colors duration-300 group-hover:text-red-600">
-                      {translatedLine.title}
+                      {line.title}
                     </h3>
 
                     <p className="mt-2 text-sm leading-6 text-gray-600">
-                      {translatedLine.description}
+                      {line.description}
                     </p>
                   </div>
 

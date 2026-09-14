@@ -17,8 +17,8 @@ import {
 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 
-import factoryHero from "../assets/images/factory 5.png";
-import factoryend from "../assets/images/factory_6.png";
+import factoryHero from "../assets/images/factory 5.webp";
+import factoryend from "../assets/images/factory_6.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 26 },

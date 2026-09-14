@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { TrendingUp, SunMedium } from "lucide-react";
 
-import cleanEnergyBg from "../../assets/images/clean.png";
+import cleanEnergyBg from "../../assets/images/clean.webp";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const CleanEnergySection = () => {
