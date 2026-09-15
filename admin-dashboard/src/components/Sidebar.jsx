@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { LayoutDashboard, Mail, Wrench } from "lucide-react";
+import { LayoutDashboard, Mail, Wrench, FolderTree, Package, Factory, Ship } from "lucide-react";
 
 const Sidebar = () => {
   const linkClass = ({ isActive }) =>
@@ -32,6 +32,18 @@ const Sidebar = () => {
         <NavLink to="/build-requests" className={linkClass}>
           <Wrench size={18} />
           Build Requests
+        </NavLink>
+        <NavLink to="/project-briefs" className={linkClass}>
+          <Factory size={18} /> Production Briefs
+        </NavLink>
+        <NavLink to="/categories" className={linkClass}>
+          <FolderTree size={18} /> Categories
+        </NavLink>
+        <NavLink to="/products" className={linkClass}>
+          <Package size={18} /> Products
+        </NavLink>
+        <NavLink to="/shipment-portfolio" className={linkClass}>
+          <Ship size={18} /> Shipment Portfolio
         </NavLink>
       </nav>
     </aside>

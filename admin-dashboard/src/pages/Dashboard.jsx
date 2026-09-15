@@ -6,6 +6,7 @@ const Dashboard = () => {
   const [stats, setStats] = useState({
     messages: 0,
     builds: 0,
+    briefs: 0,
     today: 0,
   });
 
@@ -14,11 +15,13 @@ const Dashboard = () => {
       try {
         const messages = await apiRequest("/api/admin/contact-messages");
         const builds = await apiRequest("/api/admin/build-requests");
+        const briefs = await apiRequest("/api/admin/project-briefs");
 
         setStats({
           messages: messages.count,
           builds: builds.count,
-          today: messages.data.filter((m) => {
+          briefs: briefs.count,
+          today: [...messages.data, ...builds.data, ...briefs.data].filter((m) => {
             const today = new Date().toDateString();
             return new Date(m.createdAt).toDateString() === today;
           }).length,
@@ -35,9 +38,10 @@ const Dashboard = () => {
     <Layout title="Dashboard">
       <h1 className="mb-6 text-2xl font-black">Welcome Back 👋</h1>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         <Card title="Messages" value={stats.messages} />
         <Card title="Build Requests" value={stats.builds} />
+        <Card title="Production Briefs" value={stats.briefs} />
         <Card title="New Today" value={stats.today} />
       </div>
     </Layout>

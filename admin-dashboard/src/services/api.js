@@ -1,20 +1,16 @@
-const API_BASE_URL = "http://localhost:5000";
-
-export const getToken = () => localStorage.getItem("token");
+export const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export const apiRequest = async (endpoint, options = {}) => {
-  const token = getToken();
-
   const res = await fetch(`${API_BASE_URL}${endpoint}`, {
     ...options,
+    credentials: "include",
     headers: {
-      "Content-Type": "application/json",
-      Authorization: token ? `Bearer ${token}` : "",
+      ...(options.body instanceof FormData ? {} : { "Content-Type": "application/json" }),
       ...options.headers,
     },
   });
 
-  const data = await res.json();
+  const data = await res.json().catch(() => ({}));
 
   if (!res.ok) {
     throw new Error(data.message || "Request failed");

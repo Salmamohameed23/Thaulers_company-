@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { apiRequest } from "../services/api";
 
 const Navbar = ({ title }) => {
   const navigate = useNavigate();
 
-  const logout = () => {
-    localStorage.removeItem("token");
+  const logout = async () => {
+    await apiRequest("/api/auth/logout", { method: "POST" }).catch(() => {});
     navigate("/");
+    window.location.reload();
   };
 
   return (

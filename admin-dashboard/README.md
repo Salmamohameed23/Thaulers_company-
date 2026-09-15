@@ -1,4 +1,13 @@
-# React + Vite
+# TOUGH HAULERS Admin Dashboard
+
+## Local setup
+
+1. Copy `.env.example` to `.env`.
+2. Keep `VITE_API_URL=http://localhost:5000` for local development.
+3. Run the backend first, then run `npm install` and `npm run dev` here.
+4. Sign in with `ADMIN_EMAIL` and `ADMIN_PASSWORD` configured in the backend.
+
+For deployment, set `VITE_API_URL` to the deployed backend origin without a trailing slash.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
