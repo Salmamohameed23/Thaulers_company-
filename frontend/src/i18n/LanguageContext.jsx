@@ -16,7 +16,7 @@ export const LanguageProvider = ({ children }) => {
     return {
       lang,
       setLang,
-      t: translations[lang],
+      t: translations[lang] || translations.en,
     };
   }, [lang]);
 

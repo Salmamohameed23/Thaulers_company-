@@ -47,7 +47,7 @@ const Footer = () => {
           <div className={`${isAr ? "text-right xl:pl-10" : "xl:pr-10"}`}>
             <div className={sectionHeaderClass}>
               <img
-                src="/images/home_imgs/white-logo.png"
+                src="/src/assets/logos/white-logo.png"
                 alt="Tough Haulers"
                 className={`h-9 w-auto max-w-[280px] object-contain ${
                   isAr ? "ml-auto" : "mr-auto"

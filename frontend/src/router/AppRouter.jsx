@@ -19,6 +19,7 @@ const KitchenwarePage = lazy(() => import("../pages/KitchenwarePage"));
 const HotelSuppliesPage = lazy(() => import("../pages/HotelSuppliesPage"));
 const ToolsHardwarePage = lazy(() => import("../pages/ToolsHardwarePage"));
 const ElectricScootersPage = lazy(() => import("../pages/ElectricScootersPage"));
+const ShipmentPortfolio = lazy(() => import("../pages/ShipmentPortfolio"));
 
 const PageLoader = () => (
   <div className="flex min-h-[45vh] items-center justify-center bg-white">
@@ -32,6 +33,7 @@ const AppRouter = () => (
       <Route path={ROUTES.home} element={<Home />} />
       <Route path={ROUTES.whyUs} element={<Whyus />} />
       <Route path={ROUTES.contact} element={<Contact />} />
+      <Route path={ROUTES.shipmentPortfolio} element={<ShipmentPortfolio />} />
       <Route path={ROUTES.letsBuild} element={<LetsBuild />} />
       <Route path={ROUTES.terms} element={<TermsOfService />} />
       <Route path={ROUTES.privacy} element={<PrivacyPolicy />} />

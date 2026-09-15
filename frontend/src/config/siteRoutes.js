@@ -17,6 +17,7 @@ export const ROUTES = {
   },
 
   whyUs: "/whyus",
+  shipmentPortfolio: "/shipment-portfolio",
   contact: "/contact",
   letsBuild: "/lets-build",
   rd: "/rd",

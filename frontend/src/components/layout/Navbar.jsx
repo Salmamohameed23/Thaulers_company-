@@ -84,6 +84,7 @@ const solutionsLinks = SOLUTIONS_LINKS.map((item) => ({
     { code: "zh", label: "中文", short: "中文" },
     { code: "ru", label: "Русский", short: "RU" },
     { code: "de", label: "Deutsch", short: "DE" },
+    { code: "pl", label: "Polski", short: "PL" },
   ];
 
   const currentLanguage =
@@ -223,6 +224,10 @@ const solutionsLinks = SOLUTIONS_LINKS.map((item) => ({
               </div>
             )}
           </div>
+
+          <NavLink to={ROUTES.shipmentPortfolio} className={navItemClass}>
+            {t.nav.shipmentPortfolio}
+          </NavLink>
         </nav>
 
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
@@ -352,6 +357,14 @@ const solutionsLinks = SOLUTIONS_LINKS.map((item) => ({
                 {link.label}
               </NavLink>
             ))}
+
+            <NavLink
+              to={ROUTES.shipmentPortfolio}
+              onClick={closeAll}
+              className={mobileNavItemClass}
+            >
+              {t.nav.shipmentPortfolio}
+            </NavLink>
 
             <div className="mt-4 flex flex-wrap gap-2 px-4">
               {languages.map((item) => (

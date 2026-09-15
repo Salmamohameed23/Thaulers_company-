@@ -15,21 +15,12 @@ import {
   User,
 } from "lucide-react";
 import { API_BASE_URL } from "../config/api";
-
-const supportScope = [
-  "Technical requirement collection",
-  "Factory sourcing and comparison",
-  "Process flow and layout discussion",
-  "Quotation review and scope clarification",
-  "Auxiliary equipment checklist",
-  "Shipment and export coordination",
-  "Installation and commissioning communication",
-  "After-sales follow-up support",
-];
+import { useLanguage } from "../i18n/LanguageContext";
 
 const productionGroups = [
   {
     label: "Waste & Recycling Lines",
+    lineIndexes: [0, 1, 2, 3],
     options: [
       "Municipal Solid Waste Sorting Line",
       "Food Waste Compost Production Line",
@@ -39,6 +30,7 @@ const productionGroups = [
   },
   {
     label: "Metal & Cable Lines",
+    lineIndexes: [5, 6, 7],
     options: [
       "Aluminum Recycling to Cable Production Line",
       "Metal Pipe Production Line",
@@ -47,6 +39,7 @@ const productionGroups = [
   },
   {
     label: "Packaging Production Lines",
+    lineIndexes: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
     options: [
       "Automatic Filling & Packing Line",
       "Carton Box Production Line",
@@ -62,6 +55,7 @@ const productionGroups = [
   },
   {
     label: "Textile / Fiber Lines",
+    lineIndexes: [4],
     options: ["Recycled Polyester Staple Fiber Production Line"],
   },
 ];
@@ -76,6 +70,9 @@ const factorySpaces = [
 ];
 
 export default function ProjectBriefFormPage() {
+  const { lang, t } = useLanguage();
+  const copy = t.projectBriefPage;
+  const isAr = lang === "ar";
   const [step, setStep] = useState("form");
   const [submitLoading, setSubmitLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -100,6 +97,10 @@ export default function ProjectBriefFormPage() {
   });
 
   const countries = Country.getAllCountries();
+  const regionNames = useMemo(
+    () => new Intl.DisplayNames([lang], { type: "region" }),
+    [lang],
+  );
 
   const cities = useMemo(() => {
     if (!form.country) return [];
@@ -117,14 +118,35 @@ export default function ProjectBriefFormPage() {
   const countryName =
     countries.find((item) => item.isoCode === form.country)?.name || "";
 
+  const displayCountryName = form.country
+    ? regionNames.of(form.country) || countryName
+    : "";
+
+  const displayLineType = productionGroups.reduce((translated, group) => {
+    const itemIndex = group.options.indexOf(form.productionLineType);
+    if (itemIndex < 0) return translated;
+    return (
+      copy.lineTitles?.[group.lineIndexes[itemIndex]] ||
+      t.productionLinesPage.lines[group.lineIndexes[itemIndex]]?.title ||
+      form.productionLineType
+    );
+  }, form.productionLineType);
+
+  const factorySpaceIndex = factorySpaces.indexOf(form.factorySpace);
+  const displayFactorySpace =
+    factorySpaceIndex >= 0
+      ? copy.factorySpaces[factorySpaceIndex]
+      : form.factorySpace;
+
   const inputClass =
     "h-[46px] w-full rounded-xl border border-gray-200 bg-white px-4 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/10";
 
-  const inputWithIcon =
-    "h-[46px] w-full rounded-xl border border-gray-200 bg-white pl-11 pr-4 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/10";
+  const inputWithIcon = `h-[46px] w-full rounded-xl border border-gray-200 bg-white text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/10 ${isAr ? "pl-4 pr-11" : "pl-11 pr-4"}`;
 
-  const selectWithIcon =
-    "h-[46px] w-full appearance-none rounded-xl border border-gray-200 bg-white pl-11 pr-10 text-sm text-gray-900 outline-none transition focus:border-red-500 focus:ring-4 focus:ring-red-500/10 disabled:bg-gray-50 disabled:text-gray-400";
+  const selectWithIcon = `h-[46px] w-full appearance-none rounded-xl border border-gray-200 bg-white text-sm text-gray-900 outline-none transition focus:border-red-500 focus:ring-4 focus:ring-red-500/10 disabled:bg-gray-50 disabled:text-gray-400 ${isAr ? "pl-10 pr-11" : "pl-11 pr-10"}`;
+
+  const leadingIconClass = `absolute top-3.5 h-4 w-4 text-gray-400 ${isAr ? "right-4" : "left-4"}`;
+  const selectArrowClass = `pointer-events-none absolute top-3.5 h-4 w-4 text-gray-400 ${isAr ? "left-4" : "right-4"}`;
 
   const labelClass = "mb-2 block text-xs font-black text-black";
 
@@ -139,7 +161,7 @@ export default function ProjectBriefFormPage() {
       !form.city ||
       !form.productionLineType
     ) {
-      setSubmitError("Please complete all required fields.");
+      setSubmitError(copy.requiredError);
       return;
     }
     setStep("summary");
@@ -151,11 +173,14 @@ export default function ProjectBriefFormPage() {
     setSubmitError("");
     try {
       const payload = new FormData();
-      payload.append("payload", JSON.stringify({
-        ...form,
-        country: countryName,
-        countryCode: form.country,
-      }));
+      payload.append(
+        "payload",
+        JSON.stringify({
+          ...form,
+          country: countryName,
+          countryCode: form.country,
+        }),
+      );
       attachments.forEach((file) => payload.append("attachments", file));
 
       const response = await fetch(`${API_BASE_URL}/api/project-briefs`, {
@@ -164,14 +189,14 @@ export default function ProjectBriefFormPage() {
       });
       const data = await response.json();
       if (!response.ok || !data.success) {
-        throw new Error(data.message || "Submission failed");
+        throw new Error(data.message || copy.submissionFailed);
       }
       setReferenceCode(data.referenceCode);
       setStep("success");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
       console.error("Project brief submission error:", error);
-      setSubmitError(error.message || "Submission failed. Please try again.");
+      setSubmitError(error.message || copy.submissionFailed);
     } finally {
       setSubmitLoading(false);
     }
@@ -185,7 +210,10 @@ export default function ProjectBriefFormPage() {
   );
 
   return (
-    <main className="bg-[#f6f6f6]  relative text-black">
+    <main
+      dir={isAr ? "rtl" : "ltr"}
+      className={`relative bg-[#f6f6f6] text-black ${isAr ? "font-[Cairo]" : ""}`}
+    >
       {/* HERO */}
       <section className="relative overflow-hidden py-24 text-white">
         {/* الصورة */}
@@ -202,15 +230,12 @@ export default function ProjectBriefFormPage() {
         {/* المحتوى */}
         <div className="relative mx-auto max-w-7xl px-6">
           <h1 className="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
-            Submit Your{" "}
-            <span className="block text-[#ee4036]">
-              Production Line Requirement
-            </span>
+            {copy.heroTitle}{" "}
+            <span className="block text-[#ee4036]">{copy.heroHighlight}</span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-sm font-medium leading-7 text-white/80">
-            Fill this form with your production target, raw material input,
-            expected output, capacity, budget and factory situation.
+            {copy.heroDesc}
           </p>
         </div>
       </section>
@@ -221,25 +246,24 @@ export default function ProjectBriefFormPage() {
           {/* LEFT */}
           <aside>
             <p className="mb-5 text-[11px] font-black uppercase tracking-[0.45em] text-red-600">
-              Project Brief Form
+              {copy.badge}
             </p>
 
             <h2 className="max-w-lg text-4xl font-black leading-tight text-black md:text-5xl">
-              The Information We Need Before Quotation
+              {copy.introTitle}
             </h2>
 
             <p className="mt-6 max-w-md text-sm leading-7 text-gray-600">
-              This dedicated page is designed to collect the essential project
-              information before contacting factories or requesting quotations.
+              {copy.introDesc}
             </p>
 
             <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
               <h3 className="mb-5 text-lg font-black text-black">
-                TOUGH HAULERS Support Scope
+                {copy.supportTitle}
               </h3>
 
               <div className="space-y-3">
-                {supportScope.map((item) => (
+                {copy.supportScope.map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-red-500" />
                     <p className="text-sm font-semibold leading-6 text-gray-600">
@@ -257,12 +281,12 @@ export default function ProjectBriefFormPage() {
               <form onSubmit={handleFormSubmit}>
                 <div className="grid gap-x-5 gap-y-4 md:grid-cols-2">
                   <div>
-                    <label className={labelClass}>Full Name</label>
+                    <label className={labelClass}>{copy.fields.fullName}</label>
                     <div className="relative">
-                      <User className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <User className={leadingIconClass} />
                       <input
                         className={inputWithIcon}
-                        placeholder="Your name"
+                        placeholder={copy.placeholders.name}
                         value={form.fullName}
                         onChange={(e) => update("fullName", e.target.value)}
                       />
@@ -270,19 +294,19 @@ export default function ProjectBriefFormPage() {
                   </div>
 
                   <div>
-                    <label className={labelClass}>Company Name</label>
+                    <label className={labelClass}>{copy.fields.company}</label>
                     <input
                       className={inputClass}
-                      placeholder="Your company"
+                      placeholder={copy.placeholders.company}
                       value={form.company}
                       onChange={(e) => update("company", e.target.value)}
                     />
                   </div>
 
                   <div>
-                    <label className={labelClass}>Email Address</label>
+                    <label className={labelClass}>{copy.fields.email}</label>
                     <div className="relative">
-                      <Mail className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <Mail className={leadingIconClass} />
                       <input
                         type="email"
                         className={inputWithIcon}
@@ -294,9 +318,9 @@ export default function ProjectBriefFormPage() {
                   </div>
 
                   <div>
-                    <label className={labelClass}>Phone / WhatsApp</label>
+                    <label className={labelClass}>{copy.fields.phone}</label>
                     <div className="relative">
-                      <Phone className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <Phone className={leadingIconClass} />
                       <input
                         className={inputWithIcon}
                         placeholder="+00 000 000 000"
@@ -307,29 +331,29 @@ export default function ProjectBriefFormPage() {
                   </div>
 
                   <div>
-                    <label className={labelClass}>Destination Country</label>
+                    <label className={labelClass}>{copy.fields.country}</label>
                     <div className="relative">
-                      <Globe2 className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <Globe2 className={leadingIconClass} />
                       <select
                         className={selectWithIcon}
                         value={form.country}
                         onChange={(e) => update("country", e.target.value)}
                       >
-                        <option value="">Select country</option>
+                        <option value="">{copy.placeholders.country}</option>
                         {countries.map((country) => (
                           <option key={country.isoCode} value={country.isoCode}>
-                            {country.name}
+                            {regionNames.of(country.isoCode) || country.name}
                           </option>
                         ))}
                       </select>
-                      <ChevronDown className="pointer-events-none absolute right-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <ChevronDown className={selectArrowClass} />
                     </div>
                   </div>
 
                   <div>
-                    <label className={labelClass}>Destination City</label>
+                    <label className={labelClass}>{copy.fields.city}</label>
                     <div className="relative">
-                      <MapPin className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <MapPin className={leadingIconClass} />
                       <select
                         className={selectWithIcon}
                         value={form.city}
@@ -338,8 +362,8 @@ export default function ProjectBriefFormPage() {
                       >
                         <option value="">
                           {form.country
-                            ? "Select city"
-                            : "Select country first"}
+                            ? copy.placeholders.city
+                            : copy.placeholders.countryFirst}
                         </option>
 
                         {cities.map((city) => (
@@ -351,16 +375,16 @@ export default function ProjectBriefFormPage() {
                           </option>
                         ))}
                       </select>
-                      <ChevronDown className="pointer-events-none absolute right-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <ChevronDown className={selectArrowClass} />
                     </div>
                   </div>
 
                   <div>
                     <label className={labelClass}>
-                      Target Installation Date
+                      {copy.fields.targetDate}
                     </label>
                     <div className="relative">
-                      <Calendar className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <Calendar className={leadingIconClass} />
                       <input
                         type="date"
                         className={inputWithIcon}
@@ -372,9 +396,9 @@ export default function ProjectBriefFormPage() {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label className={labelClass}>Production Line Type</label>
+                    <label className={labelClass}>{copy.fields.lineType}</label>
                     <div className="relative">
-                      <Factory className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <Factory className={leadingIconClass} />
                       <select
                         className={selectWithIcon}
                         value={form.productionLineType}
@@ -382,49 +406,60 @@ export default function ProjectBriefFormPage() {
                           update("productionLineType", e.target.value)
                         }
                       >
-                        <option value="">Select production line type</option>
+                        <option value="">{copy.placeholders.lineType}</option>
 
-                        {productionGroups.map((group) => (
-                          <optgroup key={group.label} label={group.label}>
-                            {group.options.map((item) => (
+                        {productionGroups.map((group, groupIndex) => (
+                          <optgroup
+                            key={group.label}
+                            label={copy.productionGroupLabels[groupIndex]}
+                          >
+                            {group.options.map((item, itemIndex) => (
                               <option key={item} value={item}>
-                                {item}
+                                {copy.lineTitles?.[
+                                  group.lineIndexes[itemIndex]
+                                ] ||
+                                  t.productionLinesPage.lines[
+                                    group.lineIndexes[itemIndex]
+                                  ]?.title ||
+                                  item}
                               </option>
                             ))}
                           </optgroup>
                         ))}
                       </select>
-                      <ChevronDown className="pointer-events-none absolute right-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <ChevronDown className={selectArrowClass} />
                     </div>
                   </div>
 
                   <div>
-                    <label className={labelClass}>Required Capacity</label>
+                    <label className={labelClass}>{copy.fields.capacity}</label>
                     <input
                       className={inputClass}
-                      placeholder="Example: 20 TPD / 1000 kg/h"
+                      placeholder={copy.placeholders.capacity}
                       value={form.capacity}
                       onChange={(e) => update("capacity", e.target.value)}
                     />
                   </div>
 
                   <div>
-                    <label className={labelClass}>Budget Range</label>
+                    <label className={labelClass}>{copy.fields.budget}</label>
                     <input
                       className={inputClass}
-                      placeholder="Example: USD 300,000 - 800,000"
+                      placeholder={copy.placeholders.budget}
                       value={form.budget}
                       onChange={(e) => update("budget", e.target.value)}
                     />
                   </div>
 
                   <div>
-                    <label className={labelClass}>Raw Material Input</label>
+                    <label className={labelClass}>
+                      {copy.fields.rawMaterial}
+                    </label>
                     <div className="relative">
-                      <Package className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <Package className={leadingIconClass} />
                       <input
                         className={inputWithIcon}
-                        placeholder="Example: PET flakes / food waste"
+                        placeholder={copy.placeholders.rawMaterial}
                         value={form.rawMaterial}
                         onChange={(e) => update("rawMaterial", e.target.value)}
                       />
@@ -433,11 +468,11 @@ export default function ProjectBriefFormPage() {
 
                   <div>
                     <label className={labelClass}>
-                      Raw Material Output / Final Product
+                      {copy.fields.finalProduct}
                     </label>
                     <input
                       className={inputClass}
-                      placeholder="Example: compost powder / PSI"
+                      placeholder={copy.placeholders.finalProduct}
                       value={form.finalProduct}
                       onChange={(e) => update("finalProduct", e.target.value)}
                     />
@@ -445,7 +480,7 @@ export default function ProjectBriefFormPage() {
 
                   <div>
                     <label className={labelClass}>
-                      Factory Space Available
+                      {copy.fields.factorySpace}
                     </label>
                     <div className="relative">
                       <select
@@ -453,23 +488,25 @@ export default function ProjectBriefFormPage() {
                         value={form.factorySpace}
                         onChange={(e) => update("factorySpace", e.target.value)}
                       >
-                        <option value="">Select factory space status</option>
-                        {factorySpaces.map((item) => (
+                        <option value="">
+                          {copy.placeholders.factorySpace}
+                        </option>
+                        {factorySpaces.map((item, index) => (
                           <option key={item} value={item}>
-                            {item}
+                            {copy.factorySpaces[index]}
                           </option>
                         ))}
                       </select>
-                      <ChevronDown className="pointer-events-none absolute right-4 top-3.5 h-4 w-4 text-gray-400" />
+                      <ChevronDown className={selectArrowClass} />
                     </div>
                   </div>
 
                   <div className="md:col-span-2">
-                    <label className={labelClass}>Project Details</label>
+                    <label className={labelClass}>{copy.fields.details}</label>
                     <textarea
                       rows="6"
                       className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
-                      placeholder="Write your raw material input, expected output/final product, input condition, output specification, capacity, automation level, electricity/steam/air requirements, existing factory situation, expected shipment country and any special technical requirements..."
+                      placeholder={copy.placeholders.details}
                       value={form.projectDetails}
                       onChange={(e) => update("projectDetails", e.target.value)}
                     />
@@ -481,16 +518,14 @@ export default function ProjectBriefFormPage() {
                     <FileText className="mt-1 h-5 w-5 text-red-500" />
                     <div>
                       <p className="text-sm font-black text-black">
-                        Attachments Recommended
+                        {copy.attachmentsTitle}
                       </p>
                       <p className="mt-2 text-xs leading-6 text-gray-600">
-                        Factory layout, land dimensions, raw material photos,
-                        final product samples, capacity target, existing
-                        quotation, or reference machine pictures.
+                        {copy.attachmentsDesc}
                       </p>
                       <label className="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-xl bg-black px-5 py-3 text-xs font-black text-white transition hover:bg-red-600">
                         <FileText className="h-4 w-4" />
-                        Choose attachments
+                        {copy.chooseAttachments}
                         <input
                           type="file"
                           multiple
@@ -498,26 +533,51 @@ export default function ProjectBriefFormPage() {
                           className="hidden"
                           onChange={(e) => {
                             const selected = Array.from(e.target.files || []);
-                            if (selected.some((file) => file.size > 10 * 1024 * 1024)) {
-                              setSubmitError("Each attachment must be 10 MB or smaller.");
+                            if (
+                              selected.some(
+                                (file) => file.size > 10 * 1024 * 1024,
+                              )
+                            ) {
+                              setSubmitError(copy.attachmentTooLarge);
                               e.target.value = "";
                               return;
                             }
-                            setAttachments((current) => [...current, ...selected].slice(0, 5));
+                            setAttachments((current) =>
+                              [...current, ...selected].slice(0, 5),
+                            );
                             setSubmitError("");
                             e.target.value = "";
                           }}
                         />
                       </label>
-                      <p className="mt-2 text-[11px] text-gray-500">Up to 5 files · 10 MB each · Images, PDF, Word or Excel</p>
+                      <p className="mt-2 text-[11px] text-gray-500">
+                        {copy.attachmentHelp}
+                      </p>
                     </div>
                   </div>
                   {attachments.length > 0 && (
                     <div className="mt-4 grid gap-2">
                       {attachments.map((file, index) => (
-                        <div key={`${file.name}-${index}`} className="flex items-center justify-between rounded-lg border bg-white px-4 py-3 text-xs">
-                          <span className="min-w-0 truncate font-bold">{file.name}</span>
-                          <button type="button" onClick={() => setAttachments((files) => files.filter((_, itemIndex) => itemIndex !== index))} className="ml-3 font-black text-red-600">Remove</button>
+                        <div
+                          key={`${file.name}-${index}`}
+                          className="flex items-center justify-between rounded-lg border bg-white px-4 py-3 text-xs"
+                        >
+                          <span className="min-w-0 truncate font-bold">
+                            {file.name}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setAttachments((files) =>
+                                files.filter(
+                                  (_, itemIndex) => itemIndex !== index,
+                                ),
+                              )
+                            }
+                            className={`${isAr ? "mr-3" : "ml-3"} font-black text-red-600`}
+                          >
+                            {copy.remove}
+                          </button>
                         </div>
                       ))}
                     </div>
@@ -534,66 +594,77 @@ export default function ProjectBriefFormPage() {
                   type="submit"
                   className="mt-5 inline-flex w-full items-center justify-center gap-3 bg-red-600 px-8 py-4 text-sm font-black text-white transition hover:bg-red-700"
                 >
-                  Submit Project Brief
+                  {copy.submitBrief}
                   <Send className="h-4 w-4" />
                 </button>
               </form>
             ) : step === "summary" ? (
               <div>
                 <p className="mb-4 text-[11px] font-black uppercase tracking-[0.45em] text-red-600">
-                  Project Brief Summary
+                  {copy.summaryBadge}
                 </p>
 
                 <h2 className="text-3xl font-black text-black">
-                  Review Your Information Before Final Submit
+                  {copy.summaryTitle}
                 </h2>
 
                 <p className="mt-3 text-sm leading-7 text-gray-600">
-                  Please review all information carefully before submitting your
-                  project brief to TOUGH HAULERS.
+                  {copy.summaryDesc}
                 </p>
 
                 <div className="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
                   <div className="border-b border-gray-200 bg-gray-50 px-6 py-5">
                     <h3 className="text-lg font-black text-black">
-                      Production Line Project Brief
+                      {copy.summaryCardTitle}
                     </h3>
                     <p className="mt-1 text-sm text-gray-500">
-                      Summary of your submitted requirement
+                      {copy.summaryCardDesc}
                     </p>
                   </div>
 
-                  <SummaryRow label="Full Name" value={form.fullName} />
-                  <SummaryRow label="Company" value={form.company} />
-                  <SummaryRow label="Email" value={form.email} />
-                  <SummaryRow label="Phone / WhatsApp" value={form.phone} />
                   <SummaryRow
-                    label="Destination"
-                    value={`${countryName}${form.city ? ` / ${form.city}` : ""}`}
+                    label={copy.fields.fullName}
+                    value={form.fullName}
                   />
                   <SummaryRow
-                    label="Target Installation Date"
+                    label={copy.fields.company}
+                    value={form.company}
+                  />
+                  <SummaryRow label={copy.fields.email} value={form.email} />
+                  <SummaryRow label={copy.fields.phone} value={form.phone} />
+                  <SummaryRow
+                    label={copy.destination}
+                    value={`${displayCountryName}${form.city ? ` / ${form.city}` : ""}`}
+                  />
+                  <SummaryRow
+                    label={copy.fields.targetDate}
                     value={form.targetDate}
                   />
                   <SummaryRow
-                    label="Production Line Type"
-                    value={form.productionLineType}
+                    label={copy.fields.lineType}
+                    value={displayLineType}
                   />
-                  <SummaryRow label="Required Capacity" value={form.capacity} />
-                  <SummaryRow label="Budget Range" value={form.budget} />
                   <SummaryRow
-                    label="Raw Material Input"
+                    label={copy.fields.capacity}
+                    value={form.capacity}
+                  />
+                  <SummaryRow label={copy.fields.budget} value={form.budget} />
+                  <SummaryRow
+                    label={copy.fields.rawMaterial}
                     value={form.rawMaterial}
                   />
-                  <SummaryRow label="Final Product" value={form.finalProduct} />
                   <SummaryRow
-                    label="Factory Space Available"
-                    value={form.factorySpace}
+                    label={copy.fields.finalProduct}
+                    value={form.finalProduct}
+                  />
+                  <SummaryRow
+                    label={copy.fields.factorySpace}
+                    value={displayFactorySpace}
                   />
 
                   <div className="px-6 py-5">
                     <p className="mb-2 text-sm font-black text-black">
-                      Project Details
+                      {copy.fields.details}
                     </p>
                     <p className="whitespace-pre-line text-sm leading-7 text-gray-600">
                       {form.projectDetails || "—"}
@@ -607,7 +678,7 @@ export default function ProjectBriefFormPage() {
                     onClick={() => setStep("form")}
                     className="w-full border border-gray-300 px-8 py-4 text-sm font-black text-black transition hover:border-red-600 hover:text-red-600"
                   >
-                    Back & Edit
+                    {copy.backEdit}
                   </button>
 
                   <button
@@ -616,7 +687,7 @@ export default function ProjectBriefFormPage() {
                     disabled={submitLoading}
                     className="w-full bg-red-600 px-8 py-4 text-sm font-black text-white transition hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {submitLoading ? "Submitting..." : "Submit Final Brief"}
+                    {submitLoading ? copy.submitting : copy.finalSubmit}
                   </button>
                 </div>
                 {submitError && (
@@ -628,12 +699,12 @@ export default function ProjectBriefFormPage() {
             ) : (
               <div className="py-16 text-center">
                 <CheckCircle className="mx-auto h-16 w-16 text-emerald-600" />
-                <h2 className="mt-6 text-3xl font-black">Project brief received</h2>
-                <p className="mt-3 text-gray-600">
-                  Our team will review your requirements and contact you shortly.
-                </p>
+                <h2 className="mt-6 text-3xl font-black">
+                  {copy.successTitle}
+                </h2>
+                <p className="mt-3 text-gray-600">{copy.successDesc}</p>
                 <p className="mt-5 font-black text-red-600">
-                  Reference: {referenceCode}
+                  {copy.reference}: {referenceCode}
                 </p>
               </div>
             )}

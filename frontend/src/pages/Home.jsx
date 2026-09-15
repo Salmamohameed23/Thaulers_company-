@@ -125,27 +125,7 @@ const Home = () => {
               {home.heroDesc}
             </p>
 
-            <div
-              className={`mt-10 flex flex-col gap-4 sm:flex-row ${
-                isAr ? "sm:justify-end" : "sm:justify-start"
-              }`}
-            >
-              <Link
-                to={ROUTES.solutions.solarEnergy}
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#ef3b35] px-8 py-4 font-black text-white shadow-2xl shadow-red-500/20 transition hover:bg-red-600"
-              >
-                {home.exploreSolutions}
-                <ArrowRight size={20} className={isAr ? "rotate-180" : ""} />
-              </Link>
-
-              <Link
-                to={ROUTES.contact}
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 font-black text-black transition hover:bg-zinc-100"
-              >
-                {home.requestQuotation}
-                <ArrowRight size={20} className={isAr ? "rotate-180" : ""} />
-              </Link>
-            </div>
+            
           </div>
         </div>
       </section>
