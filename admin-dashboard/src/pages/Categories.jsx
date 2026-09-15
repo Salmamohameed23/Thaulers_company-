@@ -3,14 +3,13 @@ import { FolderTree, Pencil, Plus, Search, Trash2, X } from "lucide-react";
 import Layout from "../components/Layout";
 import { apiRequest } from "../services/api";
 
-const sections = ["kitchenware", "hotel-supplies", "tools-hardware", "electric-scooters", "production-lines", "solar", "smart-storage"];
+const sections = ["kitchenware", "hotel-supplies", "tools-hardware", "electric-scooters", "production-lines", "smart-storage"];
 const sectionLabels = {
   kitchenware: "Kitchenware",
   "hotel-supplies": "Hotel Supplies",
   "tools-hardware": "Tools & Hardware",
   "electric-scooters": "Electric Scooters",
   "production-lines": "Production Lines",
-  solar: "Solar Energy",
   "smart-storage": "Smart Storage",
 };
 const languages = [

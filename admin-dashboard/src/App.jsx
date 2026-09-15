@@ -8,6 +8,8 @@ import Categories from "./pages/Categories";
 import Products from "./pages/Products";
 import ProjectBriefs from "./pages/ProjectBriefs";
 import ShipmentPortfolio from "./pages/ShipmentPortfolio";
+import Archive from "./pages/Archive";
+import Users from "./pages/Users";
 import { apiRequest } from "./services/api";
 
 const ProtectedRoute = ({ children, authenticated, loading }) => {
@@ -58,6 +60,8 @@ function App() {
         <Route path="/products" element={protectedPage(<Products />)} />
         <Route path="/project-briefs" element={protectedPage(<ProjectBriefs />)} />
         <Route path="/shipment-portfolio" element={protectedPage(<ShipmentPortfolio />)} />
+        <Route path="/archive" element={protectedPage(<Archive />)} />
+        <Route path="/users" element={protectedPage(<Users />)} />
         <Route path="*" element={<Navigate to={authenticated ? "/dashboard" : "/"} replace />} />
       </Routes>
     </BrowserRouter>

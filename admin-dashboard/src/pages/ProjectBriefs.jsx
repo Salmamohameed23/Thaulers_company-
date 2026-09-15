@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Building2, Mail, MapPin, Phone, Search, X } from "lucide-react";
+import { Building2, Mail, MapPin, Phone, RotateCcw, Search, Trash2, X } from "lucide-react";
 import Layout from "../components/Layout";
 import { apiRequest } from "../services/api";
 
@@ -9,6 +9,7 @@ const statusStyles = {
   reviewed: "bg-blue-50 text-blue-700 border-blue-200",
   contacted: "bg-emerald-50 text-emerald-700 border-emerald-200",
   closed: "bg-neutral-100 text-neutral-700 border-neutral-300",
+  removed: "bg-rose-50 text-rose-700 border-rose-200",
 };
 
 export default function ProjectBriefs() {
@@ -37,17 +38,20 @@ export default function ProjectBriefs() {
     setBriefs((items) => items.map((item) => item._id === id ? response.data : item));
     setSelected((item) => item?._id === id ? response.data : item);
   };
+  const deletePermanently = async (id) => { if (!confirm("Delete this project brief permanently? This cannot be undone.")) return; await apiRequest(`/api/admin/project-briefs/${id}`, { method: "DELETE" }); setSelected(null); await load(); };
 
   const filtered = useMemo(() => briefs.filter((item) => {
     const text = `${item.fullName} ${item.company} ${item.email} ${item.country} ${item.city} ${item.productionLineType}`.toLowerCase();
-    return text.includes(search.toLowerCase()) && (status === "all" || item.status === status);
+    return text.includes(search.toLowerCase()) && (status === "all" ? item.status !== "removed" : item.status === status);
   }), [briefs, search, status]);
 
   return <Layout title="Production Line Briefs">
     <div className="mb-8 rounded-3xl bg-black p-8 text-white shadow-xl">
+      <div>
       <p className="text-xs font-bold uppercase tracking-[0.35em] text-red-500">Production Lines</p>
       <h1 className="mt-3 text-3xl font-black">Project Briefs</h1>
       <p className="mt-2 text-sm text-neutral-400">Review technical requirements and manage client follow-up.</p>
+      </div>
     </div>
 
     <div className="mb-6 flex flex-col gap-4 md:flex-row">
@@ -55,7 +59,7 @@ export default function ProjectBriefs() {
         <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search client, company, country or line..." className="w-full rounded-2xl border bg-white py-4 pl-12 pr-4 outline-none focus:border-red-500" />
       </div>
       <select value={status} onChange={(e) => setStatus(e.target.value)} className="rounded-2xl border bg-white px-5 py-4 font-semibold">
-        <option value="all">All Status</option>{statuses.map((item) => <option key={item}>{item}</option>)}
+        <option value="all">All Status</option>{statuses.map((item) => <option key={item}>{item}</option>)}<option value="removed">removed</option>
       </select>
     </div>
 
@@ -70,7 +74,7 @@ export default function ProjectBriefs() {
               <Line icon={Mail} value={item.email} /><Line icon={Phone} value={item.phone} />
             </div>
           </div>
-          <button onClick={() => setSelected(item)} className="self-start rounded-xl bg-black px-5 py-3 font-bold text-white hover:bg-red-600">View Details</button>
+          <div className="flex gap-2"><button onClick={() => setSelected(item)} className="self-start rounded-xl bg-black px-5 py-3 font-bold text-white hover:bg-red-600">View Details</button>{item.status === "removed" ? <><button onClick={() => updateStatus(item._id,"new")} className="rounded-xl border px-3 text-black"><RotateCcw size={17}/></button><button onClick={() => deletePermanently(item._id)} className="rounded-xl border border-red-200 px-3 text-red-600"><Trash2 size={17}/></button></> : <button onClick={() => updateStatus(item._id,"removed")} className="rounded-xl border border-red-200 px-3 text-red-600"><Trash2 size={17}/></button>}</div>
         </div>
       </article>)}
       {!filtered.length && <p className="rounded-3xl bg-white p-10 text-center text-neutral-500">No project briefs found.</p>}

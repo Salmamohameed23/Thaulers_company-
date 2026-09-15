@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import Layout from "../components/Layout";
 import { apiRequest } from "../services/api";
-import { Search, Mail, Building2, CalendarDays, X } from "lucide-react";
+import { Search, Mail, Building2, CalendarDays, RotateCcw, Trash2, X } from "lucide-react";
 
 const statusStyles = {
     new: "bg-red-50 text-red-700 border-red-200",
     reviewed: "bg-blue-50 text-blue-700 border-blue-200",
     contacted: "bg-emerald-50 text-emerald-700 border-emerald-200",
     closed: "bg-neutral-100 text-neutral-700 border-neutral-300",
+    removed: "bg-rose-50 text-rose-700 border-rose-200",
 };
 
 const Messages = () => {
@@ -40,14 +41,18 @@ const Messages = () => {
     });
     fetchMessages();
   };
+  const deletePermanently = async (id) => {
+    if (!confirm("Delete this message permanently? This cannot be undone.")) return;
+    await apiRequest(`/api/admin/contact-messages/${id}`, { method: "DELETE" });
+    setSelected(null); fetchMessages();
+  };
 
   const filteredMessages = useMemo(() => {
     return messages.filter((msg) => {
       const text =
         `${msg.name || ""} ${msg.email || ""} ${msg.company || ""} ${msg.message || ""}`.toLowerCase();
       const matchesSearch = text.includes(search.toLowerCase());
-      const matchesStatus =
-        statusFilter === "all" || msg.status === statusFilter;
+      const matchesStatus = statusFilter === "all" ? msg.status !== "removed" : msg.status === statusFilter;
       return matchesSearch && matchesStatus;
     });
   }, [messages, search, statusFilter]);
@@ -89,6 +94,7 @@ const Messages = () => {
           <option value="reviewed">Reviewed</option>
           <option value="contacted">Contacted</option>
           <option value="closed">Closed</option>
+          <option value="removed">Removed</option>
         </select>
       </div>
 
@@ -162,7 +168,7 @@ const Messages = () => {
                     View Message
                   </button>
 
-                  {["reviewed", "contacted", "closed"].map((status) => (
+                  {msg.status === "removed" ? <><button onClick={() => updateStatus(msg._id, "new")} className="flex items-center gap-2 rounded-xl bg-black px-4 py-3 text-sm font-bold text-white"><RotateCcw size={16}/>Restore</button><button onClick={() => deletePermanently(msg._id)} className="flex items-center gap-2 rounded-xl border border-red-200 px-4 py-3 text-sm font-bold text-red-600"><Trash2 size={16}/>Delete permanently</button></> : <>{["reviewed", "contacted", "closed"].map((status) => (
                     <button
                       key={status}
                       onClick={() => updateStatus(msg._id, status)}
@@ -170,7 +176,7 @@ const Messages = () => {
                     >
                       {status}
                     </button>
-                  ))}
+                  ))}<button onClick={() => updateStatus(msg._id, "removed")} className="rounded-xl border border-red-200 p-3 text-red-600" title="Remove"><Trash2 size={17}/></button></>}
                 </div>
               </div>
             </div>

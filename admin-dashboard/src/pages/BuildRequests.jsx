@@ -9,6 +9,8 @@ import {
   Building2,
   CalendarDays,
   X,
+  Trash2,
+  RotateCcw,
 } from "lucide-react";
 
 const statusStyles = {
@@ -16,6 +18,7 @@ const statusStyles = {
   reviewed: "bg-blue-50 text-blue-700 border-blue-200",
   contacted: "bg-emerald-50 text-emerald-700 border-emerald-200",
   closed: "bg-neutral-100 text-neutral-700 border-neutral-300",
+  removed: "bg-rose-50 text-rose-700 border-rose-200",
 };
 
 const monthsOrder = [
@@ -63,14 +66,14 @@ const BuildRequests = () => {
     });
     fetchRequests();
   };
+  const deletePermanently = async (id) => { if (!confirm("Delete this build request permanently? This cannot be undone.")) return; await apiRequest(`/api/admin/build-requests/${id}`, { method: "DELETE" }); setSelected(null); await fetchRequests(); };
 
   const filteredRequests = useMemo(() => {
     return requests.filter((item) => {
       const text =
         `${item.name || ""} ${item.email || ""} ${item.company || ""} ${item.location || ""} ${item.projectType || ""}`.toLowerCase();
       const matchesSearch = text.includes(search.toLowerCase());
-      const matchesStatus =
-        statusFilter === "all" || item.status === statusFilter;
+      const matchesStatus = statusFilter === "all" ? item.status !== "removed" : item.status === statusFilter;
 
       return matchesSearch && matchesStatus;
     });
@@ -79,6 +82,7 @@ const BuildRequests = () => {
   return (
     <Layout title="Build Requests">
       <div className="mb-8 rounded-3xl bg-black p-8 text-white shadow-xl">
+        <div>
         <p className="text-xs font-bold uppercase tracking-[0.35em] text-red-500">
           Project Intelligence
         </p>
@@ -87,6 +91,7 @@ const BuildRequests = () => {
           Full project submissions with client details, selected solutions,
           location, timeline, system size, notes, and climate profile.
         </p>
+        </div>
       </div>
 
       <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -113,6 +118,7 @@ const BuildRequests = () => {
           <option value="reviewed">Reviewed</option>
           <option value="contacted">Contacted</option>
           <option value="closed">Closed</option>
+          <option value="removed">Removed</option>
         </select>
       </div>
 
@@ -182,7 +188,7 @@ const BuildRequests = () => {
                     View Details
                   </button>
 
-                  {["reviewed", "contacted", "closed"].map((status) => (
+                  {req.status === "removed" ? <><button onClick={() => updateStatus(req._id,"new")} className="flex items-center gap-2 rounded-xl bg-black px-4 py-3 text-sm font-bold text-white"><RotateCcw size={16}/>Restore</button><button onClick={() => deletePermanently(req._id)} className="flex items-center gap-2 rounded-xl border border-red-200 px-4 py-3 text-sm font-bold text-red-600"><Trash2 size={16}/>Delete permanently</button></> : <>{["reviewed", "contacted", "closed"].map((status) => (
                     <button
                       key={status}
                       onClick={() => updateStatus(req._id, status)}
@@ -190,7 +196,7 @@ const BuildRequests = () => {
                     >
                       {status}
                     </button>
-                  ))}
+                  ))}<button onClick={() => updateStatus(req._id,"removed")} className="rounded-xl border border-red-200 p-3 text-red-600"><Trash2 size={17}/></button></>}
                 </div>
               </div>
             </div>
