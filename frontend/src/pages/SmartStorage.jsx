@@ -15,13 +15,10 @@ import {
   ChevronRight,
   ArrowRight,
 } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 
 import smartHero from "../assets/images/hero4.jpg";
-import ess5 from "../assets/images/5 kw 1.png";
-import ess10 from "../assets/images/5 kw 6.webp";
-import essIndustrial from "../assets/images/6.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 26 },
@@ -32,22 +29,25 @@ export default function SmartStorage() {
   const sliderRef = useRef(null);
   const { t, lang } = useLanguage();
   const isAr = lang === "ar";
+  const [dashboardProducts, setDashboardProducts] = useState([]);
 
   const capabilities = t.smartStoragePage.capabilities;
 
-  const productImages = [
-    ess5,
-    ess10,
-    essIndustrial,
-    essIndustrial,
-    essIndustrial,
-    essIndustrial,
-  ];
+  useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    fetch(`${apiUrl}/api/products?limit=100`)
+      .then((response) => response.ok ? response.json() : Promise.reject())
+      .then((result) => setDashboardProducts((result.data || []).filter((product) => product.category?.section === "smart-storage")))
+      .catch(() => setDashboardProducts([]));
+  }, []);
 
-  const products = t.smartStoragePage.products.map((product, index) => ({
-    ...product,
-    image: productImages[index],
-  }));
+  const localized = (value) => value?.[lang] || value?.en || "";
+  const products = useMemo(() => dashboardProducts.map((product) => ({
+      title: localized(product.name),
+      description: localized(product.shortDescription) || localized(product.description),
+      image: product.images?.[0]?.url,
+      id: product._id,
+    })), [dashboardProducts, lang]);
 
   const applicationIcons = [Home, Factory, Zap, SolarPanel, RadioTower, Cable];
 
@@ -215,7 +215,7 @@ export default function SmartStorage() {
             >
               {products.map((product, index) => (
                 <motion.article
-                  key={`${product.title}-${index}`}
+                  key={product.id || `${product.title}-${index}`}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.25 }}
