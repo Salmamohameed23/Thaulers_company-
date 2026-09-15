@@ -21,17 +21,24 @@ const adminUserSchema = new mongoose.Schema(
     },
     role: {
       type: String,
+      enum: ["super_admin", "admin", "employee"],
       default: "admin",
     },
+    permissions: {
+      type: [String],
+      enum: ["dashboard", "messages", "build_requests", "project_briefs", "categories", "products", "shipments", "archive"],
+      default: [],
+    },
+    isActive: { type: Boolean, default: true },
+    lastLoginAt: Date,
   },
   { timestamps: true },
 );
 
-adminUserSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
+adminUserSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
 
   this.password = await bcrypt.hash(this.password, 12);
-  next();
 });
 
 adminUserSchema.methods.comparePassword = async function (candidatePassword) {

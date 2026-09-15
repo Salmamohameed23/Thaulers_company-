@@ -1,9 +1,9 @@
 import ContactMessage from "../models/ContactMessage.js";
-import nodemailer from "nodemailer";
+import { sendCompanyMailSafely } from "../services/mailService.js";
 
 export const createContactMessage = async (req, res) => {
   try {
-    const { name, email, company, message } = req.body;
+    const { name, email, company, message } = req.validated.body;
 
     const newMessage = await ContactMessage.create({
       name,
@@ -12,25 +12,7 @@ export const createContactMessage = async (req, res) => {
       message,
     });
 
- const transporter = nodemailer.createTransport({
-   host: process.env.SMTP_HOST,
-   port: Number(process.env.SMTP_PORT),
-   secure: Number(process.env.SMTP_PORT) === 465,
-   auth: {
-     user: process.env.SMTP_USER,
-     pass: process.env.SMTP_PASS,
-   },
-   connectionTimeout: 15000,
-   greetingTimeout: 15000,
-   socketTimeout: 20000,
- });
-
-    await transporter.verify();
-    console.log("SMTP is ready");
-
-    await transporter.sendMail({
-      from: `"TOUGH HAULERS Website" <${process.env.SMTP_USER}>`,
-      to: process.env.COMPANY_EMAIL,
+    void sendCompanyMailSafely({
       replyTo: email,
       subject: `New Contact Enquiry - ${name}`,
       html: `
@@ -91,7 +73,8 @@ export const createContactMessage = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: "Message saved and email sent successfully",
+      message: "Message saved successfully",
+      notificationQueued: true,
       data: newMessage,
     });
   } catch (error) {

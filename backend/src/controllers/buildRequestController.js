@@ -1,5 +1,5 @@
 import BuildRequest from "../models/BuildRequest.js";
-import nodemailer from "nodemailer";
+import { sendCompanyMailSafely } from "../services/mailService.js";
 
 export const createBuildRequest = async (req, res) => {
   try {
@@ -18,7 +18,7 @@ export const createBuildRequest = async (req, res) => {
       email,
       phone,
       notes,
-    } = req.body;
+    } = req.validated.body;
 
     const referenceCode = `THL-${Date.now().toString().slice(-6)}`;
 
@@ -40,22 +40,7 @@ export const createBuildRequest = async (req, res) => {
       referenceCode,
     });
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: Number(process.env.SMTP_PORT) === 465,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-  connectionTimeout: 15000,
-  greetingTimeout: 15000,
-  socketTimeout: 20000,
-});
-
-    await transporter.sendMail({
-      from: `"TOUGH HAULERS Website" <${process.env.SMTP_USER}>`,
-      to: process.env.COMPANY_EMAIL,
+    void sendCompanyMailSafely({
       replyTo: email,
       subject: `New Let's Build Request - ${referenceCode}`,
       html: `
@@ -156,8 +141,9 @@ const transporter = nodemailer.createTransport({
 
     res.status(201).json({
       success: true,
-      message: "Build request saved and email sent successfully",
+      message: "Build request saved successfully",
       referenceCode,
+      notificationQueued: true,
       data: newRequest,
     });
   } catch (error) {
