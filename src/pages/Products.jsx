@@ -1,0 +1,361 @@
+import { useEffect, useMemo, useState } from "react";
+import { Package, Pencil, Plus, Search, Trash2, X } from "lucide-react";
+import Layout from "../components/Layout";
+import { apiRequest } from "../services/api";
+
+const languages = [
+  ["en", "English"],
+  ["ar", "العربية"],
+  ["zh", "中文"],
+  ["ru", "Русский"],
+  ["de", "Deutsch"],
+  ["pl", "Polski"],
+];
+const emptyTranslations = () => ({
+  en: "",
+  ar: "",
+  zh: "",
+  ru: "",
+  de: "",
+  pl: "",
+});
+const emptyForm = {
+  name: emptyTranslations(),
+  category: "",
+  shortDescription: emptyTranslations(),
+  description: emptyTranslations(),
+  images: [],
+  order: 1,
+  featured: false,
+  status: "active",
+};
+export default function Products() {
+  const [items, setItems] = useState([]),
+    [categories, setCategories] = useState([]),
+    [search, setSearch] = useState(""),
+    [form, setForm] = useState(null),
+    [error, setError] = useState("");
+  const load = async () => {
+    const [p, c] = await Promise.all([
+      apiRequest("/api/products?limit=100"),
+      apiRequest("/api/categories"),
+    ]);
+    setItems(p.data || []);
+    setCategories((c.data || []).filter((x) => x.status !== "archived"));
+  };
+  useEffect(() => {
+    load().catch((e) => setError(e.message));
+  }, []);
+  const filtered = useMemo(
+    () =>
+      items.filter((x) =>
+        `${x.name?.en} ${x.name?.ar} ${x.category?.name?.en}`
+          .toLowerCase()
+          .includes(search.toLowerCase()),
+      ),
+    [items, search],
+  );
+  const save = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      const payload = {
+        name: form.name,
+        category:
+          typeof form.category === "object" ? form.category._id : form.category,
+        shortDescription: form.shortDescription,
+        description: form.description,
+        images: (form.images || []).map((image, index) => ({
+          publicId: image.publicId,
+          url: image.url,
+          alt: image.alt || form.name,
+          order: image.order ?? index,
+        })),
+        order: Math.max(Number(form.order) || 1, 1),
+        featured: Boolean(form.featured),
+        status: form.status,
+      };
+      await apiRequest(
+        form._id ? `/api/products/${form._id}` : "/api/products",
+        { method: form._id ? "PATCH" : "POST", body: JSON.stringify(payload) },
+      );
+      setForm(null);
+      await load();
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+  const archive = async (id) => {
+    if (!confirm("Archive this product?")) return;
+    await apiRequest(`/api/products/${id}`, { method: "DELETE" });
+    await load();
+  };
+  return (
+    <Layout title="Products">
+      <Header onAdd={() => setForm(structuredClone(emptyForm))} />
+      <div className="mb-6 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm">
+        <Search size={18} />
+        <input
+          className="w-full outline-none"
+          placeholder="Search products..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+      {error && (
+        <p className="mb-4 rounded-xl bg-red-50 p-4 text-red-700">{error}</p>
+      )}
+      <div className="overflow-hidden rounded-3xl bg-white shadow-sm">
+        <table className="w-full text-left">
+          <thead className="bg-black text-white">
+            <tr>
+              <th className="p-4">Product</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Featured</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((x) => (
+              <tr key={x._id} className="border-b">
+                <td className="flex items-center gap-3 p-4">
+                  {x.images?.[0]?.url ? (
+                    <img
+                      src={x.images[0].url}
+                      className="h-14 w-14 rounded-xl object-cover"
+                    />
+                  ) : (
+                    <span className="rounded-xl bg-neutral-100 p-4">
+                      <Package size={18} />
+                    </span>
+                  )}
+                  <div>
+                    <b>{x.name?.en}</b>
+                    <p dir="rtl" className="text-sm text-neutral-500">
+                      {x.name?.ar}
+                    </p>
+                  </div>
+                </td>
+                <td>{x.category?.name?.en || "-"}</td>
+                <td>{x.status}</td>
+                <td>{x.featured ? "Yes" : "No"}</td>
+                <td>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setForm(structuredClone(x))}
+                      className="rounded-lg bg-black p-2 text-white"
+                    >
+                      <Pencil size={16} />
+                    </button>
+                    <button
+                      onClick={() => archive(x._id)}
+                      className="rounded-lg border p-2 text-red-600"
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {form && (
+        <ProductForm
+          form={form}
+          setForm={setForm}
+          categories={categories}
+          onSubmit={save}
+          onClose={() => setForm(null)}
+        />
+      )}
+    </Layout>
+  );
+}
+function ProductForm({ form, setForm, categories, onSubmit, onClose }) {
+  const [uploading, setUploading] = useState(false);
+  const setNested = (g, k, v) =>
+    setForm({ ...form, [g]: { ...form[g], [k]: v } });
+  const upload = async (e) => {
+    setUploading(true);
+    try {
+      const fd = new FormData();
+      [...e.target.files].forEach((f) => fd.append("images", f));
+      const res = await apiRequest("/api/media/images", {
+        method: "POST",
+        body: fd,
+      });
+      setForm({ ...form, images: [...(form.images || []), ...res.data] });
+    } finally {
+      setUploading(false);
+    }
+  };
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-5">
+      <form
+        onSubmit={onSubmit}
+        className="max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-3xl bg-white p-7"
+      >
+        <div className="mb-6 flex justify-between">
+          <h2 className="text-2xl font-black">
+            {form._id ? "Edit" : "Add"} Product
+          </h2>
+          <button type="button" onClick={onClose}>
+            <X />
+          </button>
+        </div>
+        <p className="mb-4 text-sm text-neutral-500">
+          Enter the product name and card description in all six website
+          languages.
+        </p>
+        <div className="grid gap-4 md:grid-cols-2">
+          {languages.map(([key, label]) => (
+            <Field
+              key={key}
+              label={label}
+              value={form.name?.[key]}
+              onChange={(v) => setNested("name", key, v)}
+              required
+              rtl={key === "ar"}
+            />
+          ))}
+          <div className="md:col-span-2 mt-2 border-t pt-5">
+            <h3 className="font-black">Card Description</h3>
+            <p className="mt-1 text-sm text-neutral-500">
+              This text appears directly below the product name on the website
+              card.
+            </p>
+          </div>
+          {languages.map(([key, label]) => (
+            <TextArea
+              key={`short-${key}`}
+              label={`${label} card description`}
+              value={form.shortDescription?.[key]}
+              onChange={(v) => setNested("shortDescription", key, v)}
+              required
+              rtl={key === "ar"}
+            />
+          ))}
+          <label className="text-sm font-bold">
+            Category
+            <select
+              required
+              className="mt-2 w-full rounded-xl border p-3"
+              value={
+                typeof form.category === "object"
+                  ? form.category?._id
+                  : form.category
+              }
+              onChange={(e) => setForm({ ...form, category: e.target.value })}
+            >
+              <option value="">Select...</option>
+              {categories.map((c) => (
+                <option value={c._id} key={c._id}>
+                  {c.name?.en}
+                </option>
+              ))}
+            </select>
+          </label>
+          <Field
+            label="Display order (1 = first)"
+            type="number"
+            value={form.order}
+            onChange={(v) => setForm({ ...form, order: v })}
+          />
+          <label className="text-sm font-bold">
+            Product images
+            <input
+              className="mt-2 w-full rounded-xl border p-3"
+              type="file"
+              accept="image/jpeg,image/png,image/webp,image/avif"
+              multiple
+              onChange={upload}
+            />
+            <small className="mt-1 block text-neutral-500">
+              {uploading
+                ? "Uploading..."
+                : "Up to 12 images · maximum 5 MB each"}
+            </small>
+          </label>
+          <label className="text-sm font-bold">
+            Visibility
+            <select
+              className="mt-2 w-full rounded-xl border p-3"
+              value={form.status}
+              onChange={(e) => setForm({ ...form, status: e.target.value })}
+            >
+              <option value="active">Active — visible on website</option>
+              <option value="draft">Draft — hidden from website</option>
+            </select>
+          </label>
+          <label className="flex items-center gap-3 pt-8 font-bold">
+            <input
+              type="checkbox"
+              checked={form.featured}
+              onChange={(e) => setForm({ ...form, featured: e.target.checked })}
+            />{" "}
+            Featured product
+          </label>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {form.images?.map((im, i) => (
+            <img
+              key={im.publicId || i}
+              src={im.url}
+              className="h-20 w-20 rounded-xl object-contain bg-neutral-100"
+            />
+          ))}
+        </div>
+        <button
+          disabled={uploading}
+          className="mt-6 w-full rounded-xl bg-red-600 p-3 font-bold text-white disabled:opacity-50"
+        >
+          Save Product
+        </button>
+      </form>
+    </div>
+  );
+}
+const Field = ({ label, value, onChange, type = "text", required, rtl }) => (
+  <label className="text-sm font-bold">
+    {label}
+    <input
+      dir={rtl ? "rtl" : "ltr"}
+      type={type}
+      required={required}
+      value={value ?? ""}
+      onChange={(e) => onChange(e.target.value)}
+      className="mt-2 w-full rounded-xl border p-3 outline-none focus:border-red-500"
+    />
+  </label>
+);
+const TextArea = ({ label, value, onChange, required, rtl }) => (
+  <label className="text-sm font-bold">
+    {label}
+    <textarea
+      dir={rtl ? "rtl" : "ltr"}
+      required={required}
+      value={value ?? ""}
+      onChange={(e) => onChange(e.target.value)}
+      rows="3"
+      className="mt-2 w-full resize-y rounded-xl border p-3 outline-none focus:border-red-500"
+    />
+  </label>
+);
+const Header = ({ onAdd }) => (
+  <div className="mb-8 flex items-center justify-between rounded-3xl bg-black p-8 text-white">
+    <div>
+      <h1 className="text-3xl font-black">Products</h1>
+      <p className="mt-2 text-neutral-400">
+        Manage products, images, categories and visibility.
+      </p>
+    </div>
+    <button
+      onClick={onAdd}
+      className="flex items-center gap-2 rounded-xl bg-red-600 px-5 py-3 font-bold"
+    >
+      <Plus /> Add Product
+    </button>
+  </div>
+);
