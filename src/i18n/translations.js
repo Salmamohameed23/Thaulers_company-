@@ -1933,7 +1933,7 @@ export const translations = {
       copyright:
         "Copyright © TOUGH HAULERS TRADE LIMITED 2026 — All rights reserved.",
       slogan: "Powering a sustainable future",
-      designedBy: "Designed & Developed by",
+     
 
       links: {
         solarEnergy: "Solar Energy",
@@ -3038,7 +3038,6 @@ export const translations = {
       copyright:
         "حقوق النشر © TOUGH HAULERS TRADE LIMITED 2026 — جميع الحقوق محفوظة.",
       slogan: "نقود مستقبل الطاقة المستدامة",
-      designedBy: "تصميم وتطوير",
 
       links: {
         solarEnergy: "الطاقة الشمسية",
@@ -4150,7 +4149,6 @@ export const translations = {
 
       copyright: "版权所有 © TOUGH HAULERS TRADE LIMITED 2026。保留所有权利。",
       slogan: "推动可持续能源未来",
-      designedBy: "设计与开发：",
 
       links: {
         solarEnergy: "太阳能解决方案",
@@ -5208,7 +5206,6 @@ export const translations = {
         "Офис 201, Здание № 454, Северная дорога Гунжэнь, г. Иу, пров. Чжэцзян, Китай",
       copyright: "© 2026 TOUGH HAULERS TRADE LIMITED. Все права защищены.",
       slogan: "Обеспечивая устойчивое энергетическое будущее",
-      designedBy: "Дизайн и разработка:",
       links: {
         solarEnergy: "Солнечная энергия",
         productionLines: "Комплексные производственные линии",
@@ -6276,7 +6273,6 @@ export const translations = {
         "Büro 201, Gebäude Nr. 454, Gongren North Road, Yiwu City, Provinz Zhejiang, China",
       copyright: "© 2026 TOUGH HAULERS TRADE LIMITED. Alle Rechte vorbehalten.",
       slogan: "Eine nachhaltige Energiezukunft gestalten",
-      designedBy: "Design & Entwicklung:",
       links: {
         solarEnergy: "Solarenergie",
         productionLines: "Komplette Industrie-Produktionslinien",
@@ -7262,7 +7258,6 @@ const polishTranslations = {
     copyright:
       "Copyright © TOUGH HAULERS TRADE LIMITED 2026 — Wszelkie prawa zastrzeżone.",
     slogan: "Napędzamy zrównoważoną przyszłość",
-    designedBy: "Projekt i wykonanie:",
     links: {
       solarEnergy: "Energia słoneczna",
       productionLines: "Kompletne przemysłowe linie produkcyjne",

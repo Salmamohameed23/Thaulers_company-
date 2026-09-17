@@ -91,8 +91,8 @@ export default function ShipmentPortfolio() {
           </div>
 
           {loading && (
-            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3].map((item) => (
+            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+              {[1, 2, 3, 4].map((item) => (
                 <div
                   key={item}
                   className="h-[510px] animate-pulse rounded-3xl bg-white shadow-sm"
@@ -106,7 +106,7 @@ export default function ShipmentPortfolio() {
             </div>
           )}
 
-          <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {shipments.map((shipment, index) => (
               <motion.article
                 key={shipment._id}
@@ -114,7 +114,7 @@ export default function ShipmentPortfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -7 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.4, delay: (index % 3) * 0.07 }}
+                transition={{ duration: 0.4, delay: (index % 4) * 0.07 }}
                 className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_10px_35px_rgba(15,23,42,0.07)] transition-shadow hover:shadow-[0_22px_55px_rgba(15,23,42,0.14)]"
               >
                 <div className="grid grid-cols-2 gap-1 overflow-hidden bg-slate-100 p-1">

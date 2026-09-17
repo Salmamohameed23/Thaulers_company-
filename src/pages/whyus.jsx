@@ -191,7 +191,7 @@ const Whyus = () => {
 
             <div className="relative mt-8 aspect-video overflow-hidden rounded-3xl bg-white shadow-sm">
               <img
-                src="/images/home_imgs/global-reach.webp"
+                src="/images/home_imgs/global-reach2.png"
                 alt={page.globalReachTitle}
                 className="h-full w-full object-cover object-center"
                 loading="lazy"

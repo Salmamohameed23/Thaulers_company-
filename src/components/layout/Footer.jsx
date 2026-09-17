@@ -47,7 +47,7 @@ const Footer = () => {
           <div className={`${isAr ? "text-right xl:pl-10" : "xl:pr-10"}`}>
             <div className={sectionHeaderClass}>
               <img
-                src="/src/assets/logos/white-logo.png"
+                src="/images/home_imgs/white-logo.png"
                 alt="Tough Haulers"
                 className={`h-9 w-auto max-w-[280px] object-contain ${
                   isAr ? "ml-auto" : "mr-auto"
@@ -201,12 +201,12 @@ const Footer = () => {
           >
             <p>{t.footer.copyright}</p>
 
-            <p className="text-neutral-500">
+            {/* <p className="text-neutral-500">
               {t.footer.designedBy}{" "}
               <span className="font-semibold text-neutral-200">
                 Salma Mohamed
               </span>
-            </p>
+            </p> */}
 
             <div
               className={`flex flex-col items-center gap-5 md:flex-row ${
