@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   BatteryCharging,
   Cable,
@@ -14,9 +15,12 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowRight,
+  ArrowUpRight,
+  ClipboardCheck,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
+import { ROUTES } from "../config/siteRoutes";
 
 import smartHero from "../assets/images/hero4.jpg";
 
@@ -36,18 +40,29 @@ export default function SmartStorage() {
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
     fetch(`${apiUrl}/api/products?limit=100`)
-      .then((response) => response.ok ? response.json() : Promise.reject())
-      .then((result) => setDashboardProducts((result.data || []).filter((product) => product.category?.section === "smart-storage")))
+      .then((response) => (response.ok ? response.json() : Promise.reject()))
+      .then((result) =>
+        setDashboardProducts(
+          (result.data || []).filter(
+            (product) => product.category?.section === "smart-storage",
+          ),
+        ),
+      )
       .catch(() => setDashboardProducts([]));
   }, []);
 
   const localized = (value) => value?.[lang] || value?.en || "";
-  const products = useMemo(() => dashboardProducts.map((product) => ({
-      title: localized(product.name),
-      description: localized(product.shortDescription) || localized(product.description),
-      image: product.images?.[0]?.url,
-      id: product._id,
-    })), [dashboardProducts, lang]);
+  const products = useMemo(
+    () =>
+      dashboardProducts.map((product) => ({
+        title: localized(product.name),
+        description:
+          localized(product.shortDescription) || localized(product.description),
+        image: product.images?.[0]?.url,
+        id: product._id,
+      })),
+    [dashboardProducts, lang],
+  );
 
   const applicationIcons = [Home, Factory, Zap, SolarPanel, RadioTower, Cable];
 
@@ -429,6 +444,57 @@ export default function SmartStorage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* LET'S BUILD CTA */}
+      <section className="py-8 sm:py-10">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 26 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55 }}
+            className={`relative mx-auto w-fit max-w-full overflow-hidden rounded-[28px] border border-black/5 bg-white p-7 shadow-[0_20px_55px_rgba(0,0,0,0.08)] sm:p-9 lg:p-10 ${
+              isAr ? "text-right" : ""
+            }`}
+          >
+            <div className="absolute inset-x-0 top-0 h-[6px] bg-gradient-to-r from-[#ee4036] via-[#ee4036]/40 to-transparent" />
+
+            <div className="max-w-md">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ee4036] text-white shadow-[0_14px_30px_rgba(220,38,38,0.28)]">
+                <ClipboardCheck size={24} />
+              </div>
+
+              <p
+                className={`mb-3 font-black text-[#ee4036] ${
+                  isAr
+                    ? "text-[13px] tracking-normal text-right"
+                    : "text-[11px] uppercase tracking-[0.24em] sm:text-xs sm:tracking-[0.32em]"
+                }`}
+              >
+                {t.solarAction.letsBuild.badge}
+              </p>
+
+              <h2 className="break-words text-[26px] font-black leading-[1.15] tracking-[-0.025em] text-neutral-950 sm:text-4xl">
+                {t.solarAction.letsBuild.title}
+              </h2>
+
+              <p className="mt-4 break-words text-[15px] leading-7 text-neutral-500">
+                {t.solarAction.letsBuild.desc}
+              </p>
+
+              <Link
+                to={ROUTES.letsBuild}
+                className={`mt-7 inline-flex items-center gap-2 rounded-2xl bg-neutral-950 px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#ee4036] ${
+                  isAr ? "flex-row-reverse" : ""
+                }`}
+              >
+                {t.solarAction.letsBuild.button}
+                <ArrowUpRight size={16} />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>

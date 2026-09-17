@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Boxes,
   ClipboardCheck,
@@ -14,8 +15,10 @@ import {
   Cable,
   ScanSearch,
   ArrowRight,
+  Mail,
 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
+import { ROUTES } from "../config/siteRoutes";
 
 import factoryHero from "../assets/images/factory 5.webp";
 import factoryend from "../assets/images/factory_6.webp";
@@ -194,7 +197,6 @@ const FactoryPage = () => {
 
       {/* SERVICES */}
       <section className="relative overflow-hidden bg-white py-12 sm:py-14">
-
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center sm:mb-10">
             <p
@@ -448,6 +450,59 @@ const FactoryPage = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CONTACT CTA */}
+      <section className="py-8 sm:py-10">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 26 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55 }}
+            className={`relative mx-auto w-fit max-w-full overflow-hidden rounded-[28px] border border-black/5 bg-white p-7 shadow-[0_20px_55px_rgba(0,0,0,0.08)] sm:p-9 lg:p-10 ${
+              isAr ? "text-right" : ""
+            }`}
+          >
+            <div className="absolute inset-x-0 top-0 h-[6px] bg-gradient-to-r from-[#ee4036] via-[#ee4036]/40 to-transparent" />
+
+            <div className="max-w-md">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ee4036] text-white shadow-[0_14px_30px_rgba(220,38,38,0.28)]">
+                <Mail size={24} />
+              </div>
+
+              <p
+                className={`mb-3 font-black text-[#ee4036] ${
+                  isAr
+                    ? "text-[13px] tracking-normal text-right"
+                    : "text-[11px] uppercase tracking-[0.24em] sm:text-xs sm:tracking-[0.32em]"
+                }`}
+              >
+                {isAr ? "تواصل معنا" : "Get In Touch"}
+              </p>
+
+              <h2 className="break-words text-[26px] font-black leading-[1.15] tracking-[-0.025em] text-neutral-950 sm:text-4xl">
+                {isAr ? "عندك مشروع في بالك؟" : "Have a Project in Mind?"}
+              </h2>
+
+              <p className="mt-4 break-words text-[15px] leading-7 text-neutral-500">
+                {isAr
+                  ? "تواصل مع فريقنا وهنساعدك تلاقي الحل الصناعي المناسب لاحتياجاتك."
+                  : "Reach out to our team and we'll help you find the right industrial solution for your needs."}
+              </p>
+
+              <Link
+                to={ROUTES.contact}
+                className={`mt-7 inline-flex items-center gap-2 rounded-2xl bg-neutral-950 px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#ee4036] ${
+                  isAr ? "flex-row-reverse" : ""
+                }`}
+              >
+                {isAr ? "تواصل معنا" : "Contact Us"}
+                <ArrowRight size={16} className={isAr ? "rotate-180" : ""} />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>

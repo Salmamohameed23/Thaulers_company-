@@ -290,11 +290,7 @@ const Navbar = () => {
             </button>
 
             {langOpen && (
-              <div
-                className={`absolute top-full w-44 pt-4 ${
-                  isAr ? "left-0" : "right-0"
-                }`}
-              >
+              <div className="absolute top-full w-44 pt-4 right-0">
                 <div className="rounded-2xl border border-neutral-200 bg-white p-2 shadow-[0_22px_55px_rgba(0,0,0,0.13)]">
                   {languages.map((item) => (
                     <button

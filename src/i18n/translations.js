@@ -1657,7 +1657,7 @@ const toolsHardwareTranslations = {
 const shipmentPortfolioTranslations = {
   en: {
     badge: "Proven Operations",
-    title: "Shipment Portfolio",
+    title: "Global Logistics Track Record",
     subtitle:
       "Real loading operations. Documented shipments. Reliable execution.",
     verifiedSuppliers: "Verified Suppliers",
@@ -1667,12 +1667,14 @@ const shipmentPortfolioTranslations = {
     casesTitle: "Selected Shipment Cases",
     caseLabel: "Shipment Case",
     productLabel: "Product",
+    categoryLabel: "Category",
     containerLabel: "Container",
     originLabel: "Origin",
     destinationLabel: "Destination",
     scopeLabel: "Scope",
     statusLabel: "Status",
     detailsLabel: "Details",
+    noteLabel: "Note",
     empty: "New shipment cases will be published here soon.",
     ctaTitle: "Need reliable sourcing and shipping support?",
     ctaText:
@@ -1681,7 +1683,7 @@ const shipmentPortfolioTranslations = {
   },
   ar: {
     badge: "عمليات موثقة",
-    title: "سجل الشحنات",
+    title: "سجل الأداء اللوجستي العالمي",
     subtitle: "عمليات تحميل حقيقية، وشحنات موثقة، وتنفيذ يعتمد عليه.",
     verifiedSuppliers: "موردون معتمدون",
     loadingSupervision: "الإشراف على التحميل",
@@ -1690,12 +1692,14 @@ const shipmentPortfolioTranslations = {
     casesTitle: "نماذج من شحناتنا",
     caseLabel: "حالة شحن",
     productLabel: "المنتج",
+    categoryLabel: "الفئة",
     containerLabel: "الحاوية",
     originLabel: "بلد المنشأ",
     destinationLabel: "الوجهة",
     scopeLabel: "نطاق الخدمة",
     statusLabel: "حالة الشحنة",
     detailsLabel: "التفاصيل",
+    noteLabel: "ملاحظة",
     empty: "سيتم نشر حالات شحن جديدة هنا قريبًا.",
     ctaTitle: "هل تحتاج إلى دعم موثوق في التوريد والشحن؟",
     ctaText: "نتولى تنسيق كل مرحلة، من متابعة المورد حتى إتمام الشحن بأمان.",
@@ -1703,7 +1707,7 @@ const shipmentPortfolioTranslations = {
   },
   zh: {
     badge: "实绩展示",
-    title: "出货案例",
+    title: "全球物流实绩记录",
     subtitle: "真实装柜、全程记录、可靠交付。",
     verifiedSuppliers: "认证供应商",
     loadingSupervision: "装柜监督",
@@ -1712,12 +1716,14 @@ const shipmentPortfolioTranslations = {
     casesTitle: "精选出货案例",
     caseLabel: "出货案例",
     productLabel: "产品",
+    categoryLabel: "类别",
     containerLabel: "柜型",
     originLabel: "起运地",
     destinationLabel: "目的地",
     scopeLabel: "服务范围",
     statusLabel: "状态",
     detailsLabel: "详情",
+    noteLabel: "备注",
     empty: "新的出货案例即将发布。",
     ctaTitle: "需要可靠的采购与运输支持？",
     ctaText: "从供应商跟进到安全出货，我们协调每一个环节。",
@@ -1725,7 +1731,7 @@ const shipmentPortfolioTranslations = {
   },
   ru: {
     badge: "Подтверждённые операции",
-    title: "Портфолио поставок",
+    title: "Глобальный логистический послужной список",
     subtitle:
       "Реальные погрузки. Документированные отправки. Надёжное исполнение.",
     verifiedSuppliers: "Проверенные поставщики",
@@ -1735,12 +1741,14 @@ const shipmentPortfolioTranslations = {
     casesTitle: "Избранные поставки",
     caseLabel: "Поставка",
     productLabel: "Товар",
+    categoryLabel: "Категория",
     containerLabel: "Контейнер",
     originLabel: "Страна отправления",
     destinationLabel: "Назначение",
     scopeLabel: "Объём услуг",
     statusLabel: "Статус",
     detailsLabel: "Подробности",
+    noteLabel: "Примечание",
     empty: "Новые примеры поставок появятся здесь в ближайшее время.",
     ctaTitle: "Нужна надёжная поддержка в закупках и логистике?",
     ctaText:
@@ -1749,7 +1757,7 @@ const shipmentPortfolioTranslations = {
   },
   de: {
     badge: "Nachgewiesene Abläufe",
-    title: "Versandportfolio",
+    title: "Globale Logistik-Erfolgsbilanz",
     subtitle:
       "Reale Verladungen. Dokumentierte Sendungen. Zuverlässige Umsetzung.",
     verifiedSuppliers: "Geprüfte Lieferanten",
@@ -1759,12 +1767,14 @@ const shipmentPortfolioTranslations = {
     casesTitle: "Ausgewählte Versandprojekte",
     caseLabel: "Versandprojekt",
     productLabel: "Produkt",
+    categoryLabel: "Kategorie",
     containerLabel: "Container",
     originLabel: "Ursprung",
     destinationLabel: "Zielort",
     scopeLabel: "Leistungsumfang",
     statusLabel: "Status",
     detailsLabel: "Details",
+    noteLabel: "Hinweis",
     empty: "Neue Versandprojekte werden in Kürze veröffentlicht.",
     ctaTitle:
       "Benötigen Sie zuverlässige Unterstützung bei Beschaffung und Versand?",
@@ -1784,7 +1794,7 @@ export const translations = {
     nav: {
       home: "Home",
       about: "About",
-      solutions: "Solutions",
+      solutions: "Business Divisions",
       rd: "R&D",
       startProject: "Start Your Project",
       letsBuild: "Let’s Build",
@@ -1799,7 +1809,7 @@ export const translations = {
       kitchenware: "Kitchenware",
       hotelSupplies: "Hotel Supplies",
       toolsHardware: "Tools & Hardware",
-      shipmentPortfolio: "Shipment Portfolio",
+      shipmentPortfolio: "Global Logistics Track Record",
     },
     home: {
       heroBadge: "Solar Energy · Battery Storage ",
@@ -2889,7 +2899,7 @@ export const translations = {
     nav: {
       home: "الرئيسية",
       about: "عن الشركة",
-      solutions: "الحلول",
+      solutions: "قطاعات الأعمال",
       rd: "البحث والتطوير",
       startProject: "ابدأ مشروعك",
       letsBuild: "ابدأ الآن",
@@ -2904,7 +2914,7 @@ export const translations = {
       kitchenware: "أدوات ومعدات المطبخ",
       hotelSupplies: "تجهيزات الفنادق",
       toolsHardware: "العدد والأدوات",
-      shipmentPortfolio: "سجل الشحنات",
+      shipmentPortfolio: "سجل الأداء اللوجستي العالمي",
     },
     home: {
       heroBadge: "طاقة شمسية · تخزين بطاريات ",
@@ -4003,7 +4013,7 @@ export const translations = {
     nav: {
       home: "首页",
       about: "关于我们",
-      solutions: "解决方案",
+      solutions: "业务板块",
       rd: "研发中心",
       startProject: "启动您的项目",
       letsBuild: "开始合作",
@@ -4018,7 +4028,7 @@ export const translations = {
       kitchenware: "厨房用品",
       hotelSupplies: "酒店用品",
       toolsHardware: "工具与五金",
-      shipmentPortfolio: "出货案例",
+      shipmentPortfolio: "全球物流实绩记录",
     },
     home: {
       heroBadge: "太阳能 · 电池储能 ",
@@ -5069,7 +5079,7 @@ export const translations = {
     nav: {
       home: "Главная",
       about: "О компании",
-      solutions: "Решения",
+      solutions: "Направления бизнеса",
       rd: "НИОКР",
       startProject: "Начать проект",
       letsBuild: "Начать",
@@ -5084,7 +5094,7 @@ export const translations = {
       kitchenware: "Кухонные товары",
       hotelSupplies: "Товары для отелей",
       toolsHardware: "Инструменты и фурнитура",
-      shipmentPortfolio: "Портфолио поставок",
+      shipmentPortfolio: "Глобальный логистический послужной список",
     },
     home: {
       heroBadge: "Солнечная энергия · Системы хранения энергии",
@@ -6138,7 +6148,7 @@ export const translations = {
     nav: {
       home: "Startseite",
       about: "Über uns",
-      solutions: "Lösungen",
+      solutions: "Geschäftsbereiche",
       rd: "F&E",
       startProject: "Projekt starten",
       letsBuild: "Jetzt starten",
@@ -6153,7 +6163,7 @@ export const translations = {
       kitchenware: "Küchenwaren",
       hotelSupplies: "Hotelbedarf",
       toolsHardware: "Werkzeuge & Hardware",
-      shipmentPortfolio: "Versandportfolio",
+      shipmentPortfolio: "Globale Logistik-Erfolgsbilanz",
     },
     home: {
       heroBadge: "Solarenergie · Batteriespeicher",
@@ -7218,7 +7228,7 @@ const polishTranslations = {
   nav: {
     home: "Strona główna",
     about: "O nas",
-    solutions: "Oferta",
+    solutions: "Działy biznesowe",
     rd: "Badania i rozwój",
     startProject: "Rozpocznij projekt",
     letsBuild: "Zrealizujmy projekt",
@@ -7233,7 +7243,7 @@ const polishTranslations = {
     kitchenware: "Wyposażenie kuchenne",
     hotelSupplies: "Wyposażenie hotelowe",
     toolsHardware: "Narzędzia i artykuły techniczne",
-    shipmentPortfolio: "Portfolio dostaw",
+    shipmentPortfolio: "Globalna historia logistyczna",
   },
   home: {
     heroBadge: "Energia słoneczna · Magazynowanie energii",
@@ -7290,7 +7300,7 @@ const polishTranslations = {
   },
   shipmentPortfolioPage: {
     badge: "Sprawdzone realizacje",
-    title: "Portfolio dostaw",
+    title: "Globalna historia logistyczna",
     subtitle:
       "Rzeczywiste operacje załadunkowe. Udokumentowane wysyłki. Pewna realizacja.",
     verifiedSuppliers: "Zweryfikowani dostawcy",
@@ -7300,12 +7310,14 @@ const polishTranslations = {
     casesTitle: "Wybrane realizacje dostaw",
     caseLabel: "Realizacja dostawy",
     productLabel: "Produkt",
+    categoryLabel: "Kategoria",
     containerLabel: "Kontener",
     originLabel: "Miejsce pochodzenia",
     destinationLabel: "Miejsce docelowe",
     scopeLabel: "Zakres prac",
     statusLabel: "Status",
     detailsLabel: "Szczegóły",
+    noteLabel: "Uwaga",
     empty: "Wkrótce opublikujemy tutaj nowe realizacje dostaw.",
     ctaTitle: "Potrzebujesz niezawodnego wsparcia w zakupach i wysyłce?",
     ctaText:
