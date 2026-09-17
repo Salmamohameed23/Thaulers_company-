@@ -1656,7 +1656,6 @@ const toolsHardwareTranslations = {
 
 const shipmentPortfolioTranslations = {
   en: {
-    badge: "Proven Operations",
     title: "Global Logistics Track Record",
     subtitle:
       "Real loading operations. Documented shipments. Reliable execution.",
@@ -1682,7 +1681,6 @@ const shipmentPortfolioTranslations = {
     ctaButton: "Contact Us",
   },
   ar: {
-    badge: "عمليات موثقة",
     title: "سجل الأداء اللوجستي العالمي",
     subtitle: "عمليات تحميل حقيقية، وشحنات موثقة، وتنفيذ يعتمد عليه.",
     verifiedSuppliers: "موردون معتمدون",
@@ -1706,7 +1704,6 @@ const shipmentPortfolioTranslations = {
     ctaButton: "تواصل معنا",
   },
   zh: {
-    badge: "实绩展示",
     title: "全球物流实绩记录",
     subtitle: "真实装柜、全程记录、可靠交付。",
     verifiedSuppliers: "认证供应商",
@@ -1730,7 +1727,6 @@ const shipmentPortfolioTranslations = {
     ctaButton: "联系我们",
   },
   ru: {
-    badge: "Подтверждённые операции",
     title: "Глобальный логистический послужной список",
     subtitle:
       "Реальные погрузки. Документированные отправки. Надёжное исполнение.",
@@ -1756,7 +1752,6 @@ const shipmentPortfolioTranslations = {
     ctaButton: "Связаться с нами",
   },
   de: {
-    badge: "Nachgewiesene Abläufe",
     title: "Globale Logistik-Erfolgsbilanz",
     subtitle:
       "Reale Verladungen. Dokumentierte Sendungen. Zuverlässige Umsetzung.",
@@ -1796,8 +1791,7 @@ export const translations = {
       about: "About",
       solutions: "Business Divisions",
       rd: "R&D",
-      startProject: "Start Your Project",
-      letsBuild: "Let’s Build",
+
       companyProfile: "Company Profile",
       whyUs: "Why Us",
       contactUs: "Contact Us",
@@ -1922,7 +1916,7 @@ export const translations = {
       tagline2: "Delivering Reliability.",
       desc: "Solar power, battery energy storage, global projects, and China-based supply chain support.",
 
-      solutions: "Solutions",
+      solutions: "Business Divisions",
       contact: "Contact",
       legal: "Legal",
 
@@ -1933,7 +1927,6 @@ export const translations = {
       copyright:
         "Copyright © TOUGH HAULERS TRADE LIMITED 2026 — All rights reserved.",
       slogan: "Powering a sustainable future",
-     
 
       links: {
         solarEnergy: "Solar Energy",
@@ -3027,7 +3020,7 @@ export const translations = {
       tagline2: "ثقة في التنفيذ.",
       desc: "حلول متكاملة وخدمات هندسية متخصصة تشمل التوريد والتصميم والتنفيذ والتشغيل، بدعم من سلاسل توريد قوية في الصين.",
 
-      solutions: "الحلول",
+      solutions: "قطاعات الأعمال",
       contact: "التواصل",
       legal: "القانوني",
 
@@ -4140,7 +4133,7 @@ export const translations = {
       tagline2: "交付值得信赖。",
       desc: "提供太阳能系统、电池储能、全球项目支持及中国供应链服务。",
 
-      solutions: "解决方案",
+      solutions: "业务板块",
       contact: "联系我们",
       legal: "法律信息",
 
@@ -5198,7 +5191,7 @@ export const translations = {
       tagline1: "Инжиниринг энергии.",
       tagline2: "Надёжность на практике.",
       desc: "Солнечная энергетика, системы накопления энергии, глобальные проекты и поддержка цепочки поставок в Китае.",
-      solutions: "Решения",
+      solutions: "Направления бизнеса",
       contact: "Контакты",
       legal: "Юридическая информация",
       email: "Sales@toughhaulers.cn.com",
@@ -6265,7 +6258,7 @@ export const translations = {
       tagline1: "Energie durch Engineering.",
       tagline2: "Zuverlässigkeit in der Praxis.",
       desc: "Solarenergie, Batteriespeicher, globale Projekte und Lieferkettenunterstützung aus China.",
-      solutions: "Lösungen",
+      solutions: "Geschäftsbereiche",
       contact: "Kontakt",
       legal: "Rechtliches",
       email: "Sales@toughhaulers.cn.com",
@@ -7252,7 +7245,7 @@ const polishTranslations = {
     tagline1: "Moc inżynierii.",
     tagline2: "Pewność realizacji.",
     desc: "Energia słoneczna, magazyny energii, projekty międzynarodowe i wsparcie łańcucha dostaw w Chinach.",
-    solutions: "Oferta",
+    solutions: "Działy biznesowe",
     contact: "Kontakt",
     legal: "Informacje prawne",
     copyright:

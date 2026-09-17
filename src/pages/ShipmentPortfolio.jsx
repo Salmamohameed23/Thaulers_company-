@@ -91,7 +91,7 @@ export default function ShipmentPortfolio() {
           </div>
 
           {loading && (
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-4">
               {[1, 2, 3, 4].map((item) => (
                 <div
                   key={item}
@@ -106,7 +106,7 @@ export default function ShipmentPortfolio() {
             </div>
           )}
 
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-4">
             {shipments.map((shipment, index) => (
               <motion.article
                 key={shipment._id}
@@ -114,7 +114,7 @@ export default function ShipmentPortfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -7 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.4, delay: (index % 4) * 0.07 }}
+                transition={{ duration: 0.4, delay: (index % 3) * 0.07 }}
                 className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_10px_35px_rgba(15,23,42,0.07)] transition-shadow hover:shadow-[0_22px_55px_rgba(15,23,42,0.14)]"
               >
                 <div className="grid grid-cols-2 gap-1 overflow-hidden bg-slate-100 p-1">
@@ -143,16 +143,16 @@ export default function ShipmentPortfolio() {
                     />
                   </div>
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl font-black text-red-600">
+                <div className="p-5">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-2xl font-black text-red-600">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-lg font-black uppercase tracking-wide">
+                    <h3 className="text-base font-black uppercase tracking-wide">
                       {content.caseLabel}
                     </h3>
                   </div>
-                  <dl className="mt-5 space-y-3 text-sm">
+                  <dl className="mt-4 space-y-2.5 text-sm">
                     <Info
                       icon={Package}
                       label={content.categoryLabel}
@@ -196,7 +196,7 @@ export default function ShipmentPortfolio() {
       </section>
 
       <section className="px-5 pb-16 md:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 rounded-3xl bg-slate-950 px-8 py-9 text-white md:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 rounded-3xl bg-black px-8 py-9 text-white md:flex-row">
           <div>
             <h2 className="text-2xl font-black">{content.ctaTitle}</h2>
             <p className="mt-2 font-medium text-white/65">{content.ctaText}</p>

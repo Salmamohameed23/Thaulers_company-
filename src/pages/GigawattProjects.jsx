@@ -15,7 +15,6 @@ import {
   Building2,
   Network,
   ArrowRight,
-  ArrowUpRight,
 } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { ROUTES } from "../config/siteRoutes";
@@ -474,51 +473,28 @@ const GigaProjects = () => {
 
       {/* LET'S BUILD CTA */}
       <section className="py-8 sm:py-10">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.55 }}
-            className={`relative mx-auto w-fit max-w-full overflow-hidden rounded-[28px] border border-black/5 bg-white p-7 shadow-[0_20px_55px_rgba(0,0,0,0.08)] sm:p-9 lg:p-10 ${
-              isAr ? "text-right" : ""
-            }`}
+            className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-black px-8 py-9 text-white md:flex-row"
           >
-            <div className="absolute inset-x-0 top-0 h-[6px] bg-gradient-to-r from-[#ee4036] via-[#ee4036]/40 to-transparent" />
-
-            <div className="max-w-md">
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ee4036] text-white shadow-[0_14px_30px_rgba(220,38,38,0.28)]">
-                <ClipboardCheck size={24} />
-              </div>
-
-              <p
-                className={`mb-3 font-black text-[#ee4036] ${
-                  isAr
-                    ? "text-[13px] tracking-normal text-right"
-                    : "text-[11px] uppercase tracking-[0.24em] sm:text-xs sm:tracking-[0.32em]"
-                }`}
-              >
-                {t.solarAction.letsBuild.badge}
-              </p>
-
-              <h2 className="break-words text-[26px] font-black leading-[1.15] tracking-[-0.025em] text-neutral-950 sm:text-4xl">
+            <div className={isAr ? "text-right" : ""}>
+              <h2 className="text-2xl font-black">
                 {t.solarAction.letsBuild.title}
               </h2>
-
-              <p className="mt-4 break-words text-[15px] leading-7 text-neutral-500">
+              <p className="mt-2 font-medium text-white/65">
                 {t.solarAction.letsBuild.desc}
               </p>
-
-              <Link
-                to={ROUTES.letsBuild}
-                className={`mt-7 inline-flex items-center gap-2 rounded-2xl bg-neutral-950 px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#ee4036] ${
-                  isAr ? "flex-row-reverse" : ""
-                }`}
-              >
-                {t.solarAction.letsBuild.button}
-                <ArrowUpRight size={16} />
-              </Link>
             </div>
+            <Link
+              to={ROUTES.letsBuild}
+              className="shrink-0 rounded-xl bg-red-600 px-7 py-4 font-black transition hover:bg-red-700"
+            >
+              {t.solarAction.letsBuild.button}
+            </Link>
           </motion.div>
         </div>
       </section>
