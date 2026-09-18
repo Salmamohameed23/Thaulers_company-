@@ -37,16 +37,47 @@ export default function SmartStorage() {
 
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
-    fetch(`${apiUrl}/api/products?limit=100`)
-      .then((response) => (response.ok ? response.json() : Promise.reject()))
-      .then((result) =>
+    const controller = new AbortController();
+
+    const loadProducts = async () => {
+      try {
+        const getPage = async (page) => {
+          const response = await fetch(
+            `${apiUrl}/api/products?page=${page}&limit=100`,
+            { signal: controller.signal },
+          );
+
+          if (!response.ok) throw new Error("Unable to load products");
+          return response.json();
+        };
+
+        const firstResult = await getPage(1);
+        const totalPages = Math.max(Number(firstResult.pagination?.pages) || 1, 1);
+        const remainingResults = [];
+
+        for (let page = 2; page <= totalPages; page += 1) {
+          remainingResults.push(await getPage(page));
+        }
+
+        const allProducts = [firstResult, ...remainingResults].flatMap(
+          (result) => result.data || [],
+        );
+        const uniqueProducts = Array.from(
+          new Map(allProducts.map((product) => [product._id, product])).values(),
+        );
+
         setDashboardProducts(
-          (result.data || []).filter(
+          uniqueProducts.filter(
             (product) => product.category?.section === "smart-storage",
           ),
-        ),
-      )
-      .catch(() => setDashboardProducts([]));
+        );
+      } catch (error) {
+        if (error.name !== "AbortError") setDashboardProducts([]);
+      }
+    };
+
+    loadProducts();
+    return () => controller.abort();
   }, []);
 
   const localized = (value) => value?.[lang] || value?.en || "";
@@ -56,6 +87,10 @@ export default function SmartStorage() {
         title: localized(product.name),
         description:
           localized(product.shortDescription) || localized(product.description),
+        capacity: product.smartStorageDetails?.capacity || "",
+        nominalVoltage: product.smartStorageDetails?.nominalVoltage || "",
+        energy: product.smartStorageDetails?.energy || "",
+        note: product.smartStorageDetails?.note?.[lang] || "",
         image: product.images?.[0]?.url,
         id: product._id,
       })),
@@ -91,7 +126,9 @@ export default function SmartStorage() {
     if (!sliderRef.current) return;
 
     sliderRef.current.scrollBy({
-      left: direction === "left" ? -360 : 360,
+      left:
+        (direction === "left" ? -1 : 1) *
+        Math.max(sliderRef.current.clientWidth * 0.8, 280),
       behavior: "smooth",
     });
   };
@@ -207,24 +244,26 @@ export default function SmartStorage() {
             </h2>
           </div>
 
-          <div className="relative">
+          <div className="relative overflow-hidden rounded-[22px]">
             <button
               onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 z-20 hidden h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white text-black shadow-[0_14px_34px_rgba(0,0,0,0.14)] transition hover:bg-red-600 hover:text-white lg:flex"
+              aria-label="Previous products"
+              className="absolute left-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white/95 text-black transition hover:border-red-600 hover:bg-red-600 hover:text-white lg:flex"
             >
               <ChevronLeft size={20} />
             </button>
 
             <button
               onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 z-20 hidden h-10 w-10 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white text-black shadow-[0_14px_34px_rgba(0,0,0,0.14)] transition hover:bg-red-600 hover:text-white lg:flex"
+              aria-label="Next products"
+              className="absolute right-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white/95 text-black transition hover:border-red-600 hover:bg-red-600 hover:text-white lg:flex"
             >
               <ChevronRight size={20} />
             </button>
 
             <div
               ref={sliderRef}
-              className="no-scrollbar flex gap-6 overflow-x-auto scroll-smooth px-1 pb-6"
+              className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-2 py-2 sm:px-3 lg:px-16"
             >
               {products.map((product, index) => (
                 <motion.article
@@ -234,7 +273,7 @@ export default function SmartStorage() {
                   viewport={{ once: true, amount: 0.25 }}
                   variants={fadeUp}
                   transition={{ duration: 0.55, delay: index * 0.06 }}
-                  className="group min-w-[240px] sm:min-w-[255px] overflow-hidden rounded-[18px] border border-transparent bg-white shadow-[0_18px_45px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:border-red-500/20 hover:shadow-[0_24px_70px_rgba(220,38,38,0.18)]"
+                  className="group min-w-[240px] snap-start overflow-hidden rounded-[18px] border border-neutral-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-red-500/40 sm:min-w-[255px]"
                 >
                   <div className="flex h-[185px] items-center justify-center bg-white p-6">
                     <img
@@ -248,10 +287,46 @@ export default function SmartStorage() {
                     <h3 className="text-[15px] font-black text-neutral-950">
                       {product.title}
                     </h3>
-
-                    <p className="mt-3 min-h-[72px] text-[13px] leading-6 text-neutral-600">
-                      {product.description}
-                    </p>
+                    {product.capacity || product.nominalVoltage || product.energy ? (
+                      <dl className="mt-3 space-y-2 text-[13px] leading-5 text-neutral-700">
+                        {product.capacity && (
+                          <div className="flex gap-1.5">
+                            <dt className="font-bold">
+                              {t.smartStoragePage.specLabels.capacity}:
+                            </dt>
+                            <dd>{product.capacity}</dd>
+                          </div>
+                        )}
+                        {product.nominalVoltage && (
+                          <div className="flex gap-1.5">
+                            <dt className="font-bold">
+                              {t.smartStoragePage.specLabels.nominalVoltage}:
+                            </dt>
+                            <dd>{product.nominalVoltage}</dd>
+                          </div>
+                        )}
+                        {product.energy && (
+                          <div className="flex gap-1.5">
+                            <dt className="font-bold">
+                              {t.smartStoragePage.specLabels.energy}:
+                            </dt>
+                            <dd>{product.energy}</dd>
+                          </div>
+                        )}
+                        {product.note && (
+                          <div className="border-t border-neutral-100 pt-2 text-neutral-500">
+                            <dt className="inline font-bold">
+                              {t.smartStoragePage.specLabels.note}: {" "}
+                            </dt>
+                            <dd className="inline">{product.note}</dd>
+                          </div>
+                        )}
+                      </dl>
+                    ) : (
+                      <p className="mt-3 min-h-[72px] text-[13px] leading-6 text-neutral-600">
+                        {product.description}
+                      </p>
+                    )}
                   </div>
                 </motion.article>
               ))}

@@ -17,7 +17,7 @@ export const homeData = {
     {
       key: "electricScooters",
       icon: "bike",
-      image: "/images/bikes/city-scooters.jpg",
+      image: "/images/bikes/home.jpg",
       path: ROUTES.solutions.electricScooters,
     },
     {

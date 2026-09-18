@@ -2,12 +2,16 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { requestCategories } from "./requestConfig";
 import { API_BASE_URL } from "../config/api";
+import { useLanguage } from "../i18n/LanguageContext";
+import { translateRequestText } from "../i18n/translations";
 
 const categoryBySlug = Object.fromEntries(
   Object.entries(requestCategories).map(([key, value]) => [value.slug, key]),
 );
 
 export default function RequestCenter() {
+  const { lang } = useLanguage();
+  const tx = (value) => translateRequestText(value, lang);
   const { categorySlug } = useParams();
   const navigate = useNavigate();
   const [categoryKey, setCategoryKey] = useState(
@@ -66,7 +70,7 @@ export default function RequestCenter() {
       "image/avif",
     ]);
     if (files.length > 8) {
-      setImageError("You can upload up to 8 reference images.");
+      setImageError(tx("You can upload up to 8 reference images."));
       return;
     }
     if (
@@ -74,7 +78,7 @@ export default function RequestCenter() {
         (file) => !allowed.has(file.type) || file.size > 10 * 1024 * 1024,
       )
     ) {
-      setImageError("Use JPG, PNG, WebP or AVIF images up to 10 MB each.");
+      setImageError(tx("Use JPG, PNG, WebP or AVIF images up to 10 MB each."));
       return;
     }
     setImageError("");
@@ -87,7 +91,7 @@ export default function RequestCenter() {
       !formData.phone ||
       !/^\S+@\S+\.\S+$/.test(formData.email || "")
     ) {
-      setSubmitError("Full name, phone and a valid email are required.");
+      setSubmitError(tx("Full name, phone and a valid email are required."));
       return;
     }
 
@@ -104,13 +108,13 @@ export default function RequestCenter() {
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok || !result.success) {
-        throw new Error(result.message || "Request submission failed.");
+        throw new Error(result.message || tx("Request submission failed."));
       }
       setReferenceCode(result.referenceCode || "");
       setSubmitted(true);
     } catch (error) {
       setSubmitError(
-        error.message || "Request submission failed. Please try again.",
+        error.message || tx("Request submission failed. Please try again."),
       );
     } finally {
       setSubmitting(false);
@@ -121,7 +125,7 @@ export default function RequestCenter() {
     if (field.type === "file") {
       return (
         <div key={field.key} className="md:col-span-2">
-          <label className="text-sm font-bold block mb-2">{field.label}</label>
+          <label className="text-sm font-bold block mb-2">{tx(field.label)}</label>
           <label className="block border-2 border-dashed border-neutral-300 rounded-2xl p-8 text-center cursor-pointer hover:border-red-400 hover:bg-red-50/30 transition">
             <input
               type="file"
@@ -133,10 +137,10 @@ export default function RequestCenter() {
             <div className="mx-auto w-12 h-12 rounded-full bg-neutral-100 grid place-items-center text-2xl">
               ↑
             </div>
-            <div className="font-extrabold mt-3">Upload reference images</div>
-            <div className="text-sm text-neutral-500 mt-1">{field.help}</div>
+            <div className="font-extrabold mt-3">{tx("Upload reference images")}</div>
+            <div className="text-sm text-neutral-500 mt-1">{tx(field.help)}</div>
             <div className="text-xs text-neutral-400 mt-2">
-              JPG, PNG, WEBP • Multiple images allowed
+              {tx("JPG, PNG, WEBP • Multiple images allowed")}
             </div>
           </label>
 
@@ -167,13 +171,13 @@ export default function RequestCenter() {
     if (field.type === "textarea") {
       return (
         <label key={field.key} className="text-sm font-bold md:col-span-2">
-          {field.label}
+          {tx(field.label)}
           <textarea
             rows={field.rows || 5}
             value={formData[field.key] || ""}
             onChange={(e) => setValue(field.key, e.target.value)}
             className="mt-2 w-full border rounded-xl px-4 py-4 font-normal resize-y min-h-[140px] focus:outline-none focus:ring-2 focus:ring-red-100 focus:border-red-400"
-            placeholder={field.placeholder}
+            placeholder={tx(field.placeholder)}
           />
         </label>
       );
@@ -182,16 +186,16 @@ export default function RequestCenter() {
     if (field.type === "select") {
       return (
         <label key={field.key} className="text-sm font-bold">
-          {field.label}
+          {tx(field.label)}
           <select
             value={formData[field.key] || ""}
             onChange={(e) => setValue(field.key, e.target.value)}
             className="mt-2 w-full border rounded-xl px-4 py-3 font-normal bg-white"
           >
-            <option value="">Select option</option>
+            <option value="">{tx("Select option")}</option>
             {field.options?.map((option) => (
               <option key={option} value={option}>
-                {option}
+                {tx(option)}
               </option>
             ))}
           </select>
@@ -201,41 +205,42 @@ export default function RequestCenter() {
 
     return (
       <label key={field.key} className="text-sm font-bold">
-        {field.label}
+        {tx(field.label)}
         <input
           type={field.type === "email" ? "email" : "text"}
           value={formData[field.key] || ""}
           onChange={(e) => setValue(field.key, e.target.value)}
           className="mt-2 w-full border rounded-xl px-4 py-3 font-normal"
-          placeholder={field.placeholder}
+          placeholder={tx(field.placeholder)}
         />
       </label>
     );
   };
 
   return (
-    <main className="min-h-screen bg-neutral-50 text-neutral-950">
+    <main
+      className="min-h-screen bg-neutral-50 text-neutral-950"
+      dir={lang === "ar" ? "rtl" : "ltr"}
+    >
       <section className="bg-neutral-950 text-white px-6 md:px-14 py-14">
         <div className="text-red-500 text-xs font-extrabold tracking-[.3em] uppercase">
-          Request a Quote
+          {tx("Request a Quote")}
         </div>
         <h1 className="text-4xl md:text-6xl font-black mt-3">
-          Tell Us What You Need
+          {tx("Tell Us What You Need")}
         </h1>
         <p className="max-w-2xl text-neutral-300 mt-4 text-lg leading-8">
-          Select a product category and send us your requirements. Our sourcing
-          team will review your request and prepare the right solution, factory
-          options, and quotation.
+          {tx("Select a product category and send us your requirements. Our sourcing team will review your request and prepare the right solution, factory options, and quotation.")}
         </p>
       </section>
 
       {!category && (
         <section className="px-6 md:px-14 py-12">
           <div className="text-red-500 text-xs font-extrabold tracking-[.28em] uppercase">
-            Choose a Category
+            {tx("Choose a Category")}
           </div>
           <h2 className="text-3xl md:text-4xl font-black mt-3">
-            Select the product category for your request
+            {tx("Select the product category for your request")}
           </h2>
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-8">
             {Object.entries(requestCategories).map(([key, c]) => (
@@ -247,7 +252,7 @@ export default function RequestCenter() {
                 <div className="h-36 rounded-xl bg-neutral-100 mb-5 overflow-hidden">
                   <img
                     src={c.image}
-                    alt={c.name}
+                    alt={tx(c.name)}
                     className="w-full h-full object-contain p-3"
                     loading="lazy"
                     onError={(event) => {
@@ -256,12 +261,12 @@ export default function RequestCenter() {
                   />
                 </div>
                 <div className="flex justify-between gap-4 items-start">
-                  <h3 className="text-xl font-extrabold">{c.name}</h3>
+                  <h3 className="text-xl font-extrabold">{tx(c.name)}</h3>
                   <span className="w-8 h-8 rounded-full border grid place-items-center">
                     →
                   </span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-2">{c.description}</p>
+                <p className="text-sm text-neutral-500 mt-2">{tx(c.description)}</p>
               </button>
             ))}
           </div>
@@ -275,18 +280,18 @@ export default function RequestCenter() {
               onClick={reset}
               className="w-full border rounded-xl px-4 py-3 font-bold"
             >
-              ← Change Category
+              {tx("← Change Category")}
             </button>
-            <h3 className="font-black text-xl mt-6">Request Summary</h3>
+            <h3 className="font-black text-xl mt-6">{tx("Request Summary")}</h3>
             <div className="mt-5 text-sm text-neutral-500">
-              Selected Category
+              {tx("Selected Category")}
             </div>
-            <div className="font-bold">{category.name}</div>
-            <div className="mt-5 text-sm text-neutral-500">Current Step</div>
+            <div className="font-bold">{tx(category.name)}</div>
+            <div className="mt-5 text-sm text-neutral-500">{tx("Current Step")}</div>
             <div className="font-bold">
               {submitted
-                ? "Completed"
-                : `${step + 1} of ${category.steps.length}`}
+                ? tx("Completed")
+                : `${step + 1} ${tx("of")} ${category.steps.length}`}
             </div>
             <div className="h-2 bg-neutral-100 rounded-full mt-4 overflow-hidden">
               <div
@@ -298,13 +303,13 @@ export default function RequestCenter() {
             </div>
             {formData.quantity && (
               <>
-                <div className="mt-5 text-sm text-neutral-500">Quantity</div>
+                <div className="mt-5 text-sm text-neutral-500">{tx("Quantity")}</div>
                 <div className="font-bold">{formData.quantity}</div>
               </>
             )}
             {formData.destinationCountry && (
               <>
-                <div className="mt-5 text-sm text-neutral-500">Destination</div>
+                <div className="mt-5 text-sm text-neutral-500">{tx("Destination")}</div>
                 <div className="font-bold">{formData.destinationCountry}</div>
               </>
             )}
@@ -313,25 +318,25 @@ export default function RequestCenter() {
           <div className="bg-white border rounded-2xl overflow-hidden">
             <div className="bg-neutral-950 text-white p-8">
               <div className="text-red-500 text-xs font-extrabold tracking-[.25em] uppercase">
-                Product Request
+                {tx("Product Request")}
               </div>
               <h2 className="text-3xl font-black mt-2">
-                {category.name} Request
+                {tx(category.name)} {tx("Request")}
               </h2>
-              <p className="text-neutral-400 mt-2">{category.description}</p>
+              <p className="text-neutral-400 mt-2">{tx(category.description)}</p>
             </div>
 
             {!submitted ? (
               <div className="p-8">
                 <div className="text-red-500 text-xs font-extrabold tracking-[.25em] uppercase">
-                  Step {step + 1} of {category.steps.length}
+                  {tx("Step")} {step + 1} {tx("of")} {category.steps.length}
                 </div>
                 <h3 className="text-2xl font-black mt-2">
-                  {category.steps[step].title}
+                  {tx(category.steps[step].title)}
                 </h3>
                 {category.steps[step].description && (
                   <p className="text-neutral-500 mt-2 max-w-3xl">
-                    {category.steps[step].description}
+                    {tx(category.steps[step].description)}
                   </p>
                 )}
 
@@ -345,7 +350,7 @@ export default function RequestCenter() {
                     onClick={() => setStep(step - 1)}
                     className="border rounded-xl px-5 py-3 font-bold disabled:opacity-40"
                   >
-                    ← Back
+                    {tx("← Back")}
                   </button>
                   <button
                     onClick={() =>
@@ -358,9 +363,9 @@ export default function RequestCenter() {
                   >
                     {step === category.steps.length - 1
                       ? submitting
-                        ? "Submitting..."
-                        : "Submit Request →"
-                      : "Continue →"}
+                        ? tx("Submitting...")
+                        : tx("Submit Request →")
+                      : tx("Continue →")}
                   </button>
                 </div>
                 {submitError && (
@@ -374,27 +379,26 @@ export default function RequestCenter() {
                 <div className="mx-auto w-16 h-16 rounded-full bg-green-100 grid place-items-center text-3xl">
                   ✓
                 </div>
-                <h3 className="text-3xl font-black mt-5">Request Received</h3>
+                <h3 className="text-3xl font-black mt-5">{tx("Request Received")}</h3>
                 <p className="text-neutral-500 mt-3">
-                  Our team will review the requirements and contact you with the
-                  next steps.
+                  {tx("Our team will review the requirements and contact you with the next steps.")}
                 </p>
                 {referenceCode && (
                   <p className="mx-auto mt-5 w-fit rounded-full bg-neutral-100 px-5 py-2 text-sm font-black">
-                    Reference: {referenceCode}
+                    {tx("Reference")}: {referenceCode}
                   </p>
                 )}
                 <button
                   onClick={reset}
                   className="bg-neutral-950 text-white rounded-xl px-6 py-3 font-bold mt-7"
                 >
-                  Create Another Request
+                  {tx("Create Another Request")}
                 </button>
                 <Link
                   to="/"
                   className="ml-3 inline-block rounded-xl border px-6 py-3 font-bold"
                 >
-                  Back to Website
+                  {tx("Back to Website")}
                 </Link>
               </div>
             )}

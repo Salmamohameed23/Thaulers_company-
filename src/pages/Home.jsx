@@ -42,12 +42,12 @@ const cardVariants = {
 
 const whyIcons = [Globe2, ShieldCheck, Box, Truck, Headphones, Lightbulb];
 
-const ImageBlock = ({ src, children, className = "" }) => {
+const ImageBlock = ({ src, children, className = "", position = "center" }) => {
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <div
-        className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105"
-        style={{ backgroundImage: `url(${src})` }}
+        className="absolute inset-0 bg-cover transition duration-700 group-hover:scale-105"
+        style={{ backgroundImage: `url(${src})`, backgroundPosition: position }}
       />
       <div className="absolute inset-0 bg-black/10 transition group-hover:bg-black/20" />
       {children}
@@ -222,7 +222,11 @@ const Home = () => {
                   whileHover={{ y: -8 }}
                   className="group flex h-full flex-col overflow-hidden rounded-[26px] border border-zinc-100 bg-white shadow-[0_16px_45px_rgba(0,0,0,0.06)] transition hover:border-red-500/20 hover:shadow-[0_28px_80px_rgba(0,0,0,0.13)]"
                 >
-                  <ImageBlock src={image} className="h-48 lg:h-56" />
+                  <ImageBlock
+                    src={image}
+                    className="h-48 lg:h-56"
+                    position={icon === "bike" ? "center 58%" : "center"}
+                  />
 
                   <div
                     className={`flex flex-1 flex-col p-6 ${isAr ? "text-right" : ""}`}
